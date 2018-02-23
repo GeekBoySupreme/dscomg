@@ -1,0 +1,491 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="io-home">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .hero {
+        position: relative;
+        padding: 120px 10px 160px 10px;
+        max-width: 100%;
+        width: auto;
+        margin-left: 0;
+      }
+
+      .hero_home {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        color: #000;
+        font-size: 32px;
+      }
+
+      .hero_home .hero_logo {
+        display: none;
+      }
+
+      .hero .hero_description {
+        margin: 12px 6px 48px 0;
+        margin-bottom: 128px;
+      }
+
+      .hero .hero_date {
+        font-size: 20px;
+        margin: 4px 0;
+      }
+
+      .hero .hero_location {
+        margin: 2px 0;
+        font-size: 16px;
+      }
+
+      .hero_card {
+        background-color: white;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        position: absolute;
+        top: 0;
+        margin-right: 12px;
+        right: 64px;
+        margin-top: -80px;
+        width: 300px;
+        height: 250px;
+        padding: 30px;
+        color: #424242;
+        -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.14);
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24), 0 0 4px 0 rgba(0, 0, 0, 0.14)
+      }
+
+      .hero_card .hero_card_title {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      .hero_card .hero_card_button {
+        margin-top: 52px;
+        background: #1CE8B5;
+        font-weight: 500;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+        min-width: 0;
+        padding: 6px 25px;
+        border-radius: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #424242;
+      }
+
+      .io_belt {
+        height: 600px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .io_callout {
+        font-family: "Google Sans", arial, sans-serif;
+        background: #4768FD;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        color: #fff;
+        opacity: 1;
+        padding: 0 20px;
+        position: relative;
+        -webkit-transition: opacity 400ms ease-in-out;
+        -o-transition: opacity 400ms ease-in-out;
+        transition: opacity 400ms ease-in-out;
+        z-index: 1;
+        max-width: 1380px;
+        width: 90%;
+      }
+
+      .io_callout_text {
+        font-size: 28px;
+        line-height: 40px;
+        padding: 70px 180px 70px 64px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        position: relative;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .featured_videos {
+        background: #fafafa;
+        padding: 60px 20px;
+      }
+
+      .featured_videos .featured_videos_title {
+        font-family: "Google Sans", 'Noto', sans-serif;
+        padding-left: 32px;
+        font-size: 28px;
+        color: #424242;
+        max-width: 1280px;
+        margin: 24px auto;
+      }
+
+      .featured_videos .featured_videos_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+        margin: 0 auto;
+        max-width: 1280px;
+        padding: 0 8px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+
+      .featured_videos .featured_videos_item {
+        width: 50%;
+        padding: 0 14px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin-bottom: 28px;
+      }
+
+      .featured_videos .featured_videos_preview {
+        display: block;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .featured_videos .featured_videos_play {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        z-index: 1;
+      }
+
+      .featured_videos .featured_videos_play iron-icon {
+        width: 86px;
+        height: 86px;
+        color: white;
+        opacity: 0.6;
+      }
+
+      .featured_videos .featured_videos_preview iron-image {
+        border-radius: 5px;
+        width: 100%;
+        padding-bottom: 56.25%;
+      }
+
+      .featured_videos .featured_videos_video_title {
+        margin: 4px 0;
+        font-size: 18px;
+        color: #424242;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .featured_images {
+        position: relative;
+        margin-bottom: 90px;
+      }
+
+      .featured_images_content {
+        overflow: hidden;
+      }
+
+      .featured_images_belt {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        height: 600px;
+        -webkit-perspective: 1000px;
+                perspective: 1000px;
+        width: 5400px;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
+                transform: translateX(0px);
+        cursor: -webkit-grab;
+      }
+
+      .featured_images_card {
+        font-family: "Google Sans", 'Noto', sans-serif;
+        height: 380px;
+        margin-top: -30px;
+        padding: 45px;
+        position: absolute;
+        right: 120px;
+        width: 380px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        bottom: -90px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        background: #FCD230;
+        color: #000;
+        z-index: 1;
+      }
+
+      .featured_images_card_title {
+        font-size: 22px;
+        margin: 4px 0;
+      }
+
+      .featured_images_card_description {
+        margin: 4px 0;
+        line-height: 1.8;
+        font-size: 15px;
+      }
+
+      .featured_images_card_link {
+        margin-top: 20px;
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+      }
+
+      .featured_images_belt iron-image {
+        height: 600px;
+        width: 900px;
+        pointer-events: none;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+      }
+
+      @media screen and (max-width: 980px) {
+        .hero_card {
+          right: 32px;
+          margin-right: 0;
+          width: 220px;
+          margin-top: -60px;
+        }
+      }
+
+      @media screen and (max-width: 860px) {
+        .hero {
+          padding: 10px 0 0 0;
+          margin: 0;
+        }
+        .hero_home {
+          text-align: left;
+          margin-left: 32px;
+          max-width: initial;
+          width: 80%;
+          padding: 10px 0;
+        }
+        .hero_home .hero_logo {
+          width: 52px;
+          margin-top: 12px;
+          display: block;
+        }
+        .hero_card {
+          background: #00E4FF;
+          padding: 48px 30px;
+          width: 100%;
+          position: initial;
+          margin: -8px 0 0 0;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          height: auto;
+        }
+        .hero_card .hero_card_button {
+          margin-top: 36px;
+          padding: 6px 0;
+          background: transparent;
+        }
+        .hero .hero_description {
+          margin: 12px 6px 48px 0;
+        }
+        .hero .hero_title {
+          margin: 24px 0 48px 0;
+          font-size: 22px;
+        }
+        .io_belt {
+          height: 300px;
+        }
+        .io_callout {
+          width: 100%;
+        }
+        .io_callout_text {
+          padding: 60px 0;
+          line-height: 30px;
+          font-size: 20px;
+        }
+        .featured_videos .featured_videos_title {
+          padding-left: 8px;
+          margin: 0 auto 24px auto;
+        }
+        .featured_videos .featured_videos_item {
+          width: 100%;
+          padding: 0;
+        }
+        .featured_images_card {
+          padding: 45px 30px;
+          height: auto;
+          position: initial;
+          width: 100%;
+          right: auto;
+          bottom: auto;
+        }
+        .featured_images_card_title {
+          margin: 12px 0;
+        }
+        .featured_images_belt {
+          width: 4050px;
+          height: 450px;
+        }
+        .featured_images_belt iron-image {
+          width: 675px;
+          height: 450px;
+        }
+      }
+    </style>
+
+    <iron-ajax auto url="[[rootPath]]data/home.json" handle-as="json" last-response="{{home}}"></iron-ajax>
+
+    <div class="hero">
+      <div class="hero_home">
+        <img class="hero_logo" src="[[rootPath]]images/io.svg">
+        <div class="hero_title">Google I/O Extended 2018 brings out the best Google technologies all the way from Mountain View to Kuala Lumpur.</div>
+        <!-- <div class="hero_description">
+          <div class="hero_date"></div>
+          <div class="hero_location"></div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="io_belt" style$="background-image: url([[rootPath]]images/sundar.jpg)"></div>
+
+    <div class="io_callout">
+      <div class="io_callout_text">I/O brings together developers from around the globe for talks, hands-on learning with Google experts, and a first look at Google’s latest developer products.</div>
+    </div>
+
+    <div class="featured_videos">
+      <div class="featured_videos_title">I/O'17 featured videos</div>
+      <div class="featured_videos_content">
+        <dom-repeat items="{{home.featuredvideo}}">
+          <template>
+            <div class="featured_videos_item">
+              <a class="featured_videos_preview" href$="{{item.url}}" target="_blank" rel="noopener">
+                <div class="featured_videos_play">
+                  <iron-icon icon="io-icons:play"></iron-icon>
+                </div>
+                <iron-image preload fade src$="[[rootPath]]{{item.image}}" placeholder="{{item.placeholder}}" sizing="contain"></iron-image>
+              </a>
+              <div class="featured_videos_video_title">{{item.title}}</div>
+            </div>
+          </template>
+        </dom-repeat>
+      </div>
+    </div>
+
+    <div class="featured_images">
+      <aside class="featured_images_card">
+        <div class="featured_images_card_title">Memorable moments from I/O Extended 2017 Kuala Lumpur</div>
+        <div class="featured_images_card_description">Last year's event built lots of excitement. Check out photos from talks and workshops. Drag photos to explore.</div>
+        <a href="https://goo.gl/photos/hWdahdJokd7ELsm76" class="featured_images_card_link" target="_blank">SEE ALL PHOTOS</a>
+      </aside>
+      <div class="featured_images_content">
+        <div class="featured_images_belt" id="featured_images_belt">
+          <dom-repeat items="{{home.highlightimage}}">
+            <template>
+              <iron-image placeholder="{{item.placeholder}}" src$="[[rootPath]]{{item.image}}" preload fade sizing="cover"></iron-image>
+            </template>
+          </dom-repeat>
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    class IoHome extends Polymer.GestureEventListeners(Polymer.Element) {
+      static get is() { return 'io-home'; }
+
+      static get properties() {
+        return {
+          ticket: {
+            notify: true
+          }
+        }
+      }
+
+      ready() {
+        super.ready();
+        var startPosition = 0,
+          currentPosition = 0,
+          distancePosition = 0,
+          isMouseDown = false,
+          el = this.$.featured_images_belt;
+
+        Polymer.Gestures.addListener(this.$.featured_images_belt, 'track', e => {
+          if (isMouseDown) {
+            distancePosition = (e.detail.x - startPosition) + currentPosition;
+            if (window.innerWidth < 860) {
+              var belt_width = 4050;
+            }
+            else {
+              var belt_width = 5400;
+            }
+            if (distancePosition < 0 && -distancePosition < (belt_width - window.innerWidth)) {
+              el.style.transform = "translateX(" + distancePosition + "px)";
+            }
+          }
+        });
+        Polymer.Gestures.addListener(this.$.featured_images_belt, 'down', e => {
+          isMouseDown = true;
+          currentPosition = parseInt(getComputedStyle(el, null).getPropertyValue("transform").split(",")[4]);
+          startPosition = e.detail.x;
+        });
+        Polymer.Gestures.addListener(this.$.featured_images_belt, 'up', e => {
+          isMouseDown = false;
+        });
+      }
+    }
+
+    window.customElements.define(IoHome.is, IoHome);
+  </script>
+</dom-module>

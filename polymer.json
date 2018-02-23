@@ -1,0 +1,32 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/io-app.html",
+  "fragments": [
+    "src/io-home.html",
+    "src/io-communityguidelines.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "data/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*.js"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "builds": [{
+    "name": "ioxkl18",
+    "bundle": false,
+    "js": {"minify": false, "compile": true},
+    "css": {"minify": true},
+    "html": {"minify": true},
+    "addPushManifest": true,
+    "insertPrefetchLinks": true,
+    "addServiceWorker": true,
+    "basePath": true
+  }]
+}

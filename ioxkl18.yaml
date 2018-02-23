@@ -1,0 +1,70 @@
+service: ioxkl18
+api_version: 1
+threadsafe: true
+runtime: python27
+
+handlers:
+- url: /ioxkl18/bower_components
+  static_dir: build/ioxkl18/bower_components
+  secure: always
+
+- url: /ioxkl18/data
+  static_dir: build/ioxkl18/data
+  secure: always
+
+- url: /ioxkl18/images
+  static_dir: build/ioxkl18/images
+  secure: always
+
+- url: /ioxkl18/src
+  static_dir: build/ioxkl18/src
+  secure: always
+
+- url: /ioxkl18/service-worker.js
+  static_files: build/ioxkl18/service-worker.js
+  upload: build/ioxkl18/service-worker.js
+  expiration: "1s"
+  secure: always
+
+- url: /ioxkl18/manifest.json
+  static_files: build/ioxkl18/manifest.json
+  upload: build/ioxkl18/manifest.json
+  secure: always
+
+- url: /ioxkl18/.*
+  static_files: build/ioxkl18/index.html
+  upload: build/ioxkl18/index.html
+  secure: always
+
+- url: /ioxkl18.*
+  script: main.app
+  secure: always
+
+- url: /io18extended.*
+  script: main.app
+  secure: always
+
+- url: /ioextended.*
+  script: main.app
+  secure: always
+
+- url: /io18.*
+  script: main.app
+  secure: always
+
+- url: /io.*
+  script: main.app
+  secure: always
+
+- url: /
+  static_files: build/ioxkl18/index.html
+  upload: build/ioxkl18/index.html
+  secure: always
+
+skip_files:
+  - bower_components
+  - src
+  - data
+  - images
+  - functions
+  - .idea

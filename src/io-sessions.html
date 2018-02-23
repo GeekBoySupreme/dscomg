@@ -1,0 +1,461 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-database-script.html">
+<link rel="import" href="io-dialog.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="io-sessions">
+  <template>
+    <style include="shared-styles">
+       :host {
+        display: block;
+      }
+
+      .nav-list a:focus {
+        outline: none;
+      }
+
+      .nav-list {
+        margin-left: 64px;
+        height: 64px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .nav-list a {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        cursor: pointer;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        vertical-align: middle;
+        color: #4A4A4A;
+        font-size: 14px;
+        padding: 3px 12px 0 12px;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        -webkit-transition: border-bottom 150ms ease-in-out;
+        -o-transition: border-bottom 150ms ease-in-out;
+        transition: border-bottom 150ms ease-in-out;
+      }
+
+      .nav-list a:hover{
+        border-bottom: 3px solid #BCC8FB;
+      }
+
+      .nav-list a.iron-selected {
+        border-bottom: 3px solid #536DFE;
+      }
+
+      .schedule {
+        font-family: "Google Sans", 'Noto', sans-serif;
+        border-top: 1px solid #dcdcdc;
+        line-height: 1.87;
+      }
+
+      .schedule .schedule_note,
+      .schedule .schedule_loading {
+        background-color: #FAFAFA;
+        border-bottom: 1px solid #dcdcdc;
+        font-family: 'Roboto', 'Noto', sans-serif;
+      }
+
+      .schedule .schedule_note {
+        padding: 60px 74px;
+      }
+
+      .schedule .schedule_loading {
+        padding: 30px 74px;
+      }
+
+      .schedule .schedule_section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .schedule .schedule_events {
+        width: 100%;
+      }
+
+      .schedule .schedule_event {
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      .schedule .schedule_time {
+        padding: 30px 40px;
+        width: 75px;
+        font-size: 24px;
+        border-right: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      .schedule .schedule_time span {
+        margin-left: 4px;
+        font-size: 15px;
+      }
+
+      .schedule .schedule_event {
+        padding: 30px 60px;
+        -webkit-transition: background-color 150ms ease-in-out;
+        -o-transition: background-color 150ms ease-in-out;
+        transition: background-color 150ms ease-in-out;
+        cursor: pointer;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .schedule .schedule_event:hover {
+        background-color: #FAFAFA;
+      }
+
+      .schedule .schedule_detail {
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1
+      }
+
+      .schedule .schedule_bookmark {
+        padding: 0 8px;
+        vertical-align: middle;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        z-index: 9999999;
+      }
+
+      .schedule .schedule_bookmark.add {
+        fill: #9B9B9B;
+      }
+
+      .schedule .schedule_bookmark.exists,
+      .schedule .schedule_bookmark.add:hover {
+        fill: #536DFE;
+      }
+
+      .schedule .schedule_event_title {
+        color: #4A4A4A;
+        font-size: 22px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .schedule .schedule_event_meta {
+        font-size: 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        color: #424242;
+      }
+
+      .schedule .schedule_event_description {
+        margin-right: 8px;
+      }
+
+      .schedule .schedule_event_tag {
+        background-color: rgb(255, 213, 79);
+        height: 24px;
+        padding: 6px 8px;
+        font-size: 12px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        line-height: 16px;
+        margin: 0 4px;
+      }
+
+      @media screen and (max-width: 860px) {
+        .nav-list {
+          margin-left: 24px;
+        }
+        .schedule .schedule_section {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+        }
+        .schedule .schedule_time {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          width: 100%;
+          padding: 14px 20px;
+          font-size: 20px;
+          background-color: #FAFAFA;
+        }
+        .schedule .schedule_event {
+          padding: 20px;
+        }
+        .schedule .schedule_note,
+        .schedule .schedule_loading {
+          padding: 24px;
+        }
+      }
+    </style>
+
+    <div class="hero">
+      <div class="hero_big_title">Schedule</div>
+      <div class="hero_description">Learn Google's latest developer products from Googlers, Google Developer Experts and more.</div>
+    </div>
+
+    <iron-selector selected="{{page}}" attr-for-selected="name" class="nav-list">
+      <a name="agenda" tabindex="-1">Agenda</a>
+      <a name="myio" tabindex="-1">My I/O</a>
+    </iron-selector>
+
+    <iron-pages selected="{{page}}" attr-for-selected="name">
+      <section name="agenda">
+        <div class="schedule" id="schedule">
+          <dom-if if="{{!sessions}}">
+            <template>
+              <div class="schedule_loading">
+                Loading event information ...
+              </div>
+            </template>
+          </dom-if>
+          <dom-if if="{{sessions}}">
+            <template>
+              <dom-repeat items="{{sessions}}">
+                <template>
+                  <div class="schedule_section">
+                    <div class="schedule_time">{{item.time}}<span>{{item.ampm}}</span></div>
+                    <div class="schedule_events">
+                      <dom-repeat items="{{item.session}}">
+                        <template>
+                          <div class="schedule_event" on-tap="showDialog">
+                            <div class="schedule_detail">
+                              <div class="schedule_event_title">{{item.title}}</div>
+                              <div class="schedule_event_meta">
+                                <div class="schedule_event_description">{{item.duration}} / {{item.location}}</div>
+                                <dom-repeat items="{{item.tag}}">
+                                  <template>
+                                    <div class="schedule_event_tag" id="{{_toLowerCase(item)}}">{{item}}</div>
+                                  </template>
+                                </dom-repeat>
+                              </div>
+                            </div>
+                            <dom-if if="{{user}}">
+                              <template>
+                                <dom-if if="{{!item.bookmarked}}">
+                                  <template>
+                                    <div id="bookmark" class="schedule_bookmark add" on-tap="_bookmark">
+                                      <svg id="bookmark" width="18" height="23" viewBox="324 292 18 23" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="bookmark" d="M339.429 292c1.414 0 2.571 1.13 2.571 2.538v20.308l-9-3.808-9 3.808v-20.308c0-1.401 1.151-2.538 2.571-2.538h12.858zM338 303v-2h-4v-4h-2v4h-4v2h4v4h2v-4h4z"
+                                          fill-rule="evenodd"></path>
+                                      </svg>
+                                    </div>
+                                  </template>
+                                </dom-if>
+                                <dom-if if="{{item.bookmarked}}">
+                                  <template>
+                                    <div id="bookmark" class="schedule_bookmark exists" on-tap="_bookmark">
+                                      <svg id="bookmark" width="18" height="24" viewBox="324 402 18 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="bookmark" d="M339.429 402a2.57 2.57 0 0 1 2.571 2.571v20.572l-9-3.857-9 3.857V404.57a2.571 2.571 0 0 1 2.571-2.571h12.858zm-8.143 13.931l7.714-7.714-1.209-1.217-6.505 6.506-3.077-3.069-1.209 1.209 4.286 4.285z"
+                                          fill-rule="evenodd"></path>
+                                      </svg>
+                                    </div>
+                                  </template>
+                                </dom-if>
+                              </template>
+                            </dom-if>
+                          </div>
+                        </template>
+                      </dom-repeat>
+                    </div>
+                  </div>
+                </template>
+              </dom-repeat>
+            </template>
+          </dom-if>
+        </div>
+      </section>
+      <section name="myio">
+        <div class="schedule">
+          <dom-if if="{{user}}">
+            <template>
+              <div class="schedule_note">
+                Your saved events appear below, and are synced from your account across mobile and desktop.
+              </div>
+            </template>
+          </dom-if>
+          <dom-if if="{{!user}}">
+            <template>
+              <div class="schedule_note">
+                Sign in to save events to My I/O and create your custom I/O schedule.
+              </div>
+            </template>
+          </dom-if>
+          <dom-if if="{{!sessions}}">
+            <template>
+              <div class="schedule_loading">
+                Loading event information ...
+              </div>
+            </template>
+          </dom-if>
+          <dom-if if="{{sessions}}">
+            <template>
+              <dom-repeat items="{{sessions}}">
+                <template>
+                  <dom-if if="{{_checkBookmarked(item)}}">
+                    <template>
+                      <div class="schedule_section">
+                        <div class="schedule_time">{{item.time}}<span>{{item.ampm}}</span></div>
+                        <div class="schedule_events">
+                          <dom-repeat items="{{item.session}}">
+                            <template>
+                              <dom-if if="{{item.bookmarked}}">
+                                <template>
+                                  <div class="schedule_event" on-tap="showDialog">
+                                    <div class="schedule_detail">
+                                      <div class="schedule_event_title">{{item.title}}</div>
+                                      <div class="schedule_event_meta">
+                                        <div class="schedule_event_description">{{item.duration}} / {{item.location}}</div>
+                                        <dom-repeat items="{{item.tag}}">
+                                          <template>
+                                            <div class="schedule_event_tag" id="{{_toLowerCase(item)}}">{{item}}</div>
+                                          </template>
+                                        </dom-repeat>
+                                      </div>
+                                    </div>
+                                    <div id="bookmark" class="schedule_bookmark exists" on-tap="_bookmark">
+                                      <svg id="bookmark" width="18" height="24" viewBox="324 402 18 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="bookmark" d="M339.429 402a2.57 2.57 0 0 1 2.571 2.571v20.572l-9-3.857-9 3.857V404.57a2.571 2.571 0 0 1 2.571-2.571h12.858zm-8.143 13.931l7.714-7.714-1.209-1.217-6.505 6.506-3.077-3.069-1.209 1.209 4.286 4.285z"
+                                          fill-rule="evenodd"></path>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </template>
+                              </dom-if>
+                            </template>
+                          </dom-repeat>
+                        </div>
+                      </div>
+                    </template>
+                  </dom-if>
+                </template>
+              </dom-repeat>
+            </template>
+          </dom-if>
+        </div>
+      </section>
+    </iron-pages>
+  </template>
+
+  <script>
+    class IoSessions extends Polymer.GestureEventListeners(Polymer.Element) {
+      static get is() { return 'io-sessions'; }
+
+      static get properties() {
+        return {
+          page: {
+            notify: true,
+            value: 'agenda'
+          },
+          sessions: {
+            notify: true,
+            value: null
+          },
+          user: {
+            'observer': '_onUserChanged'
+          }
+        }
+      }
+
+      _checkBookmarked(item) {
+        for (var i in item.session) {
+          if (item.session[i].bookmarked) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      _bookmark(e) {
+        var userRef = firebase.database().ref('users/' + this.user.uid);
+        userRef.child(e.model.item.id).once('value').then(snapshot => {
+          if (snapshot.val()) {
+            userRef.child(e.model.item.id).remove();
+            this._onUserChanged();
+          }
+          else {
+            userRef.child(e.model.item.id).set({ 'bookmarked': true });
+            this._onUserChanged();
+          }
+        })
+      }
+
+      _onUserChanged() {
+        if (this.user) {
+          var agendaRef = firebase.database().ref('agenda_new/');
+          var userRef = firebase.database().ref('users/' + this.user.uid);
+          agendaRef.once('value').then(snapshot => {
+            var agenda = snapshot.val();
+            userRef.once('value').then(snapshot => {
+              var user = snapshot.val();
+              for (var i in user) {
+                for (var j in agenda) {
+                  for (var k in agenda[j].session) {
+                    if (agenda[j].session[k].id == i) {
+                      agenda[j].session[k].bookmarked = true;
+                    }
+                  }
+                }
+              }
+              this.set('sessions', agenda)
+            })
+          })
+        }
+        if (this.user == null) {
+          var agendaRef = firebase.database().ref('agenda_new/');
+          agendaRef.on('value', snapshot => {
+            this.set('sessions', snapshot.val())
+          })
+        }
+      }
+
+      showDialog(e) {
+        if (e.target.id != 'bookmark') {
+          this.dispatchEvent(new CustomEvent('showdialog', { detail: e.model.item }));
+        }
+      }
+
+      _toLowerCase(item) {
+        return item.replace(/ /g, '').toLowerCase();
+      }
+    }
+
+    window.customElements.define(IoSessions.is, IoSessions);
+  </script>
+</dom-module>
