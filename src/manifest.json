@@ -1,6 +1,6 @@
 {
-  "name": "I/O Extended '18 Kuala Lumpur",
-  "short_name": "IOXKL '18",
+  "name": "I/O Extended KL",
+  "short_name": "IOXKL",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -8,12 +8,32 @@
   "theme_color": "#536dfe",
   "icons": [
     {
-      "src": "/assets/icons/android-chrome-192x192.png",
+      "src": "/assets/icons/icon_48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/assets/icons/icon_72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/assets/icons/icon_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/assets/icons/icon_144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/assets/icons/icon_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/icons/android-chrome-512x512.png",
+      "src": "/assets/icons/icon_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
-import { auth, googleAuthProvider } from '../firebase';
+import firebase from '../firebase';
 import Drawer from 'preact-material-components/Drawer';
 import IconToggle from 'preact-material-components/IconToggle';
 import TopAppBar from 'preact-material-components/TopAppBar';
@@ -17,7 +17,7 @@ export default class NavBar extends Component {
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
 	signIn() {
-		auth.signInWithPopup(googleAuthProvider).then(result => {
+		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(result => {
 			console.log(result);
 		}).catch(error => {
 			console.log(error);
@@ -25,7 +25,7 @@ export default class NavBar extends Component {
 	}
 
 	signOut() {
-		auth.signOut().then(() => {
+		firebase.auth().signOut().then(() => {
 			console.log('Signed Out');
 		}, error => {
 			console.error('Sign Out Error', error);
@@ -49,8 +49,8 @@ export default class NavBar extends Component {
 								{this.props.user ? (
 									<img src={this.props.user.photoURL} onClick={this.signOut} />
 								) : (
-										<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
-									)}
+									<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+								)}
 							</TopAppBar.Section>
 						</TopAppBar.Row>
 					</TopAppBar>
@@ -78,8 +78,8 @@ export default class NavBar extends Component {
 					{this.props.user ? (
 						<img src={this.props.user.photoURL} onClick={this.signOut} />
 					) : (
-							<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
-						)}</div>
+						<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+					)}</div>
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
 						<IconToggle class={style.icon} role="button" tabindex="0" onClick={this.openDrawer}>menu</IconToggle>

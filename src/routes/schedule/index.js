@@ -13,7 +13,7 @@ export default class Schedule extends Component {
 		// 	document.title = item.title + ' - Projects - Henry Lim';
 		// }
 		// route('/projects/' + id);
-		console.log('what');
+		console.log(item);
 		this.dialog.toggle(id, item, 'projects');
 	}
 
@@ -37,7 +37,7 @@ export default class Schedule extends Component {
 								</div>
 								<div class={style.schedule_events}>
 									{item.session.map(item => (
-										<div class={style.schedule_event} id="this" onClick={this.toggleDialog('', '')}>
+										<div class={style.schedule_event} id="this" onClick={this.toggleDialog('', item)}>
 											<div class={style.schedule_event_details}>
 												<div class={style.schedule_event_title}>{item.title}</div>
 												<div class={style.schedule_event_meta}>

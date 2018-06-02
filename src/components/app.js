@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-import { auth } from './firebase';
+import firebase from './firebase';
 import NavBar from './navbar';
 import Home from '../routes/home';
 import Attending from '../routes/attending';
@@ -24,10 +24,12 @@ export default class App extends Component {
 	};
 
 	componentWillMount() {
-		auth.onAuthStateChanged(currentUser => {
-			this.setState({ currentUser });
-			console.log(currentUser);
-		});
+		// console.log(firebase);
+		if (typeof window !== 'undefined') {
+			firebase.auth().onAuthStateChanged(currentUser => {
+				this.setState({ currentUser });
+			});
+		}
 	}
 
 	constructor() {
