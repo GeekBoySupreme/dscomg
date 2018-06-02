@@ -1,4 +1,7 @@
 import { h, Component } from 'preact';
+import IoLogo from '../../components/io_logo';
+import SocialFooter from '../../components/social_footer';
+import Footer from '../../components/footer';
 import style from './style';
 
 export default class Register extends Component {
@@ -6,10 +9,7 @@ export default class Register extends Component {
 		return (
 			<div>
 				<div class="hero">
-					<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g id="nav-io-phase-01" fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g id="ic-io-logo-indigo" transform="translate(62 17)" fill="#536DFE"><g id="io-logo">
-						<polygon id="Fill-1" points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
-						<polygon id="Fill-2" points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" id="Fill-3" /></g></g></g>
-					</svg>
+					<IoLogo />
 					<h2>Community Guidelines</h2>
 				</div>
 				<div class={style.container}>
@@ -56,6 +56,8 @@ export default class Register extends Component {
 					<br />
 					<p>This policy extends to talks, forums, workshops, codelabs, social media, parties, hallway conversations, all attendees, partners, sponsors, volunteers, event staff, etc. You catch our drift. GDGKL reserves the right to refuse admittance to, or remove any person from, any GDGKL hosted event (including future GDGKL events) at any time in its sole discretion. This includes, but is not limited to, attendees behaving in a disorderly manner or failing to comply with this policy, and the terms and conditions herein. If a participant engages in harassing or uncomfortable behavior, the conference organizers may take any action they deem appropriate, including warning or expelling the offender from the conference with no refund.</p>
 				</div>
+				<SocialFooter />
+				<Footer />
 			</div>
 		);
 	}

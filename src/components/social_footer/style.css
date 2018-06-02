@@ -1,0 +1,28 @@
+.social_footer {
+    border-top: 1px solid #EDEDED;
+    padding: 96px 80px 96px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_body {
+    max-width: 400px;
+}
+
+.social_body p {
+    margin-top: 0;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.social_body a {
+    margin-right: 20px;
+}
+
+.social_gif {
+    max-width: 360px;
+}
+
+.social_gif img {
+    width: 100%;
+}
