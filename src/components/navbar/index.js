@@ -11,13 +11,15 @@ import style from './style';
 
 export default class NavBar extends Component {
 
-	closeDrawer() {
-		this.drawer.MDComponent.open = false;
-	}
+	closeDrawer = () => (this.drawer.MDComponent.open = false);
 
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
-	drawerRef = drawer => (this.drawer = drawer);
+	drawerRef = drawer => {
+		console.log('hmm');
+		console.log(drawer);
+		this.drawer = drawer;
+	};
 
 	render() {
 		return (
@@ -45,11 +47,11 @@ export default class NavBar extends Component {
 							<p>Sunway University<br />Bandar Sunway, Selangor</p>
 						</div>
 						<div class={style.drawer_nav}>
-							<a href="/" onClick={this.closeDrawer}>Home</a>
-							<a href="/schedule" onClick={this.closeDrawer}>Schedule</a>
-							<a href="/attending" onClick={this.closeDrawer}>Attending</a>
-							<a href="/register" onClick={this.closeDrawer}>Registration</a>
-							<a href="/communityguidelines" onClick={this.closeDrawer}>Community Guideline</a>
+							<Link href="/" onClick={this.closeDrawer}>Home</Link>
+							<Link href="/schedule" onClick={this.closeDrawer}>Schedule</Link>
+							<Link href="/attending" onClick={this.closeDrawer}>Attending</Link>
+							<Link href="/registration" onClick={this.closeDrawer}>Registration</Link>
+							<Link href="/communityguidelines" onClick={this.closeDrawer}>Community Guideline</Link>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
@@ -81,7 +83,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Attending</span>
 						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href="/register">
+						<Link activeClassName={style.active} class={style.nav_item} href="/registration">
 							<svg>
 								<g>
 									<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />

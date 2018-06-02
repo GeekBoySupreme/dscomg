@@ -1,25 +1,112 @@
 [{
-    "title": "something",
+    "time": "8:45",
+    "ampm": "AM",
     "session": [{
-        "title": "something"
-    },{
-        "title": "something"
-    },{
-        "title": "something"
+        "title": "Registration",
+        "duration": "1 hour"
     }]
-},{
-    "title": "something",
+},
+{
+    "time": "9:30",
+    "ampm": "AM",
     "session": [{
-        "title": "something"
+        "title": "I/O Extended 2018 Opening",
+        "duration": "15 mins"
     }]
-},{
-    "title": "something",
+},
+{
+    "time": "9:45",
+    "ampm": "AM",
     "session": [{
-        "title": "something"
+        "title": "Keynote",
+        "duration": "30 mins"
     }]
-},{
-    "title": "something",
+},
+{
+    "time": "10:15",
+    "ampm": "AM",
     "session": [{
-        "title": "something"
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "11:00",
+    "ampm": "AM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "11:45",
+    "ampm": "AM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "12:30",
+    "ampm": "PM",
+    "session": [{
+        "title": "Lunch",
+        "duration": "1 hour"
+    }]
+},
+{
+    "time": "1:30",
+    "ampm": "PM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "2:15",
+    "ampm": "PM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "3:00",
+    "ampm": "PM",
+    "session": [{
+        "title": "Break",
+        "duration": "30 mins"
+    }]
+},
+{
+    "time": "3:30",
+    "ampm": "PM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "4:15",
+    "ampm": "PM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "5:00",
+    "ampm": "PM",
+    "session": [{
+        "title": "TBA",
+        "duration": "45 mins"
+    }]
+},
+{
+    "time": "5:45",
+    "ampm": "PM",
+    "session": [{
+        "title": "Photo Session & Closing",
+        "duration": "30 mins"
     }]
 }]

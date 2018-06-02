@@ -6,7 +6,7 @@ export default class Footer extends Component {
 		return (
 			<div class={style.footer}>
 				<div class={style.footer_logo}>
-					<img src="https://events.gdgkl.org/ioxkl17/images/gdgkl.svg" />
+					<img src="/assets/gdgkl.svg" />
 				</div>
 				<div class={style.footer_links}>
 					<div class={style.footer_link}>

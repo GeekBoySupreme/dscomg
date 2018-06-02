@@ -38,7 +38,7 @@ export default class SocialFooter extends Component {
 					</div>
 				</div>
 				<div class={style.social_gif}>
-					<img src="https://storage.googleapis.com/io-2018.appspot.com/v1/hashtag.gif" />
+					<img src="/assets/hashtag.gif" />
 				</div>
 			</div>
 		);

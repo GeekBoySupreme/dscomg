@@ -5,7 +5,7 @@ import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
 import style from './style';
 
-export default class Register extends Component {
+export default class Registration extends Component {
 	render() {
 		return (
 			<div>

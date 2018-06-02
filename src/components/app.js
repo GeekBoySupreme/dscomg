@@ -4,7 +4,7 @@ import { Router } from 'preact-router';
 import NavBar from './navbar';
 import Home from '../routes/home';
 import Attending from '../routes/attending';
-import Register from '../routes/register';
+import Registration from '../routes/registration';
 import Schedule from '../routes/schedule';
 import CommunityGuidelines from '../routes/communityguidelines';
 // import Home from 'async!../routes/home';
@@ -17,6 +17,7 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
+		document.documentElement.scrollTop = 0;
 	};
 
 	render() {
@@ -24,11 +25,11 @@ export default class App extends Component {
 			<div id="app">
 				<NavBar />
 				<Router onChange={this.handleRoute}>
-					<Home path="/" />
 					<Attending path="/attending/" />
-					<Register path="/register/" />
+					<Registration path="/registration/" />
 					<Schedule path="/schedule/" />
 					<CommunityGuidelines path="/communityguidelines/" />
+					<Home path="/" default />
 				</Router>
 			</div>
 		);

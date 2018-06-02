@@ -26,3 +26,20 @@
 .social_gif img {
     width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .social_footer {
+        padding: 60px 20px 64px;
+        flex-direction: column;
+    }
+
+    .social_body p  {
+        font-size: 18px;
+    }
+
+    .social_gif {
+        width: 65%;
+        margin-top: 100px;
+        margin-left: auto;    
+    }
+}

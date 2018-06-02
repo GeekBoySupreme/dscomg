@@ -33,15 +33,15 @@ export default class Schedule extends Component {
 						<div class={style.schedule_section}>
 							<div class={style.schedule_content}>
 								<div class={style.schedule_time}>
-									12:30<span>PM</span>
+									{item.time}<span>{item.ampm}</span>
 								</div>
 								<div class={style.schedule_events}>
 									{item.session.map(item => (
 										<div class={style.schedule_event} id="this" onClick={this.toggleDialog('', '')}>
 											<div class={style.schedule_event_details}>
-												<div class={style.schedule_event_title}>Lunch</div>
+												<div class={style.schedule_event_title}>{item.title}</div>
 												<div class={style.schedule_event_meta}>
-													<div class={style.schedule_event_description}>1 hour</div>
+													<div class={style.schedule_event_description}>{item.duration}</div>
 												</div>
 											</div>
 										</div>
