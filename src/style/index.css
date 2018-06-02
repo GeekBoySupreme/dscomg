@@ -94,6 +94,10 @@ html, body {
   background-position: bottom;
 }
 
+.mdc-dialog__body--scrollable {
+  max-height: 80vh !important;
+}
+
 @media screen and (max-width: 768px) {
   #app {
     padding-left: 0;
@@ -110,7 +114,18 @@ html, body {
   .hero svg {
     width: 64px;
   }
+  .hero p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
   .belt {
     height: 300px;
+  }
+  .mdc-dialog__surface {
+    width: 100% !important;
+    height: 100%;
+  }
+  .mdc-dialog__body--scrollable {
+    max-height: initial !important;
   }
 }

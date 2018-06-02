@@ -1,0 +1,222 @@
+.dialog_header {
+  background-image: url(/assets/grid_seamless.png);
+  background-position: right 1px top -4px;
+  background-repeat: repeat;
+  background-size: 19px;
+  padding: 12px 8px 20px 8px !important;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  color: #000;
+  position: relative;
+}
+
+.dialog_header .back {
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  user-select: initial;
+}
+
+.dialog_header .back svg {
+  pointer-events: none;
+}
+
+.dialog_header .back:focus {
+  outline: none;
+}
+
+.dialog_header .header_text {
+  font-size: 30px;
+  line-height: 42px;
+  padding: 0 52px;
+  width: 80%;
+}
+
+.dialog_body {
+  overflow-y: auto;
+  padding: 20px 60px 48px 60px;
+  flex: 1;
+  min-height: 300px;
+  max-height: 50vh;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+.dialog_body .subtitle {
+  margin-bottom: 36px;
+}
+
+.dialog_body p {
+  max-width: 640px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+  color: #202124;
+  white-space: pre-line;
+}
+
+.dialog_body .event_topic {
+  display: flex;
+  margin: 36px 0;
+  flex-wrap: wrap;
+}
+
+.dialog_body .event_topic span {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* .dialog_body .related {
+    margin-top: 64px;
+    color: #000;
+  }
+  
+  .dialog_body .related_title {
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #4A4A4A;
+    padding-bottom: 14px;
+  } */
+
+/* .dialog_body .related_item {
+    border-bottom: 1px solid #e9e9e9;
+    padding: 16px 0;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .dialog_body .related_item:last-child {
+    border-bottom: none;
+  }
+  
+  .dialog_body .related_item:hover {
+    background-color: #FAFAFA;
+  }
+  
+  .dialog_body .related_item_title {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+  
+  .dialog_body .related_item_subtitle,
+  .dialog_body .related_item_description {
+    font-size: 14px;
+    margin-right: 16px;
+  }
+  
+  .dialog_body .related_item_description {
+    width: 90%;
+    margin-bottom: 4px;
+    line-height: 22px;
+  } */
+
+/* .related_item_info {
+    display: flex;
+    align-items: center;
+  } */
+
+.dialog_footer {
+  background-color: #fff;
+  height: 56px;
+  justify-content: space-between !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+.dialog_footer .share {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 150ms ease-in-out;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dialog_footer .share:active {
+  background-color: #e6e6e6;
+}
+
+.dialog_footer .share svg, .dialog_header .back svg, .dialog_header .fab svg, .dialog_footer .fab svg {
+  width: 24px;
+  height: 24px;
+  fill: #757575;
+}
+
+.dialog_header .back svg {
+  fill: #000;
+}
+
+.dialog_header .fab, .dialog_footer .fab {
+  background: white;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 6px 6px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.dialog_header .fab {
+  position: absolute;
+  right: 40px;
+  bottom: -28px;
+}
+
+.dialog_footer {
+  display: none;
+}
+
+.dialog_footer .fab {
+  margin-right: 16px;
+  margin-bottom: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog_header {
+    min-height: 0px;
+  }
+  .dialog_header .header_text {
+    font-size: 24px;
+    padding: 22px 16px 0 16px;
+    width: 100%;
+  }
+  .dialog_header .fab {
+    display: none;
+  }
+  .dialog_body {
+    padding: 22px 24px;
+    font-size: 16px;
+    line-height: 28px;
+    max-height: initial;
+  }
+  .dialog_body p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .dialog_footer {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  /* .dialog_body .related_item_description {
+      width: 100%;
+    } */
+}

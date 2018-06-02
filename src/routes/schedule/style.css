@@ -34,13 +34,15 @@
 
 .schedule_event {
     cursor: pointer;
-    border: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    border-left: 1px solid #ededed;
     transition: 50ms background-color ease;
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
     align-items: center;
     height: 100%;
+    min-height: 100px;
     padding: 0 20px 0 80px;
 }
 

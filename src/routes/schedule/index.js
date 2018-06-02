@@ -1,10 +1,24 @@
 import { h, Component } from 'preact';
+import Dialog from '../../components/dialog';
+import { route } from 'preact-router';
+import schedule from '../../assets/schedule.json';
 import style from './style';
 
 export default class Schedule extends Component {
+	toggleDialog = (id, item) => e => {
+		// if (typeof window !== 'undefined') {
+		// 	document.title = item.title + ' - Projects - Henry Lim';
+		// }
+		// route('/projects/' + id);
+		console.log('what');
+		this.dialog.toggle(id, item, 'projects');
+	}
+
 	render() {
 		return (
 			<div>
+				<Dialog ref={dialog => { this.dialog = dialog; }} />
+
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g id="nav-io-phase-01" fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g id="ic-io-logo-indigo" transform="translate(62 17)" fill="#536DFE"><g id="io-logo">
 						<polygon id="Fill-1" points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
@@ -15,74 +29,27 @@ export default class Schedule extends Component {
 				</div>
 
 				<div class={style.schedule}>
-					<div class={style.schedule_section}>
-						<div class={style.schedule_content}>
-							<div class={style.schedule_time}>
-								9<span>AM</span>
-							</div>
-							<div class={style.schedule_events}>
-								<div class={style.schedule_event}>
-									<div class={style.schedule_event_details}>
-										<div class={style.schedule_event_title}>Registration</div>
-										<div class={style.schedule_event_meta}>
-											<div class={style.schedule_event_description}>1 hour</div>
+					{schedule.map(item => (
+						<div class={style.schedule_section}>
+							<div class={style.schedule_content}>
+								<div class={style.schedule_time}>
+									12:30<span>PM</span>
+								</div>
+								<div class={style.schedule_events}>
+									{item.session.map(item => (
+										<div class={style.schedule_event} id="this" onClick={this.toggleDialog('', '')}>
+											<div class={style.schedule_event_details}>
+												<div class={style.schedule_event_title}>Lunch</div>
+												<div class={style.schedule_event_meta}>
+													<div class={style.schedule_event_description}>1 hour</div>
+												</div>
+											</div>
 										</div>
-									</div>
+									))}
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class={style.schedule_section}>
-						<div class={style.schedule_content}>
-							<div class={style.schedule_time}>
-								9:45<span>AM</span>
-							</div>
-							<div class={style.schedule_events}>
-								<div class={style.schedule_event}>
-									<div class={style.schedule_event_details}>
-										<div class={style.schedule_event_title}>Keynote</div>
-										<div class={style.schedule_event_meta}>
-											<div class={style.schedule_event_description}>45 mins</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class={style.schedule_section}>
-						<div class={style.schedule_content}>
-							<div class={style.schedule_time}>
-								12:30<span>PM</span>
-							</div>
-							<div class={style.schedule_events}>
-								<div class={style.schedule_event}>
-									<div class={style.schedule_event_details}>
-										<div class={style.schedule_event_title}>Lunch</div>
-										<div class={style.schedule_event_meta}>
-											<div class={style.schedule_event_description}>1 hour</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class={style.schedule_section}>
-						<div class={style.schedule_content}>
-							<div class={style.schedule_time}>
-								5:30<span>PM</span>
-							</div>
-							<div class={style.schedule_events}>
-								<div class={style.schedule_event}>
-									<div class={style.schedule_event_details}>
-										<div class={style.schedule_event_title}>Photo Session &amp; Closing</div>
-										<div class={style.schedule_event_meta}>
-											<div class={style.schedule_event_description}>15 mins</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					))}
 				</div>
 			</div >
 		);
