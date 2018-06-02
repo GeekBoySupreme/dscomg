@@ -1,0 +1,10 @@
+.hero span {
+    color: #536DFE;
+    font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero span {
+        font-size: 22px;
+    }
+}

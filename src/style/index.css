@@ -1,0 +1,116 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  font-family: 'Google Sans', arial, sans-serif;
+  font-weight: 400;
+  color: #202124;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --mdc-theme-primary: white;
+}
+
+/* fallback */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100%;
+  padding-left: 72px;
+}
+
+.mdc-drawer--temporary .mdc-drawer__drawer {
+  max-width: 300px !important;
+}
+
+.mdc-toolbar__title {
+  font-family: 'Google Sans', arial, sans-serif !important;
+  color: #000;
+  width: calc(100% - 4px);
+  text-align: center;
+  margin-left: -48px !important;
+  pointer-events: none;
+  font-weight: 400 !important;
+}
+
+.hero {
+  padding: 100px 60px 60px 60px;
+  position: relative;
+  max-width: 620px;
+  width: 80%;
+}
+
+.hero svg {
+  width: 96px;
+  height: auto;
+  margin-bottom: 24px;
+  margin-left: 2px;
+}
+
+.hero h2 {
+  margin: 6px 6px 24px 0;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.hero p {
+  margin: 12px 6px 48px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.belt {
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    padding-left: 0;
+    padding-bottom: 60px;
+  }
+  .hero {
+    padding: 48px 20px 0 20px;
+  }
+  .hero h2 {
+    font-size: 22px;
+    line-height: 30px;
+    max-width: 90%;
+  }
+  .hero svg {
+    width: 64px;
+  }
+  .belt {
+    height: 300px;
+  }
+}

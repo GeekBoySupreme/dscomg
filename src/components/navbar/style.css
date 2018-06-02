@@ -1,0 +1,163 @@
+.toolbar {
+    display: none;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.toolbar .icon {
+    color: black;
+}
+
+.drawer_toolbar {
+    font-family: 'Google Sans', sans-serif;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    margin-bottom: 16px;
+    padding: 24px 16px 24px 23px;
+}
+
+.drawer_toolbar svg {
+    width: 72px;
+}
+
+.drawer_toolbar h2 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px 0px 6px;
+}
+
+.drawer_toolbar p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0px;
+}
+
+.drawer_nav {
+    padding-left: 23px;
+}
+
+.drawer_nav a {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 400;
+    color: #202124;
+    display: block;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 10px 0;
+    text-decoration: none;
+    min-width: 255px;
+    cursor: pointer;
+    transition: 50ms color ease;
+}
+
+.drawer_nav a:hover {
+    color: #4768fd;
+}
+
+.navbar {
+    background: #4768fd;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 72px;
+    z-index: 1;
+    transform: translate(0, 0);
+    transition: transform 0.75s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.navbar .hamburger {
+    display: flex;
+    justify-content: center;
+    left: 0px;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    width: 72px;
+}
+
+.navbar .hamburger .icon {
+    color: #fff;
+}
+
+.navbar nav {
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar nav .nav_item {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+    border-right: 3px solid transparent;
+    transition: border 400ms ease;
+}
+
+.navbar nav .nav_item:hover {
+    border-right: 3px solid rgba(255, 255, 255, 0.6)
+}
+
+.navbar nav .nav_item.active {
+    opacity: 1;
+    border-right: 3px solid #fff;
+}
+
+.navbar nav .nav_item svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.navbar nav .nav_item span {
+    margin-top: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .toolbar {
+        display: block;
+    }
+
+    .navbar {
+        bottom: -2px;
+        height: 60px;
+        right: 0px;
+        z-index: 2;
+        width: auto;
+        top: auto;
+    }
+
+    .navbar .hamburger {
+        display: none;
+    }
+
+    .navbar nav {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar nav .nav_item {
+        height: 60px;
+        width: 100%;
+    }
+
+    .navbar nav .nav_item,
+    .navbar nav .nav_item:hover,
+    .navbar nav .nav_item.active {
+        border-right: none;
+    }
+
+    .navbar nav .nav_item span {
+        margin-top: 6px;
+    }
+}

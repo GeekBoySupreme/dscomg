@@ -1,0 +1,118 @@
+.schedule {
+    margin-bottom: 128px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.schedule_section {
+    border-top: 1px solid #EDEDED;
+}
+
+.schedule_content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.schedule_time {
+    padding: 30px 0 30px 60px;
+    flex: 0 0 200px;
+    font-size: 34px;
+    color: #202124;
+}
+
+.schedule_time span {
+    margin-left: 4px;
+    font-size: 14px;
+}
+
+.schedule_events {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+}
+
+.schedule_event {
+    cursor: pointer;
+    border: 1px solid #ededed;
+    transition: 50ms background-color ease;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px 0 80px;
+}
+
+.schedule_event:hover {
+    background-color: #FAFAFA;
+}
+
+.schedule_event_title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #4A4A4A;
+}
+
+.schedule_event_meta {
+    font-size: 16px;
+    line-height: 1.87;
+    display: flex;
+    color: #202124;
+}
+
+.schedule_event_description {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+}
+
+.schedule_event:first-child {
+    border-top: none;
+}
+
+.schedule_event:last-child {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+    /* .hero {
+        display: none;
+    } */
+    .schedule {
+        margin-top: 24px;
+    }
+    .schedule_time {
+        display: block;
+        font-size: 19px;
+        line-height: 26px;
+        box-sizing: border-box;
+        color: #4768FD;
+        font-weight: 500;
+        padding: 14px 6px 0 16px;
+        text-align: center;
+        flex: 0 0 66px;
+    }
+    .schedule_time span {
+        display: block;
+        font-size: 11px;
+        line-height: 12px;
+    }
+    .schedule_events {
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+    }
+    .schedule_event {
+        border: none;   
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 20px 10px;
+    }
+    .schedule_event_title {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 500;
+    }
+}

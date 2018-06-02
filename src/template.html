@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <title>Google I/O Extended 2018 Kuala Lumpur</title>
+    <meta name="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+    <meta itemprop="name" content="Google I/O Extended 2018 Kuala Lumpur">
+    <meta itemprop="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+    <meta itemprop="url" content="https://ioxkl18-staging.netlify.com/">
+    <meta itemprop="location" content="Google Malaysia, Kuala Lumpur">
+    <meta property="og:url" content="https://ioxkl18-staging.netlify.com/">
+    <meta property="og:type" content="Event">
+    <meta property="og:image" content="https://storage.googleapis.com/io-2018.appspot.com/v1/io-social-banner.gif">
+    <meta property="og:title" content="Google I/O Extended 2018 Kuala Lumpur">
+    <meta property="og:site_name" content="Google I/O Extended 2018 Kuala Lumpur">
+    <meta property="og:description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
+    <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
+        <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
+    <% } %>
+    <% for (var chunk of webpack.chunks) { %>
+        <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
+            <% for (var file of chunk.files) { %>
+                <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
+                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+                <% } else if (file.match(/manifest\.json$/)) { %>
+                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+            <% } %>
+        <% } %>
+    <% } %>
+
+</head>
+
+<body>
+    <%= htmlWebpackPlugin.options.ssr({
+			url: '/'
+	}) %>
+    <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
+    <script>
+        window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
+    </script>
+    <!-- Google Analytics -->
+    <!-- <script>
+        window.ga = window.ga || function () {
+            (ga.q = ga.q || []).push(arguments)
+        };
+        ga.l = +new Date;
+        ga('create', 'UA-57741199-3', 'auto');
+        ga('send', 'pageview');
+    </script> -->
+    <!-- <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <script>
+    </script>
+</body>
+
+</html>
