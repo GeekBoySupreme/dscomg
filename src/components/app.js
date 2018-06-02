@@ -1,12 +1,13 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-
+import { auth } from './firebase';
 import NavBar from './navbar';
 import Home from '../routes/home';
 import Attending from '../routes/attending';
 import Registration from '../routes/registration';
 import Schedule from '../routes/schedule';
 import CommunityGuidelines from '../routes/communityguidelines';
+
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
@@ -17,17 +18,36 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
-		document.documentElement.scrollTop = 0;
+		if (typeof window !== 'undefined') {
+			document.documentElement.scrollTop = 0;
+		}
 	};
 
+	componentWillMount() {
+		auth.onAuthStateChanged(currentUser => {
+			this.setState({ currentUser });
+			console.log(currentUser);
+		});
+	}
+
+	constructor() {
+		super();
+
+		this.state = {
+			currentUser: null
+		};
+	}
+
 	render() {
+		const { currentUser } = this.state;
+
 		return (
 			<div id="app">
-				<NavBar />
+				<NavBar user={currentUser} />
 				<Router onChange={this.handleRoute}>
 					<Attending path="/attending/" />
-					<Registration path="/registration/" />
-					<Schedule path="/schedule/" />
+					<Registration path="/registration/" user={currentUser} />
+					<Schedule path="/schedule/" user={currentUser} />
 					<CommunityGuidelines path="/communityguidelines/" />
 					<Home path="/" default />
 				</Router>

@@ -1,9 +1,10 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
+import { auth, googleAuthProvider } from '../firebase';
 import Drawer from 'preact-material-components/Drawer';
 import IconToggle from 'preact-material-components/IconToggle';
-import Toolbar from 'preact-material-components/Toolbar';
-import 'preact-material-components/Toolbar/style.css';
+import TopAppBar from 'preact-material-components/TopAppBar';
+import 'preact-material-components/TopAppBar/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
 import 'preact-material-components/IconToggle/style.css';
@@ -15,9 +16,23 @@ export default class NavBar extends Component {
 
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
+	signIn() {
+		auth.signInWithPopup(googleAuthProvider).then(result => {
+			console.log(result);
+		}).catch(error => {
+			console.log(error);
+		});
+	}
+
+	signOut() {
+		auth.signOut().then(() => {
+			console.log('Signed Out');
+		}, error => {
+			console.error('Sign Out Error', error);
+		});
+	}
+
 	drawerRef = drawer => {
-		console.log('hmm');
-		console.log(drawer);
 		this.drawer = drawer;
 	};
 
@@ -25,16 +40,20 @@ export default class NavBar extends Component {
 		return (
 			<div>
 				<div class={style.toolbar}>
-					<Toolbar className="toolbar">
-						<Toolbar.Row>
-							<Toolbar.Section align-start>
-								<Toolbar.Icon class={style.icon} menu onClick={this.openDrawer}>
-									menu
-								</Toolbar.Icon>
-								{/* <Toolbar.Title></Toolbar.Title> */}
-							</Toolbar.Section>
-						</Toolbar.Row>
-					</Toolbar>
+					<TopAppBar className="topappbar">
+						<TopAppBar.Row>
+							<TopAppBar.Section align-start>
+								<TopAppBar.Icon navigation class={style.icon} onClick={this.openDrawer}>menu</TopAppBar.Icon>
+							</TopAppBar.Section>
+							<TopAppBar.Section align-end>
+								{this.props.user ? (
+									<img src={this.props.user.photoURL} onClick={this.signOut} />
+								) : (
+										<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+									)}
+							</TopAppBar.Section>
+						</TopAppBar.Row>
+					</TopAppBar>
 				</div>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.DrawerContent>
@@ -55,6 +74,12 @@ export default class NavBar extends Component {
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
+				<div class={style.desktop_toolbar}>
+					{this.props.user ? (
+						<img src={this.props.user.photoURL} onClick={this.signOut} />
+					) : (
+							<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+						)}</div>
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
 						<IconToggle class={style.icon} role="button" tabindex="0" onClick={this.openDrawer}>menu</IconToggle>

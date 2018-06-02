@@ -1,10 +1,42 @@
 .toolbar {
     display: none;
-    border-bottom: 1px solid #e6e6e6;
 }
 
 .toolbar .icon {
     color: black;
+}
+
+.desktop_toolbar {
+    height: 64px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.desktop_toolbar img,
+.toolbar img {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    border: 2px solid #536cf6;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.desktop_toolbar img {
+    height: 42px;
+    width: 42px;
+    border-radius: 42px;
+}
+
+.desktop_toolbar .signin_btn,
+.toolbar .signin_btn {
+    color: #536cf6;
+    margin-right: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 8px;
 }
 
 .drawer_toolbar {

@@ -69,6 +69,13 @@
         margin-bottom: 24px;
         padding: 48px 20px;
     }
+    .ticket_types h3 {
+        font-size: 28px;
+    }
+    .ticket_type .ticket_title {
+        font-size: 20px;
+        margin: 0 0 16px 0;
+    }
     .ticket_type {
         width: 100%;
         margin-bottom: 36px;

@@ -5,6 +5,7 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Home extends Component {
+
 	render() {
 		return (
 			<div>

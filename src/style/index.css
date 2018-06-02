@@ -46,6 +46,14 @@ html, body {
   padding-left: 72px;
 }
 
+.topappbar {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.topappbar.mdc-top-app-bar {
+  z-index: 3 !important;
+}
+
 .mdc-drawer--temporary .mdc-drawer__drawer {
   max-width: 300px !important;
 }
@@ -100,11 +108,13 @@ html, body {
 
 @media screen and (max-width: 768px) {
   #app {
+    /* padding-top: 64px; */
     padding-left: 0;
     padding-bottom: 60px;
   }
   .hero {
-    padding: 48px 20px 0 20px;
+    /* margin-top: 64px; */
+    padding: 64px 20px 0 20px;
   }
   .hero h2 {
     font-size: 25px;
