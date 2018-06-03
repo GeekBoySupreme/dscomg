@@ -6,6 +6,7 @@ import Home from '../routes/home';
 import Attending from '../routes/attending';
 import Registration from '../routes/registration';
 import Schedule from '../routes/schedule';
+import Ticket from '../routes/ticket';
 import CommunityGuidelines from '../routes/communityguidelines';
 
 // import Home from 'async!../routes/home';
@@ -28,6 +29,14 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			firebase.auth().onAuthStateChanged(currentUser => {
 				this.setState({ currentUser });
+				console.log(currentUser);
+				const db = firebase.database();
+				db.ref('/events_site/ioxkl18/users/' + currentUser.uid + '/info/').set({
+					uid: currentUser.uid,
+					username: currentUser.displayName,
+					email: currentUser.email,
+					profile_picture: currentUser.photoURL
+				});
 			});
 		}
 	}
@@ -50,6 +59,7 @@ export default class App extends Component {
 					<Attending path="/attending/" />
 					<Registration path="/registration/" user={currentUser} />
 					<Schedule path="/schedule/" user={currentUser} />
+					<Ticket path="/ticket/" user={currentUser} />
 					<CommunityGuidelines path="/communityguidelines/" />
 					<Home path="/" default />
 				</Router>

@@ -3,7 +3,52 @@
     font-size: 36px;
 }
 
+.hero .ticket_btn,
+.registered .ticket_btn {
+    background: #31E7B6;
+    border-radius: 4px;
+    color: #202124;
+    padding: 0 20px;
+    display: inline-block;
+    font-weight: 500;
+    height: 36px;
+    font-size: 15px;
+    line-height: 36px;
+    margin-top: 8px;
+    cursor: pointer;
+    min-width: 85px;
+    text-align: center;
+    transition: box-shadow 200ms ease;
+    text-decoration: none;
+}
+
+.hero .ticket_btn:hover,
+.registered .ticket_btn:hover {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.12), 0 5px 8px 0 rgba(0,0,0,0.24)
+}
+
+.registered {
+    margin-top: 36px;
+    background: #5771f6;
+    padding: 100px 60px;
+    color: white;
+}
+
+.registered h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.registered p {
+    margin-bottom: 16px;
+}
+
 .ticket_types {
+    margin-top: 24px;
     padding: 48px 60px;
     max-width: 1200px;
     margin-bottom: 128px;
@@ -25,7 +70,8 @@
 .ticket_type {
     margin-top: 12px;
     display: flex;
-    width: 33.33%;
+    /* width: 33.33%; */
+    width: 40%;
 }
 
 .ticket_content {

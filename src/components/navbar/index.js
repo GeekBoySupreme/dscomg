@@ -19,6 +19,7 @@ export default class NavBar extends Component {
 	signIn() {
 		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(result => {
 			console.log(result);
+			
 		}).catch(error => {
 			console.log(error);
 		});
