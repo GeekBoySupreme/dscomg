@@ -50,7 +50,7 @@
     </script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/io/sw.js', { scope: '<%= htmlWebpackPlugin.files.publicPath %>' }).then(reg => {
+            navigator.serviceWorker.register('<%= htmlWebpackPlugin.files.publicPath %>sw.js', { scope: '<%= htmlWebpackPlugin.files.publicPath %>' }).then(reg => {
                 reg.onupdatefound = () => {
                     var installingWorker = reg.installing;
                     installingWorker.onstatechange = () => {
