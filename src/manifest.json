@@ -1,7 +1,7 @@
 {
   "name": "I/O Extended KL",
   "short_name": "IOXKL",
-  "start_url": "/",
+  "start_url": "/iostaging/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",

@@ -5,15 +5,15 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Ticket extends Component {
-	render() {
+	render({ rootPath }) {
 		return (
 			<div>
 				<div class="hero">
 					<IoLogo />
 					<h2>My Ticket</h2>
 				</div>
-				<SocialFooter />
-				<Footer />
+				<SocialFooter rootPath={rootPath} />
+				<Footer rootPath={rootPath} />
 			</div>
 		);
 	}

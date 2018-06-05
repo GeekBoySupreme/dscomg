@@ -1,9 +1,10 @@
 import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
+import { Link, Match } from 'preact-router/match';
 import firebase from '../firebase';
 import Drawer from 'preact-material-components/Drawer';
-import IconToggle from 'preact-material-components/IconToggle';
 import TopAppBar from 'preact-material-components/TopAppBar';
+import Dialog from 'preact-material-components/Dialog';
+import 'preact-material-components/Dialog/style.css';
 import 'preact-material-components/TopAppBar/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
@@ -16,41 +17,119 @@ export default class NavBar extends Component {
 
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
-	signIn() {
-		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(result => {
-			console.log(result);
-			
+	signIn = (provider) => {
+		firebase.auth().signInWithPopup(provider).then(result => {
+			this.signinDig.MDComponent.close();
 		}).catch(error => {
-			console.log(error);
+			if (error.code === 'auth/account-exists-with-different-credential') {
+				// please sign in using another provider.
+			}
 		});
 	}
 
-	signOut() {
+	signOut = () => {
 		firebase.auth().signOut().then(() => {
-			console.log('Signed Out');
-		}, error => {
-			console.error('Sign Out Error', error);
+			this.signoutDig.MDComponent.close();
 		});
+	}
+
+	signInWithGoogle = () => {
+		this.signIn(new firebase.auth.GoogleAuthProvider());
+	}
+
+	signInWithFacebook = () => {
+		this.signIn(new firebase.auth.FacebookAuthProvider());
+	}
+
+	signInWithTwitter = () => {
+		this.signIn(new firebase.auth.TwitterAuthProvider());
+	}
+
+	toggleSigninDig = () => {
+		this.signinDig.MDComponent.show();
+	}
+
+	toggleSignoutDig = () => {
+		this.signoutDig.MDComponent.show();
 	}
 
 	drawerRef = drawer => {
 		this.drawer = drawer;
 	};
 
-	render() {
+	render({ rootPath, user }) {
 		return (
 			<div>
+				<div className={[style.signin_dialog, 'signin_dialog'].join(' ')}>
+					<Dialog ref={signinDig => { this.signinDig = signinDig; }}>
+						<div class={style.dialog_body}>
+							<h3>Sign in to I/O Extended KL</h3>
+							<div class={style.btn_container}>
+								<button id={style.google} onClick={this.signInWithGoogle}>
+									<span>
+										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" />
+									</span>
+									<span class={style.btn_label}>Sign in with Google</span>
+								</button>
+								<button id={style.facebook} onClick={this.signInWithFacebook}>
+									<span>
+										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/facebook.svg" />
+									</span>
+									<span class={style.btn_label}>Sign in with Facebook</span>
+								</button>
+								<button id={style.twitter} onClick={this.signInWithTwitter}>
+									<span>
+										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/twitter.svg" />
+									</span>
+									<span class={style.btn_label}>Sign in with Twitter</span>
+								</button>
+							</div>
+						</div>
+						<Dialog.Footer>
+							<Dialog.FooterButton class={style.cancel_btn} accept>
+								Not now
+							</Dialog.FooterButton>
+						</Dialog.Footer>
+					</Dialog>
+				</div>
+				<div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
+					<Dialog onCancel={this.onClose} onAccept={this.onClose} ref={signoutDig => { this.signoutDig = signoutDig; }}>
+						<div class={style.dialog_body}>
+							<h3>Sign out?</h3>
+							<p>All saved events and session ratings (if an attendee) remain synced to your account.</p>
+						</div>
+						<Dialog.Footer>
+							<Dialog.FooterButton class={style.cancel_btn} accept>
+								Not now
+							</Dialog.FooterButton>
+							<Dialog.FooterButton class={style.signout_btn} onClick={this.signOut}>
+								Sign out
+							</Dialog.FooterButton>
+						</Dialog.Footer>
+					</Dialog>
+				</div>
 				<div class={style.toolbar}>
 					<TopAppBar className="topappbar">
 						<TopAppBar.Row>
 							<TopAppBar.Section align-start>
-								<TopAppBar.Icon navigation class={style.icon} onClick={this.openDrawer}>menu</TopAppBar.Icon>
+								<svg class={style.menu_icon} onClick={this.openDrawer}>
+									<g id="Rounded">
+										<path d="M4,18h16c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,17.55,3.45,18,4,18z M4,13h16c0.55,0,1-0.45,1-1 v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,12.55,3.45,13,4,13z M3,7L3,7c0,0.55,0.45,1,1,1h16c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H4C3.45,6,3,6.45,3,7z" />
+									</g>
+								</svg>
 							</TopAppBar.Section>
+							<div class={style.mobile_title}>
+								<Match path={rootPath + 'schedule'}>
+									{({ path, url }) => (
+										(path.startsWith(rootPath + 'schedule')) && <span>Schedule</span>
+									)}
+								</Match>
+							</div>
 							<TopAppBar.Section align-end>
-								{this.props.user ? (
-									<img src={this.props.user.photoURL} onClick={this.signOut} />
+								{user ? (
+									<img src={user.photoURL} onClick={this.toggleSignoutDig} />
 								) : (
-									<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+									<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
 								)}
 							</TopAppBar.Section>
 						</TopAppBar.Row>
@@ -67,41 +146,58 @@ export default class NavBar extends Component {
 							<p>Sunway University<br />Bandar Sunway, Selangor</p>
 						</div>
 						<div class={style.drawer_nav}>
-							<Link href="/" onClick={this.closeDrawer}>Home</Link>
-							<Link href="/schedule" onClick={this.closeDrawer}>Schedule</Link>
-							<Link href="/attending" onClick={this.closeDrawer}>Attending</Link>
-							<Link href="/registration" onClick={this.closeDrawer}>Registration</Link>
-							<Link href="/communityguidelines" onClick={this.closeDrawer}>Community Guideline</Link>
+							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
+							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
+							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
+							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
+							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guideline</Link>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
 				<div class={style.desktop_toolbar}>
-					{this.props.user ? (
-						<img src={this.props.user.photoURL} onClick={this.signOut} />
+					{user ? (
+						<img src={user.photoURL} onClick={this.toggleSignoutDig} />
 					) : (
-						<div class={style.signin_btn} onClick={this.signIn}>Sign In</div>
+						<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
 					)}</div>
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
-						<IconToggle class={style.icon} role="button" tabindex="0" onClick={this.openDrawer}>menu</IconToggle>
+						<svg class={style.menu_icon} onClick={this.openDrawer}>
+							<g id="Rounded">
+								<path d="M4,18h16c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,17.55,3.45,18,4,18z M4,13h16c0.55,0,1-0.45,1-1 v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,12.55,3.45,13,4,13z M3,7L3,7c0,0.55,0.45,1,1,1h16c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H4C3.45,6,3,6.45,3,7z" />
+							</g>
+						</svg>
 					</div>
 					<nav>
-						<Link activeClassName={style.active} class={style.nav_item} href="/">
+						<Link activeClassName={style.active} class={style.nav_item} href={rootPath}>
 							<svg>
 								<g id="ui_x5F_spec_x5F_header_copy_5" display="inline" />
 								<path display="inline" d="M10,19v-5h4v5c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1v-7h1.7c0.46,0,0.68-0.57,0.33-0.87L12.67,3.6 c-0.38-0.34-0.96-0.34-1.34,0l-8.36,7.53C2.63,11.43,2.84,12,3.3,12H5v7c0,0.55,0.45,1,1,1h3C9.55,20,10,19.55,10,19z" />
 							</svg>
 							<span>Home</span>
 						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href="/schedule">
-							<svg>
-								<g>
-									<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
-								</g>
-							</svg>
-							<span>Schedule</span>
-						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href="/attending">
+						<Match path="/schedule">
+							{({ path, url }) => (
+								(path.startsWith('/schedule/')) ?
+									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'schedule'} path={url}>
+										<svg>
+											<g>
+												<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
+											</g>
+										</svg>
+										<span>Schedule</span>
+									</Link>
+									: <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'schedule'}>
+										<svg>
+											<g>
+												<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
+											</g>
+										</svg>
+										<span>Schedule</span>
+									</Link>
+							)}
+						</Match>
+						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
 							<svg>
 								<g>
 									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
@@ -109,7 +205,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Attending</span>
 						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href="/registration">
+						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
 							<svg>
 								<g>
 									<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />

@@ -21,7 +21,7 @@ export default class Registration extends Component {
 			this.setState({ registrationStatusText: 'Closed' });
 		}
 		if (status === 'open') {
-			this.setState({ registrationStatusText: 'Open until 6/30 5pm' });
+			this.setState({ registrationStatusText: 'Open' });
 		}
 	}
 
@@ -44,7 +44,7 @@ export default class Registration extends Component {
 		});
 	}
 
-	render({}, { registrationStatus, registrationStatusText, registrationUrl }) {
+	render({ rootPath }, { registrationStatus, registrationStatusText, registrationUrl }) {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
@@ -60,7 +60,7 @@ export default class Registration extends Component {
 					<div class={style.registered}>
 						<h3>Registered Attendees</h3>
 						<p>If you’re a registered attendee, you can view your ticket details online. </p>
-						<a class={style.ticket_btn} href="/ticket">View Ticket</a>
+						<a class={style.ticket_btn} href={rootPath + 'ticket'}>View Ticket</a>
 					</div>
 				}
 				<div class={style.ticket_types}>
@@ -80,17 +80,10 @@ export default class Registration extends Component {
 								<div class={style.ticket_body}>We’re proud of the fact that every day, women are making technology that changes the world. Hence, we reserved a limited amount of special tickets for women.</div>
 							</div>
 						</div>
-						{/* <div class={style.ticket_type} id={style.academic}>
-							<TicketIcon />
-							<div class={style.ticket_content}>
-								<div class={style.ticket_title}>Academic</div>
-								<div class={style.ticket_body}>To be eligible, you must be an active full-time student, professor, faculty, or staff member at a high school or institution of higher learning, including those graduating in 2018 prior to the event.</div>
-							</div>
-						</div> */}
 					</div>
 				</div>
-				<SocialFooter />
-				<Footer />
+				<SocialFooter rootPath={rootPath} />
+				<Footer rootPath={rootPath} />
 			</div>
 		);
 	}

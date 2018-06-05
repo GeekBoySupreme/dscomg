@@ -1,9 +1,119 @@
+.dialog_body {
+    padding: 24px 34px;
+}
+
+.signin_dialog h3,
+.signout_dialog h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 34px;
+    text-align: center;
+    color: #536cf6;
+}
+
+.signout_dialog h3 {
+    text-align: left;
+    margin-bottom: 26px;
+}
+
+.signout_dialog p {
+    line-height: 28px;
+}
+
+.dialog_body .btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog_body .btn_container button {
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-weight: 500;
+    height: auto;
+    line-height: normal;
+    max-width: 250px;
+    min-height: 40px;
+    padding: 8px 16px;
+    text-align: left;
+    width: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background: white;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.dialog_body .btn_container img {
+    width: 18px;
+    height: 18px;
+}
+
+.dialog_body .btn_container .btn_label {
+    font-size: 15px;
+    line-height: 15px;
+    padding-left: 16px;
+    color: white;
+    font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.dialog_body .btn_container #google .btn_label {
+    color: #57575a;
+}
+
+.dialog_body .btn_container #facebook {
+    background-color: #3b5998;
+}
+
+.dialog_body .btn_container #twitter {
+    background-color: #55acee;
+}
+
+.dialog_body .btn_container #github {
+    background-color: #333;
+}
+
+.cancel_btn,
+.signout_btn {
+    cursor: pointer;
+    color: #527aee;
+    font-weight: 500;
+    background: white;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 12px 8px;
+    font-family: 'Google Sans', sans-serif;
+    min-width: 100px;
+    border-radius: 4px;
+}
+
+.signout_btn {
+    color: #fff;
+    font-weight: 500;
+    background: #527aee;
+}
+
+.cancel_btn:focus,
+.signout_btn:focus {
+    outline: none;
+}
+
 .toolbar {
     display: none;
 }
 
-.toolbar .icon {
-    color: black;
+.menu_icon {
+    fill: black;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .desktop_toolbar {
@@ -108,8 +218,8 @@
     width: 72px;
 }
 
-.navbar .hamburger .icon {
-    color: #fff;
+.navbar .hamburger .menu_icon {
+    fill: #fff;
 }
 
 .navbar nav {
@@ -155,8 +265,27 @@
 }
 
 @media screen and (max-width: 768px) {
+    .dialog_body {
+       padding: 16px 28px;
+    }
     .toolbar {
         display: block;
+    }
+
+    .toolbar .mobile_title {
+        color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .desktop_toolbar {
+        display: none;
     }
 
     .navbar {

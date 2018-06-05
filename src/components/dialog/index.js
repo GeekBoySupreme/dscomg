@@ -9,20 +9,29 @@ export default class CustomDialog extends Component {
 		data: {
 			tags: []
 		},
-		supportShare: false
+		supportShare: false,
+		star: false
 	}
 
-	share = (dataId, data, type) => e => {
+	star = (id) => e => {
+		let star = this.props.star ? !this.props.star[id] : true;
+		const ref = this.props.db.ref('/events_site/ioxkl18/users/' + this.props.user.uid + '/schedule/' + id);
+		ref.set(star ? true : null);
+	}
+
+	share = (dataId, data) => e => {
 		if (navigator.share) {
 			navigator.share({
-				title: data.talk_title,
-				text: data.event_name,
-				url: 'https://limhenryxyz.firebaseapp.com/' + type + '/' + dataId
+				title: 'I/O Extended 2018 Kuala Lumpur',
+				text: `Check out '${data.title}' at #ioxkl18`,
+				url: `https://ioxkl18-staging.netlify.com/schedule/${dataId}`
 			});
 		}
 	}
 
-	onClose = type => e => {}
+	onClose = type => e => {
+		route(this.props.rootPath + 'schedule');
+	}
 
 	toggle(dataId, dataItem, dataType) {
 		this.setState({ data: dataItem, id: dataId, type: dataType });
@@ -40,47 +49,53 @@ export default class CustomDialog extends Component {
 		}
 	}
 
-	render({ }, { id, data, type }) {
+	render({ rootPath }, { id, data, type, star }) {
 		return (
 			<Dialog onCancel={this.onClose(type)} onAccept={this.onClose(type)} class={style.dialog} ref={scrollingDlg => { this.scrollingDlg = scrollingDlg; }}>
-				<div class={style.dialog_header}>
+				<div class={style.dialog_header} style={"background-image: url('" + rootPath + "assets/grid_seamless.png')"}>
 					<Dialog.FooterButton class={style.back} accept>
 						<svg>
 							<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
 						</svg>
 					</Dialog.FooterButton>
-					<div class={style.header_text}>{data.title}</div>
-					{/* <a class={style.fab} href={data.link} target="_blank" rel="noopener">
-						<svg>
-							<path d="M19.66,3.99c-2.64-1.8-5.9-0.96-7.66,1.1c-1.76-2.06-5.02-2.91-7.66-1.1C2.94,4.95,2.06,6.57,2,8.28 c-0.14,3.88,3.3,6.99,8.55,11.76l0.1,0.09c0.76,0.69,1.93,0.69,2.69-0.01l0.11-0.1c5.25-4.76,8.68-7.87,8.55-11.75 C21.94,6.57,21.06,4.95,19.66,3.99z M12.1,18.55l-0.1,0.1l-0.1-0.1C7.14,14.24,4,11.39,4,8.5C4,6.5,5.5,5,7.5,5 c1.54,0,3.04,0.99,3.57,2.36h1.87C13.46,5.99,14.96,5,16.5,5c2,0,3.5,1.5,3.5,3.5C20,11.39,16.86,14.24,12.1,18.55z" />
-						</svg>
-					</a> */}
+					<div class={style.header_text}>{star} {data.title}</div>
+					{this.props.user &&
+						<div class={style.fab} onClick={this.star(id)}>
+							<svg>
+								{this.props.star ?
+									this.props.star[id] ?
+										<path fill="#4768FD" d="M12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.72l3.67-3.18c0.67-0.58,0.31-1.68-0.57-1.75l-4.83-0.41 l-1.89-4.46c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75l3.67,3.18l-1.1,4.72 c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27z" />
+										: <path d="M19.65,9.04l-4.84-0.42l-1.89-4.45c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75 l3.67,3.18l-1.1,4.72c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.73l3.67-3.18 C20.88,10.21,20.53,9.11,19.65,9.04z M12,15.4l-3.76,2.27l1-4.28l-3.32-2.88l4.38-0.38L12,6.1l1.71,4.04l4.38,0.38l-3.32,2.88 l1,4.28L12,15.4z" />
+									: <path d="M19.65,9.04l-4.84-0.42l-1.89-4.45c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75 l3.67,3.18l-1.1,4.72c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.73l3.67-3.18 C20.88,10.21,20.53,9.11,19.65,9.04z M12,15.4l-3.76,2.27l1-4.28l-3.32-2.88l4.38-0.38L12,6.1l1.71,4.04l4.38,0.38l-3.32,2.88 l1,4.28L12,15.4z" />
+								}
+							</svg>
+						</div>
+					}
 				</div>
 				<div class={style.dialog_body} scrollable>
 					<div class={style.subtitle}>{data.startTime} - {data.endTime}, {data.location}</div>
 					<p class={style.dialog_body_description}>{data.description}</p>
-					{/* <div class={style.event_topic}>
-						{data.tags.map(item => (
-							<div class="item_tag">
-								<div class="item_circle" id={item.id} />
-								<span>{item.value}</span>
-							</div>
-						))}
-					</div> */}
 				</div>
 				<Dialog.Footer class={style.dialog_footer}>
-					{/*<a class={style.fab} href={data.link} target="_blank" rel="noopener">
-						 <svg>
-							<path d="M19.66,3.99c-2.64-1.8-5.9-0.96-7.66,1.1c-1.76-2.06-5.02-2.91-7.66-1.1C2.94,4.95,2.06,6.57,2,8.28 c-0.14,3.88,3.3,6.99,8.55,11.76l0.1,0.09c0.76,0.69,1.93,0.69,2.69-0.01l0.11-0.1c5.25-4.76,8.68-7.87,8.55-11.75 C21.94,6.57,21.06,4.95,19.66,3.99z M12.1,18.55l-0.1,0.1l-0.1-0.1C7.14,14.24,4,11.39,4,8.5C4,6.5,5.5,5,7.5,5 c1.54,0,3.04,0.99,3.57,2.36h1.87C13.46,5.99,14.96,5,16.5,5c2,0,3.5,1.5,3.5,3.5C20,11.39,16.86,14.24,12.1,18.55z" />
-						</svg>
-					</a>*/}
-					{/* { this.state.supportShare &&
-						<div class={style.share} onClick={this.share(id, data, type)}>
+					{this.props.user &&
+						<div class={style.fab} onClick={this.star(id)}>
+							<svg>
+								{this.props.star ?
+									this.props.star[id] ?
+										<path fill="#4768FD" d="M12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.72l3.67-3.18c0.67-0.58,0.31-1.68-0.57-1.75l-4.83-0.41 l-1.89-4.46c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75l3.67,3.18l-1.1,4.72 c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27z" />
+										: <path d="M19.65,9.04l-4.84-0.42l-1.89-4.45c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75 l3.67,3.18l-1.1,4.72c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.73l3.67-3.18 C20.88,10.21,20.53,9.11,19.65,9.04z M12,15.4l-3.76,2.27l1-4.28l-3.32-2.88l4.38-0.38L12,6.1l1.71,4.04l4.38,0.38l-3.32,2.88 l1,4.28L12,15.4z" />
+									: <path d="M19.65,9.04l-4.84-0.42l-1.89-4.45c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75 l3.67,3.18l-1.1,4.72c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.73l3.67-3.18 C20.88,10.21,20.53,9.11,19.65,9.04z M12,15.4l-3.76,2.27l1-4.28l-3.32-2.88l4.38-0.38L12,6.1l1.71,4.04l4.38,0.38l-3.32,2.88 l1,4.28L12,15.4z" />
+								}
+							</svg>
+						</div>
+					}
+					{this.state.supportShare &&
+						<div class={style.share} onClick={this.share(id, data)}>
 							<svg>
 								<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
 							</svg>
 						</div>
-					} */}
+					}
 				</Dialog.Footer>
 			</Dialog>
 		);

@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import style from './style';
 
 export default class SocialFooter extends Component {
-	render() {
+	render({ rootPath }) {
 		return (
 			<div class={style.social_footer}>
 				<div class={style.social_body}>
@@ -41,7 +41,7 @@ export default class SocialFooter extends Component {
 					</div>
 				</div>
 				<div class={style.social_gif}>
-					<img src="/assets/hashtag.gif" />
+					<img src={rootPath + 'assets/hashtag.gif'} />
 				</div>
 			</div>
 		);

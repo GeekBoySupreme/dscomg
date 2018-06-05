@@ -12,33 +12,9 @@ html, body {
   --mdc-theme-primary: white;
 }
 
-/* fallback */
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 #app {
@@ -106,6 +82,22 @@ html, body {
   max-height: 80vh !important;
 }
 
+.signin_dialog .mdc-dialog__surface,
+.signout_dialog .mdc-dialog__surface {
+  width: 50% !important;
+  min-width: 0 !important;
+  max-width: 420px !important;
+  border-radius: 16px;
+}
+
+.signin_dialog .mdc-dialog__footer {
+  justify-content: center;
+}
+
+.signout_dialog .mdc-dialog__footer{
+  padding: 0 30px 22px 30px;
+}
+
 @media screen and (max-width: 768px) {
   #app {
     /* padding-top: 64px; */
@@ -114,7 +106,7 @@ html, body {
   }
   .hero {
     /* margin-top: 64px; */
-    padding: 64px 20px 0 20px;
+    padding: 112px 20px 0 20px;
   }
   .hero h2 {
     font-size: 25px;
@@ -135,6 +127,12 @@ html, body {
     width: 100% !important;
     height: 100%;
   }
+  .signin_dialog .mdc-dialog__surface,
+  .signout_dialog .mdc-dialog__surface {
+    width: 80% !important;
+    height: initial;
+  }
+
   .mdc-dialog__body--scrollable {
     max-height: initial !important;
   }

@@ -1,5 +1,4 @@
 .dialog_header {
-  background-image: url(/assets/grid_seamless.png);
   background-position: right 1px top -4px;
   background-repeat: repeat;
   background-size: 19px;
@@ -173,6 +172,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+  cursor: pointer;
 }
 
 .dialog_header .fab {
@@ -192,7 +192,8 @@
 
 @media screen and (max-width: 768px) {
   .dialog_header {
-    min-height: 0px;
+    padding: 12px 8px !important;
+    min-height: 150px;
   }
   .dialog_header .header_text {
     font-size: 24px;

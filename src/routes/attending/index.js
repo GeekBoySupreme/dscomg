@@ -5,7 +5,7 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Attending extends Component {
-	render() {
+	render({ rootPath }) {
 		return (
 			<div>
 				<div class="hero">
@@ -13,14 +13,10 @@ export default class Attending extends Component {
 					<h2>Attending</h2>
 					<p>Join us at Sunway University as we celebrate product and platform innovations at Google.</p>
 				</div>
-				<div className={[style.belt, 'belt'].join(' ')} style="background-image: url(assets/sunway_auditorium.jpg)" />
+				<div className={[style.belt, 'belt'].join(' ')}
+					style={"background-image: url('" + rootPath + "assets/sunway_auditorium.jpg')"}
+				/>
 				<div class={style.attending}>
-					{/* <div class={style.attending_item}>
-						<div class={style.attending_title}>What to bring for the event</div>
-						<div class={style.attending_content}>
-							<p>Google I/O is an outdoor festival. While this is a big part of what makes I/O special, it also means there are some things to consider. Sessions will happen inside of climate-controlled tents, but sunscreen, sunglasses, and an extra layer for the evening are recommended. I/O is a casual event, so keep this in mind when deciding what to wear.</p>
-						</div>
-					</div> */}
 					<div class={style.attending_item}>
 						<div class={style.attending_title}>Getting to Sunway University</div>
 						<div class={style.attending_content}>
@@ -59,8 +55,8 @@ export default class Attending extends Component {
 						<div class={style.attending_content}>Stay tuned over the coming weeks for more information about parking.</div>
 					</div>
 				</div>
-				<SocialFooter />
-				<Footer />
+				<SocialFooter rootPath={rootPath} />
+				<Footer rootPath={rootPath} />
 			</div>
 		);
 	}

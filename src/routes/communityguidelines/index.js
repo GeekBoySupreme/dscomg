@@ -5,7 +5,7 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Register extends Component {
-	render() {
+	render({ rootPath }) {
 		return (
 			<div>
 				<div class="hero">
@@ -56,8 +56,8 @@ export default class Register extends Component {
 					<br />
 					<p>This policy extends to talks, forums, workshops, codelabs, social media, parties, hallway conversations, all attendees, partners, sponsors, volunteers, event staff, etc. You catch our drift. GDGKL reserves the right to refuse admittance to, or remove any person from, any GDGKL hosted event (including future GDGKL events) at any time in its sole discretion. This includes, but is not limited to, attendees behaving in a disorderly manner or failing to comply with this policy, and the terms and conditions herein. If a participant engages in harassing or uncomfortable behavior, the conference organizers may take any action they deem appropriate, including warning or expelling the offender from the conference with no refund.</p>
 				</div>
-				<SocialFooter />
-				<Footer />
+				<SocialFooter rootPath={rootPath} />
+				<Footer rootPath={rootPath} />
 			</div>
 		);
 	}

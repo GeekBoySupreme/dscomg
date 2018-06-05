@@ -6,7 +6,7 @@ import style from './style';
 
 export default class Home extends Component {
 
-	render() {
+	render({ rootPath }) {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
@@ -19,72 +19,25 @@ export default class Home extends Component {
 					<div class={style.partner}>
 						<h4>General sponsor</h4>
 						<div class={style.sponsor}>
-							<a href="" class={style.item}>
-								<img src="https://firebasestorage.googleapis.com/v0/b/hoverboard-firebase.appspot.com/o/images%2Flogos%2Fgoogle.svg?alt=media&token=3e7c88fe-2e6f-459a-b9dc-c84dd3358d9a" />
+							<a class={style.item} href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+								<img src="assets/partners/google.svg" alt="Google" />
 							</a>
 						</div>
 					</div>
 					<div class={style.partner}>
-						<h4>Dummy Platinum sponsors</h4>
+						<h4>Brought to you by</h4>
 						<div class={style.sponsor}>
-							<a href="" class={style.item}>
-								<img src="https://dfua17.firebaseapp.com/images/logos/n_ix.svg" />
+							<a class={style.item} href="https://meetup.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">
+								<img src="assets/gdgkl.svg" alt="GDG Kuala Lumpur" />
 							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/dataart.svg?alt=media&token=17bf36ef-4f21-44d5-8e6c-8a588d5b50de" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/softserve.svg" />
-							</a>
-						</div>
-					</div>
-					<div class={style.partner}>
-						<h4>Dummy General sponsor</h4>
-						<div class={style.sponsor}>
-							<a href="" class={style.item}>
-								<img src="https://dfua17.firebaseapp.com/images/logos/itvdn.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/dataart.svg?alt=media&token=17bf36ef-4f21-44d5-8e6c-8a588d5b50de" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/twilio.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://dfua16.firebaseapp.com/images/logos/jetbrains.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/softserve.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://firebasestorage.googleapis.com/v0/b/hoverboard-firebase.appspot.com/o/images%2Flogos%2Fgoogle.svg?alt=media&token=3e7c88fe-2e6f-459a-b9dc-c84dd3358d9a" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/ruckus.svg?alt=media&token=24202cb1-c2de-49f9-b0b2-c2c14bd1006e" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/symphony-solutions.svg?alt=media&token=95796fce-fcb8-433f-ab72-5ac47c95199c" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://dfua17.firebaseapp.com/images/logos/n_ix.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://dfua17.firebaseapp.com/images/logos/techmagic.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/twilio.svg" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/symphony-solutions.svg?alt=media&token=95796fce-fcb8-433f-ab72-5ac47c95199c" />
-							</a>
-							<a href="" class={style.item}>
-								<img src="https://storage.googleapis.com/dfua17.appspot.com/images/logos/softserve.svg" />
+							<a class={style.item} href="https://www.meetup.com/GDG-Cloud-Kuala-Lumpur/" target="_blank" rel="noopener noreferrer">
+								<img src="assets/partners/gdg_cloud_kl.svg" alt="GDG Cloud Kuala Lumpur" />
 							</a>
 						</div>
 					</div>
 				</div>
-				<SocialFooter />
-				<Footer />
+				<SocialFooter rootPath={rootPath} />
+				<Footer rootPath={rootPath} />
 			</div>
 		);
 	}

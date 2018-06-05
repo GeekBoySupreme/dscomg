@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <base href="<%= htmlWebpackPlugin.files.publicPath %>">
+    <script>
+        window.GlobalVars = {rootPath: '<%= htmlWebpackPlugin.files.publicPath %>'};
+    </script>
     <meta charset="utf-8">
     <title>Google I/O Extended 2018 Kuala Lumpur</title>
     <meta name="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
@@ -43,6 +47,31 @@
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>
         window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/io/sw.js', { scope: '<%= htmlWebpackPlugin.files.publicPath %>' }).then(reg => {
+                reg.onupdatefound = () => {
+                    var installingWorker = reg.installing;
+                    installingWorker.onstatechange = () => {
+                        switch (installingWorker.state) {
+                            case 'installed':
+                                if (navigator.serviceWorker.controller) {
+                                    if (window.confirm("New update is available! Refresh now for better experience.")) {
+                                        window.location.reload();
+                                    } 
+                                }
+                                break;
+                            case 'redundant':
+                                console.error('The installing service worker became redundant.');
+                                break;
+                        }
+                    }
+                }
+            }).catch(e => {
+                console.error('Error during service worker registration:', e);
+            })
+        }
     </script>
     <!-- Google Analytics -->
     <!-- <script>
