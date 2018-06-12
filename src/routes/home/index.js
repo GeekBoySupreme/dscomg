@@ -12,6 +12,7 @@ export default class Home extends Component {
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
 					<h2>Google I/O Extended 2018 brings out the best Google technologies all the way from Mountain View to Kuala Lumpur.</h2>
+					<h3>July 15, 2018 &middot; Sunway University</h3>
 				</div>
 				<div className={[style.belt, 'belt'].join(' ')} style="background-image: url(assets/io18_keynote.jpg)" />
 				<div class={style.partners}>
@@ -29,9 +30,6 @@ export default class Home extends Component {
 						<div class={style.sponsor}>
 							<a class={style.item} href="https://meetup.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">
 								<img src="assets/gdgkl.svg" alt="GDG Kuala Lumpur" />
-							</a>
-							<a class={style.item} href="https://www.meetup.com/GDG-Cloud-Kuala-Lumpur/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/partners/gdg_cloud_kl.svg" alt="GDG Cloud Kuala Lumpur" />
 							</a>
 						</div>
 					</div>

@@ -11,9 +11,9 @@
     <meta name="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
     <meta itemprop="name" content="Google I/O Extended 2018 Kuala Lumpur">
     <meta itemprop="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
-    <meta itemprop="url" content="https://ioxkl18-staging.netlify.com/">
+    <meta itemprop="url" content="https://events.gdgkl.org/io/">
     <meta itemprop="location" content="Google Malaysia, Kuala Lumpur">
-    <meta property="og:url" content="https://ioxkl18-staging.netlify.com/">
+    <meta property="og:url" content="https://events.gdgkl.org/io/">
     <meta property="og:type" content="Event">
     <meta property="og:image" content="https://storage.googleapis.com/io-2018.appspot.com/v1/io-social-banner.gif">
     <meta property="og:title" content="Google I/O Extended 2018 Kuala Lumpur">
@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.publicPath %>assets/favicon.ico">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
     <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
@@ -43,7 +44,8 @@
 <body>
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
-	}) %>
+    }) %>
+    <script src="https://cdn.ravenjs.com/3.26.1/raven.min.js" crossorigin="anonymous"></script>
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>
         window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
@@ -73,18 +75,14 @@
             })
         }
     </script>
-    <!-- Google Analytics -->
-    <!-- <script>
-        window.ga = window.ga || function () {
-            (ga.q = ga.q || []).push(arguments)
-        };
-        ga.l = +new Date;
-        ga('create', 'UA-57741199-3', 'auto');
-        ga('send', 'pageview');
-    </script> -->
-    <!-- <script async src='https://www.google-analytics.com/analytics.js'></script> -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76843776-9"></script>
     <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-76843776-9');
     </script>
 </body>
 

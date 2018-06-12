@@ -17,13 +17,9 @@ export default class NavBar extends Component {
 
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
-	signIn = (provider) => {
-		firebase.auth().signInWithPopup(provider).then(result => {
+	signIn = () => {
+		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(result => {
 			this.signinDig.MDComponent.close();
-		}).catch(error => {
-			if (error.code === 'auth/account-exists-with-different-credential') {
-				// please sign in using another provider.
-			}
 		});
 	}
 
@@ -33,20 +29,20 @@ export default class NavBar extends Component {
 		});
 	}
 
-	signInWithGoogle = () => {
-		this.signIn(new firebase.auth.GoogleAuthProvider());
-	}
+	// signInWithGoogle = () => {
+	// 	this.signIn(new firebase.auth.GoogleAuthProvider());
+	// }
 
-	signInWithFacebook = () => {
-		this.signIn(new firebase.auth.FacebookAuthProvider());
-	}
+	// signInWithFacebook = () => {
+	// 	this.signIn(new firebase.auth.FacebookAuthProvider());
+	// }
 
-	signInWithTwitter = () => {
-		this.signIn(new firebase.auth.TwitterAuthProvider());
-	}
+	// signInWithTwitter = () => {
+	// 	this.signIn(new firebase.auth.TwitterAuthProvider());
+	// }
 
 	toggleSigninDig = () => {
-		this.signinDig.MDComponent.show();
+		this.signIn();
 	}
 
 	toggleSignoutDig = () => {
@@ -142,7 +138,7 @@ export default class NavBar extends Component {
 								<polygon id="Fill-1" points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
 								<polygon id="Fill-2" points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" id="Fill-3" /></g></g></g>
 							</svg>
-							<h2>July 14, 2018</h2>
+							<h2>July 15, 2018</h2>
 							<p>Sunway University<br />Bandar Sunway, Selangor</p>
 						</div>
 						<div class={style.drawer_nav}>
@@ -205,6 +201,14 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Attending</span>
 						</Link>
+						{/* <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'map'}>
+							<svg>
+								<g>
+									<path d="M12,2C8.13,2,5,5.13,5,9c0,4.17,4.42,9.92,6.24,12.11c0.4,0.48,1.13,0.48,1.53,0C14.58,18.92,19,13.17,19,9 C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z" />
+								</g>
+							</svg>
+							<span>Map</span>
+						</Link> */}
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
 							<svg>
 								<g>

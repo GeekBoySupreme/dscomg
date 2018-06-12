@@ -1,40 +1,47 @@
-service: iostaging
+service: io
 api_version: 1
 threadsafe: true
 runtime: python27
 
 handlers:
-- url: /iostaging/assets
+- url: /io/assets
   static_dir: build/assets
+  secure: always
 
-- url: /iostaging/sw.js
+- url: /io/sw.js
   static_files: build/sw.js
   upload: build/sw.js
   expiration: "1s"
+  secure: always
 
-- url: /iostaging/manifest.json
+- url: /io/manifest.json
   static_files: build/manifest.json
   upload: build/manifest.json
+  secure: always
 
-- url: /iostaging/(.*\.css)
+- url: /io/(.*\.css)
   mime_type: text/css
   static_files: build/\1
   upload: build/(.*\.css)
+  secure: always
 
-- url: /iostaging/(.*\.js)
+- url: /io/(.*\.js)
   mime_type: text/javascript
   static_files: build/\1
   upload: build/(.*\.js)
+  secure: always
 
-- url: /iostaging/(.*\.map)
+- url: /io/(.*\.map)
   static_files: build/\1
   upload: build/(.*\.map)
+  secure: always
 
-- url: /iostaging/.*
+- url: /io/.*
   static_files: build/index.html
   upload: build/index.html
+  secure: always
 
-- url: /iostaging.*
+- url: /io.*
   script: main.app
   secure: always
 

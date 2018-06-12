@@ -56,7 +56,7 @@ export default class Schedule extends Component {
 	render({ rootPath, user, userSchedule, db, sessions, schedule }) {
 		return (
 			<div>
-				<Dialog ref={dialog => { this.dialog = dialog; }} rootPath={rootPath} />
+				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
