@@ -80,7 +80,7 @@ export default class Schedule extends Component {
 														<div class={style.schedule_event_details}>
 															<div class={style.schedule_event_title}>{sessions[item].title}</div>
 															<div class={style.schedule_event_meta}>
-																<div class={style.schedule_event_description}>{sessions[item].duration}</div>
+																<div class={style.schedule_event_description}>{sessions[item].duration} / {sessions[item].location}</div>
 															</div>
 														</div>
 														{user &&
