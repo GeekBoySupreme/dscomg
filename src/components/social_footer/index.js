@@ -41,7 +41,7 @@ export default class SocialFooter extends Component {
 					</div>
 				</div>
 				<div class={style.social_gif}>
-					<img src={rootPath + 'assets/hashtag.gif'} />
+					<img src="https://res.cloudinary.com/limhenry/image/upload/v1528856060/ioxkl18_pwa/hashtag.gif" />
 				</div>
 			</div>
 		);

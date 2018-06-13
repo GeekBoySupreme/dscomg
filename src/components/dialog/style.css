@@ -10,6 +10,7 @@
   border-bottom: 1px solid #e5e5e5;
   color: #000;
   position: relative;
+  background-image: url('https://res.cloudinary.com/limhenry/image/upload/v1528856070/ioxkl18_pwa/grid_seamless.png');
 }
 
 .dialog_header .back {

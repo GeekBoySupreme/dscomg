@@ -3,10 +3,13 @@ api_version: 1
 threadsafe: true
 runtime: python27
 
+default_expiration: "30d"
+
 handlers:
 - url: /io/assets
   static_dir: build/assets
   secure: always
+  expiration: "1d"
 
 - url: /io/sw.js
   static_files: build/sw.js
@@ -18,18 +21,21 @@ handlers:
   static_files: build/manifest.json
   upload: build/manifest.json
   secure: always
+  expiration: "1h"
 
 - url: /io/(.*\.css)
   mime_type: text/css
   static_files: build/\1
   upload: build/(.*\.css)
   secure: always
+  expiration: "365d"
 
 - url: /io/(.*\.js)
   mime_type: text/javascript
   static_files: build/\1
   upload: build/(.*\.js)
   secure: always
+  expiration: "365d"
 
 - url: /io/(.*\.map)
   static_files: build/\1
@@ -40,6 +46,7 @@ handlers:
   static_files: build/index.html
   upload: build/index.html
   secure: always
+  expiration: "1s"
 
 - url: /io.*
   script: main.app

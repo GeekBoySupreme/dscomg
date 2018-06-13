@@ -63,6 +63,10 @@ export default class App extends Component {
 				this.setState({ userSchedule: val });
 			});
 
+			this.getDb('partners').then(val => {
+				this.setState({ partners: val });
+			});
+
 			this.getDb('sessions').then(val => {
 				this.setState({ sessions: val });
 
@@ -82,6 +86,12 @@ export default class App extends Component {
 				const data = snapshot.val();
 				this.setState({ sessions: data });
 				this.setDb('sessions', data);
+			});
+
+			this.db.ref('/events_site/ioxkl18/partners').once('value').then(snapshot => {
+				const data = snapshot.val();
+				this.setState({ partners: data });
+				this.setDb('partners', data);
 			});
 
 			firebase.auth().onAuthStateChanged(currentUser => {
@@ -119,6 +129,7 @@ export default class App extends Component {
 		this.state = {
 			currentUser: null,
 			schedule: [],
+			partners: {},
 			sessions: {},
 			userSchedule: {},
 			rootPath: '/'
@@ -132,7 +143,7 @@ export default class App extends Component {
 		}
 	}
 
-	render({ }, { currentUser, schedule, sessions, userSchedule, db, rootPath }) {
+	render({ }, { currentUser, schedule, sessions, partners, userSchedule, db, rootPath }) {
 		return (
 			<div id="app">
 				<NavBar user={currentUser} rootPath={rootPath} />
@@ -148,7 +159,7 @@ export default class App extends Component {
 					<Map path={rootPath + 'map/'} rootPath={rootPath} />
 					<Ticket path={rootPath + 'ticket/'} user={currentUser} rootPath={rootPath} />
 					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
-					<Home path={rootPath} rootPath={rootPath} default />
+					<Home path={rootPath} rootPath={rootPath} organizers={partners.organizers} sponsors={partners.sponsors} default />
 				</Router>
 			</div>
 		);

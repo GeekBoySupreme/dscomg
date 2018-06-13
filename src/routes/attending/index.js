@@ -14,7 +14,7 @@ export default class Attending extends Component {
 					<p>Join us at Sunway University as we celebrate product and platform innovations at Google.</p>
 				</div>
 				<div className={[style.belt, 'belt'].join(' ')}
-					style={"background-image: url('" + rootPath + "assets/sunway_auditorium.jpg')"}
+					style={"background-image: url('https://res.cloudinary.com/limhenry/image/upload/v1528856061/ioxkl18_pwa/sunway_auditorium.jpg')"}
 				/>
 				<div class={style.attending}>
 					<div class={style.attending_item}>

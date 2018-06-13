@@ -52,7 +52,7 @@ export default class CustomDialog extends Component {
 	render({ rootPath, user, star }, { id, data, type, supportShare }) {
 		return (
 			<Dialog onCancel={this.onClose(type)} onAccept={this.onClose(type)} class={style.dialog} ref={scrollingDlg => { this.scrollingDlg = scrollingDlg; }}>
-				<div class={style.dialog_header} style={"background-image: url('" + rootPath + "assets/grid_seamless.png')"}>
+				<div class={style.dialog_header}>
 					<Dialog.FooterButton class={style.back} accept>
 						<svg>
 							<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />

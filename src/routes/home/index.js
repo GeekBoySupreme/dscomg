@@ -6,7 +6,7 @@ import style from './style';
 
 export default class Home extends Component {
 
-	render({ rootPath }) {
+	render({ rootPath, sponsors, organizers }) {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
@@ -14,23 +14,27 @@ export default class Home extends Component {
 					<h2>Google I/O Extended 2018 brings out the best Google technologies all the way from Mountain View to Kuala Lumpur.</h2>
 					<h3>July 15, 2018 &middot; Sunway University</h3>
 				</div>
-				<div className={[style.belt, 'belt'].join(' ')} style="background-image: url(assets/io18_keynote.jpg)" />
+				<div className={[style.belt, 'belt'].join(' ')} style="background-image: url('https://res.cloudinary.com/limhenry/image/upload/fl_progressive/v1528856061/ioxkl18_pwa/io18_keynote.jpg')" />
 				<div class={style.partners}>
 					<h3>Partners</h3>
 					<div class={style.partner}>
-						<h4>General sponsor</h4>
+						<h4>Sponsors</h4>
 						<div class={style.sponsor}>
-							<a class={style.item} href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-								<img src="assets/partners/google.svg" alt="Google" />
-							</a>
+							{sponsors && sponsors.map(item => (
+								<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
+									<img src={item.image} alt={item.name} />
+								</a>
+							))}
 						</div>
 					</div>
 					<div class={style.partner}>
 						<h4>Brought to you by</h4>
 						<div class={style.sponsor}>
-							<a class={style.item} href="https://meetup.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">
-								<img src="assets/gdgkl.svg" alt="GDG Kuala Lumpur" />
-							</a>
+							{organizers && organizers.map(item => (
+								<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
+									<img src={item.image} alt={item.name} />
+								</a>
+							))}
 						</div>
 					</div>
 				</div>
