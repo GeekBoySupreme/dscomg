@@ -35,9 +35,8 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    height: 100%;
-    min-height: 100px;
-    padding: 0 20px 0 80px;
+    min-height: 104px;
+    padding: 20px 20px 20px 80px;
 }
 
 .schedule_event:hover {
@@ -68,6 +67,7 @@
 }
 
 .schedule_event_title {
+    padding-right: 24px;
     font-size: 20px;
     line-height: 28px;
     font-weight: 500;
@@ -82,7 +82,7 @@
 }
 
 .schedule_event_description {
-    margin: 4px 0 0 0;
+    margin: 4px 28px 0 0;
     font-size: 13px;
 }
 
@@ -92,6 +92,10 @@
 
 .schedule_event:last-child {
     border-bottom: none;
+}
+
+.schedule_event_topics {
+    display: flex;
 }
 
 @media screen and (max-width: 1200px) {
@@ -148,6 +152,9 @@
     .schedule_event:focus {
         background-color: #FAFAFA;
     }
+    .schedule_event_meta {
+        flex-direction: column;
+    }
     .star_button {
         padding: 8px 12px;
         margin-right: 0; 
@@ -161,8 +168,9 @@
     .schedule_event_title {
         color: #202124;
         font-size: 16px;
-        line-height: 18px;
+        line-height: 20px;
         font-weight: 500;
+        padding-right: 16px;
     }
     .footer {
         display: none;

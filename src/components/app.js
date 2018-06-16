@@ -2,13 +2,13 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import firebase from './firebase';
 import NavBar from './navbar';
+import idb from 'idb';
 import Home from '../routes/home';
 import Attending from '../routes/attending';
 import Registration from '../routes/registration';
 import Schedule from '../routes/schedule';
 import Ticket from '../routes/ticket';
-import Map from '../routes/map';
-import idb from 'idb';
+import Speakers from '../routes/speakers';
 import CommunityGuidelines from '../routes/communityguidelines';
 
 // import Home from 'async!../routes/home';
@@ -25,6 +25,7 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			if (e.previous) {
 				if (e.url.startsWith(this.state.rootPath + 'schedule') && e.previous.startsWith(this.state.rootPath + 'schedule')) { }
+				else if (e.url.startsWith(this.state.rootPath + 'speakers') && e.previous.startsWith(this.state.rootPath + 'speakers')) { }
 				else {
 					document.documentElement.scrollTop = 0;
 				}
@@ -67,6 +68,14 @@ export default class App extends Component {
 				this.setState({ partners: val });
 			});
 
+			this.getDb('speakers').then(val => {
+				this.setState({ speakers: val });
+			});
+
+			this.getDb('info').then(val => {
+				this.setState({ info: val });
+			});
+
 			this.getDb('sessions').then(val => {
 				this.setState({ sessions: val });
 
@@ -88,10 +97,22 @@ export default class App extends Component {
 				this.setDb('sessions', data);
 			});
 
+			this.db.ref('/events_site/ioxkl18/speakers').once('value').then(snapshot => {
+				const data = snapshot.val();
+				this.setState({ speakers: data });
+				this.setDb('speakers', data);
+			});
+
 			this.db.ref('/events_site/ioxkl18/partners').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ partners: data });
 				this.setDb('partners', data);
+			});
+
+			this.db.ref('/events_site/ioxkl18/info').once('value').then(snapshot => {
+				const data = snapshot.val();
+				this.setState({ info: data });
+				this.setDb('info', data);
 			});
 
 			firebase.auth().onAuthStateChanged(currentUser => {
@@ -131,7 +152,9 @@ export default class App extends Component {
 			schedule: [],
 			partners: {},
 			sessions: {},
+			speakers: {},
 			userSchedule: {},
+			info: {},
 			rootPath: '/'
 		};
 
@@ -143,23 +166,24 @@ export default class App extends Component {
 		}
 	}
 
-	render({ }, { currentUser, schedule, sessions, partners, userSchedule, db, rootPath }) {
+	render({ }, { currentUser, schedule, sessions, speakers, partners, userSchedule, info, rootPath }) {
 		return (
 			<div id="app">
 				<NavBar user={currentUser} rootPath={rootPath} />
 				<Router onChange={this.handleRoute}>
 					<Attending path={rootPath + 'attending/'} rootPath={rootPath} />
-					<Registration path={rootPath + 'registration/'} user={currentUser} rootPath={rootPath} />
+					<Registration path={rootPath + 'registration/'} user={currentUser} info={info} rootPath={rootPath} />
 					<Schedule path={rootPath + 'schedule/'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} db={this.db} rootPath={rootPath}
+						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
 					<Schedule path={rootPath + 'schedule/:id'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} db={this.db} rootPath={rootPath}
+						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
-					<Map path={rootPath + 'map/'} rootPath={rootPath} />
 					<Ticket path={rootPath + 'ticket/'} user={currentUser} rootPath={rootPath} />
+					<Speakers path={rootPath + 'speakers/'} speakers={speakers} rootPath={rootPath} />
+					<Speakers path={rootPath + 'speakers/:id'} speakers={speakers} rootPath={rootPath} />
 					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
-					<Home path={rootPath} rootPath={rootPath} organizers={partners.organizers} sponsors={partners.sponsors} default />
+					<Home path={rootPath} rootPath={rootPath} partners={partners} default />
 				</Router>
 			</div>
 		);

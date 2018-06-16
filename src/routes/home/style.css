@@ -15,13 +15,17 @@
 	font-weight: 400;
 }
 
+.belt {
+	background-image: url('https://res.cloudinary.com/limhenry/image/upload/fl_progressive/v1528856061/ioxkl18_pwa/io18_keynote.jpg');
+}
+
 .partners {
 	padding: 48px 60px;
 	max-width: 1200px;
 }
 
 .partners h3 {
-	margin-bottom: 24px;
+	margin-bottom: 28px;
     padding: 0;
     font-size: 32px;
 	line-height: 30px;
@@ -31,6 +35,7 @@
 .partners h4 {
 	font-size: 20px;
 	font-weight: 400;
+	margin-bottom: 8px;
 }
 
 .partners .sponsor {
@@ -67,6 +72,10 @@
 	.hero h3 {
 		margin-top: 32px;
 		font-size: 16px;
+	}
+
+	.belt {
+		background-image: url('https://res.cloudinary.com/limhenry/image/upload/fl_progressive,w_768/v1528856061/ioxkl18_pwa/io18_keynote.jpg');
 	}
 
 	.partners {

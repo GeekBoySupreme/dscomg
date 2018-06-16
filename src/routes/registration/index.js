@@ -27,24 +27,24 @@ export default class Registration extends Component {
 
 	constructor(props) {
 		super(props);
+		this.props = props;
 
-		const localRegistrationStatus = localStorage.getItem('registrationStatus');
-
-		if (localRegistrationStatus) {
-			this.setState({ registrationStatus: localRegistrationStatus });
-			this.changeRegistrationStatusText(localRegistrationStatus);
-		}
-
-		const db = firebase.database();
-		db.ref('/events_site/ioxkl18/info').once('value').then(snapshot => {
-			const status = snapshot.val().registration_status;
+		if (props.info) {
+			const status = props.info.registration_status;
 			this.setState({ registrationStatus: status });
 			this.changeRegistrationStatusText(status);
-			localStorage.setItem('registrationStatus', status);
-		});
+		}
 	}
 
-	render({ rootPath }, { registrationStatus, registrationStatusText, registrationUrl }) {
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.info !== this.props.info) {
+			const status = nextProps.info.registration_status;
+			this.setState({ registrationStatus: status });
+			this.changeRegistrationStatusText(status);
+		}
+	}
+
+	render({ rootPath, info }, { registrationStatus, registrationStatusText, registrationUrl }) {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
@@ -52,11 +52,11 @@ export default class Registration extends Component {
 					<h2>Registration is: <br />
 						<span>{registrationStatusText}</span>
 					</h2>
-					{ registrationStatus === 'open' &&
+					{registrationStatus === 'open' &&
 						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">Get Ticket</a>
 					}
 				</div>
-				{ registrationStatus !== 'opening_soon' &&
+				{registrationStatus !== 'opening_soon' &&
 					<div class={style.registered}>
 						<h3>Registered Attendees</h3>
 						<p>If you’re a registered attendee, you can view your ticket details online. </p>

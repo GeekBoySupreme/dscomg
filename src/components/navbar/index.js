@@ -18,9 +18,7 @@ export default class NavBar extends Component {
 	openDrawer = () => (this.drawer.MDComponent.open = true);
 
 	signIn = () => {
-		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(result => {
-			this.signinDig.MDComponent.close();
-		});
+		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
 	}
 
 	signOut = () => {
@@ -28,18 +26,6 @@ export default class NavBar extends Component {
 			this.signoutDig.MDComponent.close();
 		});
 	}
-
-	// signInWithGoogle = () => {
-	// 	this.signIn(new firebase.auth.GoogleAuthProvider());
-	// }
-
-	// signInWithFacebook = () => {
-	// 	this.signIn(new firebase.auth.FacebookAuthProvider());
-	// }
-
-	// signInWithTwitter = () => {
-	// 	this.signIn(new firebase.auth.TwitterAuthProvider());
-	// }
 
 	toggleSigninDig = () => {
 		this.signIn();
@@ -56,38 +42,6 @@ export default class NavBar extends Component {
 	render({ rootPath, user }) {
 		return (
 			<div>
-				<div className={[style.signin_dialog, 'signin_dialog'].join(' ')}>
-					<Dialog ref={signinDig => { this.signinDig = signinDig; }}>
-						<div class={style.dialog_body}>
-							<h3>Sign in to I/O Extended KL</h3>
-							<div class={style.btn_container}>
-								<button id={style.google} onClick={this.signInWithGoogle}>
-									<span>
-										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" />
-									</span>
-									<span class={style.btn_label}>Sign in with Google</span>
-								</button>
-								<button id={style.facebook} onClick={this.signInWithFacebook}>
-									<span>
-										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/facebook.svg" />
-									</span>
-									<span class={style.btn_label}>Sign in with Facebook</span>
-								</button>
-								<button id={style.twitter} onClick={this.signInWithTwitter}>
-									<span>
-										<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/twitter.svg" />
-									</span>
-									<span class={style.btn_label}>Sign in with Twitter</span>
-								</button>
-							</div>
-						</div>
-						<Dialog.Footer>
-							<Dialog.FooterButton class={style.cancel_btn} accept>
-								Not now
-							</Dialog.FooterButton>
-						</Dialog.Footer>
-					</Dialog>
-				</div>
 				<div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
 					<Dialog onCancel={this.onClose} onAccept={this.onClose} ref={signoutDig => { this.signoutDig = signoutDig; }}>
 						<div class={style.dialog_body}>
@@ -109,7 +63,7 @@ export default class NavBar extends Component {
 						<TopAppBar.Row>
 							<TopAppBar.Section align-start>
 								<svg class={style.menu_icon} onClick={this.openDrawer}>
-									<g id="Rounded">
+									<g>
 										<path d="M4,18h16c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,17.55,3.45,18,4,18z M4,13h16c0.55,0,1-0.45,1-1 v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,12.55,3.45,13,4,13z M3,7L3,7c0,0.55,0.45,1,1,1h16c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H4C3.45,6,3,6.45,3,7z" />
 									</g>
 								</svg>
@@ -118,6 +72,11 @@ export default class NavBar extends Component {
 								<Match path={rootPath + 'schedule'}>
 									{({ path, url }) => (
 										(path.startsWith(rootPath + 'schedule')) && <span>Schedule</span>
+									)}
+								</Match>
+								<Match path={rootPath + 'speakers'}>
+									{({ path, url }) => (
+										(path.startsWith(rootPath + 'speakers')) && <span>Speakers</span>
 									)}
 								</Match>
 							</div>
@@ -134,9 +93,9 @@ export default class NavBar extends Component {
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
-							<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g id="nav-io-phase-01" fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g id="ic-io-logo-indigo" transform="translate(62 17)" fill="#536DFE"><g id="io-logo">
-								<polygon id="Fill-1" points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
-								<polygon id="Fill-2" points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" id="Fill-3" /></g></g></g>
+							<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g transform="translate(62 17)" fill="#536DFE"><g>
+								<polygon points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
+								<polygon points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" /></g></g></g>
 							</svg>
 							<h2>July 15, 2018</h2>
 							<p>Sunway University<br />Bandar Sunway, Selangor</p>
@@ -144,6 +103,7 @@ export default class NavBar extends Component {
 						<div class={style.drawer_nav}>
 							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
 							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
+							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
 							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
 							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guideline</Link>
@@ -159,7 +119,7 @@ export default class NavBar extends Component {
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
 						<svg class={style.menu_icon} onClick={this.openDrawer}>
-							<g id="Rounded">
+							<g>
 								<path d="M4,18h16c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,17.55,3.45,18,4,18z M4,13h16c0.55,0,1-0.45,1-1 v0c0-0.55-0.45-1-1-1H4c-0.55,0-1,0.45-1,1v0C3,12.55,3.45,13,4,13z M3,7L3,7c0,0.55,0.45,1,1,1h16c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H4C3.45,6,3,6.45,3,7z" />
 							</g>
 						</svg>
@@ -167,7 +127,7 @@ export default class NavBar extends Component {
 					<nav>
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath}>
 							<svg>
-								<g id="ui_x5F_spec_x5F_header_copy_5" display="inline" />
+								<g display="inline" />
 								<path display="inline" d="M10,19v-5h4v5c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1v-7h1.7c0.46,0,0.68-0.57,0.33-0.87L12.67,3.6 c-0.38-0.34-0.96-0.34-1.34,0l-8.36,7.53C2.63,11.43,2.84,12,3.3,12H5v7c0,0.55,0.45,1,1,1h3C9.55,20,10,19.55,10,19z" />
 							</svg>
 							<span>Home</span>
@@ -193,6 +153,33 @@ export default class NavBar extends Component {
 									</Link>
 							)}
 						</Match>
+						{/* <Match path="/speakers">
+							{({ path, url }) => (
+								(path.startsWith('/speakers/')) ?
+									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'} path={url}>
+										<svg>
+											<g>
+												<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
+												<path d="M8,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3S5,6.34,5,8C5,9.66,6.34,11,8,11z" />
+												<path d="M8,13c-2.33,0-7,1.17-7,3.5V18c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1v-1.5C15,14.17,10.33,13,8,13z" />
+												<path d="M16,13c-0.29,0-0.62,0.02-0.97,0.05c0.02,0.01,0.03,0.03,0.04,0.04C16.21,13.92,17,15.03,17,16.5V18 c0,0.35-0.07,0.69-0.18,1H22c0.55,0,1-0.45,1-1v-1.5C23,14.17,18.33,13,16,13z" />
+											</g>
+										</svg>
+										<span>Speakers</span>
+									</Link>
+									: <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'}>
+										<svg>
+											<g>
+												<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
+												<path d="M8,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3S5,6.34,5,8C5,9.66,6.34,11,8,11z" />
+												<path d="M8,13c-2.33,0-7,1.17-7,3.5V18c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1v-1.5C15,14.17,10.33,13,8,13z" />
+												<path d="M16,13c-0.29,0-0.62,0.02-0.97,0.05c0.02,0.01,0.03,0.03,0.04,0.04C16.21,13.92,17,15.03,17,16.5V18 c0,0.35-0.07,0.69-0.18,1H22c0.55,0,1-0.45,1-1v-1.5C23,14.17,18.33,13,16,13z" />
+											</g>
+										</svg>
+										<span>Speakers</span>
+									</Link>
+							)}
+						</Match> */}
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
 							<svg>
 								<g>
@@ -209,6 +196,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Map</span>
 						</Link> */}
+						
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
 							<svg>
 								<g>

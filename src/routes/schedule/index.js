@@ -17,7 +17,7 @@ export default class Schedule extends Component {
 	toggleDialog = (id, item) => e => {
 		if (e.target.id !== 'star') {
 			route(this.props.rootPath + 'schedule/' + id);
-			this.dialog.toggle(id, item);
+			this.dialog.toggle(id, item, 'schedule');
 		}
 	}
 
@@ -25,6 +25,11 @@ export default class Schedule extends Component {
 		let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
 		const ref = this.props.db.ref('/events_site/ioxkl18/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
+	}
+
+	parseTopic(topic) {
+		topic = topic.replace('_', ' ');
+		return topic.charAt(0).toUpperCase() + topic.slice(1);
 	}
 
 	constructor(props) {
@@ -39,7 +44,7 @@ export default class Schedule extends Component {
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.id !== this.props.id) {
 			if (nextProps.id) {
-				this.dialog.toggle(nextProps.id, nextProps.sessions[nextProps.id]);
+				this.dialog.toggle(nextProps.id, nextProps.sessions[nextProps.id], 'schedule');
 			}
 			else {
 				this.dialog.close();
@@ -48,20 +53,19 @@ export default class Schedule extends Component {
 		if (nextProps.id && nextProps.sessions && nextProps.schedule && this.state.toggleDialog) {
 			if (nextProps.sessions[nextProps.id]) {
 				this.setState({ toggleDialog: false });
-				this.dialog.toggle(nextProps.id, nextProps.sessions[nextProps.id]);
+				this.dialog.toggle(nextProps.id, nextProps.sessions[nextProps.id], 'schedule');
 			}
 		}
 	}
 
-	render({ rootPath, user, userSchedule, db, sessions, schedule }) {
+	render({ rootPath, user, userSchedule, db, sessions, schedule, speakers }) {
 		return (
 			<div>
-				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} db={db} user={user} rootPath={rootPath} />
+				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
 					<h2>Schedule</h2>
-					<p>This is just a preview! More events will be added frequently, so make sure to check back often.</p>
 				</div>
 
 				{schedule &&
@@ -81,6 +85,16 @@ export default class Schedule extends Component {
 															<div class={style.schedule_event_title}>{sessions[item].title}</div>
 															<div class={style.schedule_event_meta}>
 																<div class={style.schedule_event_description}>{sessions[item].duration} / {sessions[item].location}</div>
+																<div class={style.schedule_event_topics}>
+																	{sessions[item].topics &&
+																		sessions[item].topics.map(item => (
+																			<div class="session_topic">
+																				<span id={item} class="session_topic_dot" />
+																				<span>{this.parseTopic(item)}</span>
+																			</div>
+																		))
+																	}
+																</div>
 															</div>
 														</div>
 														{user &&

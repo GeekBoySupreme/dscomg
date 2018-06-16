@@ -2,7 +2,6 @@
     padding: 24px 34px;
 }
 
-.signin_dialog h3,
 .signout_dialog h3 {
     font-weight: 500;
     font-size: 22px;
@@ -142,7 +141,7 @@
 
 .desktop_toolbar .signin_btn,
 .toolbar .signin_btn {
-    color: #536cf6;
+    color: #2a45d8;
     margin-right: 8px;
     font-weight: 500;
     cursor: pointer;
@@ -252,6 +251,10 @@
 .navbar nav .nav_item.active {
     opacity: 1;
     border-right: 3px solid #fff;
+}
+
+.navbar nav .nav_item:focus {
+    outline: none;
 }
 
 .navbar nav .nav_item svg {
