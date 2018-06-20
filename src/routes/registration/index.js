@@ -49,22 +49,23 @@ export default class Registration extends Component {
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
-					<h2>Registration is: <br />
-						<span>{registrationStatusText}</span>
+					<h2>
+						{info.registration_text} <br />
+						<span>{info.registration_text_highlight}</span>
 					</h2>
 					{registrationStatus === 'open' &&
 						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">Get Ticket</a>
 					}
 				</div>
-				{registrationStatus !== 'opening_soon' &&
+				{/* {registrationStatus !== 'opening_soon' &&
 					<div class={style.registered}>
 						<h3>Registered Attendees</h3>
 						<p>If you’re a registered attendee, you can view your ticket details online. </p>
-						<a class={style.ticket_btn} href={rootPath + 'ticket'}>View Ticket</a>
+						<a class={style.ticket_btn} href={rootPath + 'registration/ticket'}>View Ticket</a>
 					</div>
-				}
+				} */}
 				<div class={style.ticket_types}>
-					<h3>Ticket types</h3>
+					<h3>Ticket type</h3>
 					<div class={style.ticket_types_container}>
 						<div class={style.ticket_type} id={style.general}>
 							<TicketIcon />
@@ -73,13 +74,13 @@ export default class Registration extends Component {
 								<div class={style.ticket_body}>I/O welcomes anyone who pursues development and tech as a career, side occupation, or hobby.</div>
 							</div>
 						</div>
-						<div class={style.ticket_type} id={style.community}>
+						{/* <div class={style.ticket_type} id={style.community}>
 							<TicketIcon />
 							<div class={style.ticket_content}>
 								<div class={style.ticket_title}>Women Techmakers</div>
 								<div class={style.ticket_body}>We’re proud of the fact that every day, women are making technology that changes the world. Hence, we reserved a limited amount of special tickets for women.</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<SocialFooter rootPath={rootPath} />

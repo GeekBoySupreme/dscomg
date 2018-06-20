@@ -52,7 +52,7 @@ export default class Attending extends Component {
 					</div>
 					<div class={style.attending_item}>
 						<div class={style.attending_title}>Parking</div>
-						<div class={style.attending_content}>Stay tuned over the coming weeks for more information about parking.</div>
+						<div class={style.attending_content}>Limited parking is available at Sunway University. The parking rate is RM5.00 per entry.</div>
 					</div>
 				</div>
 				<SocialFooter rootPath={rootPath} />

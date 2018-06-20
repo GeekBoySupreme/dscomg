@@ -71,7 +71,8 @@
     margin-top: 12px;
     display: flex;
     /* width: 33.33%; */
-    width: 40%;
+    max-width: 400px;
+    width: 60%;
 }
 
 .ticket_content {

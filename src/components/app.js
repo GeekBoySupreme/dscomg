@@ -7,9 +7,10 @@ import Home from '../routes/home';
 import Attending from '../routes/attending';
 import Registration from '../routes/registration';
 import Schedule from '../routes/schedule';
-import Ticket from '../routes/ticket';
-import Speakers from '../routes/speakers';
+// import Ticket from '../routes/ticket';
+// import Speakers from '../routes/speakers';
 import CommunityGuidelines from '../routes/communityguidelines';
+import Faq from '../routes/faq';
 
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
@@ -172,17 +173,18 @@ export default class App extends Component {
 				<NavBar user={currentUser} rootPath={rootPath} />
 				<Router onChange={this.handleRoute}>
 					<Attending path={rootPath + 'attending/'} rootPath={rootPath} />
-					<Registration path={rootPath + 'registration/'} user={currentUser} info={info} rootPath={rootPath} />
 					<Schedule path={rootPath + 'schedule/'} user={currentUser} schedule={schedule}
 						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
 					<Schedule path={rootPath + 'schedule/:id'} user={currentUser} schedule={schedule}
 						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
-					<Ticket path={rootPath + 'ticket/'} user={currentUser} rootPath={rootPath} />
-					<Speakers path={rootPath + 'speakers/'} speakers={speakers} rootPath={rootPath} />
-					<Speakers path={rootPath + 'speakers/:id'} speakers={speakers} rootPath={rootPath} />
+					<Registration path={rootPath + 'registration/'} user={currentUser} info={info} rootPath={rootPath} />
+					{/* <Ticket path={rootPath + 'registration/ticket/'} user={currentUser} db={this.db} rootPath={rootPath} /> */}
+					{/* <Speakers path={rootPath + 'speakers/'} speakers={speakers} rootPath={rootPath} /> */}
+					{/* <Speakers path={rootPath + 'speakers/:id'} speakers={speakers} rootPath={rootPath} /> */}
 					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
+					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
 					<Home path={rootPath} rootPath={rootPath} partners={partners} default />
 				</Router>
 			</div>
