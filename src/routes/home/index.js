@@ -19,7 +19,7 @@ export default class Home extends Component {
 					<div class={style.partners}>
 						<h3>Partners</h3>
 						<div class={style.partner}>
-							<h4>General Sponsors</h4>
+							<h4>Our Mind-blowing Supporters</h4>
 							<div class={style.sponsor}>
 								{partners.general_sponsor && partners.general_sponsor.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
@@ -29,7 +29,7 @@ export default class Home extends Component {
 							</div>
 						</div>
 						<div class={style.partner}>
-							<h4>Sponsors</h4>
+							<h4>Our Awesome Partners</h4>
 							<div class={style.sponsor}>
 								{partners.sponsors && partners.sponsors.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
@@ -38,8 +38,20 @@ export default class Home extends Component {
 								))}
 							</div>
 						</div>
+						{/* {partners.gift_sponsor &&
+							<div class={style.partner}>
+								<h4>Gift Sponsor</h4>
+								<div class={style.sponsor}>
+									{partners.gift_sponsor && partners.gift_sponsor.map(item => (
+										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
+											<img src={item.image} alt={item.name} />
+										</a>
+									))}
+								</div>
+							</div>
+						} */}
 						<div class={style.partner}>
-							<h4>Communinty Sponsors</h4>
+							<h4>Our Hardcore Fans</h4>
 							<div class={style.sponsor}>
 								{partners.community_sponsors && partners.community_sponsors.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
@@ -49,7 +61,7 @@ export default class Home extends Component {
 							</div>
 						</div>
 						<div class={style.partner}>
-							<h4>Brought to you by</h4>
+							<h4>With Love From</h4>
 							<div class={style.sponsor}>
 								{partners.organizers && partners.organizers.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">

@@ -3,14 +3,14 @@ import TicketIcon from '../../components/ticket_icon';
 import IoLogo from '../../components/io_logo';
 import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
-import firebase from '../../components/firebase';
+// import firebase from '../../components/firebase';
 import style from './style';
 
 export default class Registration extends Component {
 	state = {
 		registrationStatus: 'opening_soon',
 		registrationStatusText: 'Loading ...',
-		registrationUrl: 'https://gdgkl.peatix.com/'
+		registrationUrl: 'https://ioxkl18.peatix.com/'
 	}
 
 	changeRegistrationStatusText(status) {
@@ -38,9 +38,11 @@ export default class Registration extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.info !== this.props.info) {
-			const status = nextProps.info.registration_status;
-			this.setState({ registrationStatus: status });
-			this.changeRegistrationStatusText(status);
+			if (nextProps.info) {
+				const status = nextProps.info.registration_status;
+				this.setState({ registrationStatus: status });
+				this.changeRegistrationStatusText(status);
+			}
 		}
 	}
 
@@ -49,12 +51,14 @@ export default class Registration extends Component {
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
-					<h2>
-						{info.registration_text} <br />
-						<span>{info.registration_text_highlight}</span>
-					</h2>
+					{info &&
+						<h2>
+							{info.registration_text} <br />
+							<span>{info.registration_text_highlight}</span>
+						</h2>
+					}
 					{registrationStatus === 'open' &&
-						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">Get Ticket</a>
+						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">{info.registration_btn_text}</a>
 					}
 				</div>
 				{/* {registrationStatus !== 'opening_soon' &&
@@ -71,7 +75,7 @@ export default class Registration extends Component {
 							<TicketIcon />
 							<div class={style.ticket_content}>
 								<div class={style.ticket_title}>General admission</div>
-								<div class={style.ticket_body}>I/O welcomes anyone who pursues development and tech as a career, side occupation, or hobby.</div>
+								<div class={style.ticket_body}>I/O welcomes anyone who pursues development and tech as a career, side occupation, or hobby.<br /><br />Price: RM12</div>
 							</div>
 						</div>
 						{/* <div class={style.ticket_type} id={style.community}>

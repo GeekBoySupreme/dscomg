@@ -94,9 +94,9 @@ html, body {
 }
 
 .session_topic {
-  margin: 4px 16px 0 0;
+  margin: 0 16px 0 0;
   font-size: 13px;
-  line-height: 24px;
+  line-height: 20px;
   display: flex;
   align-items: center;
 }
@@ -111,7 +111,7 @@ html, body {
 }
 
 #flutter {
-  background-color: rgb(255, 64, 129);
+  background-color: #4496e3;
 }
 
 #android {
@@ -131,7 +131,7 @@ html, body {
 }
 
 #firebase {
-  background-color: rgb(57, 199, 157);
+  background-color: #FFCA28;
 }
 
 #iot {
@@ -139,7 +139,7 @@ html, body {
 }
 
 #machine_learning {
-  background-color: rgb(252, 210, 48);
+  background-color: #ef6c00;
 }
 
 #misc {
@@ -152,6 +152,10 @@ html, body {
 
 #vr {
   background-color: rgb(255, 138, 101);
+}
+
+#angular {
+  background-color: #cf4643;
 }
 
 @media screen and (max-width: 768px) {

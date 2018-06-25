@@ -17,10 +17,10 @@ export default class Faq extends Component {
 						<div class={style.faq_title}>General</div>
 						<div class={style.faq_content}>
 							<p><b>Date and location</b></p>
-							<p>I/O Extended 2018 Kuala Lumpur will take place on the 15th of July at <a>Sunway University</a> in Bandar Sunway, Selangor.</p>
+							<p>I/O Extended 2018 Kuala Lumpur will take place on the 15th of July at <a href="https://goo.gl/maps/vok9mgz1nB62" target="_blank" rel="noopener noreferrer">Sunway University</a> in Bandar Sunway, Selangor.</p>
 							<br />
 							<p><b>Stay Informed</b></p>
-							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the I/O Extended website, <a href="http://gdgkl.peatix.com">RSVP on Peatix</a> and follow us on <a>Facebook Page</a> and <a>Facebook Group</a> can also follow and join the social conversation about I/O Extended 2018 Kuala Lumpur via official hashtags #ioxkl18 and #io18extended. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
+							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the I/O Extended website, <a href="http://ioxkl18.peatix.com" target="_blank" rel="noopener noreferrer">RSVP on Peatix</a> and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a> and <a href="https://www.facebook.com/events/180152056008809/" target="_blank" rel="noopener noreferrer">Facebook Event Page</a> can also follow and join the social conversation about I/O Extended 2018 Kuala Lumpur via official hashtags #ioxkl18 and #io18extended. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
 							<br />
 							<p><b>Content Formats</b></p>
 							<p>During the conference, attendees will be able to attend sessions and hands-on workshops, chat with experts and attendees.</p>
@@ -55,7 +55,7 @@ export default class Faq extends Component {
 							<p>All presentations at I/O Extended 2018 Kuala Lumpur will be in English.</p>
 							<br />
 							<p><b>Registration &amp; Badge Pick-up</b></p>
-							<p>We’ll begin badge pick-up on 8:30am, July 15. Please note, you may not share, give, or otherwise provide your badge to anyone. I/O Extended 2018 Kuala Lumpur badges aren’t replaceable, so don't lose yours or you won’t be readmitted to the conference. You must wear your I/O Extended 2018 Kuala Lumpur badge to gain admission to the conference, including the sessions, and workshops. If requested by security, please display or provide additional identification.</p>
+							<p>We’ll begin badge pick-up on 8:00am, July 15. Please note, you may not share, give, or otherwise provide your badge to anyone. I/O Extended 2018 Kuala Lumpur badges aren’t replaceable, so don't lose yours or you won’t be readmitted to the conference. You must wear your I/O Extended 2018 Kuala Lumpur badge to gain admission to the conference, including the sessions, and workshops. If requested by security, please display or provide additional identification.</p>
 							<br />
 							<p><b>Transportations</b></p>
 							<p>Check out our <a href={rootPath + 'attending'}>Attending page</a> for all the transportations tips you need, including driving, public transport information, ride sharing tips, and more!</p>

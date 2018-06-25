@@ -89,6 +89,7 @@ export default class NavBar extends Component {
 							</TopAppBar.Section>
 						</TopAppBar.Row>
 					</TopAppBar>
+					{/* <div>lol</div> */}
 				</div>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.DrawerContent>

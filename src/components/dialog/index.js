@@ -145,23 +145,24 @@ export default class CustomDialog extends Component {
 										<h3>Speakers </h3>
 										{(data.speakers && speakers) &&
 											data.speakers.map(item => (
-												<div class={style.speaker_item} onClick={this.showSpeaker(item)}>
-													{speakers[item].profile_pic ?
-														<div class={style.speaker_thumbnail} style={"background-image: url('" + speakers[item].profile_pic + "')"} /> :
-														<div class={style.speaker_thumbnail} style={"background-image: url('" + rootPath + "assets/person.svg')"} />
-													}
-													<div class={style.speaker_details}>
-														<div class={style.speaker_name}>{speakers[item].name}</div>
-														<div class={style.speaker_title}>{speakers[item].title}</div>
+												speakers[item] &&
+													<div class={style.speaker_item} onClick={this.showSpeaker(item)}>
+														{speakers[item].profile_pic ?
+															<div class={style.speaker_thumbnail} style={"background-image: url('" + speakers[item].profile_pic + "')"} /> :
+															<div class={style.speaker_thumbnail} style={"background-image: url('" + rootPath + "assets/person.svg')"} />
+														}
+														<div class={style.speaker_details}>
+															<div class={style.speaker_name}>{speakers[item].name}</div>
+															<div class={style.speaker_title}>{speakers[item].title}</div>
+														</div>
+														<div class={style.speaker_arrow}>
+															<svg>
+																<g>
+																	<path d="M5,13h11.17l-4.88,4.88c-0.39,0.39-0.39,1.03,0,1.42l0,0c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41 L12.71,4.7c-0.39-0.39-1.02-0.39-1.41,0l0,0c-0.39,0.39-0.39,1.02,0,1.41L16.17,11H5c-0.55,0-1,0.45-1,1v0C4,12.55,4.45,13,5,13z" />
+																</g>
+															</svg>
+														</div>
 													</div>
-													<div class={style.speaker_arrow}>
-														<svg>
-															<g>
-																<path d="M5,13h11.17l-4.88,4.88c-0.39,0.39-0.39,1.03,0,1.42l0,0c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41 L12.71,4.7c-0.39-0.39-1.02-0.39-1.41,0l0,0c-0.39,0.39-0.39,1.02,0,1.41L16.17,11H5c-0.55,0-1,0.45-1,1v0C4,12.55,4.45,13,5,13z" />
-															</g>
-														</svg>
-													</div>
-												</div>
 											))
 										}
 									</div>
