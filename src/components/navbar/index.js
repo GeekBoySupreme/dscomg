@@ -89,7 +89,6 @@ export default class NavBar extends Component {
 							</TopAppBar.Section>
 						</TopAppBar.Row>
 					</TopAppBar>
-					{/* <div>lol</div> */}
 				</div>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.DrawerContent>
@@ -107,6 +106,7 @@ export default class NavBar extends Component {
 							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
 							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
 							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
+							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guideline</Link>
 						</div>
 					</Drawer.DrawerContent>

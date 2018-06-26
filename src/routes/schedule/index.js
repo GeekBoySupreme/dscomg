@@ -68,6 +68,10 @@ export default class Schedule extends Component {
 		}
 	}
 
+	componentDidMount() {
+		document.title = 'Schedule - Google I/O Extended 2018 Kuala Lumpur';
+	}
+
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.id !== this.props.id) {
 			if (nextProps.id) {

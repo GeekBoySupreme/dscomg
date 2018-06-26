@@ -5,6 +5,10 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Attending extends Component {
+	componentDidMount() {
+		document.title = 'Attending - Google I/O Extended 2018 Kuala Lumpur';
+	}
+
 	render({ rootPath }) {
 		return (
 			<div>

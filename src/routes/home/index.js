@@ -5,6 +5,9 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Home extends Component {
+	componentDidMount() {
+		document.title = 'Google I/O Extended 2018 Kuala Lumpur';
+	}
 
 	render({ rootPath, partners }) {
 		return (

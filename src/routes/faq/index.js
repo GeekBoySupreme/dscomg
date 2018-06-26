@@ -5,6 +5,10 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Faq extends Component {
+	componentDidMount() {
+		document.title = 'FAQ - Google I/O Extended 2018 Kuala Lumpur';
+	}
+
 	render({ rootPath }) {
 		return (
 			<div>
@@ -64,7 +68,7 @@ export default class Faq extends Component {
 							<p>I/O Extended 2018 Kuala Lumpur is a developer event, so please be comfortable and casual. There is no enforced dress code.</p>
 							<br />
 							<p><b>Onsite food &amp; beverages</b></p>
-							<p>Attendees are offered complimentary breakfast, lunch, and tea break.</p>
+							<p>Attendees are offered complimentary breakfast, lunch, and tea break. Check out the <a href={rootPath + 'faq/food-menu'}>food menu here</a>.</p>
 							<br />
 							<p><b>Smoking</b></p>
 							<p>Smoking is strictly prohibited in Sunway University.</p>

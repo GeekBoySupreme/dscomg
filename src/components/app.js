@@ -11,6 +11,7 @@ import Schedule from '../routes/schedule';
 // import Speakers from '../routes/speakers';
 import CommunityGuidelines from '../routes/communityguidelines';
 import Faq from '../routes/faq';
+import FoodMenu from '../routes/food-menu';
 
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
@@ -185,6 +186,7 @@ export default class App extends Component {
 					{/* <Speakers path={rootPath + 'speakers/:id'} speakers={speakers} rootPath={rootPath} /> */}
 					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
+					<FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} />
 					<Home path={rootPath} rootPath={rootPath} partners={partners} default />
 				</Router>
 			</div>
