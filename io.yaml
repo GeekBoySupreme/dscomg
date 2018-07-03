@@ -23,6 +23,18 @@ handlers:
   secure: always
   expiration: "1h"
 
+- url: /io/sitemap.xml
+  static_files: sitemap.xml
+  upload: sitemap.xml
+  secure: always
+  expiration: "1h"
+
+- url: /io/robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+  secure: always
+  expiration: "1h"
+
 - url: /io/(.*\.css)
   mime_type: text/css
   static_files: build/\1
@@ -41,6 +53,42 @@ handlers:
   static_files: build/\1
   upload: build/(.*\.map)
   secure: always
+
+- url: /io/attending/?
+  static_files: build/attending/index.html
+  upload: build/attending/index.html
+  secure: always
+  expiration: "1s"
+
+- url: /io/schedule/?
+  static_files: build/schedule/index.html
+  upload: build/schedule/index.html
+  secure: always
+  expiration: "1s"
+
+- url: /io/registration/?
+  static_files: build/registration/index.html
+  upload: build/registration/index.html
+  secure: always
+  expiration: "1s"
+
+- url: /io/communityguidelines/?
+  static_files: build/communityguidelines/index.html
+  upload: build/communityguidelines/index.html
+  secure: always
+  expiration: "1s"
+
+- url: /io/faq/?
+  static_files: build/faq/index.html
+  upload: build/faq/index.html
+  secure: always
+  expiration: "1s"
+
+- url: /io/faq/food-menu/?
+  static_files: build/faq/food-menu/index.html
+  upload: build/faq/food-menu/index.html
+  secure: always
+  expiration: "1s"
 
 - url: /io/.*
   static_files: build/index.html

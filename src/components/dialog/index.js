@@ -69,8 +69,10 @@ export default class CustomDialog extends Component {
 
 	constructor(props) {
 		super();
-		if (navigator.share) {
-			this.setState({ supportShare: true });
+		if (typeof window !== 'undefined') {
+			if (navigator.share) {
+				this.setState({ supportShare: true });
+			}
 		}
 	}
 

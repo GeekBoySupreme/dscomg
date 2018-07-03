@@ -3,18 +3,13 @@ import { Router } from 'preact-router';
 import firebase from './firebase';
 import NavBar from './navbar';
 import idb from 'idb';
-import Home from '../routes/home';
-import Attending from '../routes/attending';
-import Registration from '../routes/registration';
-import Schedule from '../routes/schedule';
-// import Ticket from '../routes/ticket';
-// import Speakers from '../routes/speakers';
-import CommunityGuidelines from '../routes/communityguidelines';
-import Faq from '../routes/faq';
-import FoodMenu from '../routes/food-menu';
-
-// import Home from 'async!../routes/home';
-// import Profile from 'async!../routes/profile';
+import Home from 'async!../routes/home';
+import Attending from 'async!../routes/attending';
+import Registration from 'async!../routes/registration';
+import Schedule from 'async!../routes/schedule';
+import CommunityGuidelines from 'async!../routes/communityguidelines';
+import Faq from 'async!../routes/faq';
+import FoodMenu from 'async!../routes/food-menu';
 
 export default class App extends Component {
 	/** Gets fired when the route changes.

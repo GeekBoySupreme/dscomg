@@ -4,7 +4,6 @@ import { route } from 'preact-router';
 import IoLogo from '../../components/io_logo';
 import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
-import Switch from 'preact-material-components/Switch';
 import 'preact-material-components/Switch/style.css';
 import style from './style';
 

@@ -14,6 +14,10 @@
     width: 25%
 }
 
+.faq_title p {
+    font-size: 17px;
+}
+
 .faq_content {
     padding-left: 64px;
     width: 75%;

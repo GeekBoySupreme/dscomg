@@ -1,21 +1,15 @@
-# preact material app
+# I/O Extended 2018 Kuala Lumpur PWA
 
-Super performant `Material` app for preact world using [preact-material-components](https://github.com/prateekbh/preact-material-components)
+Serve:
 
-## CLI Commands
+`preact serve --template src/template.html`
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+Build: 
 
-# build for production with minification
-npm run build
+`preact build --template src/template.html --prerenderUrls src/prerender-urls.json`
 
-# test the production build locally
-npm run serve
-```
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+Deploy: 
+
+`gcloud app deploy io.yaml -v 1`

@@ -18,7 +18,7 @@ export default class FoodMenu extends Component {
 				</div>
 				<div class={style.faq}>
 					<div class={style.faq_item}>
-						<div class={style.faq_title}>Breakfast</div>
+						<div class={style.faq_title}>Breakfast<br /><p>(Start serving at 8am)</p></div>
 						<div class={style.faq_content}>
 							<p><b>Non-Vegetarian</b></p>
 							<ul>
