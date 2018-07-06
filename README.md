@@ -2,12 +2,12 @@
 
 Serve:
 
-`preact serve --template src/template.html`
+`preact watch --template src/template.html`
 
 
 Build: 
 
-`preact build --template src/template.html --prerenderUrls src/prerender-urls.json`
+`preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker false`
 
 
 Deploy: 

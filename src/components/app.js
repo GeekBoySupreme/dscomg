@@ -1,5 +1,7 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import Snackbar from 'preact-material-components/Snackbar';
+import 'preact-material-components/Snackbar/style.css';
 import firebase from './firebase';
 import NavBar from './navbar';
 import idb from 'idb';
@@ -12,11 +14,6 @@ import Faq from 'async!../routes/faq';
 import FoodMenu from 'async!../routes/food-menu';
 
 export default class App extends Component {
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
-
 	handleRoute = e => {
 		this.currentUrl = e.url;
 		if (typeof window !== 'undefined') {
@@ -43,6 +40,34 @@ export default class App extends Component {
 
 	getDb(key) {
 		return this.dbPromise.then(db => db.transaction('data').objectStore('data').get(key));
+	}
+
+	showRefreshSnack = () => {
+		this.snackbar.MDComponent.show({
+			message: 'Site updated. Refresh this page for better experience.',
+			actionText: 'Refresh',
+			timeout: 5000,
+			actionHandler: () => {
+				window.location.reload();
+			}
+		});
+	}
+
+	showReadySnack = () => {
+		this.snackbar.MDComponent.show({
+			message: 'Content is now available offline.',
+			timeout: 5000
+		});
+	}
+
+	componentDidMount() {
+		window.addEventListener('showRefreshSnack', this.showRefreshSnack);
+		window.addEventListener('showReadySnack', this.showReadySnack);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('showRefreshSnack', this.showRefreshSnack);
+		window.addEventListener('showReadySnack', this.showReadySnack);
 	}
 
 	componentWillMount() {
@@ -168,7 +193,7 @@ export default class App extends Component {
 			<div id="app">
 				<NavBar user={currentUser} rootPath={rootPath} />
 				<Router onChange={this.handleRoute}>
-					<Attending path={rootPath + 'attending/'} rootPath={rootPath} />
+					<Attending path={rootPath + 'attending/'} rootPath={rootPath} info={info} />
 					<Schedule path={rootPath + 'schedule/'} user={currentUser} schedule={schedule}
 						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
@@ -184,6 +209,7 @@ export default class App extends Component {
 					<FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} />
 					<Home path={rootPath} rootPath={rootPath} partners={partners} default />
 				</Router>
+				<Snackbar ref={snackbar => { this.snackbar = snackbar; }} />
 			</div>
 		);
 	}

@@ -1,6 +1,6 @@
 import { firebase } from '@firebase/app';
-import 'async!@firebase/auth';
-import 'async!@firebase/database';
+import 'firebase/auth';
+import 'firebase/database';
 
 const config = {
 	apiKey: 'AIzaSyD_B8LAxG-1IlfrlZwN5HAbncuwHrCZxU8',

@@ -16,6 +16,8 @@ handlers:
   upload: build/sw.js
   expiration: "1s"
   secure: always
+  http_headers:
+    Cache-Control: private, no-cache
 
 - url: /io/manifest.json
   static_files: build/manifest.json
@@ -95,6 +97,10 @@ handlers:
   upload: build/index.html
   secure: always
   expiration: "1s"
+  http_headers:
+    Cache-Control: public, max-age=3600, no-cache
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Max-Age: "600"
 
 - url: /io.*
   script: main.app

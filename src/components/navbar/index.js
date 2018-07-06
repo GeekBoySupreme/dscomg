@@ -74,6 +74,11 @@ export default class NavBar extends Component {
 										(path.startsWith(rootPath + 'schedule')) && <span>Schedule</span>
 									)}
 								</Match>
+								<Match path={rootPath + 'attending'}>
+									{({ path, url }) => (
+										(path.startsWith(rootPath + 'attending')) && <span>Attending</span>
+									)}
+								</Match>
 								<Match path={rootPath + 'speakers'}>
 									{({ path, url }) => (
 										(path.startsWith(rootPath + 'speakers')) && <span>Speakers</span>
@@ -82,7 +87,7 @@ export default class NavBar extends Component {
 							</div>
 							<TopAppBar.Section align-end>
 								{user ? (
-									<img src={user.photoURL} onClick={this.toggleSignoutDig} />
+									<img crossorigin="anonymous" src={user.photoURL} onClick={this.toggleSignoutDig} />
 								) : (
 									<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
 								)}
@@ -113,7 +118,7 @@ export default class NavBar extends Component {
 				</Drawer.TemporaryDrawer>
 				<div class={style.desktop_toolbar}>
 					{user ? (
-						<img src={user.photoURL} onClick={this.toggleSignoutDig} />
+						<img crossorigin="anonymous" src={user.photoURL} onClick={this.toggleSignoutDig} />
 					) : (
 						<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
 					)}</div>

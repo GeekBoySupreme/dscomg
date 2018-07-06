@@ -1,3 +1,28 @@
+.tabs {
+    display: none;
+    margin: 0 0 0 60px;
+}
+
+.tabs .tab {
+    color: #4A4A4A; 
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 4px;
+    border-bottom: 3px solid transparent;
+    padding: 16px;
+    transition: 150ms border ease, 150ms color ease;
+}
+
+.tabs .tab:hover {
+    color: #4768fd;
+    border-bottom-color: #bcc8fb;
+}
+
+.tabs .tab[active] {
+    border-bottom: 3px solid #4768fd;
+}
+
 .attending {
     max-width: 960px;
     padding-bottom: 64px;
@@ -40,8 +65,29 @@
 }
 
 @media screen and (max-width: 768px) {
+    .tabs {
+        display: flex;
+        margin: 0;
+        width: 100%;
+        padding-top: 64px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .tabs .tab {
+        text-align: center;
+        width: 100%;
+        border-bottom: 2px solid transparent;
+    }
+    .tabs .tab:hover {
+        border-bottom: 2px solid #bcc8fb;
+    }
+    .tabs .tab[active] {
+        border-bottom: 2px solid #4768fd;
+    }
+    .hero, .belt {
+        display: none;
+    }
     .attending {
-        margin: 48px 0 0 0;
+        margin: 24px 0 0 0;
         padding: 20px;
     }
     .attending_item {
@@ -50,11 +96,17 @@
     }
     .attending_title {
         width: auto;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .attending_content {
         padding-left: 0;
+        width: 95%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tabs {
+        padding-top: 56px;
     }
 }

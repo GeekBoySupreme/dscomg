@@ -5,8 +5,25 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Home extends Component {
+	handleScroll() {
+		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
+		if (document.documentElement.scrollTop < 56) {
+			ele.setAttribute('top', true);
+		}
+		else {
+			ele.removeAttribute('top');
+		}
+	}
+
 	componentDidMount() {
 		document.title = 'Google I/O Extended 2018 Kuala Lumpur';
+		window.addEventListener('scroll', this.handleScroll, { passive: true });
+		this.handleScroll();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
 	}
 
 	render({ rootPath, partners }) {
@@ -26,7 +43,7 @@ export default class Home extends Component {
 							<div class={style.sponsor}>
 								{partners.general_sponsor && partners.general_sponsor.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-										<img src={item.image} alt={item.name} />
+										<img crossorigin="anonymous" src={item.image} alt={item.name} />
 									</a>
 								))}
 							</div>
@@ -36,7 +53,7 @@ export default class Home extends Component {
 							<div class={style.sponsor}>
 								{partners.sponsors && partners.sponsors.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-										<img src={item.image} alt={item.name} />
+										<img crossorigin="anonymous" src={item.image} alt={item.name} />
 									</a>
 								))}
 							</div>
@@ -47,7 +64,7 @@ export default class Home extends Component {
 								<div class={style.sponsor}>
 									{partners.gift_sponsor && partners.gift_sponsor.map(item => (
 										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-											<img src={item.image} alt={item.name} />
+											<img crossorigin="anonymous" src={item.image} alt={item.name} />
 										</a>
 									))}
 								</div>
@@ -58,7 +75,7 @@ export default class Home extends Component {
 							<div class={style.sponsor}>
 								{partners.community_sponsors && partners.community_sponsors.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-										<img src={item.image} alt={item.name} />
+										<img crossorigin="anonymous" src={item.image} alt={item.name} />
 									</a>
 								))}
 							</div>
@@ -68,7 +85,7 @@ export default class Home extends Component {
 							<div class={style.sponsor}>
 								{partners.organizers && partners.organizers.map(item => (
 									<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-										<img src={item.image} alt={item.name} />
+										<img crossorigin="anonymous" src={item.image} alt={item.name} />
 									</a>
 								))}
 							</div>

@@ -58,6 +58,16 @@ export default class Schedule extends Component {
 		this.setState({ showMyIO: state });
 	}
 
+	handleScroll() {
+		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
+		if (document.documentElement.scrollTop < 56) {
+			ele.setAttribute('top', true);
+		}
+		else {
+			ele.removeAttribute('top');
+		}
+	}
+
 	constructor(props) {
 		super(props);
 
@@ -69,6 +79,13 @@ export default class Schedule extends Component {
 
 	componentDidMount() {
 		document.title = 'Schedule - Google I/O Extended 2018 Kuala Lumpur';
+		window.addEventListener('scroll', this.handleScroll, { passive: true });
+		this.handleScroll();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -88,7 +105,7 @@ export default class Schedule extends Component {
 		}
 	}
 
-	render({ rootPath, user, userSchedule, db, sessions, schedule, speakers }) {
+	render({ rootPath, user, userSchedule, db, sessions, schedule, speakers }, { showMyIO }) {
 		return (
 			<div>
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
@@ -97,16 +114,10 @@ export default class Schedule extends Component {
 					<IoLogo />
 					<h2>Schedule</h2>
 				</div>
-				{this.state.showMyIO ?
-					<div class={style.tabs} id="one">
-						<div class={style.tab} onClick={this.showMyIO(false)}>All</div>
-						<div class={style.tab} onClick={this.showMyIO(true)} active>My I/O</div>
-					</div>:
-					<div class={style.tabs} id="two">
-						<div class={style.tab} onClick={this.showMyIO(false)} active>All</div>
-						<div class={style.tab} onClick={this.showMyIO(true)}> My I/O</div>
-					</div>
-				}
+				<div class={style.tabs}>
+					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
+					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My I/O</div>
+				</div>
 				{!user && this.state.showMyIO &&
 					<div class={style.myio_info}>Sign in to save events to My I/O and create your custom I/O schedule.</div>
 				}

@@ -67,6 +67,10 @@ export default class CustomDialog extends Component {
 		return topic.charAt(0).toUpperCase() + topic.slice(1);
 	}
 
+	profilePicFallback = () => event => {
+		event.target.src = this.props.rootPath + 'assets/person.svg';
+	}
+
 	constructor(props) {
 		super();
 		if (typeof window !== 'undefined') {
@@ -109,8 +113,8 @@ export default class CustomDialog extends Component {
 						)}
 						{showSpeaker && (
 							speakers[speakerId].profile_pic ?
-								<div class={style.header_speaker_profile} style={"background-image: url('" + speakers[speakerId].profile_pic + "')"} /> :
-								<div class={style.header_speaker_profile} style={"background-image: url('" + rootPath + "assets/person.svg')"} />
+								<img crossorigin="anonymous" class={style.header_speaker_profile} src={speakers[speakerId].profile_pic} onError={this.profilePicFallback()} /> :
+								<img crossorigin="anonymous" class={style.header_speaker_profile} src={rootPath + 'assets/person.svg'} />
 						)}
 						{user &&
 							<div class={style.fab} onClick={this.star(id)}>
@@ -150,8 +154,8 @@ export default class CustomDialog extends Component {
 												speakers[item] &&
 													<div class={style.speaker_item} onClick={this.showSpeaker(item)}>
 														{speakers[item].profile_pic ?
-															<div class={style.speaker_thumbnail} style={"background-image: url('" + speakers[item].profile_pic + "')"} /> :
-															<div class={style.speaker_thumbnail} style={"background-image: url('" + rootPath + "assets/person.svg')"} />
+															<img crossorigin="anonymous" class={style.speaker_thumbnail} src={speakers[item].profile_pic} onError={this.profilePicFallback()} /> :
+															<img crossorigin="anonymous" class={style.speaker_thumbnail} src={rootPath + 'assets/person.svg'} />
 														}
 														<div class={style.speaker_details}>
 															<div class={style.speaker_name}>{speakers[item].name}</div>

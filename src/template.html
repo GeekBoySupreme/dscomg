@@ -76,6 +76,8 @@
         window.fetch || document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
     </script>
     <script>
+        window.dispatchEvent(new CustomEvent('showSnack', {detail: {message: "content is now available offline"}}));
+
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('<%= htmlWebpackPlugin.files.publicPath %>sw.js', { scope: '<%= htmlWebpackPlugin.files.publicPath %>' }).then(reg => {
                 reg.onupdatefound = () => {
@@ -84,9 +86,10 @@
                         switch (installingWorker.state) {
                             case 'installed':
                                 if (navigator.serviceWorker.controller) {
-                                    if (window.confirm("New update is available! Refresh now for better experience.")) {
-                                        window.location.reload();
-                                    } 
+                                    window.dispatchEvent(new CustomEvent('showRefreshSnack', null));
+                                }
+                                else {
+                                    window.dispatchEvent(new CustomEvent('showReadySnack', null));
                                 }
                                 break;
                             case 'redundant':
