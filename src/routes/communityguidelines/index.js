@@ -54,7 +54,7 @@ export default class Register extends Component {
 						<li>Pregnancy</li>
 					</ul>
 					<br />
-					<p>Participants asked to stop any harassing behavior are expected to comply immediately. Our zero tolerance policy means that we will look into and review every allegation of violation of our Event Community Guidelines and Anti-Harassment Policy and respond appropriately. We empower and encourage you to report any behavior that makes you or others feel uncomfortable by finding a GDGKL organizer or volunteer or by emailing henry@gdg.my.</p>
+					<p>Participants asked to stop any harassing behavior are expected to comply immediately. Our zero tolerance policy means that we will look into and review every allegation of violation of our Event Community Guidelines and Anti-Harassment Policy and respond appropriately. We empower and encourage you to report any behavior that makes you or others feel uncomfortable by finding a GDGKL organizer or volunteer or by emailing <a href="mailto:events@gdgkl.org">events@gdgkl.org</a>.</p>
 					<br />
 					<p>Event staff will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing discomfort or harassment to feel safe for the duration of the event. We value your attendance.</p>
 					<br />

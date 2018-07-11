@@ -47,6 +47,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://apis.google.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="https://res.cloudinary.com/limhenry/image/upload/v1528856065/ioxkl18_pwa/favicon.png">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
@@ -87,9 +91,6 @@
                             case 'installed':
                                 if (navigator.serviceWorker.controller) {
                                     window.dispatchEvent(new CustomEvent('showRefreshSnack', null));
-                                }
-                                else {
-                                    window.dispatchEvent(new CustomEvent('showReadySnack', null));
                                 }
                                 break;
                             case 'redundant':

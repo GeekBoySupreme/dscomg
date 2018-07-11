@@ -1,16 +1,15 @@
 .speakers {
     margin: 0 60px 64px 60px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
     max-width: 1400px;
 }
 .speaker_item {
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.15);
     padding: 24px 12px 48px 12px;
     min-width: 280px;
     max-width: 350px;
-    margin-right: 16px;
-    margin-bottom: 16px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -18,14 +17,51 @@
     flex: 1;
     border-radius: 4px;
     cursor: pointer;
+    transition: box-shadow 250ms ease;
+}
+
+.speaker_item:hover {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
 .speaker_profile_pic {
-    width: 120px;
-    height: 120px;
+    width: 128px;
+    height: 128px;
     background-size: cover;
     margin-bottom: 16px;
     border-radius: 50%;
+}
+
+.profile_pic {
+    position: relative;
+}
+
+.badges {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 32px);
+    display: flex;
+}
+
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #4768fd;
+}
+
+.badge:nth-of-type(2) {
+    transform: translate(25%, 75%);
+}
+
+.badge .badge_icon {
+    height: 12px;
+    width: 12px;
 }
 
 .speaker_name {
@@ -45,19 +81,35 @@
     color: #565656;
 }
 
+@media screen and (max-width: 1300px) {
+    .speakers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .speakers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hero {
         display: none;
     }
     .speakers {
-        padding-top: 64px;
-        margin: 24px 0 0 0;
+        grid-gap: 12px;
+        padding: 64px 16px 16px 16px;
+        margin: 8px 0 0 0;
+        grid-template-columns: 1fr;
     }
     .speaker_item {
         max-width: 100%;
-        margin-left: 16px;
     }
     .short_bio {
         width: 100%;
+    }
+    .footer {
+        display: none;
     }
 }

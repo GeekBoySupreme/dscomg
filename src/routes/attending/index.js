@@ -131,8 +131,10 @@ export default class Attending extends Component {
 						</div>
 					}
 				</div>
-				<SocialFooter rootPath={rootPath} />
-				<Footer rootPath={rootPath} />
+				<div class={style.footer}>
+					<SocialFooter rootPath={rootPath} />
+					<Footer rootPath={rootPath} />
+				</div>
 			</div>
 		);
 	}

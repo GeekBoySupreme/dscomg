@@ -87,7 +87,7 @@
         display: none;
     }
     .attending {
-        margin: 24px 0 0 0;
+        margin: 8px 0 0 0;
         padding: 20px;
     }
     .attending_item {
@@ -96,13 +96,16 @@
     }
     .attending_title {
         width: auto;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
     .attending_content {
         padding-left: 0;
         width: 95%;
+    }
+    .footer {
+        display: none;
     }
 }
 @media screen and (max-width: 600px) {

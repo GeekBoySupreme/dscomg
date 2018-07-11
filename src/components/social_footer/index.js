@@ -18,6 +18,13 @@ export default class SocialFooter extends Component {
 								</g>
 							</svg>
 						</a>
+						<a href="https://meetup.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+								<title>GDG Malaysia Slack</title>
+								<circle fill="#536dfe" cx="20" cy="20" r="20" />
+								<path fill="#fff" d="M32,28.24c-.31-1.93-3.88-.45-4.1-2.56-.31-3,4.15-9.46,3.8-12A2.92,2.92,0,0,0,28.51,11a3.09,3.09,0,0,0-2.05.44.79.79,0,0,1-1.12,0,11.49,11.49,0,0,0-.9-.82,1.84,1.84,0,0,0-1-.4A3.09,3.09,0,0,0,22,10.3a3.89,3.89,0,0,0-1,.75c-.33.28-1.15,1.2-1.92.86-.33-.15-1.45-.71-2.27-1.06-1.56-.68-3.82.42-4.63,1.87-1.22,2.15-3.6,10.6-4,11.71a3.32,3.32,0,0,0,3.51,4.43,2.61,2.61,0,0,0,2.41-1.64c.39-.69,4-10.09,4.25-10.54a1.17,1.17,0,0,1,1.39-.48,1.27,1.27,0,0,1,.58,1.42c-.13.9-2.67,6.63-2.77,7.28-.16,1.1.36,1.71,1.51,1.77a2.2,2.2,0,0,0,2.18-1.41c.35-.65,4.35-8.67,4.7-9.2s.71-.78,1.11-.76.8.1.68,1-3.35,6.78-3.68,8.22a4.26,4.26,0,0,0,2.34,4.73C27.51,29.81,32.37,30.74,32,28.24Z" />
+							</svg>
+						</a>
 						<a href="https://gdgmy-slack.herokuapp.com/" target="_blank" rel="noopener noreferrer">
 							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
 								<title>GDG Malaysia Slack</title>

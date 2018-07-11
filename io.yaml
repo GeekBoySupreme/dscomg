@@ -68,6 +68,12 @@ handlers:
   secure: always
   expiration: "1s"
 
+- url: /io/speakers/?
+  static_files: build/speakers/index.html
+  upload: build/speakers/index.html
+  secure: always
+  expiration: "1s"
+
 - url: /io/registration/?
   static_files: build/registration/index.html
   upload: build/registration/index.html

@@ -16,13 +16,23 @@ export default class Speakers extends Component {
 
 	shortBio(string) {
 		if (string) {
-			return (string.length > 5) ? string.substr(0, string.lastIndexOf(' ', 150)) +' ...' : string;
+			return (string.length > 5) ? string.substr(0, string.lastIndexOf(' ', 150)) + ' ...' : string;
 		}
 	}
 
 	toggleDialog = (id, item) => e => {
-		route(this.props.rootPath + 'speakers/' + id);
-		this.dialog.toggle(id, item, 'speakers');
+		if (e.target.id !== 'badge') {
+			route(this.props.rootPath + 'speakers/' + id);
+			this.dialog.toggle(id, item, 'speakers');
+		}
+	}
+
+	profilePicFallback = () => event => {
+		event.target.src = this.props.rootPath + 'assets/person.svg';
+	}
+
+	componentDidMount() {
+		document.title = 'Speakers - Google I/O Extended 2018 Kuala Lumpur';
 	}
 
 	constructor(props) {
@@ -65,19 +75,32 @@ export default class Speakers extends Component {
 					<div class={style.speakers}>
 						{Object.keys(speakers).map(item => (
 							<div class={style.speaker_item} onClick={this.toggleDialog(item, speakers[item])}>
-								{speakers[item].profile_pic ?
-									<div class={style.speaker_profile_pic} style={"background-image: url('" + speakers[item].profile_pic + "')"} />:
-									<div class={style.speaker_profile_pic} style={"background-image: url('" + rootPath + "assets/person.svg')"} />
-								}
+								<div class={style.profile_pic}>
+									{speakers[item].profile_pic ?
+										<img alt={speakers[item].name} crossorigin="anonymous" class={style.speaker_profile_pic} src={speakers[item].profile_pic} onError={this.profilePicFallback()} /> :
+										<img alt={speakers[item].name} crossorigin="anonymous" class={style.speaker_profile_pic} src={rootPath + 'assets/person.svg'} />
+									}
+									{speakers[item].badges &&
+										<div class={style.badges}>
+											{speakers[item].badges.map(item => (
+												<a id="badge" alt={item.name} target="_blank" href={item.link} class={style.badge}>
+													<img id="badge" alt={item.name} class={style.badge_icon} src={`${rootPath}assets/${item.type}.svg`} />
+												</a>
+											))}
+										</div>
+									}
+								</div>
 								<div class={style.speaker_name}>{speakers[item].name}</div>
 								<div class={style.speaker_title}>{speakers[item].title}</div>
-								<div class={style.short_bio}>{this.shortBio(speakers[item].bio)}</div>
+								<div class={style.short_bio}>{speakers[item].short_bio}</div>
 							</div>
 						))}
 					</div>
 				}
-				<SocialFooter rootPath={rootPath} />
-				<Footer rootPath={rootPath} />
+				<div class={style.footer}>
+					<SocialFooter rootPath={rootPath} />
+					<Footer rootPath={rootPath} />
+				</div>
 			</div>
 		);
 	}

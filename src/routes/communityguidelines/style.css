@@ -10,6 +10,12 @@
     font-size: 20px;
 }
 
+.container a {
+    color: #4768FD;
+    font-weight: 500;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         margin-bottom: 0;

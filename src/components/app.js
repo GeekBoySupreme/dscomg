@@ -1,17 +1,18 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-import Snackbar from 'preact-material-components/Snackbar';
-import 'preact-material-components/Snackbar/style.css';
 import firebase from './firebase';
 import NavBar from './navbar';
 import idb from 'idb';
-import Home from 'async!../routes/home';
+import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
 import Schedule from 'async!../routes/schedule';
+import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import Faq from 'async!../routes/faq';
 import FoodMenu from 'async!../routes/food-menu';
+import Snackbar from 'preact-material-components/Snackbar';
+import 'preact-material-components/Snackbar/style.css';
 
 export default class App extends Component {
 	handleRoute = e => {
@@ -53,21 +54,12 @@ export default class App extends Component {
 		});
 	}
 
-	showReadySnack = () => {
-		this.snackbar.MDComponent.show({
-			message: 'Content is now available offline.',
-			timeout: 5000
-		});
-	}
-
 	componentDidMount() {
 		window.addEventListener('showRefreshSnack', this.showRefreshSnack);
-		window.addEventListener('showReadySnack', this.showReadySnack);
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('showRefreshSnack', this.showRefreshSnack);
-		window.addEventListener('showReadySnack', this.showReadySnack);
 	}
 
 	componentWillMount() {
@@ -200,10 +192,13 @@ export default class App extends Component {
 					<Schedule path={rootPath + 'schedule/:id'} user={currentUser} schedule={schedule}
 						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
+					<Speakers path={rootPath + 'speakers/'} user={currentUser} schedule={schedule}
+						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
+					/>
+					<Speakers path={rootPath + 'speakers/:id'} user={currentUser} schedule={schedule}
+						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
+					/>
 					<Registration path={rootPath + 'registration/'} user={currentUser} info={info} rootPath={rootPath} />
-					{/* <Ticket path={rootPath + 'registration/ticket/'} user={currentUser} db={this.db} rootPath={rootPath} /> */}
-					{/* <Speakers path={rootPath + 'speakers/'} speakers={speakers} rootPath={rootPath} /> */}
-					{/* <Speakers path={rootPath + 'speakers/:id'} speakers={speakers} rootPath={rootPath} /> */}
 					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
 					<FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} />

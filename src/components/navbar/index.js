@@ -107,12 +107,12 @@ export default class NavBar extends Component {
 						</div>
 						<div class={style.drawer_nav}>
 							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
-							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
-							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
 							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
-							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
+							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
+							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link>
+							{/* <Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link> */}
 							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
-							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guideline</Link>
+							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
@@ -138,6 +138,14 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Home</span>
 						</Link>
+						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
+							<svg>
+								<g>
+									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
+								</g>
+							</svg>
+							<span>Attending</span>
+						</Link>
 						<Match path="/schedule">
 							{({ path, url }) => (
 								(path.startsWith('/schedule/')) ?
@@ -159,7 +167,7 @@ export default class NavBar extends Component {
 									</Link>
 							)}
 						</Match>
-						{/* <Match path="/speakers">
+						<Match path="/speakers">
 							{({ path, url }) => (
 								(path.startsWith('/speakers/')) ?
 									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'} path={url}>
@@ -185,16 +193,16 @@ export default class NavBar extends Component {
 										<span>Speakers</span>
 									</Link>
 							)}
-						</Match> */}
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
+						</Match>
+						<a  class={style.nav_item} href="https://ask.gdgkl.org" target="_blank" rel="noopener noreferrer">
 							<svg>
 								<g>
-									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
+									<path d="M20,6h-1v8c0,0.55-0.45,1-1,1H6v1c0,1.1,0.9,2,2,2h10l4,4V8C22,6.9,21.1,6,20,6z M17,11V4c0-1.1-0.9-2-2-2H4 C2.9,2,2,2.9,2,4v13l4-4h9C16.1,13,17,12.1,17,11z" />
 								</g>
 							</svg>
-							<span>Attending</span>
-						</Link>
-						<Match path="/registration">
+							<span>Ask</span>
+						</a>
+						{/* <Match path="/registration">
 							{({ path, url }) => (
 								(path.startsWith('/registration/')) ?
 									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'} path={url}>
@@ -214,7 +222,7 @@ export default class NavBar extends Component {
 										<span>Registration</span>
 									</Link>
 							)}
-						</Match>
+						</Match> */}
 					</nav>
 				</div>
 			</div>
