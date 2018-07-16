@@ -69,7 +69,8 @@ export default class Attending extends Component {
 								<div class={style.attending_item}>
 									<div class={style.attending_title}>Wi-Fi</div>
 									<div class={style.attending_content}>
-										<p><b>Wi-Fi network:</b>&emsp;<a>{info.wifi_ssid}</a></p>
+										<p><b>Wi-Fi Network:</b>&emsp;<a>{info.wifi_ssid}</a></p>
+										<p><b>Username:</b>&emsp;<a>{info.wifi_username}</a></p>
 										<p><b>Password:</b>&emsp;<a>{info.wifi_password}</a></p>
 									</div>
 								</div>

@@ -25,8 +25,9 @@ export default class App extends Component {
 					document.documentElement.scrollTop = 0;
 				}
 			}
-			if (window.gtag) {
-				window.gtag('config', 'UA-76843776-9', { page_path: window.location.pathname });
+			if (window.ga) {
+				window.ga('set', 'page', 'window.location.pathname');
+				window.ga('send', 'pageview');
 			}
 		}
 	};

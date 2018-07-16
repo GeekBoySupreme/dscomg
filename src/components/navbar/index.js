@@ -46,7 +46,7 @@ export default class NavBar extends Component {
 					<Dialog onCancel={this.onClose} onAccept={this.onClose} ref={signoutDig => { this.signoutDig = signoutDig; }}>
 						<div class={style.dialog_body}>
 							<h3>Sign out?</h3>
-							<p>All saved events and session ratings (if an attendee) remain synced to your account.</p>
+							<p>All saved events remain synced to your account.</p>
 						</div>
 						<Dialog.Footer>
 							<Dialog.FooterButton class={style.cancel_btn} accept>
@@ -107,9 +107,9 @@ export default class NavBar extends Component {
 						</div>
 						<div class={style.drawer_nav}>
 							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
-							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
 							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
 							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link>
+							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
 							{/* <Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link> */}
 							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
@@ -137,14 +137,6 @@ export default class NavBar extends Component {
 								<path display="inline" d="M10,19v-5h4v5c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1v-7h1.7c0.46,0,0.68-0.57,0.33-0.87L12.67,3.6 c-0.38-0.34-0.96-0.34-1.34,0l-8.36,7.53C2.63,11.43,2.84,12,3.3,12H5v7c0,0.55,0.45,1,1,1h3C9.55,20,10,19.55,10,19z" />
 							</svg>
 							<span>Home</span>
-						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
-							<svg>
-								<g>
-									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
-								</g>
-							</svg>
-							<span>Attending</span>
 						</Link>
 						<Match path="/schedule">
 							{({ path, url }) => (
@@ -194,14 +186,14 @@ export default class NavBar extends Component {
 									</Link>
 							)}
 						</Match>
-						<a  class={style.nav_item} href="https://ask.gdgkl.org" target="_blank" rel="noopener noreferrer">
+						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
 							<svg>
 								<g>
-									<path d="M20,6h-1v8c0,0.55-0.45,1-1,1H6v1c0,1.1,0.9,2,2,2h10l4,4V8C22,6.9,21.1,6,20,6z M17,11V4c0-1.1-0.9-2-2-2H4 C2.9,2,2,2.9,2,4v13l4-4h9C16.1,13,17,12.1,17,11z" />
+									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
 								</g>
 							</svg>
-							<span>Ask</span>
-						</a>
+							<span>Attending</span>
+						</Link>
 						{/* <Match path="/registration">
 							{({ path, url }) => (
 								(path.startsWith('/registration/')) ?
