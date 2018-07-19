@@ -2,7 +2,7 @@ const preactCliSwPrecachePlugin = require('preact-cli-sw-precache');
 
 export default (config, env, helpers) => {
 
-	config.output.publicPath = env.production ? '/io/' : '/';
+	config.output.publicPath = env.production ? '/nextkl18/' : '/';
 	config.plugins.push(
 		new helpers.webpack.DefinePlugin({
 			'process.env.PUBLIC_PATH': JSON.stringify(config.output.publicPath || '/')

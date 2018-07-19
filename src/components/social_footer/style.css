@@ -3,10 +3,11 @@
     padding: 96px 80px 96px;
     display: flex;
     justify-content: space-between;
+    background-color: #fefefe;
 }
 
 .social_body {
-    max-width: 400px;
+    max-width: 420px;
 }
 
 .social_body p {
@@ -20,7 +21,7 @@
 }
 
 .social_gif {
-    max-width: 360px;
+    max-width: 340px;
 }
 
 .social_gif img {

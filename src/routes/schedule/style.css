@@ -1,3 +1,8 @@
+.schedule {
+    overflow-x: hidden;
+    position: relative;
+}
+
 .tabs {
     display: flex;
     margin: 0 0 0 60px;
@@ -26,6 +31,16 @@
 .myio_info {
     border-top: 1px solid #e6e6e6;
     padding: 40px 72px;
+}
+
+.glyph {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 0;
+    right: -60px;
+    top: 128px;
+    overflow: hidden;
 }
 
 .schedule_section {
@@ -153,6 +168,10 @@
     font-size: 13px;
 }
 
+.schedule_event_description b {
+    font-weight: 500;
+}
+
 .schedule_event:only-child .schedule_event_description {
     margin: 0 28px 0 0;
 }
@@ -160,6 +179,7 @@
 .schedule_event_topics {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .schedule_event:only-child .schedule_event_topics {
@@ -199,6 +219,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .glyph {
+		display: none;
+	}
     .hero {
         display: none;
     }

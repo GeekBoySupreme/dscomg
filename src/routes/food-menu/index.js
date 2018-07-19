@@ -6,7 +6,7 @@ import style from './style';
 
 export default class FoodMenu extends Component {
 	componentDidMount() {
-		document.title = 'Food at the Conference - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Food at the Conference - Cloud Next Extended 2018 Kuala Lumpur';
 	}
 
 	render({ rootPath }) {

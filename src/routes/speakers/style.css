@@ -1,3 +1,7 @@
+.speaker {
+    overflow-x: hidden;
+    position: relative;
+}
 .speakers {
     margin: 0 60px 64px 60px;
     display: grid;
@@ -5,7 +9,27 @@
     grid-gap: 16px;
     max-width: 1400px;
 }
+.glyph {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 0;
+    right: -60px;
+    top: 200px;
+    overflow: hidden;
+}
+
+.glyph#middle {
+    top: auto;
+    bottom: 900px;
+    right: 0px;
+    height: 200px;
+    width: 200px;
+}
+
 .speaker_item {
+    z-index: 1;
+    background: white;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.15);
     padding: 24px 12px 48px 12px;
     min-width: 280px;
@@ -94,6 +118,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .glyph {
+		display: none;
+	}
     .hero {
         display: none;
     }

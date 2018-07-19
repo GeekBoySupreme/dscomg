@@ -6,7 +6,7 @@ import style from './style';
 
 export default class Register extends Component {
 	componentDidMount() {
-		document.title = 'Community Guidelines - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Community Guidelines - Cloud Next Extended 2018 Kuala Lumpur';
 	}
 
 	render({ rootPath }) {

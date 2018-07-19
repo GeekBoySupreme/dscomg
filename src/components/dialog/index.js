@@ -86,7 +86,7 @@ export default class CustomDialog extends Component {
 		return (
 			<Dialog onCancel={this.onClose(type)} onAccept={this.onClose(type)} class={style.dialog} ref={scrollingDlg => { this.scrollingDlg = scrollingDlg; }}>
 				<div class={style.dialog_container} ref={dialogContainer => { this.dialogContainer = dialogContainer; }}>
-					<div class={style.dialog_header} style={"background-image: url('" + rootPath + "assets/grid_seamless.png')"}>
+					<div class={style.dialog_header}>
 						{showSpeaker ?
 							(type === 'speakers') ?
 								<Dialog.FooterButton class={style.back} accept>
@@ -141,8 +141,8 @@ export default class CustomDialog extends Component {
 								<div class={style.schedule_event_topics}>
 									{data.topics &&
 										data.topics.map(item => (
-											<div class="session_topic">
-												<span id={item} class="session_topic_dot" />
+											<div id={item} class="session_topic">
+												<span class="session_topic_dot" />
 												<span>{this.parseTopic(item)}</span>
 											</div>
 										))

@@ -34,7 +34,7 @@ export default class Attending extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Attending - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Attending - Cloud Next Extended 2018 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		window.addEventListener('resize', this.resize);
 		this.resize();

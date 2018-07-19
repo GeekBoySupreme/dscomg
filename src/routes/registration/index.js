@@ -37,7 +37,7 @@ export default class Registration extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Registration - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Registration - Cloud Next Extended 2018 Kuala Lumpur';
 	}
 
 	componentWillReceiveProps(nextProps) {

@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Schedule - Cloud Next Extended 2018 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -107,16 +107,24 @@ export default class Schedule extends Component {
 
 	render({ rootPath, user, userSchedule, db, sessions, schedule, speakers }, { showMyIO }) {
 		return (
-			<div>
+			<div class={style.schedule}>
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo />
 					<h2>Schedule</h2>
+					<p>Hone your skills. Ask technical questions. Get inspired. This year’s program is packed with breakouts, keynotes, spotlights, panels, and bootcamps.</p>
 				</div>
+
+				<div class={style.glyph}>
+					<svg data-v-26351a0e="" width="100%" height="100%" viewBox="0 0 232 232" xmlns="http://www.w3.org/2000/svg" focusable="false">
+						<path d="M0 49h232V0H0m0 232h232v-49H0m0-43h232V91H0" fill="#EA4335" fill-rule="evenodd" style="fill: rgb(66, 133, 244);" />
+					</svg>
+				</div>
+
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
-					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My I/O</div>
+					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My Schedule</div>
 				</div>
 				{!user && this.state.showMyIO &&
 					<div class={style.myio_info}>Sign in to save events to My I/O and create your custom I/O schedule.</div>
@@ -140,12 +148,12 @@ export default class Schedule extends Component {
 												<div class={style.schedule_event_details}>
 													<div class={style.schedule_event_title}>{sessions[item].title}</div>
 													<div class={style.schedule_event_meta}>
-														<div class={style.schedule_event_description}>{sessions[item].duration} / {sessions[item].location}</div>
+														<div class={style.schedule_event_description}><b>{sessions[item].location}</b> &middot; {sessions[item].duration}</div>
 														<div class={style.schedule_event_topics}>
 															{sessions[item].topics &&
 																sessions[item].topics.map(item => (
-																	<div class="session_topic">
-																		<span id={item} class="session_topic_dot" />
+																	<div id={item} class="session_topic">
+																		<span class="session_topic_dot" />
 																		<span>{this.parseTopic(item)}</span>
 																	</div>
 																))

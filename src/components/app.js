@@ -67,7 +67,7 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			this.db = firebase.database();
 
-			this.dbPromise = idb.open('ioxkl18', 1, upgradeDB => {
+			this.dbPromise = idb.open('nextkl18', 1, upgradeDB => {
 				upgradeDB.createObjectStore('data');
 			});
 
@@ -100,31 +100,31 @@ export default class App extends Component {
 				}
 			});
 
-			this.db.ref('/events_site/ioxkl18/schedule').once('value').then(snapshot => {
+			this.db.ref('/events_site/nextkl18/schedule').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ schedule: data });
 				this.setDb('schedule', data);
 			});
 
-			this.db.ref('/events_site/ioxkl18/sessions').once('value').then(snapshot => {
+			this.db.ref('/events_site/nextkl18/sessions').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ sessions: data });
 				this.setDb('sessions', data);
 			});
 
-			this.db.ref('/events_site/ioxkl18/speakers').once('value').then(snapshot => {
+			this.db.ref('/events_site/nextkl18/speakers').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ speakers: data });
 				this.setDb('speakers', data);
 			});
 
-			this.db.ref('/events_site/ioxkl18/partners').once('value').then(snapshot => {
+			this.db.ref('/events_site/nextkl18/partners').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ partners: data });
 				this.setDb('partners', data);
 			});
 
-			this.db.ref('/events_site/ioxkl18/info').once('value').then(snapshot => {
+			this.db.ref('/events_site/nextkl18/info').once('value').then(snapshot => {
 				const data = snapshot.val();
 				this.setState({ info: data });
 				this.setDb('info', data);
@@ -138,7 +138,7 @@ export default class App extends Component {
 						id: currentUser.uid
 					});
 
-					const dbRef = '/events_site/ioxkl18/users/' + currentUser.uid;
+					const dbRef = '/events_site/nextkl18/users/' + currentUser.uid;
 					this.db.ref(dbRef + '/info/').set({
 						uid: currentUser.uid,
 						username: currentUser.displayName,

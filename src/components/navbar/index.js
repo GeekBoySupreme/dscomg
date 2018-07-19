@@ -110,7 +110,7 @@ export default class NavBar extends Component {
 							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
 							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link>
 							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
-							{/* <Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link> */}
+							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
 							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
 						</div>
@@ -194,7 +194,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Attending</span>
 						</Link>
-						{/* <Match path="/registration">
+						<Match path="/registration">
 							{({ path, url }) => (
 								(path.startsWith('/registration/')) ?
 									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'} path={url}>
@@ -214,7 +214,7 @@ export default class NavBar extends Component {
 										<span>Registration</span>
 									</Link>
 							)}
-						</Match> */}
+						</Match>
 					</nav>
 				</div>
 			</div>

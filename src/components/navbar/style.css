@@ -8,7 +8,7 @@
     line-height: 32px;
     margin-bottom: 34px;
     text-align: center;
-    color: #536cf6;
+    color: #1a73e8;
 }
 
 .signout_dialog h3 {
@@ -94,7 +94,7 @@
 .signout_btn {
     color: #fff;
     font-weight: 500;
-    background: #527aee;
+    background: #1a73e8;
 }
 
 .cancel_btn:focus,
@@ -128,7 +128,7 @@
     height: 40px;
     width: 40px;
     border-radius: 40px;
-    border: 2px solid #536cf6;
+    border: 2px solid #1a73e8;
     margin-right: 8px;
     cursor: pointer;
 }
@@ -196,12 +196,14 @@
 }
 
 .navbar {
-    background: #4768fd;
+    box-shadow: 2px 0 6px 0 rgba(0,0,0,.12);
+    /* background: #1a73e8; */
+    background: #fff;
     bottom: 0px;
     left: 0px;
     position: fixed;
     top: 0px;
-    width: 72px;
+    width: 80px;
     z-index: 1;
     transform: translate(0, 0);
     transition: transform 0.75s cubic-bezier(0.190, 1.000, 0.220, 1.000);
@@ -214,11 +216,11 @@
     position: absolute;
     text-align: center;
     top: 20px;
-    width: 72px;
+    width: 80px;
 }
 
 .navbar .hamburger .menu_icon {
-    fill: #fff;
+    fill: #4a4a4a;
 }
 
 .navbar nav {
@@ -238,8 +240,8 @@
     font-size: 11px;
     font-weight: 500;
     text-decoration: none;
-    color: white;
-    opacity: 0.6;
+    color: #4A4A4A;
+    opacity: 0.5;
     border-right: 3px solid transparent;
     transition: border 400ms ease;
 }
@@ -249,8 +251,9 @@
 }
 
 .navbar nav .nav_item.active {
+    color: #1a73e8;
     opacity: 1;
-    border-right: 3px solid #fff;
+    border-right: 3px solid #1a73e8;
 }
 
 .navbar nav .nav_item:focus {
@@ -260,7 +263,11 @@
 .navbar nav .nav_item svg {
     width: 24px;
     height: 24px;
-    fill: #fff;
+    fill: #4A4A4A;
+}
+
+.navbar nav .nav_item.active svg {
+    fill: #1a73e8;
 }
 
 .navbar nav .nav_item span {
@@ -292,6 +299,7 @@
     }
 
     .navbar {
+        box-shadow: 0 -2px 6px 0 rgba(0,0,0,.12);
         bottom: -2px;
         height: 60px;
         right: 0px;

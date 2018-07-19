@@ -65,8 +65,9 @@ html, body {
 
 .hero h2 {
   margin: 6px 6px 24px 0;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 40px;
+  color: #3c4043;
 }
 
 .hero p {
@@ -125,68 +126,86 @@ html, body {
 }
 
 .session_topic {
-  margin: 0 16px 0 0;
+  margin: 2px 8px 2px 0;
   font-size: 13px;
   line-height: 20px;
   display: flex;
   align-items: center;
+  border: 1px solid rgb(95, 99, 104);
+  padding: 0px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(95, 99, 104);
 }
 
 .session_topic .session_topic_dot {
   width: 12px;
   height: 12px;
   background: rgb(197, 201, 233);
-  display: inline-block;
+  display: none;
   border-radius: 50%;
   margin-right: 6px;
 }
 
 #flutter {
-  background-color: #4496e3;
+  border-color: #4496e3;
+  color: #4496e3;
 }
 
 #android {
-  background-color: rgb(174, 213, 129);
+  border-color: #498603;
+  color: #498603;
 }
 
 #assistant {
-  background-color: rgb(28, 232, 181);
+  border-color: #ab6304;
+  color: #ab6304;
 }
 
 #cloud {
-  background-color: rgb(128, 203, 196);
+  border-color: #037ab7;
+  color: #037ab7;
 }
 
 #design {
-  background-color: rgb(248, 187, 208);
+  border-color: #b32cdc;
+  color: #b32cdc;
 }
 
 #firebase {
-  background-color: #FFCA28;
+  border-color: #072e7b;
+  color: #072e7b;
 }
 
 #iot {
-  background-color: rgb(188, 170, 164);
+  border-color: rgb(188, 170, 164);
+  color: rgb(188, 170, 164);
 }
 
 #machine_learning {
-  background-color: #ef6c00;
+  border-color: #ef6c00;
+  color: #ef6c00;
 }
 
 #misc {
-  background-color: rgb(197, 201, 233);
+  border-color: rgb(197, 201, 233);
+  color: rgb(197, 201, 233);
 }
 
 #web {
-  background-color: rgb(250, 191, 169);
+  border-color: #c73f0d;
+  color: #c73f0d;
 }
 
 #vr {
-  background-color: rgb(255, 138, 101);
+  border-color: rgb(255, 138, 101);
+  color: rgb(255, 138, 101);
 }
 
 #angular {
-  background-color: #cf4643;
+  border-color: #cf4643;
+  color: #cf4643;
 }
 
 @media screen and (max-width: 768px) {
@@ -225,7 +244,7 @@ html, body {
     max-height: initial !important;
   }
   .session_topic {
-    margin: 0 16px 0 0;
+    margin: 0 6px 0 0;
   }
 }
 

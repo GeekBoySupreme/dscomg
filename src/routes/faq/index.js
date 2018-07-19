@@ -6,7 +6,7 @@ import style from './style';
 
 export default class Faq extends Component {
 	componentDidMount() {
-		document.title = 'FAQ - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'FAQ - Cloud Next Extended 2018 Kuala Lumpur';
 	}
 
 	render({ rootPath }) {
