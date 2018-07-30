@@ -1,0 +1,4 @@
+[build]
+  command = "npm install && preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker false"
+  publish = "build"
+  branch = "master"
