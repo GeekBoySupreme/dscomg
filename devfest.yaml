@@ -1,4 +1,4 @@
-service: devfestkl18
+service: devfest
 api_version: 1
 threadsafe: true
 runtime: python27

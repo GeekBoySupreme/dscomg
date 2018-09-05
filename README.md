@@ -12,4 +12,4 @@ Build:
 
 Deploy: 
 
-`gcloud app deploy io.yaml -v 1`
+`gcloud app deploy devfest.yaml -v 1`
