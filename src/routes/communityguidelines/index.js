@@ -5,15 +5,32 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Register extends Component {
+	handleScroll() {
+		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
+		if (document.documentElement.scrollTop < 56) {
+			ele.setAttribute('top', true);
+		}
+		else {
+			ele.removeAttribute('top');
+		}
+	}
+	
 	componentDidMount() {
-		document.title = 'Community Guidelines - Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'Community Guidelines - GDG DevFest Kuala Lumpur 2018';
+		window.addEventListener('scroll', this.handleScroll, { passive: true });
+		this.handleScroll();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
 	}
 
 	render({ rootPath }) {
 		return (
 			<div>
 				<div class="hero">
-					<IoLogo />
+					<IoLogo rootPath={rootPath} />
 					<h2>Community Guidelines</h2>
 				</div>
 				<div class={style.container}>

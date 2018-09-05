@@ -32,7 +32,7 @@ export default class Speakers extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Speakers - Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'Speakers - GDG DevFest Kuala Lumpur 2018';
 	}
 
 	constructor(props) {
@@ -67,7 +67,7 @@ export default class Speakers extends Component {
 				<Dialog ref={dialog => { this.dialog = dialog; }} speakers={speakers} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath} />
 					<h2>Speakers</h2>
 					<p>Find speakers who are building a cloud full of opportunity with our partners and customers.</p>
 				</div>

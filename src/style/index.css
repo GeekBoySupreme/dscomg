@@ -81,7 +81,7 @@ html, body {
   height: 600px;
   width: 100%;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
 }
 
 .mdc-dialog__body--scrollable {

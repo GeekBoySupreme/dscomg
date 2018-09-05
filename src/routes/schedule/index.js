@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'Schedule - GDG DevFest Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -111,7 +111,7 @@ export default class Schedule extends Component {
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath} />
 					<h2>Schedule</h2>
 					<p>Hone your skills. Ask technical questions. Get inspired. This year’s program is packed with breakouts, keynotes, spotlights, panels, and bootcamps.</p>
 				</div>

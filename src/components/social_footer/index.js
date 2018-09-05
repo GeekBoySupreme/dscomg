@@ -6,7 +6,7 @@ export default class SocialFooter extends Component {
 		return (
 			<div class={style.social_footer}>
 				<div class={style.social_body}>
-					<p>Keep in touch with GDG Cloud Kuala Lumpur for the latest Cloud Next announcements</p>
+					<p>Keep in touch with GDG Kuala Lumpur for the latest DevFest announcements</p>
 					<div>
 						<a alt="" href="https://facebook.com/GDGKualaLumpur" target="_blank" rel="noopener noreferrer">
 							<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -26,13 +26,6 @@ export default class SocialFooter extends Component {
 							</svg>
 						</a>
 						<a href="https://gdgmy-slack.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-								<title>GDG Malaysia Slack</title>
-								<circle fill="#536dfe" cx="20" cy="20" r="20" />
-								<path fill="#fff" d="M24,10.3L24,10.3l-0.4,0.4c4,1.1,5.9,2.9,5.9,2.9c-2.6-1.3-4.9-1.9-7.2-2.2c-1.7-0.3-3.3-0.1-4.7,0h-0.4 c-0.9,0-2.8,0.4-5.4,1.4c-0.9,0.4-1.4,0.6-1.4,0.6s1.9-1.9,6.1-2.9l-0.3-0.3c0,0-3.2-0.1-6.7,2.4c0,0-3.5,6-3.5,13.4 c0,0,1.9,3.3,7.2,3.5c0,0,0.8-1,1.5-1.9c-3-0.9-4.1-2.7-4.1-2.7s0.3,0.1,0.6,0.4h0.1c0.1,0,0.1,0,0.1,0.1v0c0,0,0.1,0.1,0.1,0.1 c0.6,0.3,1.3,0.5,1.8,0.8c0.9,0.4,2,0.8,3.4,1c1.8,0.3,3.8,0.4,6.1,0c1.1-0.3,2.3-0.5,3.4-1c0.7-0.4,1.7-0.8,2.7-1.4 c0,0-1.1,1.8-4.2,2.7c0.6,0.9,1.5,1.9,1.5,1.9c5.3-0.1,7.3-3.4,7.4-3.3c0-7.4-3.5-13.4-3.5-13.4c-3.1-2.3-6.1-2.4-6.6-2.4L24,10.3 L24,10.3z M24.3,18.8c1.3,0,2.4,1.1,2.4,2.6c0,1.4-1.1,2.6-2.4,2.6c-1.3,0-2.4-1.1-2.4-2.6C21.9,19.9,22.9,18.8,24.3,18.8L24.3,18.8 z M15.6,18.8c1.3,0,2.4,1.1,2.4,2.6c0,1.4-1.1,2.6-2.4,2.6s-2.4-1.1-2.4-2.6C13.1,19.9,14.2,18.8,15.6,18.8L15.6,18.8z" />
-							</svg>
-						</a>
-						<a href="https://gdgmy-slack.herokuapp.com/" target="_blank" rel="noopener noreferrer">
 							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
 								<title>GDG Malaysia Slack</title>
 								<circle fill="#536dfe" cx="12" cy="12" r="12" />
@@ -42,9 +35,9 @@ export default class SocialFooter extends Component {
 						</a>
 					</div>
 				</div>
-				<div class={style.social_gif}>
+				{/* <div class={style.social_gif}>
 					<img crossorigin="anonymous" alt="I/O 2018 Hashtag" src="https://res.cloudinary.com/limhenry/image/upload/v1531970212/nextkl18_pwa/next18.gif" />
-				</div>
+				</div> */}
 			</div>
 		);
 	}

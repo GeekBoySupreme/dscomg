@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://events.gdgkl.org/io/</loc>
+    <loc>https://events.gdgkl.org/devfest/</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/attending</loc>
+    <loc>https://events.gdgkl.org/devfest/attending</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/schedule</loc>
+    <loc>https://events.gdgkl.org/devfest/schedule</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/registration</loc>
+    <loc>https://events.gdgkl.org/devfest/registration</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/communityguidelines</loc>
+    <loc>https://events.gdgkl.org/devfest/communityguidelines</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/faq</loc>
+    <loc>https://events.gdgkl.org/devfest/faq</loc>
   </url>
   <url>
-    <loc>https://events.gdgkl.org/io/faq/food-menu</loc>
+    <loc>https://events.gdgkl.org/devfest/faq/food-menu</loc>
   </url>
 </urlset>

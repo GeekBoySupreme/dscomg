@@ -10,9 +10,8 @@ export default class Footer extends Component {
 				</div>
 				<div class={style.footer_links}>
 					<div class={style.footer_link}>
-						<a href="https://cloudnextkl2017.firebaseapp.com" target="_blank" rel="noopener noreferrer">Cloud Next Extended '17 Kuala Lumpur</a>
 						<a href={rootPath + 'faq'}>FAQ</a>
-						<a href={rootPath + 'communityguidelines'}>Community Guideline</a>
+						<a href={rootPath + 'communityguidelines'}>Community Guidelines</a>
 					</div>
 				</div>
 			</div>

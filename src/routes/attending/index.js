@@ -34,7 +34,7 @@ export default class Attending extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Attending - Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'Attending - GDG DevFest Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		window.addEventListener('resize', this.resize);
 		this.resize();
@@ -51,7 +51,7 @@ export default class Attending extends Component {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath} />
 					<h2>Attending</h2>
 					<p>Join us at Sunway University as we celebrate product and platform innovations at Google.</p>
 				</div>

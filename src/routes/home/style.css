@@ -9,16 +9,13 @@
 	width: 100%;
 	z-index: 1;
 }
-.hero_title {
-	width: 50%;
-}
 .hero h2 {
 	margin: 0;
-	font-size: 50px;
-	line-height: 60px;
+	font-size: 30px;
+	line-height: 38px;
 	letter-spacing: -0.5px;
-	font-weight: 700;
-	max-width: 480px;
+	font-weight: 500;
+	max-width: 640px;
 	color: #3c4043;
 }
 .hero span {
@@ -28,44 +25,15 @@
 	color: #3c4043;
 	font-size: 22px;
 	line-height: 30px;
-	font-weight: 700;
+	font-weight: 500;
 }
 .hero h4{
 	margin-top: 48px;
 	margin-bottom: 0;
 	font-weight: 400;
 }
-.video {
-	margin-top: 24px;
-	width: 50%;
-	z-index: 1;
-	background: white;
-}
-.videoblock{
-	box-shadow: 0 8px 31px 0 rgba(0,0,0,.29);
-	height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-}
-.videoblock iframe{
-	width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-}
-.glyph {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: 0;
-    right: -60px;
-    top: 60px;
-    overflow: hidden;
-}
 .belt {
-	background-image: url('https://res.cloudinary.com/limhenry/image/upload/v1531706607/ioxkl18_pwa/io18_opening.jpg');
+	background-image: url('https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg');
 }
 
 .partners {
@@ -121,8 +89,8 @@
 	}
 
 	.hero h2 {
-		font-size: 32px;
-		line-height: 40px;
+		font-size: 24px;
+		line-height: 32px;
 		max-width: 90%;
 		margin: 0;
 	}
@@ -142,7 +110,7 @@
 	}
 
 	.belt {
-		background-image: url('https://res.cloudinary.com/limhenry/image/upload/fl_progressive,w_768/v1531706607/ioxkl18_pwa/io18_opening.jpg');
+		background-image: url('https://res.cloudinary.com/limhenry/image/upload/fl_progressive,w_768/v1536157604/devfestkl18_pwa/misc/cover.jpg');
 	}
 
 	.partners {

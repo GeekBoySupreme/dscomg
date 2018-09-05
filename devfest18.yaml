@@ -1,4 +1,4 @@
-service: nextkl18
+service: devfestkl18
 api_version: 1
 threadsafe: true
 runtime: python27
@@ -6,12 +6,12 @@ runtime: python27
 default_expiration: "30d"
 
 handlers:
-- url: /nextkl18/assets
+- url: /devfest/assets
   static_dir: build/assets
   secure: always
   expiration: "1d"
 
-- url: /nextkl18/sw.js
+- url: /devfest/sw.js
   static_files: build/sw.js
   upload: build/sw.js
   expiration: "1s"
@@ -19,86 +19,62 @@ handlers:
   http_headers:
     Cache-Control: private, no-cache
 
-- url: /nextkl18/manifest.json
+- url: /devfest/manifest.json
   static_files: build/manifest.json
   upload: build/manifest.json
   secure: always
   expiration: "1h"
 
-- url: /nextkl18/sitemap.xml
+- url: /devfest/sitemap.xml
   static_files: sitemap.xml
   upload: sitemap.xml
   secure: always
   expiration: "1h"
 
-- url: /nextkl18/robots.txt
+- url: /devfest/robots.txt
   static_files: robots.txt
   upload: robots.txt
   secure: always
   expiration: "1h"
 
-- url: /nextkl18/(.*\.css)
+- url: /devfest/(.*\.css)
   mime_type: text/css
   static_files: build/\1
   upload: build/(.*\.css)
   secure: always
   expiration: "365d"
 
-- url: /nextkl18/(.*\.js)
+- url: /devfest/(.*\.js)
   mime_type: text/javascript
   static_files: build/\1
   upload: build/(.*\.js)
   secure: always
   expiration: "365d"
 
-- url: /io/(.*\.map)
+- url: /devfest/(.*\.map)
   static_files: build/\1
   upload: build/(.*\.map)
   secure: always
 
-- url: /nextkl18/attending/?
-  static_files: build/attending/index.html
-  upload: build/attending/index.html
-  secure: always
-  expiration: "1s"
-
-- url: /nextkl18/schedule/?
-  static_files: build/schedule/index.html
-  upload: build/schedule/index.html
-  secure: always
-  expiration: "1s"
-
-- url: /nextkl18/speakers/?
-  static_files: build/speakers/index.html
-  upload: build/speakers/index.html
-  secure: always
-  expiration: "1s"
-
-- url: /nextkl18/registration/?
+- url: /devfest/registration/?
   static_files: build/registration/index.html
   upload: build/registration/index.html
   secure: always
   expiration: "1s"
 
-- url: /nextkl18/communityguidelines/?
+- url: /devfest/communityguidelines/?
   static_files: build/communityguidelines/index.html
   upload: build/communityguidelines/index.html
   secure: always
   expiration: "1s"
 
-- url: /nextkl18/faq/?
+- url: /devfest/faq/?
   static_files: build/faq/index.html
   upload: build/faq/index.html
   secure: always
   expiration: "1s"
 
-- url: /nextkl18/faq/food-menu/?
-  static_files: build/faq/food-menu/index.html
-  upload: build/faq/food-menu/index.html
-  secure: always
-  expiration: "1s"
-
-- url: /nextkl18/.*
+- url: /devfest/.*
   static_files: build/index.html
   upload: build/index.html
   secure: always
@@ -108,7 +84,7 @@ handlers:
     Access-Control-Allow-Origin: "*"
     Access-Control-Max-Age: "600"
 
-- url: /nextkl18.*
+- url: /devfest.*
   script: main.app
   secure: always
 

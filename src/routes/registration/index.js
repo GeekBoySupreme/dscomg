@@ -13,6 +13,16 @@ export default class Registration extends Component {
 		registrationUrl: 'https://ioxkl18.peatix.com/'
 	}
 
+	handleScroll() {
+		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
+		if (document.documentElement.scrollTop < 56) {
+			ele.setAttribute('top', true);
+		}
+		else {
+			ele.removeAttribute('top');
+		}
+	}
+
 	changeRegistrationStatusText(status) {
 		if (status === 'opening_soon') {
 			this.setState({ registrationStatusText: 'Opening Soon' });
@@ -37,7 +47,14 @@ export default class Registration extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Registration - Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'Registration - GDG DevFest Kuala Lumpur 2018';
+		window.addEventListener('scroll', this.handleScroll, { passive: true });
+		this.handleScroll();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -54,7 +71,7 @@ export default class Registration extends Component {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath} />
 					{info &&
 						<h2>
 							{info.registration_text} <br />
@@ -65,13 +82,6 @@ export default class Registration extends Component {
 						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">{info.registration_btn_text}</a>
 					}
 				</div>
-				{/* {registrationStatus !== 'opening_soon' &&
-					<div class={style.registered}>
-						<h3>Registered Attendees</h3>
-						<p>If you’re a registered attendee, you can view your ticket details online. </p>
-						<a class={style.ticket_btn} href={rootPath + 'registration/ticket'}>View Ticket</a>
-					</div>
-				} */}
 				<div class={style.ticket_types}>
 					<h3>Ticket type</h3>
 					<div class={style.ticket_types_container}>
@@ -79,7 +89,7 @@ export default class Registration extends Component {
 							<TicketIcon />
 							<div class={style.ticket_content}>
 								<div class={style.ticket_title}>General admission</div>
-								<div class={style.ticket_body}>I/O welcomes anyone who pursues development and tech as a career, side occupation, or hobby.<br /><br />Price: RM12</div>
+								<div class={style.ticket_body}>DevFest welcomes anyone who pursues development and tech as a career, side occupation, or hobby.</div>
 							</div>
 						</div>
 						{/* <div class={style.ticket_type} id={style.community}>

@@ -16,7 +16,7 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Cloud Next Extended 2018 Kuala Lumpur';
+		document.title = 'GDG DevFest Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -31,23 +31,13 @@ export default class Home extends Component {
 			<div class={style.home}>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class={style.hero_title}>
-						<IoLogo />
-						<h2>The cloud for everyone is made here. <span>Together.</span></h2>
-						<h3>Cloud Next Extended ’18 Kuala Lumpur</h3>
-						<h4>Summer 2018 &middot; Kuala Lumpur, Malaysia</h4>
-					</div>
-					<div class={style.video}>
-						<div class={style.videoblock}>
-							<iframe src="https://www.youtube.com/embed/a0zdDitrhoY?" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" title="Google Cloud Next ’18" />
-						</div>
+						<IoLogo rootPath={rootPath} />
+						<h2>GDG DevFests are large, community-run developer events happening around the globe focused on community building and learning about Google’s technologies.</h2>
+						{/* <h3>GDG DevFest ’18 Kuala Lumpur</h3> */}
+						<h4>December 2018 &middot; Kuala Lumpur, Malaysia</h4>
 					</div>
 				</div>
-				<div class={style.glyph}>
-					<svg data-v-26351a0e="" width="100%" height="100%" viewBox="0 0 232 232" xmlns="http://www.w3.org/2000/svg" focusable="false">
-						<path d="M0 49h232V0H0m0 232h232v-49H0m0-43h232V91H0" fill="#EA4335" fill-rule="evenodd" style="fill: #f4ba44" />
-					</svg>
-				</div>
-				{/* <div className={[style.belt, 'belt'].join(' ')} /> */}
+				<div className={[style.belt, 'belt'].join(' ')} />
 				{partners &&
 					<div class={style.partners}>
 						<h3>Partners</h3>

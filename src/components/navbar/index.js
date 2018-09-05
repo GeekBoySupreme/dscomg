@@ -98,18 +98,19 @@ export default class NavBar extends Component {
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
-							<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g transform="translate(62 17)" fill="#536DFE"><g>
+							{/* <svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g transform="translate(62 17)" fill="#536DFE"><g>
 								<polygon points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
 								<polygon points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" /></g></g></g>
-							</svg>
-							<h2>July 15, 2018</h2>
-							<p>Sunway University<br />Bandar Sunway, Selangor</p>
+							</svg> */}
+							<img style="width: 32px; margin-left: 2px" src={rootPath + 'assets/gdg_icon.svg'} />
+							<h2>December, 2018</h2>
+							<p>Kuala Lumpur, Malaysia</p>
 						</div>
 						<div class={style.drawer_nav}>
 							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
-							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link>
-							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link>
-							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
+							{/* <Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link> */}
+							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
+							{/* <Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link> */}
 							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
 							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
@@ -138,7 +139,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Home</span>
 						</Link>
-						<Match path="/schedule">
+						{/* <Match path="/schedule">
 							{({ path, url }) => (
 								(path.startsWith('/schedule/')) ?
 									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'schedule'} path={url}>
@@ -193,28 +194,21 @@ export default class NavBar extends Component {
 								</g>
 							</svg>
 							<span>Attending</span>
+						</Link> */}
+						<Link activeClassName={style.active} class={style.nav_item} href="/registration">
+							<svg>
+								<g display="inline" />
+								<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />
+							</svg>
+							<span>Registration</span>
 						</Link>
-						<Match path="/registration">
-							{({ path, url }) => (
-								(path.startsWith('/registration/')) ?
-									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'} path={url}>
-										<svg>
-											<g>
-												<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />
-											</g>
-										</svg>
-										<span>Registration</span>
-									</Link>
-									: <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
-										<svg>
-											<g>
-												<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />
-											</g>
-										</svg>
-										<span>Registration</span>
-									</Link>
-							)}
-						</Match>
+						<Link activeClassName={style.active} class={style.nav_item} href="/faq">
+							<svg>
+								<g display="inline" />
+								<path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M12,17L12,17c-0.55,0-1-0.45-1-1v-4 c0-0.55,0.45-1,1-1h0c0.55,0,1,0.45,1,1v4C13,16.55,12.55,17,12,17z M13,9h-2V7h2V9z" />
+							</svg>
+							<span>FAQ</span>
+						</Link>
 					</nav>
 				</div>
 			</div>
