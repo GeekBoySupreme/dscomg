@@ -2,6 +2,7 @@ import { Component } from 'preact';
 import IoLogo from '../../components/io_logo';
 import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
+import GalleryBlock from '../../components/gallery_block';
 import style from './style';
 
 export default class Home extends Component {
@@ -33,11 +34,35 @@ export default class Home extends Component {
 					<div class={style.hero_title}>
 						<IoLogo rootPath={rootPath} />
 						<h2>GDG DevFests are large, community-run developer events happening around the globe focused on community building and learning about Google’s technologies.</h2>
-						{/* <h3>GDG DevFest ’18 Kuala Lumpur</h3> */}
-						<h4>December 2018 &middot; Kuala Lumpur, Malaysia</h4>
+						<h4>December 1, 2018 · Sunway University</h4>
 					</div>
 				</div>
 				<div className={[style.belt, 'belt'].join(' ')} />
+				<div class={style.home_info}>
+					<div class={style.text}>
+						<h3>What you need to know, before you ask.</h3>
+						<p>GDG DevFest Kuala Lumpur brings together the world class experts in Android, Web and Cloud technologies for one full day of sessions, workshops and showcases.</p>
+					</div>
+					<div class={style.stats}>
+						<div class={style.stat}>
+							<div class={style.number}>300+</div>
+							<div class={style.label}>Attendees</div>
+						</div>
+						<div class={style.stat}>
+							<div class={style.number}>1</div>
+							<div class={style.label}>Day</div>
+						</div>
+						<div class={style.stat}>
+							<div class={style.number}>20+</div>
+							<div class={style.label}>Sessions</div>
+						</div>
+						<div class={style.stat}>
+							<div class={style.number}>3</div>
+							<div class={style.label}>Tracks</div>
+						</div>
+					</div>
+				</div>
+				<GalleryBlock />
 				{partners &&
 					<div class={style.partners}>
 						<h3>Partners</h3>

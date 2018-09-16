@@ -78,14 +78,14 @@ export default class Attending extends Component {
 							<div class={style.attending_item}>
 								<div class={style.attending_title}>What to expect and explore</div>
 								<div class={style.attending_content}>
-									<p>I/O features hands-on learning, Google's latest developer products, and technical talks given by the engineers who are developing our latest APIs and tools–plus a few surprises along the way.</p>
+									<p>GDG DevFest Kuala Lumpur 2018 features hands-on learning, Google's latest developer products, and technical talks given by the engineers who are developing our latest APIs and tools–plus a few surprises along the way.</p>
 									<br />
 									<p><b>Sessions</b></p>
-									<p>Learn Google's latest developer products from Googlers, Google Developer Experts and more. View all the sessions  <a href={rootPath + 'schedule'}>here</a>.</p>
+									<p>Learn Google's latest developer products from Googlers, Google Developer Experts and more.</p>
 									<p><b>Sandbox</b></p>
 									<p>Dedicated spaces to explore, learn, and play with our latest products and platforms via interactive demos, physical installations, and more.</p>
 									<p><b>Meals</b></p>
-									<p>Attendees are offered complimentary breakfast, lunch, and tea break. Check out the  <a href={rootPath + 'faq/food-menu'}>food menu here</a>.</p>
+									<p>Attendees are offered complimentary breakfast, and lunch.</p>
 								</div>
 							</div>
 						</div>

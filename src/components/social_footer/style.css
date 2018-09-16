@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #fefefe;
+    align-items: center;
 }
 
 .social_body {
@@ -32,6 +33,7 @@
     .social_footer {
         padding: 60px 20px 64px;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .social_body p  {
@@ -41,7 +43,6 @@
 
     .social_gif {
         width: 65%;
-        margin-top: 100px;
-        margin-left: auto;    
+        margin-top: 80px;
     }
 }

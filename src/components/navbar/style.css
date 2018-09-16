@@ -141,7 +141,7 @@
 
 .desktop_toolbar .signin_btn,
 .toolbar .signin_btn {
-    color: #2a45d8;
+    color: #1a73e8;
     margin-right: 8px;
     font-weight: 500;
     cursor: pointer;
@@ -152,7 +152,7 @@
     font-family: 'Google Sans', sans-serif;
     border-bottom: 1px solid rgb(230, 230, 230);
     margin-bottom: 16px;
-    padding: 24px 16px 24px 23px;
+    padding: 24px 16px 16px 23px;
 }
 
 .drawer_toolbar svg {
@@ -163,7 +163,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    margin: 16px 0px 6px;
+    margin: 24px 0 0;
 }
 
 .drawer_toolbar p {
@@ -232,7 +232,7 @@
 }
 
 .navbar nav .nav_item {
-    height: 120px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

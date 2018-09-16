@@ -102,15 +102,15 @@ export default class NavBar extends Component {
 								<polygon points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
 								<polygon points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" /></g></g></g>
 							</svg> */}
-							<img style="width: 32px; margin-left: 2px" src={rootPath + 'assets/gdg_icon.svg'} />
-							<h2>December, 2018</h2>
+							<img style="width: 200px" src={rootPath + 'assets/devfest_kl.svg'} />
+							<h2>December 1, 2018</h2>
 							<p>Kuala Lumpur, Malaysia</p>
 						</div>
 						<div class={style.drawer_nav}>
 							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
 							{/* <Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link> */}
 							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
-							{/* <Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link> */}
+							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
 							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
 							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
@@ -186,7 +186,7 @@ export default class NavBar extends Component {
 										<span>Speakers</span>
 									</Link>
 							)}
-						</Match>
+						</Match> */}
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
 							<svg>
 								<g>
@@ -194,7 +194,7 @@ export default class NavBar extends Component {
 								</g>
 							</svg>
 							<span>Attending</span>
-						</Link> */}
+						</Link>
 						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
 							<svg>
 								<g display="inline" />

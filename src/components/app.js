@@ -4,7 +4,7 @@ import firebase from './firebase';
 import NavBar from './navbar';
 import idb from 'idb';
 import Home from '../routes/home';
-// import Attending from 'async!../routes/attending';
+import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
 // import Schedule from 'async!../routes/schedule';
 // import Speakers from 'async!../routes/speakers';
@@ -186,7 +186,7 @@ export default class App extends Component {
 			<div id="app">
 				<NavBar user={currentUser} rootPath={rootPath} />
 				<Router onChange={this.handleRoute}>
-					{/* <Attending path={rootPath + 'attending/'} rootPath={rootPath} info={info} /> */}
+					<Attending path={rootPath + 'attending/'} rootPath={rootPath} info={info} />
 					{/* <Schedule path={rootPath + 'schedule/'} user={currentUser} schedule={schedule}
 						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
 					/>
