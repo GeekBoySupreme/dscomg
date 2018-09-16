@@ -1,6 +1,7 @@
 .tabs {
     display: none;
     margin: 0 0 0 60px;
+    position: relative;
 }
 
 .tabs .tab {
@@ -9,18 +10,31 @@
     font-weight: 500;
     cursor: pointer;
     margin: 0 4px;
-    border-bottom: 3px solid transparent;
     padding: 16px;
     transition: 150ms border ease, 150ms color ease;
 }
 
 .tabs .tab:hover {
     color: #4768fd;
-    border-bottom-color: #bcc8fb;
 }
 
-.tabs .tab[active] {
-    border-bottom: 3px solid #4768fd;
+.tabs .line {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background-color: #4768fd;
+    bottom: 0;
+    transition: 250ms ease transform;
+}
+
+.tabs .tab:first-child[active] ~ .line {
+    transform: translateX(0%);
+}
+
+.tabs .tab:nth-child(2)[active] ~ .line {
+    transform: translateX(100%);
 }
 
 .attending {
@@ -75,13 +89,6 @@
     .tabs .tab {
         text-align: center;
         width: 100%;
-        border-bottom: 2px solid transparent;
-    }
-    .tabs .tab:hover {
-        border-bottom: 2px solid #bcc8fb;
-    }
-    .tabs .tab[active] {
-        border-bottom: 2px solid #4768fd;
     }
     .hero, .belt {
         display: none;

@@ -58,6 +58,7 @@ export default class Attending extends Component {
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showTravel(false)} active={!showTravel}>Event</div>
 					<div class={style.tab} onClick={this.showTravel(true)} active={showTravel}>Travel</div>
+					<div class={style.line} />
 				</div>
 				<div className={[style.belt, 'belt'].join(' ')}
 					style={"background-image: url('" + rootPath + "assets/sunway_auditorium.jpg')"}

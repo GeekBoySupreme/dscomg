@@ -209,6 +209,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>FAQ</span>
 						</Link>
+						<div class={style.line} />
 					</nav>
 				</div>
 			</div>

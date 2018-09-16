@@ -253,7 +253,7 @@
 .navbar nav .nav_item.active {
     color: #1a73e8;
     opacity: 1;
-    border-right: 3px solid #1a73e8;
+    /* border-right: 3px solid #1a73e8; */
 }
 
 .navbar nav .nav_item:focus {
@@ -272,6 +272,39 @@
 
 .navbar nav .nav_item span {
     margin-top: 12px;
+}
+
+.navbar nav .line {
+    position: absolute;
+    height: 100px;
+    background-color: #1a73e8;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    right: 0;
+    top: 0;
+    width: 3px;
+    transition: 250ms transform ease;
+    opacity: 0;
+}
+
+.navbar nav .nav_item.active ~ .line {
+    opacity: 1;
+}
+
+.navbar nav .nav_item:first-child.active ~ .line {
+    transform: translateY(0);
+}
+
+.navbar nav .nav_item:nth-child(2).active ~ .line {
+    transform: translateY(100px);
+}
+
+.navbar nav .nav_item:nth-child(3).active ~ .line {
+    transform: translateY(200px);
+}
+
+.navbar nav .nav_item:nth-child(4).active ~ .line {
+    transform: translateY(300px);
 }
 
 @media screen and (max-width: 768px) {
