@@ -9,6 +9,9 @@ Build:
 
 `preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker false`
 
+Set Google Cloud Project:
+
+`gcloud config set project <project-id>`
 
 Deploy: 
 
