@@ -173,10 +173,6 @@
     margin: 0px;
 }
 
-.drawer_nav {
-    padding-left: 23px;
-}
-
 .drawer_nav a {
     font-family: 'Google Sans', sans-serif;
     font-weight: 400;
@@ -184,11 +180,15 @@
     display: block;
     font-size: 15px;
     line-height: 22px;
-    padding: 10px 0;
+    padding: 10px 0 10px 23px;
     text-decoration: none;
     min-width: 255px;
     cursor: pointer;
     transition: 50ms color ease;
+}
+
+.drawer_nav a:focus {
+    outline: none;
 }
 
 .drawer_nav a:hover {
@@ -364,5 +364,9 @@
 
     .navbar nav .nav_item span {
         margin-top: 6px;
+    }
+
+    .navbar nav .line {
+        display: none;
     }
 }

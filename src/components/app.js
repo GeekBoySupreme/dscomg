@@ -173,12 +173,12 @@ export default class App extends Component {
 			rootPath: '/'
 		};
 
-		if (typeof window !== 'undefined') {
-			this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
-			if (window.Raven) {
-				window.Raven.config('https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209').install();
-			}
-		}
+		// if (typeof window !== 'undefined') {
+		// 	this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
+		// 	if (window.Raven) {
+		// 		window.Raven.config('https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209').install();
+		// 	}
+		// }
 	}
 
 	render({ }, { currentUser, schedule, sessions, speakers, partners, userSchedule, info, rootPath }) {

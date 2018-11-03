@@ -8,14 +8,13 @@ import 'preact-material-components/Dialog/style.css';
 import 'preact-material-components/TopAppBar/style.css';
 import 'preact-material-components/Drawer/style.css';
 import 'preact-material-components/List/style.css';
-import 'preact-material-components/IconToggle/style.css';
 import style from './style';
 
 export default class NavBar extends Component {
 
-	closeDrawer = () => (this.drawer.MDComponent.open = false);
+	closeDrawer = () => this.setState({ drawerOpened: false });
 
-	openDrawer = () => (this.drawer.MDComponent.open = true);
+	openDrawer = () => this.setState({ drawerOpened: !this.state.drawerOpened });
 
 	signIn = () => {
 		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
@@ -34,10 +33,6 @@ export default class NavBar extends Component {
 	toggleSignoutDig = () => {
 		this.signoutDig.MDComponent.show();
 	}
-
-	drawerRef = drawer => {
-		this.drawer = drawer;
-	};
 
 	render({ rootPath, user }) {
 		return (
@@ -95,7 +90,11 @@ export default class NavBar extends Component {
 						</TopAppBar.Row>
 					</TopAppBar>
 				</div>
-				<Drawer.TemporaryDrawer ref={this.drawerRef}>
+				<Drawer
+					modal
+					open={this.state.drawerOpened}
+					onClose={this.closeDrawer}
+				>
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
 							{/* <svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g transform="translate(62 17)" fill="#536DFE"><g>
@@ -116,7 +115,7 @@ export default class NavBar extends Component {
 							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
 						</div>
 					</Drawer.DrawerContent>
-				</Drawer.TemporaryDrawer>
+				</Drawer>
 				<div class={style.desktop_toolbar}>
 					{user ? (
 						<img crossorigin="anonymous" src={user.photoURL} onClick={this.toggleSignoutDig} />
@@ -159,8 +158,8 @@ export default class NavBar extends Component {
 										<span>Schedule</span>
 									</Link>
 							)}
-						</Match>
-						<Match path="/speakers">
+						</Match> */}
+						{/* <Match path="/speakers">
 							{({ path, url }) => (
 								(path.startsWith('/speakers/')) ?
 									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'} path={url}>

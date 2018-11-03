@@ -33,16 +33,6 @@
     padding: 40px 72px;
 }
 
-.glyph {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: 0;
-    right: -60px;
-    top: 128px;
-    overflow: hidden;
-}
-
 .schedule_section {
     border-top: 1px solid #EDEDED;
 }
@@ -219,9 +209,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .glyph {
-		display: none;
-	}
     .hero {
         display: none;
     }

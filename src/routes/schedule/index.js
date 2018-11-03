@@ -116,18 +116,12 @@ export default class Schedule extends Component {
 					<p>Hone your skills. Ask technical questions. Get inspired. This year’s program is packed with breakouts, keynotes, spotlights, panels, and bootcamps.</p>
 				</div>
 
-				<div class={style.glyph}>
-					<svg data-v-26351a0e="" width="100%" height="100%" viewBox="0 0 232 232" xmlns="http://www.w3.org/2000/svg" focusable="false">
-						<path d="M0 49h232V0H0m0 232h232v-49H0m0-43h232V91H0" fill="#EA4335" fill-rule="evenodd" style="fill: rgb(66, 133, 244);" />
-					</svg>
-				</div>
-
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
 					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My Schedule</div>
 				</div>
 				{!user && this.state.showMyIO &&
-					<div class={style.myio_info}>Sign in to save events to My I/O and create your custom I/O schedule.</div>
+					<div class={style.myio_info}>Sign in to save events to My Schedule and create your custom schedule.</div>
 				}
 				{user && this.state.showMyIO &&
 					<div class={style.myio_info}>Your saved events appear below, and are synced from your account across mobile and desktop.</div>

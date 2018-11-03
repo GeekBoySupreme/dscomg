@@ -127,9 +127,6 @@
 	margin: auto;
 }
 @media screen and (max-width: 768px) {
-	.glyph {
-		display: none;
-	}
 	.hero {
 		width: auto;
 		padding: 112px 20px 48px 20px;
