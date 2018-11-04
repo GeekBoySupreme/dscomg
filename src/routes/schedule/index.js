@@ -111,7 +111,7 @@ export default class Schedule extends Component {
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath}  />
 					<h2>Schedule</h2>
 				</div>
 				<div class={style.tabs}>

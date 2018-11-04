@@ -153,6 +153,9 @@
     border-bottom: 1px solid rgb(230, 230, 230);
     margin-bottom: 16px;
     padding: 24px 16px 16px 23px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 }
 
 .drawer_toolbar svg {

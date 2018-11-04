@@ -15,7 +15,7 @@
 	line-height: 38px;
 	letter-spacing: -0.5px;
 	font-weight: 500;
-	max-width: 640px;
+	/* max-width: 640px; */
 	color: #3c4043;
 }
 .hero span {
@@ -31,6 +31,9 @@
 	margin-top: 48px;
 	margin-bottom: 0;
 	font-weight: 400;
+}
+.hero_title {
+	width: 100%;
 }
 .belt {
 	background-image: url('https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg');

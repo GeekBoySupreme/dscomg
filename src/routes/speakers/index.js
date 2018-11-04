@@ -83,7 +83,7 @@ export default class Speakers extends Component {
 				/>
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo />
+					<IoLogo rootPath={rootPath}  />
 					<h2>Speakers</h2>
 					<p>
 						Learn Google's latest developer products from Googlers, Google

@@ -13,7 +13,7 @@ export default class FoodMenu extends Component {
 		return (
 			<div>
 				<div class="hero">
-					<IoLogo />
+					<IoLogo rootPath={rootPath}   />
 					<h2>Food at the Conference</h2>
 				</div>
 				<div class={style.faq}>
