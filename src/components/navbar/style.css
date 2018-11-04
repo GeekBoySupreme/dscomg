@@ -232,7 +232,7 @@
 }
 
 .navbar nav .nav_item {
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,7 +276,7 @@
 
 .navbar nav .line {
     position: absolute;
-    height: 100px;
+    height: 90px;
     background-color: #1a73e8;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -296,15 +296,19 @@
 }
 
 .navbar nav .nav_item:nth-child(2).active ~ .line {
-    transform: translateY(100px);
+    transform: translateY(90px);
 }
 
 .navbar nav .nav_item:nth-child(3).active ~ .line {
-    transform: translateY(200px);
+    transform: translateY(180px);
 }
 
 .navbar nav .nav_item:nth-child(4).active ~ .line {
-    transform: translateY(300px);
+    transform: translateY(270px);
+}
+
+.navbar nav .nav_item:nth-child(5).active ~ .line {
+    transform: translateY(360px);
 }
 
 @media screen and (max-width: 768px) {

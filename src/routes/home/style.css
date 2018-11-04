@@ -126,6 +126,14 @@
 	width: 100%;
 	margin: auto;
 }
+@media screen and (max-width: 960px) {
+	.home_info .stats {
+		padding-left: 48px;
+	}
+	.stats .stat .number {
+		font-size: 40px;
+	}
+}
 @media screen and (max-width: 768px) {
 	.hero {
 		width: auto;

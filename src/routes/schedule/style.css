@@ -176,6 +176,28 @@
     flex-direction: row;
 }
 
+.slides {
+    display: flex;
+    margin: 8px 0 0;
+    align-items: center;
+    text-decoration: none;
+    color: #4768fd;
+    font-size: 14px;
+}
+
+.slides svg {
+    width: 16px;
+    height: 16px;
+    margin-left: -2px;
+    margin-right: 4px;
+    fill: #4768fd;
+}
+
+.slide span {
+    line-height: 19px;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 1100px) {
     .schedule_events {
         flex-direction: column;

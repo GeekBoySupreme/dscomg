@@ -29,11 +29,19 @@
     width: 100%;
 }
 
+@media screen and (max-width: 960px) {
+    .social_footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .social_gif  {
+        margin-top: 80px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .social_footer {
         padding: 60px 20px 64px;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .social_body p  {

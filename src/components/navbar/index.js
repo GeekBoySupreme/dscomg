@@ -295,7 +295,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Registration</span>
 						</Link>
-						<Link
+						{/* <Link
 							activeClassName={style.active}
 							class={style.nav_item}
 							href={rootPath + 'faq'}
@@ -305,7 +305,7 @@ export default class NavBar extends Component {
 								<path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M12,17L12,17c-0.55,0-1-0.45-1-1v-4 c0-0.55,0.45-1,1-1h0c0.55,0,1,0.45,1,1v4C13,16.55,12.55,17,12,17z M13,9h-2V7h2V9z" />
 							</svg>
 							<span>FAQ</span>
-						</Link>
+						</Link> */}
 						<div class={style.line} />
 					</nav>
 				</div>
