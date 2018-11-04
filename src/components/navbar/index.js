@@ -11,34 +11,42 @@ import 'preact-material-components/List/style.css';
 import style from './style';
 
 export default class NavBar extends Component {
-
 	closeDrawer = () => this.setState({ drawerOpened: false });
 
 	openDrawer = () => this.setState({ drawerOpened: !this.state.drawerOpened });
 
 	signIn = () => {
 		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
-	}
+	};
 
 	signOut = () => {
-		firebase.auth().signOut().then(() => {
-			this.signoutDig.MDComponent.close();
-		});
-	}
+		firebase
+			.auth()
+			.signOut()
+			.then(() => {
+				this.signoutDig.MDComponent.close();
+			});
+	};
 
 	toggleSigninDig = () => {
 		this.signIn();
-	}
+	};
 
 	toggleSignoutDig = () => {
 		this.signoutDig.MDComponent.show();
-	}
+	};
 
 	render({ rootPath, user }) {
 		return (
 			<div>
 				<div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
-					<Dialog onCancel={this.onClose} onAccept={this.onClose} ref={signoutDig => { this.signoutDig = signoutDig; }}>
+					<Dialog
+						onCancel={this.onClose}
+						onAccept={this.onClose}
+						ref={signoutDig => {
+							this.signoutDig = signoutDig;
+						}}
+					>
 						<div class={style.dialog_body}>
 							<h3>Sign out?</h3>
 							<p>All saved events remain synced to your account.</p>
@@ -47,7 +55,10 @@ export default class NavBar extends Component {
 							<Dialog.FooterButton class={style.cancel_btn} accept>
 								Not now
 							</Dialog.FooterButton>
-							<Dialog.FooterButton class={style.signout_btn} onClick={this.signOut}>
+							<Dialog.FooterButton
+								class={style.signout_btn}
+								onClick={this.signOut}
+							>
 								Sign out
 							</Dialog.FooterButton>
 						</Dialog.Footer>
@@ -65,63 +76,109 @@ export default class NavBar extends Component {
 							</TopAppBar.Section>
 							<div class={style.mobile_title}>
 								<Match path={rootPath + 'schedule'}>
-									{({ path, url }) => (
-										(path.startsWith(rootPath + 'schedule')) && <span>Schedule</span>
-									)}
+									{({ path, url }) =>
+										path.startsWith(rootPath + 'schedule') && (
+											<span>Schedule</span>
+										)
+									}
 								</Match>
 								<Match path={rootPath + 'attending'}>
-									{({ path, url }) => (
-										(path.startsWith(rootPath + 'attending')) && <span>Attending</span>
-									)}
+									{({ path, url }) =>
+										path.startsWith(rootPath + 'attending') && (
+											<span>Attending</span>
+										)
+									}
 								</Match>
 								<Match path={rootPath + 'speakers'}>
-									{({ path, url }) => (
-										(path.startsWith(rootPath + 'speakers')) && <span>Speakers</span>
-									)}
+									{({ path, url }) =>
+										path.startsWith(rootPath + 'speakers') && (
+											<span>Speakers</span>
+										)
+									}
 								</Match>
 							</div>
 							<TopAppBar.Section align-end>
 								{user ? (
-									<img crossorigin="anonymous" src={user.photoURL} onClick={this.toggleSignoutDig} />
+									<img
+										crossorigin="anonymous"
+										src={user.photoURL}
+										onClick={this.toggleSignoutDig}
+									/>
 								) : (
-									<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
+									<div class={style.signin_btn} onClick={this.toggleSigninDig}>
+										Sign In
+									</div>
 								)}
 							</TopAppBar.Section>
 						</TopAppBar.Row>
 					</TopAppBar>
 				</div>
-				<Drawer
-					modal
-					open={this.state.drawerOpened}
-					onClose={this.closeDrawer}
-				>
+				<Drawer modal open={this.state.drawerOpened} onClose={this.closeDrawer}>
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
-							{/* <svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(-62 -17)"><g transform="translate(62 17)" fill="#536DFE"><g>
-								<polygon points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
-								<polygon points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" /><path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" /></g></g></g>
-							</svg> */}
-							<img style="width: 200px" src={rootPath + 'assets/devfest_kl.svg'} />
+							<svg viewBox="0 0 46 33" xmlns="http://www.w3.org/2000/svg">
+								<g
+									fill="none"
+									fill-rule="evenodd"
+									transform="translate(-62 -17)"
+								>
+									<g transform="translate(62 17)" fill="#536DFE">
+										<g>
+											<polygon points="0 27.6131665 11.6101901 27.6131665 11.6101901 4.41459344 0 4.41459344" />
+											<polygon points="20.1618317 2.15798668e-05 12.9722085 32.3443582 14.7781521 32.7494123 21.9677754 0.405075688" />
+											<path d="M33.2533553,3.45297298 C26.3665842,3.45297298 20.7835806,9.06222787 20.7835806,15.9813807 C20.7835806,22.9009651 26.3665842,28.5100042 33.2533553,28.5100042 C40.140556,28.5100042 45.7233447,22.9009651 45.7233447,15.9813807 C45.7233447,9.06222787 40.140556,3.45297298 33.2533553,3.45297298" />
+										</g>
+									</g>
+								</g>
+							</svg>
+							<img
+								style="width: 200px"
+								src={rootPath + 'assets/devfest_kl.svg'}
+							/>
 							<h2>December 1, 2018</h2>
 							<p>Kuala Lumpur, Malaysia</p>
 						</div>
 						<div class={style.drawer_nav}>
-							<Link href={rootPath} onClick={this.closeDrawer}>Home</Link>
-							{/* <Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>Schedule</Link> */}
-							{/* <Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>Speakers</Link> */}
-							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>Attending</Link>
-							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>Registration</Link>
-							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>FAQ</Link>
-							<Link href={rootPath + 'communityguidelines'} onClick={this.closeDrawer}>Community Guidelines</Link>
+							<Link href={rootPath} onClick={this.closeDrawer}>
+								Home
+							</Link>
+							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>
+								Schedule
+							</Link>
+							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>
+								Speakers
+							</Link>
+							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>
+								Attending
+							</Link>
+							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>
+								Registration
+							</Link>
+							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>
+								FAQ
+							</Link>
+							<Link
+								href={rootPath + 'communityguidelines'}
+								onClick={this.closeDrawer}
+							>
+								Community Guidelines
+							</Link>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer>
 				<div class={style.desktop_toolbar}>
 					{user ? (
-						<img crossorigin="anonymous" src={user.photoURL} onClick={this.toggleSignoutDig} />
+						<img
+							crossorigin="anonymous"
+							src={user.photoURL}
+							onClick={this.toggleSignoutDig}
+						/>
 					) : (
-						<div class={style.signin_btn} onClick={this.toggleSigninDig}>Sign In</div>
-					)}</div>
+						<div class={style.signin_btn} onClick={this.toggleSigninDig}>
+							Sign In
+						</div>
+					)}
+				</div>
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
 						<svg class={style.menu_icon} onClick={this.openDrawer}>
@@ -131,17 +188,29 @@ export default class NavBar extends Component {
 						</svg>
 					</div>
 					<nav>
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath}>
+						<Link
+							activeClassName={style.active}
+							class={style.nav_item}
+							href={rootPath}
+						>
 							<svg>
 								<g display="inline" />
-								<path display="inline" d="M10,19v-5h4v5c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1v-7h1.7c0.46,0,0.68-0.57,0.33-0.87L12.67,3.6 c-0.38-0.34-0.96-0.34-1.34,0l-8.36,7.53C2.63,11.43,2.84,12,3.3,12H5v7c0,0.55,0.45,1,1,1h3C9.55,20,10,19.55,10,19z" />
+								<path
+									display="inline"
+									d="M10,19v-5h4v5c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1v-7h1.7c0.46,0,0.68-0.57,0.33-0.87L12.67,3.6 c-0.38-0.34-0.96-0.34-1.34,0l-8.36,7.53C2.63,11.43,2.84,12,3.3,12H5v7c0,0.55,0.45,1,1,1h3C9.55,20,10,19.55,10,19z"
+								/>
 							</svg>
 							<span>Home</span>
 						</Link>
-						{/* <Match path="/schedule">
-							{({ path, url }) => (
-								(path.startsWith('/schedule/')) ?
-									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'schedule'} path={url}>
+						<Match path="/schedule">
+							{({ path, url }) =>
+								path.startsWith('/schedule/') ? (
+									<Link
+										activeClassName={style.active}
+										class={style.nav_item}
+										href={rootPath + 'schedule'}
+										path={url}
+									>
 										<svg>
 											<g>
 												<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
@@ -149,7 +218,12 @@ export default class NavBar extends Component {
 										</svg>
 										<span>Schedule</span>
 									</Link>
-									: <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'schedule'}>
+								) : (
+									<Link
+										activeClassName={style.active}
+										class={style.nav_item}
+										href={rootPath + 'schedule'}
+									>
 										<svg>
 											<g>
 												<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
@@ -157,12 +231,18 @@ export default class NavBar extends Component {
 										</svg>
 										<span>Schedule</span>
 									</Link>
-							)}
-						</Match> */}
-						{/* <Match path="/speakers">
-							{({ path, url }) => (
-								(path.startsWith('/speakers/')) ?
-									<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'} path={url}>
+								)
+							}
+						</Match>
+						<Match path="/speakers">
+							{({ path, url }) =>
+								path.startsWith('/speakers/') ? (
+									<Link
+										activeClassName={style.active}
+										class={style.nav_item}
+										href={rootPath + 'speakers'}
+										path={url}
+									>
 										<svg>
 											<g>
 												<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
@@ -173,7 +253,12 @@ export default class NavBar extends Component {
 										</svg>
 										<span>Speakers</span>
 									</Link>
-									: <Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'speakers'}>
+								) : (
+									<Link
+										activeClassName={style.active}
+										class={style.nav_item}
+										href={rootPath + 'speakers'}
+									>
 										<svg>
 											<g>
 												<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
@@ -184,9 +269,14 @@ export default class NavBar extends Component {
 										</svg>
 										<span>Speakers</span>
 									</Link>
-							)}
-						</Match> */}
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'attending'}>
+								)
+							}
+						</Match>
+						<Link
+							activeClassName={style.active}
+							class={style.nav_item}
+							href={rootPath + 'attending'}
+						>
 							<svg>
 								<g>
 									<path d="M19,2H5C3.89,2,3,2.9,3,4v14c0,1.1,0.9,2,2,2h4l2.29,2.29c0.39,0.39,1.02,0.39,1.41,0L15,20h4c1.1,0,2-0.9,2-2V4 C21,2.9,20.1,2,19,2z M12,5.3c1.49,0,2.7,1.21,2.7,2.7s-1.21,2.7-2.7,2.7S9.3,9.49,9.3,8S10.51,5.3,12,5.3z M18,16H6v-0.9 c0-2,4-3.1,6-3.1s6,1.1,6,3.1V16z" />
@@ -194,14 +284,22 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Attending</span>
 						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'registration'}>
+						<Link
+							activeClassName={style.active}
+							class={style.nav_item}
+							href={rootPath + 'registration'}
+						>
 							<svg>
 								<g display="inline" />
 								<path d="M20,12c0-0.76,0.43-1.42,1.06-1.76C21.66,9.91,22,9.23,22,8.54V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.89,2.01,5.99l0,2.55 c0,0.69,0.33,1.37,0.94,1.69C3.58,10.58,4,11.24,4,12c0,0.76-0.43,1.43-1.06,1.76C2.34,14.09,2,14.77,2,15.46l0,2.25 C2,19.1,2.9,20,4,20h16c1.1,0,2-0.9,2-2v-2.54c0-0.69-0.34-1.37-0.94-1.7C20.43,13.42,20,12.76,20,12z M14.5,16.1L12,14.5 l-2.5,1.61C9.12,16.35,8.63,16,8.75,15.56l0.75-2.88L7.2,10.8c-0.35-0.29-0.17-0.86,0.29-0.89l2.96-0.17l1.08-2.75 c0.17-0.42,0.77-0.42,0.93,0l1.08,2.76l2.96,0.17c0.45,0.03,0.64,0.6,0.29,0.89l-2.3,1.88l0.76,2.86 C15.37,16,14.88,16.35,14.5,16.1z" />
 							</svg>
 							<span>Registration</span>
 						</Link>
-						<Link activeClassName={style.active} class={style.nav_item} href={rootPath + 'faq'}>
+						<Link
+							activeClassName={style.active}
+							class={style.nav_item}
+							href={rootPath + 'faq'}
+						>
 							<svg>
 								<g display="inline" />
 								<path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M12,17L12,17c-0.55,0-1-0.45-1-1v-4 c0-0.55,0.45-1,1-1h0c0.55,0,1,0.45,1,1v4C13,16.55,12.55,17,12,17z M13,9h-2V7h2V9z" />

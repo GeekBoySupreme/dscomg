@@ -10,8 +10,8 @@ export default class Registration extends Component {
 	state = {
 		registrationStatus: 'opening_soon',
 		registrationStatusText: 'Loading ...',
-		registrationUrl: 'https://ioxkl18.peatix.com/'
-	}
+		registrationUrl: 'https://devfestxfirebase.peatix.com/'
+	};
 
 	handleScroll() {
 		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
@@ -67,20 +67,30 @@ export default class Registration extends Component {
 		}
 	}
 
-	render({ rootPath, info }, { registrationStatus, registrationStatusText, registrationUrl }) {
+	render(
+		{ rootPath, info },
+		{ registrationStatus, registrationStatusText, registrationUrl }
+	) {
 		return (
 			<div>
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<IoLogo rootPath={rootPath} />
-					{info &&
+					{info && (
 						<h2>
 							{info.registration_text} <br />
 							<span>{info.registration_text_highlight}</span>
 						</h2>
-					}
-					{registrationStatus === 'open' &&
-						<a class={style.ticket_btn} href={registrationUrl} target="_blank" rel="noopener noreferrer">{info.registration_btn_text}</a>
-					}
+					)}
+					{registrationStatus === 'open' && (
+						<a
+							class={style.ticket_btn}
+							href={registrationUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{info.registration_btn_text}
+						</a>
+					)}
 				</div>
 				<div class={style.ticket_types}>
 					<h3>Ticket type</h3>
@@ -89,7 +99,10 @@ export default class Registration extends Component {
 							<TicketIcon />
 							<div class={style.ticket_content}>
 								<div class={style.ticket_title}>General admission</div>
-								<div class={style.ticket_body}>DevFest welcomes anyone who pursues development and tech as a career, side occupation, or hobby.</div>
+								<div class={style.ticket_body}>
+									DevFest welcomes anyone who pursues development and tech as a
+									career, side occupation, or hobby.
+								</div>
 							</div>
 						</div>
 						{/* <div class={style.ticket_type} id={style.community}>

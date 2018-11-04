@@ -12,11 +12,13 @@ export default class Speakers extends Component {
 		sessions: {},
 		dialogOpened: false,
 		toggleDialog: false
-	}
+	};
 
 	shortBio(string) {
 		if (string) {
-			return (string.length > 5) ? string.substr(0, string.lastIndexOf(' ', 150)) + ' ...' : string;
+			return string.length > 5
+				? string.substr(0, string.lastIndexOf(' ', 150)) + ' ...'
+				: string;
 		}
 	}
 
@@ -25,14 +27,14 @@ export default class Speakers extends Component {
 			route(this.props.rootPath + 'speakers/' + id);
 			this.dialog.toggle(id, item, 'speakers');
 		}
-	}
+	};
 
 	profilePicFallback = () => event => {
 		event.target.src = this.props.rootPath + 'assets/person.svg';
-	}
+	};
 
 	componentDidMount() {
-		document.title = 'Speakers - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Speakers - Google I/O Extended 2018 Kuala Lumpur';
 	}
 
 	constructor(props) {
@@ -47,7 +49,11 @@ export default class Speakers extends Component {
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.id !== this.props.id) {
 			if (nextProps.id) {
-				this.dialog.toggle(nextProps.id, nextProps.speakers[nextProps.id], 'speakers');
+				this.dialog.toggle(
+					nextProps.id,
+					nextProps.speakers[nextProps.id],
+					'speakers'
+				);
 			}
 			else {
 				this.dialog.close();
@@ -56,39 +62,78 @@ export default class Speakers extends Component {
 		if (nextProps.id && nextProps.speakers && this.state.toggleDialog) {
 			if (nextProps.speakers[nextProps.id]) {
 				this.setState({ toggleDialog: false });
-				this.dialog.toggle(nextProps.id, nextProps.speakers[nextProps.id], 'speakers');
+				this.dialog.toggle(
+					nextProps.id,
+					nextProps.speakers[nextProps.id],
+					'speakers'
+				);
 			}
 		}
 	}
 
 	render({ rootPath, speakers }) {
 		return (
-			<div class={style.speaker}>
-				<Dialog ref={dialog => { this.dialog = dialog; }} speakers={speakers} rootPath={rootPath} />
+			<div>
+				<Dialog
+					ref={dialog => {
+						this.dialog = dialog;
+					}}
+					speakers={speakers}
+					rootPath={rootPath}
+				/>
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo rootPath={rootPath} />
+					<IoLogo />
 					<h2>Speakers</h2>
-					<p>Find speakers who are building a cloud full of opportunity with our partners and customers.</p>
+					<p>
+						Learn Google's latest developer products from Googlers, Google
+						Developer Experts, guest speakers and more.
+					</p>
 				</div>
-				{speakers &&
+				{speakers && (
 					<div class={style.speakers}>
 						{Object.keys(speakers).map(item => (
-							<div class={style.speaker_item} onClick={this.toggleDialog(item, speakers[item])}>
+							<div
+								class={style.speaker_item}
+								onClick={this.toggleDialog(item, speakers[item])}
+							>
 								<div class={style.profile_pic}>
-									{speakers[item].profile_pic ?
-										<img alt={speakers[item].name} crossorigin="anonymous" class={style.speaker_profile_pic} src={speakers[item].profile_pic} onError={this.profilePicFallback()} /> :
-										<img alt={speakers[item].name} crossorigin="anonymous" class={style.speaker_profile_pic} src={rootPath + 'assets/person.svg'} />
-									}
-									{speakers[item].badges &&
+									{speakers[item].profile_pic ? (
+										<img
+											alt={speakers[item].name}
+											crossorigin="anonymous"
+											class={style.speaker_profile_pic}
+											src={speakers[item].profile_pic}
+											onError={this.profilePicFallback()}
+										/>
+									) : (
+										<img
+											alt={speakers[item].name}
+											crossorigin="anonymous"
+											class={style.speaker_profile_pic}
+											src={rootPath + 'assets/person.svg'}
+										/>
+									)}
+									{speakers[item].badges && (
 										<div class={style.badges}>
 											{speakers[item].badges.map(item => (
-												<a id="badge" alt={item.name} target="_blank" rel="noopener noreferrer" href={item.link} class={style.badge}>
-													<img id="badge" alt={item.name} class={style.badge_icon} src={`${rootPath}assets/${item.type}.svg`} />
+												<a
+													id="badge"
+													alt={item.name}
+													target="_blank"
+													href={item.link}
+													class={style.badge}
+												>
+													<img
+														id="badge"
+														alt={item.name}
+														class={style.badge_icon}
+														src={`${rootPath}assets/${item.type}.svg`}
+													/>
 												</a>
 											))}
 										</div>
-									}
+									)}
 								</div>
 								<div class={style.speaker_name}>{speakers[item].name}</div>
 								<div class={style.speaker_title}>{speakers[item].title}</div>
@@ -96,7 +141,7 @@ export default class Speakers extends Component {
 							</div>
 						))}
 					</div>
-				}
+				)}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />

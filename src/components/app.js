@@ -6,11 +6,11 @@ import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
-// import Schedule from 'async!../routes/schedule';
-// import Speakers from 'async!../routes/speakers';
+import Schedule from 'async!../routes/schedule';
+import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import Faq from 'async!../routes/faq';
-// import FoodMenu from 'async!../routes/food-menu';
+import FoodMenu from 'async!../routes/food-menu';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 
@@ -19,8 +19,16 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 		if (typeof window !== 'undefined') {
 			if (e.previous) {
-				if (e.url.startsWith(this.state.rootPath + 'schedule') && e.previous.startsWith(this.state.rootPath + 'schedule')) { }
-				else if (e.url.startsWith(this.state.rootPath + 'speakers') && e.previous.startsWith(this.state.rootPath + 'speakers')) { }
+				if (
+					e.url.startsWith(this.state.rootPath + 'schedule') &&
+					e.previous.startsWith(this.state.rootPath + 'schedule')
+				) {
+				}
+				else if (
+					e.url.startsWith(this.state.rootPath + 'speakers') &&
+					e.previous.startsWith(this.state.rootPath + 'speakers')
+				) {
+				}
 				else {
 					document.documentElement.scrollTop = 0;
 				}
@@ -41,7 +49,12 @@ export default class App extends Component {
 	}
 
 	getDb(key) {
-		return this.dbPromise.then(db => db.transaction('data').objectStore('data').get(key));
+		return this.dbPromise.then(db =>
+			db
+				.transaction('data')
+				.objectStore('data')
+				.get(key)
+		);
 	}
 
 	showRefreshSnack = () => {
@@ -53,7 +66,7 @@ export default class App extends Component {
 				window.location.reload();
 			}
 		});
-	}
+	};
 
 	componentDidMount() {
 		window.addEventListener('showRefreshSnack', this.showRefreshSnack);
@@ -100,35 +113,50 @@ export default class App extends Component {
 				}
 			});
 
-			this.db.ref('/events_site/devfestkl18/schedule').once('value').then(snapshot => {
-				const data = snapshot.val();
-				this.setState({ schedule: data });
-				this.setDb('schedule', data);
-			});
+			this.db
+				.ref('/events_site/devfestkl18/schedule')
+				.once('value')
+				.then(snapshot => {
+					const data = snapshot.val();
+					this.setState({ schedule: data });
+					this.setDb('schedule', data);
+				});
 
-			this.db.ref('/events_site/devfestkl18/sessions').once('value').then(snapshot => {
-				const data = snapshot.val();
-				this.setState({ sessions: data });
-				this.setDb('sessions', data);
-			});
+			this.db
+				.ref('/events_site/devfestkl18/sessions')
+				.once('value')
+				.then(snapshot => {
+					const data = snapshot.val();
+					this.setState({ sessions: data });
+					this.setDb('sessions', data);
+				});
 
-			this.db.ref('/events_site/devfestkl18/speakers').once('value').then(snapshot => {
-				const data = snapshot.val();
-				this.setState({ speakers: data });
-				this.setDb('speakers', data);
-			});
+			this.db
+				.ref('/events_site/devfestkl18/speakers')
+				.once('value')
+				.then(snapshot => {
+					const data = snapshot.val();
+					this.setState({ speakers: data });
+					this.setDb('speakers', data);
+				});
 
-			this.db.ref('/events_site/devfestkl18/partners').once('value').then(snapshot => {
-				const data = snapshot.val();
-				this.setState({ partners: data });
-				this.setDb('partners', data);
-			});
+			this.db
+				.ref('/events_site/devfestkl18/partners')
+				.once('value')
+				.then(snapshot => {
+					const data = snapshot.val();
+					this.setState({ partners: data });
+					this.setDb('partners', data);
+				});
 
-			this.db.ref('/events_site/devfestkl18/info').once('value').then(snapshot => {
-				const data = snapshot.val();
-				this.setState({ info: data });
-				this.setDb('info', data);
-			});
+			this.db
+				.ref('/events_site/devfestkl18/info')
+				.once('value')
+				.then(snapshot => {
+					const data = snapshot.val();
+					this.setState({ info: data });
+					this.setDb('info', data);
+				});
 
 			firebase.auth().onAuthStateChanged(currentUser => {
 				this.setState({ currentUser });
@@ -176,36 +204,99 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
 			if (window.Raven) {
-				window.Raven.config('https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209').install();
+				window.Raven.config(
+					'https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209'
+				).install();
 			}
 		}
 	}
 
-	render({ }, { currentUser, schedule, sessions, speakers, partners, userSchedule, info, rootPath }) {
+	render(
+		{},
+		{
+			currentUser,
+			schedule,
+			sessions,
+			speakers,
+			partners,
+			userSchedule,
+			info,
+			rootPath
+		}
+	) {
 		return (
 			<div id="app">
 				<NavBar user={currentUser} rootPath={rootPath} />
 				<Router onChange={this.handleRoute}>
-					<Attending path={rootPath + 'attending/'} rootPath={rootPath} info={info} />
-					{/* <Schedule path={rootPath + 'schedule/'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
+					<Attending
+						path={rootPath + 'attending/'}
+						rootPath={rootPath}
+						info={info}
 					/>
-					<Schedule path={rootPath + 'schedule/:id'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
+					<Schedule
+						path={rootPath + 'schedule/'}
+						user={currentUser}
+						schedule={schedule}
+						userSchedule={userSchedule}
+						sessions={sessions}
+						speakers={speakers}
+						db={this.db}
+						rootPath={rootPath}
 					/>
-					<Speakers path={rootPath + 'speakers/'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
+					<Schedule
+						path={rootPath + 'schedule/:id'}
+						user={currentUser}
+						schedule={schedule}
+						userSchedule={userSchedule}
+						sessions={sessions}
+						speakers={speakers}
+						db={this.db}
+						rootPath={rootPath}
 					/>
-					<Speakers path={rootPath + 'speakers/:id'} user={currentUser} schedule={schedule}
-						userSchedule={userSchedule} sessions={sessions} speakers={speakers} db={this.db} rootPath={rootPath}
-					/> */}
-					<Registration path={rootPath + 'registration/'} user={currentUser} info={info} rootPath={rootPath} />
-					<CommunityGuidelines path={rootPath + 'communityguidelines/'} rootPath={rootPath} />
+					<Speakers
+						path={rootPath + 'speakers/'}
+						user={currentUser}
+						schedule={schedule}
+						userSchedule={userSchedule}
+						sessions={sessions}
+						speakers={speakers}
+						db={this.db}
+						rootPath={rootPath}
+					/>
+					<Speakers
+						path={rootPath + 'speakers/:id'}
+						user={currentUser}
+						schedule={schedule}
+						userSchedule={userSchedule}
+						sessions={sessions}
+						speakers={speakers}
+						db={this.db}
+						rootPath={rootPath}
+					/>
+					<Registration
+						path={rootPath + 'registration/'}
+						user={currentUser}
+						info={info}
+						rootPath={rootPath}
+					/>
+					<CommunityGuidelines
+						path={rootPath + 'communityguidelines/'}
+						rootPath={rootPath}
+					/>
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
-					{/* <FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} /> */}
-					<Home path={rootPath} rootPath={rootPath} partners={partners} default />
+					<FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} />
+					<Home
+						path={rootPath}
+						rootPath={rootPath}
+						partners={partners}
+						default
+					/>
 				</Router>
-				<Snackbar ref={snackbar => { this.snackbar = snackbar; }} />
+				<Snackbar
+					ref={snackbar => {
+						this.snackbar = snackbar;
+					}}
+				/>
 			</div>
 		);
 	}

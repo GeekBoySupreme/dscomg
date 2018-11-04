@@ -3,90 +3,96 @@ api_version: 1
 threadsafe: true
 runtime: python27
 
-default_expiration: "30d"
+default_expiration: '30d'
 
 handlers:
-- url: /devfest/assets
-  static_dir: build/assets
-  secure: always
-  expiration: "1d"
+  - url: /devfest/assets
+    static_dir: build/assets
+    secure: always
+    expiration: '1d'
 
-- url: /devfest/sw.js
-  static_files: build/sw.js
-  upload: build/sw.js
-  expiration: "1s"
-  secure: always
-  http_headers:
-    Cache-Control: private, no-cache
+  - url: /devfest/sw.js
+    static_files: build/sw.js
+    upload: build/sw.js
+    expiration: '1s'
+    secure: always
+    http_headers:
+      Cache-Control: private, no-cache
 
-- url: /devfest/manifest.json
-  static_files: build/manifest.json
-  upload: build/manifest.json
-  secure: always
-  expiration: "1h"
+  - url: /devfest/manifest.json
+    static_files: build/manifest.json
+    upload: build/manifest.json
+    secure: always
+    expiration: '1h'
 
-- url: /devfest/sitemap.xml
-  static_files: sitemap.xml
-  upload: sitemap.xml
-  secure: always
-  expiration: "1h"
+  - url: /devfest/sitemap.xml
+    static_files: sitemap.xml
+    upload: sitemap.xml
+    secure: always
+    expiration: '1h'
 
-- url: /devfest/robots.txt
-  static_files: robots.txt
-  upload: robots.txt
-  secure: always
-  expiration: "1h"
+  - url: /devfest/robots.txt
+    static_files: robots.txt
+    upload: robots.txt
+    secure: always
+    expiration: '1h'
 
-- url: /devfest/(.*\.css)
-  mime_type: text/css
-  static_files: build/\1
-  upload: build/(.*\.css)
-  secure: always
-  expiration: "365d"
+  - url: /devfest/(.*\.css)
+    mime_type: text/css
+    static_files: build/\1
+    upload: build/(.*\.css)
+    secure: always
+    expiration: '365d'
 
-- url: /devfest/(.*\.js)
-  mime_type: text/javascript
-  static_files: build/\1
-  upload: build/(.*\.js)
-  secure: always
-  expiration: "365d"
+  - url: /devfest/(.*\.js)
+    mime_type: text/javascript
+    static_files: build/\1
+    upload: build/(.*\.js)
+    secure: always
+    expiration: '365d'
 
-- url: /devfest/(.*\.map)
-  static_files: build/\1
-  upload: build/(.*\.map)
-  secure: always
+  - url: /devfest/(.*\.map)
+    static_files: build/\1
+    upload: build/(.*\.map)
+    secure: always
 
-- url: /devfest/registration/?
-  static_files: build/registration/index.html
-  upload: build/registration/index.html
-  secure: always
-  expiration: "1s"
+  - url: /devfest/speakers/?
+    static_files: build/speakers/index.html
+    upload: build/speakers/index.html
+    secure: always
+    expiration: '1s'
 
-- url: /devfest/communityguidelines/?
-  static_files: build/communityguidelines/index.html
-  upload: build/communityguidelines/index.html
-  secure: always
-  expiration: "1s"
+  - url: /devfest/registration/?
+    static_files: build/registration/index.html
+    upload: build/registration/index.html
+    secure: always
+    expiration: '1s'
 
-- url: /devfest/faq/?
-  static_files: build/faq/index.html
-  upload: build/faq/index.html
-  secure: always
-  expiration: "1s"
+  - url: /devfest/communityguidelines/?
+    static_files: build/communityguidelines/index.html
+    upload: build/communityguidelines/index.html
+    secure: always
+    expiration: '1s'
 
-- url: /devfest/.*
-  static_files: build/index.html
-  upload: build/index.html
-  secure: always
-  expiration: "1s"
-  http_headers:
-    Cache-Control: public, max-age=3600, no-cache
-    Access-Control-Allow-Origin: "*"
-    Access-Control-Max-Age: "600"
+  - url: /devfest/faq/?
+    static_files: build/faq/index.html
+    upload: build/faq/index.html
+    secure: always
+    expiration: '1s'
 
-- url: /devfest.*
-  script: main.app
-  secure: always
+  - url: /devfest/.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+    expiration: '1s'
+    http_headers:
+      Cache-Control: public, max-age=3600, no-cache
+      Access-Control-Allow-Origin: '*'
+      Access-Control-Max-Age: '600'
+
+  - url: /devfest.*
+    script: main.app
+    secure: always
 
 skip_files:
   - bower_components

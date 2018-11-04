@@ -17,7 +17,7 @@ export default class Schedule extends Component {
 	}
 
 	toggleDialog = (id, item) => e => {
-		if (e.target.id !== 'star') {
+		if (e.target.id !== 'star' && e.target.id !== 'slides') {
 			route(this.props.rootPath + 'schedule/' + id);
 			this.dialog.toggle(id, item, 'schedule');
 		}
@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Schedule - Google I/O Extended 2018 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -107,21 +107,19 @@ export default class Schedule extends Component {
 
 	render({ rootPath, user, userSchedule, db, sessions, schedule, speakers }, { showMyIO }) {
 		return (
-			<div class={style.schedule}>
+			<div>
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo rootPath={rootPath} />
+					<IoLogo />
 					<h2>Schedule</h2>
-					<p>Hone your skills. Ask technical questions. Get inspired. This year’s program is packed with breakouts, keynotes, spotlights, panels, and bootcamps.</p>
 				</div>
-
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
-					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My Schedule</div>
+					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My I/O</div>
 				</div>
 				{!user && this.state.showMyIO &&
-					<div class={style.myio_info}>Sign in to save events to My Schedule and create your custom schedule.</div>
+					<div class={style.myio_info}>Sign in to save events to My I/O and create your custom I/O schedule.</div>
 				}
 				{user && this.state.showMyIO &&
 					<div class={style.myio_info}>Your saved events appear below, and are synced from your account across mobile and desktop.</div>
@@ -142,18 +140,28 @@ export default class Schedule extends Component {
 												<div class={style.schedule_event_details}>
 													<div class={style.schedule_event_title}>{sessions[item].title}</div>
 													<div class={style.schedule_event_meta}>
-														<div class={style.schedule_event_description}><b>{sessions[item].location}</b> &middot; {sessions[item].duration}</div>
+														<div class={style.schedule_event_description}>{sessions[item].duration} / {sessions[item].location}</div>
 														<div class={style.schedule_event_topics}>
 															{sessions[item].topics &&
 																sessions[item].topics.map(item => (
-																	<div id={item} class="session_topic">
-																		<span class="session_topic_dot" />
+																	<div class="session_topic">
+																		<span id={item} class="session_topic_dot" />
 																		<span>{this.parseTopic(item)}</span>
 																	</div>
 																))
 															}
 														</div>
 													</div>
+													{sessions[item].slides &&
+														<a class={style.slides} id="slides" target="_blank" rel="noopener noreferrer" href={sessions[item].slides}>
+															<svg id="slides" viewBox="0 0 24 24">
+																<g id="slides">
+																	<path id="slides" d="M19,16H5V8H19M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+																</g>
+															</svg>
+															<span id="slides">View Slides</span>
+														</a>
+													}
 												</div>
 												{user &&
 													<div class={style.star_button} onClick={this.star(item)} id="star">
