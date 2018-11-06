@@ -33,7 +33,18 @@ export default class Home extends Component {
 				<div className={[style.hero, 'hero'].join(' ')}>
 					<div class={style.hero_title}>
 						<IoLogo rootPath={rootPath} />
-						<h2>GDG DevFests are large, community-run developer events happening around the globe focused on community building and learning about Google’s technologies.</h2>
+						<h2>
+							GDG DevFests are large, community-run developer events happening
+							around the globe focused on community building and learning about
+							Google’s technologies.
+						</h2>
+						<br />
+						<h2>
+							This year, DevFest includes Firebase Summit Extended which has a
+							track dedicated to everything Firebase. We have Firebase Googlers
+							coming all the way from USA to share what's new and exciting in
+							Firebase.
+						</h2>
 						<h4>December 1, 2018 · Sunway University</h4>
 					</div>
 				</div>
@@ -41,11 +52,20 @@ export default class Home extends Component {
 				<div class={style.home_info}>
 					<div class={style.text}>
 						<h3>What you need to know, before you ask.</h3>
-						<p>GDG DevFest Kuala Lumpur brings together the world class experts in Android, Web and Cloud technologies for one full day of sessions, workshops and showcases.</p>
+						<p>
+							GDG DevFest Kuala Lumpur brings together the world class experts
+							in Android, Web and Cloud technologies for one full day of
+							sessions, workshops and showcases.
+						</p>
+						<p>
+							Firebase Summits brings together experts in Firebase, and show how
+							Firebase helps mobile app teams of all sizes across the entire
+							development lifecycle to build their products.
+						</p>
 					</div>
 					<div class={style.stats}>
 						<div class={style.stat}>
-							<div class={style.number}>300+</div>
+							<div class={style.number}>400+</div>
 							<div class={style.label}>Attendees</div>
 						</div>
 						<div class={style.stat}>
@@ -57,65 +77,101 @@ export default class Home extends Component {
 							<div class={style.label}>Sessions</div>
 						</div>
 						<div class={style.stat}>
-							<div class={style.number}>3</div>
+							<div class={style.number}>4</div>
 							<div class={style.label}>Tracks</div>
 						</div>
 					</div>
 				</div>
 				<GalleryBlock />
-				{partners &&
+				{partners && (
 					<div class={style.partners}>
 						<h3>Partners</h3>
-						{partners.general_sponsor &&
+						{partners.general_sponsor && (
 							<div class={style.partner}>
 								<h4>Our Mind-blowing Supporters</h4>
 								<div class={style.sponsor}>
 									{partners.general_sponsor.map(item => (
-										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-											<img crossorigin="anonymous" src={item.image} alt={item.name} />
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
 										</a>
 									))}
 								</div>
 							</div>
-						}
-						{partners.sponsors &&
+						)}
+						{partners.sponsors && (
 							<div class={style.partner}>
 								<h4>Our Awesome Partners</h4>
 								<div class={style.sponsor}>
 									{partners.sponsors.map(item => (
-										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-											<img crossorigin="anonymous" src={item.image} alt={item.name} />
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
 										</a>
 									))}
 								</div>
 							</div>
-						}
-						{partners.community_sponsors &&
+						)}
+						{partners.community_sponsors && (
 							<div class={style.partner}>
 								<h4>Our Hardcore Fans</h4>
 								<div class={style.sponsor}>
 									{partners.community_sponsors.map(item => (
-										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-											<img crossorigin="anonymous" src={item.image} alt={item.name} />
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
 										</a>
 									))}
 								</div>
 							</div>
-						}
-						{partners.organizers &&
+						)}
+						{partners.organizers && (
 							<div class={style.partner}>
 								<h4>With Love From</h4>
 								<div class={style.sponsor}>
 									{partners.organizers.map(item => (
-										<a class={style.item} href={item.url} target="_blank" rel="noopener noreferrer">
-											<img crossorigin="anonymous" src={item.image} alt={item.name} />
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
 										</a>
 									))}
 								</div>
 							</div>
-						}
+						)}
 					</div>
-				}
+				)}
 				<SocialFooter rootPath={rootPath} />
 				<Footer rootPath={rootPath} />
 			</div>
