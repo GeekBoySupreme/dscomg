@@ -126,6 +126,7 @@ html, body {
 }
 
 .session_topic {
+  text-transform: capitalize;
   margin: 2px 8px 2px 0;
   font-size: 13px;
   line-height: 20px;
@@ -137,15 +138,6 @@ html, body {
   font-size: 12px;
   font-weight: 500;
   color: rgb(95, 99, 104);
-}
-
-.session_topic .session_topic_dot {
-  width: 12px;
-  height: 12px;
-  background: rgb(197, 201, 233);
-  display: none;
-  border-radius: 50%;
-  margin-right: 6px;
 }
 
 #flutter {

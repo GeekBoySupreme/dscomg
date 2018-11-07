@@ -144,8 +144,7 @@ export default class Schedule extends Component {
 														<div class={style.schedule_event_topics}>
 															{sessions[item].topics &&
 																sessions[item].topics.map(item => (
-																	<div class="session_topic">
-																		<span id={item} class="session_topic_dot" />
+																	<div id={item} class="session_topic">
 																		<span>{this.parseTopic(item)}</span>
 																	</div>
 																))
