@@ -1,9 +1,10 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background: #FFF;
+  background: #fff;
   font-family: 'Google Sans', 'Roboto', arial, sans-serif;
   font-weight: 400;
   color: #202124;
@@ -103,7 +104,8 @@ html, body {
   width: 100% !important;
   z-index: 9;
   opacity: 0;
-  transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1), 0.25s opacity ease !important;
+  transition: transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1),
+    -webkit-transform 0.25s 0ms cubic-bezier(0.4, 0, 1, 1), 0.25s opacity ease !important;
 }
 
 .mdc-snackbar.mdc-snackbar--active {
@@ -121,7 +123,7 @@ html, body {
 .mdc-snackbar__action-button {
   font-family: 'Google Sans', sans-serif !important;
   letter-spacing: 0 !important;
-  color: #FCD230 !important;
+  color: #fcd230 !important;
   font-weight: 600 !important;
 }
 
@@ -141,23 +143,23 @@ html, body {
 }
 
 #flutter {
-  border-color: #4496e3;
-  color: #4496e3;
+  border-color: #39c9f4;
+  color: #39c9f4;
 }
 
 #android {
-  border-color: #498603;
-  color: #498603;
+  border-color: #9ec351;
+  color: #9ec351;
 }
 
 #assistant {
-  border-color: #ab6304;
-  color: #ab6304;
+  border-color: #00a75d;
+  color: #00a75d;
 }
 
 #cloud {
-  border-color: #037ab7;
-  color: #037ab7;
+  border-color: #1f87e3;
+  color: #1f87e3;
 }
 
 #design {
@@ -165,19 +167,19 @@ html, body {
   color: #b32cdc;
 }
 
-#firebase {
-  border-color: #072e7b;
-  color: #072e7b;
+#vr {
+  border-color: #00a8db;
+  color: #00a8db;
 }
 
-#iot {
-  border-color: rgb(188, 170, 164);
-  color: rgb(188, 170, 164);
+#android_things {
+  border-color: #00a75d;
+  color: #00a75d;
 }
 
 #machine_learning {
-  border-color: #ef6c00;
-  color: #ef6c00;
+  border-color: #ffa74d;
+  color: #ffa74d;
 }
 
 #misc {
@@ -186,18 +188,18 @@ html, body {
 }
 
 #web {
-  border-color: #c73f0d;
-  color: #c73f0d;
+  border-color: #2788ed;
+  color: #2788ed;
 }
 
-#vr {
-  border-color: rgb(255, 138, 101);
-  color: rgb(255, 138, 101);
+#firebase {
+  border-color: #f57c00;
+  color: #f57c00;
 }
 
 #angular {
-  border-color: #cf4643;
-  color: #cf4643;
+  border-color: #d84315;
+  color: #d84315;
 }
 
 @media screen and (max-width: 768px) {
@@ -243,7 +245,7 @@ html, body {
 @media screen and (max-width: 600px) {
   .mdc-snackbar {
     padding: 8px 24px !important;
-  }   
+  }
   .mdc-snackbar__text {
     line-height: 1.2rem !important;
   }
