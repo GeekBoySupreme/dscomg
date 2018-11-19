@@ -31,16 +31,16 @@ export default class CustomDialog extends Component {
 
 	star = (id) => e => {
 		let star = this.props.star ? !this.props.star[id] : true;
-		const ref = this.props.db.ref('/events_site/ioxkl18/users/' + this.props.user.uid + '/schedule/' + id);
+		const ref = this.props.db.ref('/events_site/devfestkl18/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
 	}
 
 	share = (dataId, data) => e => {
 		if (navigator.share) {
 			navigator.share({
-				title: 'I/O Extended 2018 Kuala Lumpur',
-				text: `Check out '${data.title}' at #ioxkl18`,
-				url: `https://events.gdgkl.org/io/schedule/${dataId}`
+				title: 'GDG DevFest Kuala Lumpur 2018',
+				text: `Check out '${data.title}' at #devfestkl18`,
+				url: `https://events.gdgkl.org/devfest/schedule/${dataId}`
 			});
 		}
 	}
