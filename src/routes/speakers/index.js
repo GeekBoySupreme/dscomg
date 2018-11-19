@@ -34,7 +34,7 @@ export default class Speakers extends Component {
 	};
 
 	componentDidMount() {
-		document.title = 'Speakers - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Speakers - GDG DevFest Kuala Lumpur 2018';
 	}
 
 	constructor(props) {

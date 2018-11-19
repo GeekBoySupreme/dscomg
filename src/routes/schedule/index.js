@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - Google I/O Extended 2018 Kuala Lumpur';
+		document.title = 'Schedule - GDG DevFest Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -116,10 +116,10 @@ export default class Schedule extends Component {
 				</div>
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
-					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My I/O</div>
+					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My Schedule</div>
 				</div>
 				{!user && this.state.showMyIO &&
-					<div class={style.myio_info}>Sign in to save events to My I/O and create your custom I/O schedule.</div>
+					<div class={style.myio_info}>Sign in to save events to My Schedule and create your custom schedule.</div>
 				}
 				{user && this.state.showMyIO &&
 					<div class={style.myio_info}>Your saved events appear below, and are synced from your account across mobile and desktop.</div>
