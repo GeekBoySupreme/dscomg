@@ -83,10 +83,10 @@ export default class Attending extends Component {
 									<br />
 									<p><b>Sessions</b></p>
 									<p>Learn Google's latest developer products from Googlers, Google Developer Experts and more.</p>
-									<p><b>Sandbox</b></p>
-									<p>Dedicated spaces to explore, learn, and play with our latest products and platforms via interactive demos, physical installations, and more.</p>
+									{/* <p><b>Sandbox</b></p>
+									<p>Dedicated spaces to explore, learn, and play with our latest products and platforms via interactive demos, physical installations, and more.</p> */}
 									<p><b>Meals</b></p>
-									<p>Attendees are offered complimentary breakfast, and lunch.</p>
+									<p>Attendees are offered complimentary breakfast, lunch, and tea-break.</p>
 								</div>
 							</div>
 						</div>
