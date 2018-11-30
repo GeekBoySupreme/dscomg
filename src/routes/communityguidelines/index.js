@@ -14,9 +14,9 @@ export default class Register extends Component {
 			ele.removeAttribute('top');
 		}
 	}
-	
+
 	componentDidMount() {
-		document.title = 'Community Guidelines - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Community Guidelines - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

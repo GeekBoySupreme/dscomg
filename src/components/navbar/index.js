@@ -105,10 +105,10 @@ export default class NavBar extends Component {
 										onClick={this.toggleSignoutDig}
 									/>
 								) : (
-									<div class={style.signin_btn} onClick={this.toggleSigninDig}>
-										Sign In
+										<div class={style.signin_btn} onClick={this.toggleSigninDig}>
+											Sign In
 									</div>
-								)}
+									)}
 							</TopAppBar.Section>
 						</TopAppBar.Row>
 					</TopAppBar>
@@ -121,7 +121,7 @@ export default class NavBar extends Component {
 								style="width: 160px;margin-left:10px;"
 								src={rootPath + 'assets/devfest.svg'}
 							/>
-								<img
+							<img
 								style="width: 20px;"
 								src={rootPath + 'assets/x.svg'}
 							/>
@@ -168,10 +168,10 @@ export default class NavBar extends Component {
 							onClick={this.toggleSignoutDig}
 						/>
 					) : (
-						<div class={style.signin_btn} onClick={this.toggleSigninDig}>
-							Sign In
+							<div class={style.signin_btn} onClick={this.toggleSigninDig}>
+								Sign In
 						</div>
-					)}
+						)}
 				</div>
 				<div class={style.navbar}>
 					<div class={style.hamburger}>
@@ -213,19 +213,19 @@ export default class NavBar extends Component {
 										<span>Schedule</span>
 									</Link>
 								) : (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'schedule'}
-									>
-										<svg>
-											<g>
-												<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
-											</g>
-										</svg>
-										<span>Schedule</span>
-									</Link>
-								)
+										<Link
+											activeClassName={style.active}
+											class={style.nav_item}
+											href={rootPath + 'schedule'}
+										>
+											<svg>
+												<g>
+													<path d="M19,3h-1V2c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v1H8V2c0-0.55-0.45-1-1-1h0C6.45,1,6,1.45,6,2v1H5 C3.89,3,3.01,3.9,3.01,5L3,19c0,1.1,0.89,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M18,19H6c-0.55,0-1-0.45-1-1V8h14v10 C19,18.55,18.55,19,18,19z M8,10h3c0.55,0,1,0.45,1,1v3c0,0.55-0.45,1-1,1H8c-0.55,0-1-0.45-1-1v-3C7,10.45,7.45,10,8,10z" />
+												</g>
+											</svg>
+											<span>Schedule</span>
+										</Link>
+									)
 							}
 						</Match>
 						<Match path="/speakers">
@@ -248,22 +248,22 @@ export default class NavBar extends Component {
 										<span>Speakers</span>
 									</Link>
 								) : (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'speakers'}
-									>
-										<svg>
-											<g>
-												<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
-												<path d="M8,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3S5,6.34,5,8C5,9.66,6.34,11,8,11z" />
-												<path d="M8,13c-2.33,0-7,1.17-7,3.5V18c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1v-1.5C15,14.17,10.33,13,8,13z" />
-												<path d="M16,13c-0.29,0-0.62,0.02-0.97,0.05c0.02,0.01,0.03,0.03,0.04,0.04C16.21,13.92,17,15.03,17,16.5V18 c0,0.35-0.07,0.69-0.18,1H22c0.55,0,1-0.45,1-1v-1.5C23,14.17,18.33,13,16,13z" />
-											</g>
-										</svg>
-										<span>Speakers</span>
-									</Link>
-								)
+										<Link
+											activeClassName={style.active}
+											class={style.nav_item}
+											href={rootPath + 'speakers'}
+										>
+											<svg>
+												<g>
+													<path d="M16,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3s-3,1.34-3,3C13,9.66,14.34,11,16,11z" />
+													<path d="M8,11c1.66,0,2.99-1.34,2.99-3c0-1.66-1.33-3-2.99-3S5,6.34,5,8C5,9.66,6.34,11,8,11z" />
+													<path d="M8,13c-2.33,0-7,1.17-7,3.5V18c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1v-1.5C15,14.17,10.33,13,8,13z" />
+													<path d="M16,13c-0.29,0-0.62,0.02-0.97,0.05c0.02,0.01,0.03,0.03,0.04,0.04C16.21,13.92,17,15.03,17,16.5V18 c0,0.35-0.07,0.69-0.18,1H22c0.55,0,1-0.45,1-1v-1.5C23,14.17,18.33,13,16,13z" />
+												</g>
+											</svg>
+											<span>Speakers</span>
+										</Link>
+									)
 							}
 						</Match>
 						<Link
@@ -289,7 +289,7 @@ export default class NavBar extends Component {
 							</svg>
 							<span>Registration</span>
 						</Link> */}
-						{/* <Link
+						<Link
 							activeClassName={style.active}
 							class={style.nav_item}
 							href={rootPath + 'faq'}
@@ -299,7 +299,7 @@ export default class NavBar extends Component {
 								<path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M12,17L12,17c-0.55,0-1-0.45-1-1v-4 c0-0.55,0.45-1,1-1h0c0.55,0,1,0.45,1,1v4C13,16.55,12.55,17,12,17z M13,9h-2V7h2V9z" />
 							</svg>
 							<span>FAQ</span>
-						</Link> */}
+						</Link>
 						<div class={style.line} />
 					</nav>
 				</div>

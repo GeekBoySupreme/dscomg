@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Schedule - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -111,8 +111,16 @@ export default class Schedule extends Component {
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo rootPath={rootPath}  />
+					<IoLogo rootPath={rootPath} />
 					<h2>Schedule</h2>
+					<p>
+						All sessions feature a Q&A session at the end, time permitting.<br /><br />
+						Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
+						<li>Hall A (JC 1) - #9769</li>
+						<li>Hall B (JC 2) - #L145</li>
+						<li>Hall C (JC 3) - #N095</li>
+						<li>Hall D (LT 5) - #L556</li>
+					</p>
 				</div>
 				<div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>

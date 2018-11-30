@@ -38,7 +38,7 @@ export default class CustomDialog extends Component {
 	share = (dataId, data) => e => {
 		if (navigator.share) {
 			navigator.share({
-				title: 'GDG DevFest Kuala Lumpur 2018',
+				title: 'GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018',
 				text: `Check out '${data.title}' at #devfestkl18`,
 				url: `https://events.gdgkl.org/devfest/schedule/${dataId}`
 			});
@@ -111,8 +111,8 @@ export default class CustomDialog extends Component {
 								<div class={style.header_subtext}>{speakers[speakerId].title}</div>
 							</div>
 						) : (
-							data && <div class={style.header_text}>{data.title}</div>
-						)}
+								data && <div class={style.header_text}>{data.title}</div>
+							)}
 						{showSpeaker && (
 							speakers[speakerId].profile_pic ?
 								<img crossorigin="anonymous" class={style.header_speaker_profile} src={speakers[speakerId].profile_pic} onError={this.profilePicFallback()} /> :
@@ -135,48 +135,48 @@ export default class CustomDialog extends Component {
 						{showSpeaker ? (
 							<div class={style.speaker_bio}>{speakers[speakerId].bio}</div>
 						) : (
-							<div>
-								<div class={style.subtitle}>{data.startTime} - {data.endTime}, {data.location}</div>
-								<p class={style.dialog_body_description}>{data.description}</p>
-								<div class={style.schedule_event_topics}>
-									{data.topics &&
-										data.topics.map(item => (
-											<div id={item} class="session_topic">
-												<span class="session_topic_dot" />
-												<span>{this.parseTopic(item)}</span>
-											</div>
-										))
-									}
-								</div>
-								{data.speakers &&
-									<div class={style.speaker}>
-										<h3>Speakers </h3>
-										{(data.speakers && speakers) &&
-											data.speakers.map(item => (
-												speakers[item] &&
-												<div class={style.speaker_item} onClick={this.showSpeaker(item)}>
-													{speakers[item].profile_pic ?
-														<img crossorigin="anonymous" class={style.speaker_thumbnail} src={speakers[item].profile_pic} onError={this.profilePicFallback()} /> :
-														<img crossorigin="anonymous" class={style.speaker_thumbnail} src={rootPath + 'assets/person.svg'} />
-													}
-													<div class={style.speaker_details}>
-														<div class={style.speaker_name}>{speakers[item].name}</div>
-														<div class={style.speaker_title}>{speakers[item].title}</div>
-													</div>
-													<div class={style.speaker_arrow}>
-														<svg>
-															<g>
-																<path d="M5,13h11.17l-4.88,4.88c-0.39,0.39-0.39,1.03,0,1.42l0,0c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41 L12.71,4.7c-0.39-0.39-1.02-0.39-1.41,0l0,0c-0.39,0.39-0.39,1.02,0,1.41L16.17,11H5c-0.55,0-1,0.45-1,1v0C4,12.55,4.45,13,5,13z" />
-															</g>
-														</svg>
-													</div>
+								<div>
+									<div class={style.subtitle}>{data.startTime} - {data.endTime}, {data.location}</div>
+									<p class={style.dialog_body_description}>{data.description}</p>
+									<div class={style.schedule_event_topics}>
+										{data.topics &&
+											data.topics.map(item => (
+												<div id={item} class="session_topic">
+													<span class="session_topic_dot" />
+													<span>{this.parseTopic(item)}</span>
 												</div>
 											))
 										}
 									</div>
-								}
-							</div>
-						)}
+									{data.speakers &&
+										<div class={style.speaker}>
+											<h3>Speakers </h3>
+											{(data.speakers && speakers) &&
+												data.speakers.map(item => (
+													speakers[item] &&
+													<div class={style.speaker_item} onClick={this.showSpeaker(item)}>
+														{speakers[item].profile_pic ?
+															<img crossorigin="anonymous" class={style.speaker_thumbnail} src={speakers[item].profile_pic} onError={this.profilePicFallback()} /> :
+															<img crossorigin="anonymous" class={style.speaker_thumbnail} src={rootPath + 'assets/person.svg'} />
+														}
+														<div class={style.speaker_details}>
+															<div class={style.speaker_name}>{speakers[item].name}</div>
+															<div class={style.speaker_title}>{speakers[item].title}</div>
+														</div>
+														<div class={style.speaker_arrow}>
+															<svg>
+																<g>
+																	<path d="M5,13h11.17l-4.88,4.88c-0.39,0.39-0.39,1.03,0,1.42l0,0c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41 L12.71,4.7c-0.39-0.39-1.02-0.39-1.41,0l0,0c-0.39,0.39-0.39,1.02,0,1.41L16.17,11H5c-0.55,0-1,0.45-1,1v0C4,12.55,4.45,13,5,13z" />
+																</g>
+															</svg>
+														</div>
+													</div>
+												))
+											}
+										</div>
+									}
+								</div>
+							)}
 					</div>
 					{(supportShare || user) &&
 						<Dialog.Footer class={style.dialog_footer}>

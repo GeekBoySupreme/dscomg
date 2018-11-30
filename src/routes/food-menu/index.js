@@ -6,14 +6,14 @@ import style from './style';
 
 export default class FoodMenu extends Component {
 	componentDidMount() {
-		document.title = 'Food at the Conference - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Food at the Conference - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 	}
 
 	render({ rootPath }) {
 		return (
 			<div>
 				<div class="hero">
-					<IoLogo rootPath={rootPath}   />
+					<IoLogo rootPath={rootPath} />
 					<h2>Food at the Conference</h2>
 				</div>
 				<div class={style.faq}>

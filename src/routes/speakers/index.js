@@ -34,7 +34,7 @@ export default class Speakers extends Component {
 	};
 
 	componentDidMount() {
-		document.title = 'Speakers - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Speakers - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 	}
 
 	constructor(props) {
@@ -83,7 +83,7 @@ export default class Speakers extends Component {
 				/>
 
 				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo rootPath={rootPath}  />
+					<IoLogo rootPath={rootPath} />
 					<h2>Speakers</h2>
 					<p>
 						Learn Google's latest developer products from Googlers, Google
@@ -107,13 +107,13 @@ export default class Speakers extends Component {
 											onError={this.profilePicFallback()}
 										/>
 									) : (
-										<img
-											alt={speakers[item].name}
-											crossorigin="anonymous"
-											class={style.speaker_profile_pic}
-											src={rootPath + 'assets/person.svg'}
-										/>
-									)}
+											<img
+												alt={speakers[item].name}
+												crossorigin="anonymous"
+												class={style.speaker_profile_pic}
+												src={rootPath + 'assets/person.svg'}
+											/>
+										)}
 									{speakers[item].badges && (
 										<div class={style.badges}>
 											{speakers[item].badges.map(item => (

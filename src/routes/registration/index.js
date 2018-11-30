@@ -47,7 +47,7 @@ export default class Registration extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Registration - GDG DevFest Kuala Lumpur 2018';
+		document.title = 'Registration - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

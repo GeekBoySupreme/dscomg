@@ -17,7 +17,7 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'GDG DevFest Kuala Lumpur 2018';
+		document.title = 'GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
