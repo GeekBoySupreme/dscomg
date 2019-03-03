@@ -1,4 +1,4 @@
-service: devfest
+service: io
 api_version: 1
 threadsafe: true
 runtime: python27
@@ -6,12 +6,12 @@ runtime: python27
 default_expiration: '30d'
 
 handlers:
-  - url: /devfest/assets
+  - url: /io/assets
     static_dir: build/assets
     secure: always
     expiration: '1d'
 
-  - url: /devfest/sw.js
+  - url: /io/sw.js
     static_files: build/sw.js
     upload: build/sw.js
     expiration: '1s'
@@ -19,68 +19,68 @@ handlers:
     http_headers:
       Cache-Control: private, no-cache
 
-  - url: /devfest/manifest.json
+  - url: /io/manifest.json
     static_files: build/manifest.json
     upload: build/manifest.json
     secure: always
     expiration: '1h'
 
-  - url: /devfest/sitemap.xml
+  - url: /io/sitemap.xml
     static_files: sitemap.xml
     upload: sitemap.xml
     secure: always
     expiration: '1h'
 
-  - url: /devfest/robots.txt
+  - url: /io/robots.txt
     static_files: robots.txt
     upload: robots.txt
     secure: always
     expiration: '1h'
 
-  - url: /devfest/(.*\.css)
+  - url: /io/(.*\.css)
     mime_type: text/css
     static_files: build/\1
     upload: build/(.*\.css)
     secure: always
     expiration: '365d'
 
-  - url: /devfest/(.*\.js)
+  - url: /io/(.*\.js)
     mime_type: text/javascript
     static_files: build/\1
     upload: build/(.*\.js)
     secure: always
     expiration: '365d'
 
-  - url: /devfest/(.*\.map)
+  - url: /io/(.*\.map)
     static_files: build/\1
     upload: build/(.*\.map)
     secure: always
 
-  - url: /devfest/speakers/?
+  - url: /io/speakers/?
     static_files: build/speakers/index.html
     upload: build/speakers/index.html
     secure: always
     expiration: '1s'
 
-  - url: /devfest/registration/?
+  - url: /io/registration/?
     static_files: build/registration/index.html
     upload: build/registration/index.html
     secure: always
     expiration: '1s'
 
-  - url: /devfest/communityguidelines/?
+  - url: /io/communityguidelines/?
     static_files: build/communityguidelines/index.html
     upload: build/communityguidelines/index.html
     secure: always
     expiration: '1s'
 
-  - url: /devfest/faq/?
+  - url: /io/faq/?
     static_files: build/faq/index.html
     upload: build/faq/index.html
     secure: always
     expiration: '1s'
 
-  - url: /devfest/.*
+  - url: /io/.*
     static_files: build/index.html
     upload: build/index.html
     secure: always
@@ -90,7 +90,7 @@ handlers:
       Access-Control-Allow-Origin: '*'
       Access-Control-Max-Age: '600'
 
-  - url: /devfest.*
+  - url: /io.*
     script: main.app
     secure: always
 

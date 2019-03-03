@@ -1,13 +1,12 @@
-# DevFest 2018 Kuala Lumpur PWA
+# I/O Extended 2019 Kuala Lumpur PWA
 
-Serve:
+Start development server:
 
-`preact watch --template src/template.html`
-
+`npm run dev`
 
 Build: 
 
-`preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker false`
+`npm run build`
 
 Set Google Cloud Project:
 
