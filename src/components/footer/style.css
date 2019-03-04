@@ -26,7 +26,7 @@
 }
 
 .footer_link a:hover {
-	color: #4768fd;
+	color: var(--primary-color);
 }
 
 

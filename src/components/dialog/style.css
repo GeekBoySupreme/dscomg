@@ -113,7 +113,7 @@
 
 .dialog_body .speaker_name {
   font-weight: 500;
-  color: #4768FD;
+  color: var(--primary-color);
   font-size: 18px;
   line-height: 24px;
 }
@@ -126,7 +126,7 @@
 .dialog_body .speaker_arrow svg {
   width: 24px;
   height: 24px;
-  fill: #4768FD;
+  fill: var(--primary-color);
 }
 
 .dialog_body .speaker_bio {

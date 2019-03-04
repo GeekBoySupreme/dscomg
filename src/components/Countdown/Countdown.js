@@ -40,7 +40,6 @@ export class Countdown {
 	constructor(style, container, isReset) {
 		this.countdownContainer = container;
 		this.style = style;
-		console.log(this.style);
 		this.endTime = Date.parse(EVENT_DATE.toString()) / 1000;
 		this.daysCounter = null;
 		this.hoursCounter = null;
@@ -154,6 +153,16 @@ export class Countdown {
 		this.checkAndSetTime();
 		this.render();
 	}
+
+	reset(isReset) {
+		this.digitObjects.forEach(digitObject => {
+		  while (digitObject.element.firstChild) {
+				digitObject.element.removeChild(digitObject.element.firstChild);
+		  }
+		});
+		this.digitObjects = null;
+		this.isReset = isReset;
+	  }
 
 	patchBodymovinClasses(classNames) {
 		classNames.forEach(className => {

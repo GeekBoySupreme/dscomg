@@ -129,6 +129,11 @@ body {
   font-weight: 600 !important;
 }
 
+.mdc-drawer {
+  width: 300px !important;
+  max-width: 300px !important;
+}
+
 .session_topic {
   text-transform: capitalize;
   margin: 2px 8px 2px 0;
@@ -218,7 +223,7 @@ body {
     max-width: 90%;
   }
   .hero svg {
-    width: 64px;
+    width: 96px;
   }
   .hero p {
     font-size: 16px;

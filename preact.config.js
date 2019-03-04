@@ -1,8 +1,9 @@
 const preactCliSwPrecachePlugin = require('preact-cli-sw-precache');
+const netlifyPlugin = require('preact-cli-plugin-netlify');
 
 export default (config, env, helpers) => {
 
-	config.output.publicPath = env.production ? '/io/' : '/';
+	config.output.publicPath = env.production ? '/' : '/';
 	config.plugins.push(
 		new helpers.webpack.DefinePlugin({
 			'process.env.PUBLIC_PATH': JSON.stringify(config.output.publicPath || '/')
@@ -35,6 +36,8 @@ export default (config, env, helpers) => {
 			}
 		]
 	};
+
+	netlifyPlugin(config);
 
 	return preactCliSwPrecachePlugin(config, precacheConfig);
 };

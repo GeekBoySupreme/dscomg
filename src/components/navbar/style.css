@@ -156,11 +156,12 @@
   padding: 24px 16px 16px 23px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .drawer_toolbar svg {
   width: 72px;
+  height: 100%;
 }
 
 .drawer_toolbar h2 {
@@ -177,7 +178,12 @@
   margin: 0px;
 }
 
+.drawer_nav {
+  padding-left: 8px;
+}
+
 .drawer_nav a {
+  margin: 4px 0;
   font-family: 'Google Sans', sans-serif;
   font-weight: 400;
   color: #202124;
@@ -191,12 +197,19 @@
   transition: 50ms color ease;
 }
 
+.drawer_nav a.active {
+  color: #1a73e8;
+  background-color: rgba(26,115,232,.12);
+  border-top-left-radius: 42px;
+  border-bottom-left-radius: 42px;
+}
+
 .drawer_nav a:focus {
   outline: none;
 }
 
 .drawer_nav a:hover {
-  color: #4768fd;
+  color: var(--primary-color);
 }
 
 .navbar {

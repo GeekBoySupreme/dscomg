@@ -34,7 +34,7 @@
 }
 
 .faq_content a {
-    color: #4768FD;
+    color: var(--primary-color);
     font-weight: 500;
     text-decoration: none;
 }

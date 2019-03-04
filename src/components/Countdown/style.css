@@ -1,6 +1,6 @@
 .countdownContainer {
     max-width: 800px;
-    margin-left: 24px;
+    margin-left: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +109,9 @@
     stroke: #cdead5
 }
 
-@media screen and (min-width: 600px) {
-    .countdown {
-        max-width: calc(100% - 40px);
+@media screen and (max-width: 768px) {
+    .countdownContainer {
+        margin-left: 0;
+        margin-right: 20px;
     }
 }

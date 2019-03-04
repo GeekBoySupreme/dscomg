@@ -4,6 +4,7 @@ import firebase from '../firebase';
 import Drawer from 'preact-material-components/Drawer';
 import TopAppBar from 'preact-material-components/TopAppBar';
 import Dialog from 'preact-material-components/Dialog';
+import IoLogo from '../../components/io_logo';
 import 'preact-material-components/Dialog/style.css';
 import 'preact-material-components/TopAppBar/style.css';
 import 'preact-material-components/Drawer/style.css';
@@ -116,42 +117,55 @@ export default class NavBar extends Component {
 				<Drawer modal open={this.state.drawerOpened} onClose={this.closeDrawer}>
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
-
-							<img
-								style="width: 160px;margin-left:10px;"
-								src={rootPath + 'assets/devfest.svg'}
-							/>
-							<img
-								style="width: 20px;"
-								src={rootPath + 'assets/x.svg'}
-							/>
-							<img
-								style="width: 200px"
-								src={rootPath + 'assets/firebaseext_wrap.svg'}
-							/>
-							<h2>December 1, 2018</h2>
+							<IoLogo />
+							<h2>June 2019</h2>
 							<p>Kuala Lumpur, Malaysia</p>
 						</div>
 						<div class={style.drawer_nav}>
-							<Link href={rootPath} onClick={this.closeDrawer}>
+							<Link
+								activeClassName={style.active}
+								href={rootPath}
+								onClick={this.closeDrawer}
+							>
 								Home
 							</Link>
-							<Link href={rootPath + 'schedule'} onClick={this.closeDrawer}>
+							{/* <Link
+								activeClassName={style.active}
+								href={rootPath + 'schedule'}
+								onClick={this.closeDrawer}
+							>
 								Schedule
 							</Link>
-							<Link href={rootPath + 'speakers'} onClick={this.closeDrawer}>
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'speakers'}
+								onClick={this.closeDrawer}
+							>
 								Speakers
 							</Link>
-							<Link href={rootPath + 'attending'} onClick={this.closeDrawer}>
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'attending'}
+								onClick={this.closeDrawer}
+							>
 								Attending
-							</Link>
-							<Link href={rootPath + 'registration'} onClick={this.closeDrawer}>
+							</Link> */}
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'registration'}
+								onClick={this.closeDrawer}
+							>
 								Registration
 							</Link>
-							<Link href={rootPath + 'faq'} onClick={this.closeDrawer}>
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'faq'}
+								onClick={this.closeDrawer}
+							>
 								FAQ
 							</Link>
 							<Link
+								activeClassName={style.active}
 								href={rootPath + 'communityguidelines'}
 								onClick={this.closeDrawer}
 							>

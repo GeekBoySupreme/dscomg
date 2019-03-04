@@ -15,7 +15,7 @@
 }
 
 .tabs .tab:hover {
-    color: #4768fd;
+    color: var(--primary-color);
 }
 
 .tabs .line {
@@ -24,7 +24,7 @@
     position: absolute;
     height: 3px;
     width: 50%;
-    background-color: #4768fd;
+    background-color: var(--primary-color);
     bottom: 0;
     transition: 250ms ease transform;
 }
@@ -69,7 +69,7 @@
 }
 
 .attending_content a {
-    color: #4768FD;
+    color: var(--primary-color);
     font-weight: 500;
     text-decoration: none;
 }

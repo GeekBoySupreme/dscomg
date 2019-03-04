@@ -6,8 +6,8 @@ import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
-import Schedule from 'async!../routes/schedule';
-import Speakers from 'async!../routes/speakers';
+// import Schedule from 'async!../routes/schedule';
+// import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import Faq from 'async!../routes/faq';
 import FoodMenu from 'async!../routes/food-menu';
@@ -233,7 +233,7 @@ export default class App extends Component {
 						rootPath={rootPath}
 						info={info}
 					/>
-					<Schedule
+					{/* <Schedule
 						path={rootPath + 'schedule/'}
 						user={currentUser}
 						schedule={schedule}
@@ -242,8 +242,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/>
-					<Schedule
+					/> */}
+					{/* <Schedule
 						path={rootPath + 'schedule/:id'}
 						user={currentUser}
 						schedule={schedule}
@@ -252,8 +252,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/>
-					<Speakers
+					/> */}
+					{/* <Speakers
 						path={rootPath + 'speakers/'}
 						user={currentUser}
 						schedule={schedule}
@@ -262,8 +262,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/>
-					<Speakers
+					/> */}
+					{/* <Speakers
 						path={rootPath + 'speakers/:id'}
 						user={currentUser}
 						schedule={schedule}
@@ -272,7 +272,7 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/>
+					/> */}
 					<Registration
 						path={rootPath + 'registration/'}
 						user={currentUser}
