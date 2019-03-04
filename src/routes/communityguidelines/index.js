@@ -16,7 +16,7 @@ export default class Register extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Community Guidelines - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'Community Guidelines - Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

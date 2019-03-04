@@ -114,7 +114,7 @@ export default class App extends Component {
 			});
 
 			this.db
-				.ref('/events_site/devfestkl18/schedule')
+				.ref('/events_site/ioxkl19/schedule')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -123,7 +123,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/devfestkl18/sessions')
+				.ref('/events_site/ioxkl19/sessions')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -132,7 +132,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/devfestkl18/speakers')
+				.ref('/events_site/ioxkl19/speakers')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -141,7 +141,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/devfestkl18/partners')
+				.ref('/events_site/ioxkl19/partners')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -150,7 +150,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/devfestkl18/info')
+				.ref('/events_site/ioxkl19/info')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -166,7 +166,7 @@ export default class App extends Component {
 						id: currentUser.uid
 					});
 
-					const dbRef = '/events_site/devfestkl18/users/' + currentUser.uid;
+					const dbRef = '/events_site/ioxkl19/users/' + currentUser.uid;
 					this.db.ref(dbRef + '/info/').set({
 						uid: currentUser.uid,
 						username: currentUser.displayName,
@@ -201,14 +201,14 @@ export default class App extends Component {
 			rootPath: '/'
 		};
 
-		if (typeof window !== 'undefined') {
-			this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
-			if (window.Raven) {
-				window.Raven.config(
-					'https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209'
-				).install();
-			}
-		}
+		// if (typeof window !== 'undefined') {
+		// 	this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
+		// 	if (window.Raven) {
+		// 		window.Raven.config(
+		// 			'https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209'
+		// 		).install();
+		// 	}
+		// }
 	}
 
 	render(

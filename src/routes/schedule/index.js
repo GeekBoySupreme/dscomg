@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'Schedule - Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

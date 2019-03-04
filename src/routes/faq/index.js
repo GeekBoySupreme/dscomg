@@ -16,7 +16,7 @@ export default class Faq extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'FAQ - GGDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'FAQ - Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

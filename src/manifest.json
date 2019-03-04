@@ -1,39 +1,39 @@
 {
-  "name": "GDG DevFest Kuala Lumpur 2018",
-  "short_name": "DevFest KL",
-  "start_url": "/devfest/",
+  "name": "I/O Extended 2019 Kuala Lumpur",
+  "short_name": "IOXKL",
+  "start_url": "/io/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#fff",
+  "theme_color": "#1a73e8",
   "icons": [
     {
-      "src": "/devfest/assets/icons/icon_48.png",
+      "src": "/io/assets/icons/icon_48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "/devfest/assets/icons/icon_72.png",
+      "src": "/io/assets/icons/icon_72.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "/devfest/assets/icons/icon_96.png",
+      "src": "/io/assets/icons/icon_96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "/devfest/assets/icons/icon_144.png",
+      "src": "/io/assets/icons/icon_144.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "/devfest/assets/icons/icon_192.png",
+      "src": "/io/assets/icons/icon_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/devfest/assets/icons/icon_512.png",
+      "src": "/io/assets/icons/icon_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

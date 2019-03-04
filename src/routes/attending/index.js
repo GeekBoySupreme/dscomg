@@ -34,7 +34,7 @@ export default class Attending extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Attending - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'Attending - Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		window.addEventListener('resize', this.resize);
 		this.resize();

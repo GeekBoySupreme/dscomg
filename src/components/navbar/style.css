@@ -236,7 +236,7 @@
 }
 
 .navbar nav .nav_item {
-  height: 90px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -256,7 +256,7 @@
 
 .navbar nav .nav_item.active {
   /* color: #1a73e8; */
-  color: #ff9800;
+  color: var(--primary-color);
   opacity: 1;
   /* border-right: 3px solid #1a73e8; */
 }
@@ -273,7 +273,7 @@
 
 .navbar nav .nav_item.active svg {
   /* fill: #1a73e8; */
-  fill: #ff9800;
+  fill: var(--primary-color);
 }
 
 .navbar nav .nav_item span {
@@ -282,8 +282,8 @@
 
 .navbar nav .line {
   position: absolute;
-  height: 90px;
-  background-color: #ff9800;
+  height: 120px;
+  background-color: var(--primary-color);
   /* background-color: #1a73e8; */
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -303,15 +303,15 @@
 }
 
 .navbar nav .nav_item:nth-child(2).active ~ .line {
-  transform: translateY(90px);
+  transform: translateY(120px);
 }
 
 .navbar nav .nav_item:nth-child(3).active ~ .line {
-  transform: translateY(180px);
+  transform: translateY(240px);
 }
 
 .navbar nav .nav_item:nth-child(4).active ~ .line {
-  transform: translateY(270px);
+  transform: translateY(360px);
 }
 
 .navbar nav .nav_item:nth-child(5).active ~ .line {

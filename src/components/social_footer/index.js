@@ -6,7 +6,7 @@ export default class SocialFooter extends Component {
 		return (
 			<div class={style.social_footer}>
 				<div class={style.social_body}>
-					<p>Keep in touch with GDG Kuala Lumpur for the latest DevFest announcements</p>
+					<p>Keep in touch with GDG Kuala Lumpur for the latest I/O announcements</p>
 					<div>
 						<a alt="" href="https://facebook.com/GDGKualaLumpur" target="_blank" rel="noopener noreferrer">
 							<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ export default class SocialFooter extends Component {
 					</div>
 				</div>
 				<div class={style.social_gif}>
-					<img crossorigin="anonymous" alt="I/O 2018 Hashtag" src={rootPath + 'assets/devfest_kl.svg'} />
+					<img crossorigin="anonymous" alt="I/O 2018 Hashtag" src={rootPath + 'assets/hashtag.png'} />
 				</div>
 			</div>
 		);

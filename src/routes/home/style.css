@@ -3,19 +3,20 @@
 	overflow-x: hidden;
 }
 .hero {
-	padding: 100px 60px;
+	padding: 60px;
 	max-width: initial;
 	display: flex;
 	width: 100%;
 	z-index: 1;
+	justify-content: space-between;
 }
 .hero h2 {
 	margin: 0;
-	font-size: 30px;
-	line-height: 38px;
+	font-size: 24px;
+	line-height: 36px;
 	letter-spacing: -0.5px;
-	font-weight: 500;
-	/* max-width: 640px; */
+	font-weight: 400;
+	max-width: 500px;
 	color: #3c4043;
 }
 .hero span {
@@ -28,11 +29,13 @@
 	font-weight: 500;
 }
 .hero h4{
-	margin-top: 48px;
+	margin-top: 24px;
 	margin-bottom: 0;
 	font-weight: 400;
+	font-size: 18px;
 }
 .hero_title {
+	margin: 64px 0;
 	width: 100%;
 }
 .belt {
@@ -117,6 +120,7 @@
 
 .partners .item {
 	display: flex;
+	align-items: center;
 	padding: 8px 24px;
 	width: 170px;
 	height: 140px;

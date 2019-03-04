@@ -47,7 +47,7 @@ export default class Registration extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Registration - GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'Registration - Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -100,7 +100,7 @@ export default class Registration extends Component {
 							<div class={style.ticket_content}>
 								<div class={style.ticket_title}>General admission</div>
 								<div class={style.ticket_body}>
-									DevFest welcomes anyone who pursues development and tech as a
+									I/O welcomes anyone who pursues development and tech as a
 									career, side occupation, or hobby.
 								</div>
 							</div>

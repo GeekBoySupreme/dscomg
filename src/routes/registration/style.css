@@ -1,5 +1,5 @@
 .hero span {
-    color: #536DFE;
+    color: var(--primary-color);
     font-size: 36px;
 }
 

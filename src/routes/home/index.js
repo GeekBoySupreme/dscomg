@@ -3,6 +3,7 @@ import IoLogo from '../../components/io_logo';
 import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
 import GalleryBlock from '../../components/gallery_block';
+import Countdown from '../../components/Countdown';
 import style from './style';
 
 export default class Home extends Component {
@@ -17,7 +18,7 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018';
+		document.title = 'Google I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -34,19 +35,12 @@ export default class Home extends Component {
 					<div class={style.hero_title}>
 						<IoLogo rootPath={rootPath} />
 						<h2>
-							GDG DevFests are large, community-run developer events happening
-							around the globe focused on community building and learning about
-							Google’s technologies.
+							I/O brings together developers from around the globe for talks, hands-on learning with Google experts, and a first look at Google’s latest developer products.
 						</h2>
 						<br />
-						<h2>
-							This year, DevFest includes Firebase Summit Extended which has a
-							track dedicated to everything Firebase. We have Firebase Googlers
-							coming all the way from USA to share what's new and exciting in
-							Firebase.
-						</h2>
-						<h4>December 1, 2018 · Sunway University</h4>
+						<h4>June 2019 · Kuala Lumpur, Malaysia</h4>
 					</div>
+					<Countdown />
 				</div>
 				<div className={[style.belt, 'belt'].join(' ')} />
 				<div class={style.home_info}>
@@ -56,11 +50,6 @@ export default class Home extends Component {
 							GDG DevFest Kuala Lumpur brings together the world class experts
 							in Android, Web and Cloud technologies for one full day of
 							sessions, workshops and showcases.
-						</p>
-						<p>
-							Firebase Summits brings together experts in Firebase, and show how
-							Firebase helps mobile app teams of all sizes across the entire
-							development lifecycle to build their products.
 						</p>
 					</div>
 					<div class={style.stats}>

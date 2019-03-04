@@ -53,7 +53,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="shortcut icon" href="https://res.cloudinary.com/limhenry/image/upload/v1536154177/devfestkl18_pwa/misc/favicon.png">
+    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.publicPath %>/assets/favicon.png">
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet">
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.7/pwacompat.min.js"
@@ -79,6 +79,7 @@
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
     }) %>
+    <script src="https://www.gstatic.com/external_hosted/lottie/lottie.js"></script>
     <script src="https://cdn.ravenjs.com/3.26.1/raven.min.js" crossorigin="anonymous"></script>
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>
