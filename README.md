@@ -31,4 +31,5 @@ Deploy:
 ## License
 
 This PWA is published under the [MIT license](/LICENSE.md). 
+
 Feel free to clone and modify repo as you want, but don't forget to add reference to authors.
