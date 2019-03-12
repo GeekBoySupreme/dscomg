@@ -68,9 +68,9 @@ handlers:
     secure: always
     expiration: '1s'
 
-  - url: /io/communityguidelines/?
-    static_files: build/communityguidelines/index.html
-    upload: build/communityguidelines/index.html
+  - url: /io/faq/communityguidelines/?
+    static_files: build/faq/communityguidelines/index.html
+    upload: build/faq/communityguidelines/index.html
     secure: always
     expiration: '1s'
 

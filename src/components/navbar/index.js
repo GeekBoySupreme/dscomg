@@ -146,7 +146,14 @@ export default class NavBar extends Component {
 							</Link>
 							<Link
 								activeClassName={style.active}
-								href={rootPath + 'communityguidelines'}
+								href={rootPath + 'faq'}
+								onClick={this.closeDrawer}
+							>
+								FAQ
+							</Link>
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'faq/communityguidelines'}
 								onClick={this.closeDrawer}
 							>
 								Community Guidelines

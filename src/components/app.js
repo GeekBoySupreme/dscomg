@@ -160,9 +160,11 @@ export default class App extends Component {
 			firebase.auth().onAuthStateChanged(currentUser => {
 				this.setState({ currentUser });
 				if (currentUser) {
-					window.Raven.setUserContext({
-						email: currentUser.email,
-						id: currentUser.uid
+					window.Sentry.configureScope((scope) => {
+						scope.setUser({
+							email: currentUser.email,
+							id: currentUser.uid
+						});
 					});
 
 					const dbRef = '/events_site/ioxkl19/users/' + currentUser.uid;
@@ -180,7 +182,9 @@ export default class App extends Component {
 					});
 				}
 				else {
-					window.Raven.setUserContext();
+					window.Sentry.configureScope((scope) => {
+						scope.setUser({});
+					});
 				}
 			});
 		}
@@ -200,14 +204,14 @@ export default class App extends Component {
 			rootPath: '/'
 		};
 
-		// if (typeof window !== 'undefined') {
-		// 	this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
-		// 	if (window.Raven) {
-		// 		window.Raven.config(
-		// 			'https://0c7e238e4884476b8c36fa477ec75048@sentry.io/1275209'
-		// 		).install();
-		// 	}
-		// }
+		if (typeof window !== 'undefined') {
+			this.setState({ rootPath: window.GlobalVars.rootPath || '/' });
+			if (window.Sentry) {
+				window.Sentry.init(
+					{ dsn: 'https://822494317dbb488f81fb34fef787a12e@sentry.io/1413330' }
+				);
+			}
+		}
 	}
 
 	render(
@@ -283,7 +287,6 @@ export default class App extends Component {
 						rootPath={rootPath}
 					/>
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
-					{/* <FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} /> */}
 					<Home
 						path={rootPath}
 						rootPath={rootPath}

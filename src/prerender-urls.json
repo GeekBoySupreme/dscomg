@@ -20,12 +20,12 @@
     "title": "Registration - I/O Extended 2019 Kuala Lumpur"
   },
   {
-    "url": "/communityguidelines",
-    "title": "Community Guidelines - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
     "url": "/faq",
     "title": "FAQ - I/O Extended 2019 Kuala Lumpur"
+  },
+  {
+    "url": "/faq/communityguidelines",
+    "title": "Community Guidelines - I/O Extended 2019 Kuala Lumpur"
   },
   {
     "url": "/faq/food-menu",
