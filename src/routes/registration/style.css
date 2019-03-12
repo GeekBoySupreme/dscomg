@@ -1,6 +1,41 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .hero span {
     color: var(--primary-color);
     font-size: 36px;
+}
+
+.hero .heroText {
+    /* width: 50%; */
+    width: 100%;
+    max-width: 360px;
+    margin: 64px 0;
+}
+
+.hero .heroShape {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero .heroShape svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero .heroShape .registrationShape {
+    width: 100%;
+    height: 100%;
+    margin-left: 16px;
+    max-width: 520px;
+}
+
+.hero .heroShape .registrationShapeMobile {
+    display: none;
 }
 
 .hero .ticket_btn,
@@ -109,8 +144,29 @@
 }
 
 @media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero .heroText {
+        margin-top: 0;
+        margin-bottom: 32px;
+    }
+    .hero .heroText,
+    .hero .heroShape{
+        width: 100%;
+    }
+    .hero .heroShape .registrationShape {
+        display: none;
+    }
+    .hero .heroShape .registrationShapeMobile {
+        display: block;
+        width: 100%;
+        max-width: 520px;
+        margin-right: auto;
+    }
     .hero span {
-        font-size: 25px;
+        font-size: 32px;
     }
     .registered {
         margin-top: 48px;

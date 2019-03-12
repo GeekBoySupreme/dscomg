@@ -156,12 +156,10 @@
   padding: 24px 16px 16px 23px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .drawer_toolbar svg {
   width: 72px;
-  height: 100%;
 }
 
 .drawer_toolbar h2 {
@@ -268,10 +266,18 @@
 }
 
 .navbar nav .nav_item.active {
-  /* color: #1a73e8; */
   color: var(--primary-color);
   opacity: 1;
-  /* border-right: 3px solid #1a73e8; */
+}
+
+.navbar nav .nav_item svg,
+.navbar nav .nav_item.active svg[active] {
+  display: block;
+}
+
+.navbar nav .nav_item svg[active],
+.navbar nav .nav_item.active svg {
+  display: none;
 }
 
 .navbar nav .nav_item:focus {

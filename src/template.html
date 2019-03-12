@@ -69,6 +69,7 @@
                         switch (installingWorker.state) {
                             case 'installed':
                                 if (navigator.serviceWorker.controller) {
+                                    window.swUpdate = true;
                                     window.dispatchEvent(new CustomEvent('showRefreshSnack', null));
                                 }
                                 break;

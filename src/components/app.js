@@ -6,16 +6,14 @@ import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
-// import Schedule from 'async!../routes/schedule';
-// import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
-import Faq from 'async!../routes/faq';
-import FoodMenu from 'async!../routes/food-menu';
+import NotFoundPage from 'async!../routes/404';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 
 export default class App extends Component {
 	handleRoute = e => {
+		if (window.swUpdate) return (window.location = e.url);
 		this.currentUrl = e.url;
 		if (typeof window !== 'undefined') {
 			if (e.previous) {
@@ -283,14 +281,14 @@ export default class App extends Component {
 						path={rootPath + 'communityguidelines/'}
 						rootPath={rootPath}
 					/>
-					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
-					<FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} />
+					{/* <Faq path={rootPath + 'faq/'} rootPath={rootPath} /> */}
+					{/* <FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} /> */}
 					<Home
 						path={rootPath}
 						rootPath={rootPath}
 						partners={partners}
-						default
 					/>
+					<NotFoundPage rootPath={rootPath} default />
 				</Router>
 				<Snackbar
 					ref={snackbar => {

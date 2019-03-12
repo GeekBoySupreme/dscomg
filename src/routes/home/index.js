@@ -38,7 +38,7 @@ export default class Home extends Component {
 							I/O brings together developers from around the globe for talks, hands-on learning with Google experts, and a first look at Google’s latest developer products.
 						</h2>
 						<br />
-						<h4>June 2019 · Kuala Lumpur, Malaysia</h4>
+						<h4>June 2019 · Sunway University, Bandar Sunway</h4>
 					</div>
 					<Countdown />
 				</div>
@@ -47,8 +47,8 @@ export default class Home extends Component {
 					<div class={style.text}>
 						<h3>What you need to know, before you ask.</h3>
 						<p>
-							GDG DevFest Kuala Lumpur brings together the world class experts
-							in Android, Web and Cloud technologies for one full day of
+							I/O Extended 2019 Kuala Lumpur brings together the world class experts
+							in Android, Web, Machine Learning and Cloud technologies for one full day of
 							sessions, workshops and showcases.
 						</p>
 					</div>
@@ -60,14 +60,6 @@ export default class Home extends Component {
 						<div class={style.stat}>
 							<div class={style.number}>1</div>
 							<div class={style.label}>Day</div>
-						</div>
-						<div class={style.stat}>
-							<div class={style.number}>20+</div>
-							<div class={style.label}>Sessions</div>
-						</div>
-						<div class={style.stat}>
-							<div class={style.number}>4</div>
-							<div class={style.label}>Tracks</div>
 						</div>
 					</div>
 				</div>

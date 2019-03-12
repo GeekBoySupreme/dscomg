@@ -3,7 +3,8 @@ import TicketIcon from '../../components/ticket_icon';
 import IoLogo from '../../components/io_logo';
 import SocialFooter from '../../components/social_footer';
 import Footer from '../../components/footer';
-// import firebase from '../../components/firebase';
+import RegistrationShape from '../../components/SVG/Shape/RegistrationShape';
+import RegistrationShapeMobile from '../../components/SVG/Shape/RegistrationShapeMobile';
 import style from './style';
 
 export default class Registration extends Component {
@@ -73,24 +74,34 @@ export default class Registration extends Component {
 	) {
 		return (
 			<div>
-				<div className={[style.hero, 'hero'].join(' ')}>
-					<IoLogo rootPath={rootPath} />
-					{info && (
-						<h2>
-							{info.registration_text} <br />
-							<span>{info.registration_text_highlight}</span>
-						</h2>
-					)}
-					{registrationStatus === 'open' && (
-						<a
-							class={style.ticket_btn}
-							href={registrationUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							{info.registration_btn_text}
-						</a>
-					)}
+				<div class={`${style.hero} hero`}>
+					<div class={style.heroText}>
+						<IoLogo rootPath={rootPath} />
+						{info && (
+							<h2>
+								{info.registration_text} <br />
+								<span>{info.registration_text_highlight}</span>
+							</h2>
+						)}
+						{registrationStatus === 'open' && (
+							<a
+								class={style.ticket_btn}
+								href={registrationUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{info.registration_btn_text}
+							</a>
+						)}
+					</div>
+					<div class={style.heroShape}>
+						<div class={style.registrationShape}>
+							<RegistrationShape />
+						</div>
+						<div class={style.registrationShapeMobile}>
+							<RegistrationShapeMobile />
+						</div>
+					</div>
 				</div>
 				<div class={style.ticket_types}>
 					<h3>Ticket type</h3>
@@ -105,13 +116,6 @@ export default class Registration extends Component {
 								</div>
 							</div>
 						</div>
-						{/* <div class={style.ticket_type} id={style.community}>
-							<TicketIcon />
-							<div class={style.ticket_content}>
-								<div class={style.ticket_title}>Women Techmakers</div>
-								<div class={style.ticket_body}>We’re proud of the fact that every day, women are making technology that changes the world. Hence, we reserved a limited amount of special tickets for women.</div>
-							</div>
-						</div> */}
 					</div>
 				</div>
 				<SocialFooter rootPath={rootPath} />
