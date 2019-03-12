@@ -31,16 +31,16 @@ export default class CustomDialog extends Component {
 
 	star = (id) => e => {
 		let star = this.props.star ? !this.props.star[id] : true;
-		const ref = this.props.db.ref('/events_site/devfestkl18/users/' + this.props.user.uid + '/schedule/' + id);
+		const ref = this.props.db.ref('/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
 	}
 
 	share = (dataId, data) => e => {
 		if (navigator.share) {
 			navigator.share({
-				title: 'GDG DevFest x Firebase Summit Extended Kuala Lumpur 2018',
-				text: `Check out '${data.title}' at #devfestkl18`,
-				url: `https://events.gdgkl.org/devfest/schedule/${dataId}`
+				title: 'I/O Extended 2019 Kuala Lumpur',
+				text: `Check out '${data.title}' at #ioxkl19`,
+				url: `https://events.gdgkl.org/io/schedule/${dataId}`
 			});
 		}
 	}
@@ -111,8 +111,8 @@ export default class CustomDialog extends Component {
 								<div class={style.header_subtext}>{speakers[speakerId].title}</div>
 							</div>
 						) : (
-								data && <div class={style.header_text}>{data.title}</div>
-							)}
+							data && <div class={style.header_text}>{data.title}</div>
+						)}
 						{showSpeaker && (
 							speakers[speakerId].profile_pic ?
 								<img crossorigin="anonymous" class={style.header_speaker_profile} src={speakers[speakerId].profile_pic} onError={this.profilePicFallback()} /> :
@@ -135,20 +135,20 @@ export default class CustomDialog extends Component {
 						{showSpeaker ? (
 							<div class={style.speaker_bio}>{speakers[speakerId].bio}</div>
 						) : (
-								<div>
-									<div class={style.subtitle}>{data.startTime} - {data.endTime}, {data.location}</div>
-									<p class={style.dialog_body_description}>{data.description}</p>
-									<div class={style.schedule_event_topics}>
-										{data.topics &&
+							<div>
+								<div class={style.subtitle}>{data.startTime} - {data.endTime}, {data.location}</div>
+								<p class={style.dialog_body_description}>{data.description}</p>
+								<div class={style.schedule_event_topics}>
+									{data.topics &&
 											data.topics.map(item => (
 												<div id={item} class="session_topic">
 													<span class="session_topic_dot" />
 													<span>{this.parseTopic(item)}</span>
 												</div>
 											))
-										}
-									</div>
-									{data.speakers &&
+									}
+								</div>
+								{data.speakers &&
 										<div class={style.speaker}>
 											<h3>Speakers </h3>
 											{(data.speakers && speakers) &&
@@ -174,9 +174,9 @@ export default class CustomDialog extends Component {
 												))
 											}
 										</div>
-									}
-								</div>
-							)}
+								}
+							</div>
+						)}
 					</div>
 					{(supportShare || user) &&
 						<Dialog.Footer class={style.dialog_footer}>

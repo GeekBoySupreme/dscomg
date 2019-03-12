@@ -13,7 +13,7 @@ import MenuIcon from '../SVG/Icons/menu';
 import HomeIcon from '../SVG/Icons/home';
 import AttendingIcon from '../SVG/Icons/attending';
 import RegistrationIcon from '../SVG/Icons/registration';
-// import FaqIcon from '../SVG/Icons/faq';
+import FaqIcon from '../SVG/Icons/faq';
 import style from './style';
 
 export default class NavBar extends Component {
@@ -180,54 +180,6 @@ export default class NavBar extends Component {
 							<HomeIcon />
 							<span>Home</span>
 						</Link>
-						{/* <Match path="/schedule">
-							{({ path, url }) =>
-								path.startsWith('/schedule/') ? (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'schedule'}
-										path={url}
-									>
-										<ScheduleIcon />
-										<span>Schedule</span>
-									</Link>
-								) : (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'schedule'}
-									>
-										<ScheduleIcon />
-										<span>Schedule</span>
-									</Link>
-								)
-							}
-						</Match> */}
-						{/* <Match path="/speakers">
-							{({ path, url }) =>
-								path.startsWith('/speakers/') ? (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'speakers'}
-										path={url}
-									>
-										<SpeakerIcon />
-										<span>Speakers</span>
-									</Link>
-								) : (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'speakers'}
-									>
-										<SpeakerIcon />
-										<span>Speakers</span>
-									</Link>
-								)
-							}
-						</Match> */}
 						<Link
 							activeClassName={style.active}
 							class={style.nav_item}
@@ -244,14 +196,19 @@ export default class NavBar extends Component {
 							<RegistrationIcon />
 							<span>Registration</span>
 						</Link>
-						{/* <Link
-							activeClassName={style.active}
-							class={style.nav_item}
-							href={rootPath + 'faq'}
-						>
-							<FaqIcon />
-							<span>FAQ</span>
-						</Link> */}
+						<Match path="/faq">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'faq'}
+									path={path.startsWith('/faq/') ? url : undefined}
+								>
+									<FaqIcon />
+									<span>FAQ</span>
+								</Link>
+							)}
+						</Match>
 						<div class={style.line} />
 					</nav>
 				</div>

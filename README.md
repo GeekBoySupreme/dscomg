@@ -14,4 +14,4 @@ Set Google Cloud Project:
 
 Deploy: 
 
-`gcloud app deploy devfest.yaml -v 1`
+`gcloud app deploy io.yaml -v 1`

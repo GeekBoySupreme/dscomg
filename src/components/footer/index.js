@@ -12,7 +12,8 @@ export default class Footer extends Component {
 					<div class={style.footer_link}>
 						<a href="https://events.gdgkl.org/ioxkl18/">I/O Extended KL 2018</a>
 						<a href="https://events.gdgkl.org/ioxkl17/">I/O Extended KL 2017</a>
-						<a href={rootPath + 'communityguidelines'}>Community Guidelines</a>
+						<a href={rootPath + 'faq'}>FAQ</a>
+						<a href={rootPath + 'faq/communityguidelines'}>Community Guidelines</a>
 					</div>
 				</div>
 			</div>

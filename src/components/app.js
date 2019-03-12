@@ -8,6 +8,7 @@ import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
+import Faq from 'async!../routes/faq';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 
@@ -278,10 +279,10 @@ export default class App extends Component {
 						rootPath={rootPath}
 					/>
 					<CommunityGuidelines
-						path={rootPath + 'communityguidelines/'}
+						path={rootPath + 'faq/communityguidelines/'}
 						rootPath={rootPath}
 					/>
-					{/* <Faq path={rootPath + 'faq/'} rootPath={rootPath} /> */}
+					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
 					{/* <FoodMenu path={rootPath + 'faq/food-menu/'} rootPath={rootPath} /> */}
 					<Home
 						path={rootPath}

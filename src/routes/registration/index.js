@@ -11,7 +11,7 @@ export default class Registration extends Component {
 	state = {
 		registrationStatus: 'opening_soon',
 		registrationStatusText: 'Loading ...',
-		registrationUrl: 'https://devfestxfirebase.peatix.com/'
+		registrationUrl: 'https://ioxkl19.peatix.com/'
 	};
 
 	handleScroll() {

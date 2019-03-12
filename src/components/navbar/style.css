@@ -247,7 +247,7 @@
 }
 
 .navbar nav .nav_item {
-  height: 120px;
+  height: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,9 +301,8 @@
 
 .navbar nav .line {
   position: absolute;
-  height: 120px;
+  height: 110px;
   background-color: var(--primary-color);
-  /* background-color: #1a73e8; */
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   right: 0;
@@ -322,19 +321,19 @@
 }
 
 .navbar nav .nav_item:nth-child(2).active ~ .line {
-  transform: translateY(120px);
+  transform: translateY(110px);
 }
 
 .navbar nav .nav_item:nth-child(3).active ~ .line {
-  transform: translateY(240px);
+  transform: translateY(220px);
 }
 
 .navbar nav .nav_item:nth-child(4).active ~ .line {
-  transform: translateY(360px);
+  transform: translateY(330px);
 }
 
 .navbar nav .nav_item:nth-child(5).active ~ .line {
-  transform: translateY(360px);
+  transform: translateY(440px);
 }
 
 @media screen and (max-width: 768px) {
