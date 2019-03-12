@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --template src/template.html --no-prerender --service-worker false",
+    "build": "node route-generator.js && preact build --template src/template.html --prerenderUrls prerender-urls.json --service-worker false",
     "serve": "preact build --template src/template.html --service-worker false && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src"
@@ -29,7 +29,8 @@
     "preact-cli": "^2.2.1",
     "preact-cli-plugin-netlify": "^1.1.0",
     "preact-cli-sw-precache": "^1.0.3",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^2.13.1",
+    "xmlbuilder": "^11.0.0"
   },
   "dependencies": {
     "firebase": "^5.8.5",

@@ -49,19 +49,24 @@ export default class Speakers extends Component {
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.id !== this.props.id) {
 			if (nextProps.id) {
+				const speaker = nextProps.speakers[nextProps.id];
+				document.title = `${speaker.name} - Speakers - I/O Extended 2019 Kuala Lumpur`;
 				this.dialog.toggle(
 					nextProps.id,
-					nextProps.speakers[nextProps.id],
+					speaker,
 					'speakers'
 				);
 			}
 			else {
+				document.title = 'Speakers - I/O Extended 2019 Kuala Lumpur';
 				this.dialog.close();
 			}
 		}
 		if (nextProps.id && nextProps.speakers && this.state.toggleDialog) {
-			if (nextProps.speakers[nextProps.id]) {
+			const speaker = nextProps.speakers[nextProps.id];
+			if (speaker) {
 				this.setState({ toggleDialog: false });
+				document.title = `${speaker.name} - Speakers - I/O Extended 2019 Kuala Lumpur`;
 				this.dialog.toggle(
 					nextProps.id,
 					nextProps.speakers[nextProps.id],

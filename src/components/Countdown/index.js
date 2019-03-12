@@ -3,11 +3,17 @@ import { Component } from 'preact';
 import { Countdown as CountdownController } from './Countdown';
 
 export default class Countdown extends Component {
-controller = CountdownController;
-countdownContainer = HTMLElement;
 
 state = {
 	isReset: false
+}
+
+constructor() {
+	super();
+	if (typeof window !== 'undefined') {
+		this.controller = CountdownController;
+		this.countdownContainer = HTMLElement;
+	}
 }
 
 componentDidMount() {

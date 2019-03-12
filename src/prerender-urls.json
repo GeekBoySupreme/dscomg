@@ -1,34 +1,34 @@
 [
-  {
-    "url": "/",
-    "title": "I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/attending",
-    "title": "Attending - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/schedule",
-    "title": "Schedule - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/speakers",
-    "title": "Speakers - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/registration",
-    "title": "Registration - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/faq",
-    "title": "FAQ - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/faq/communityguidelines",
-    "title": "Community Guidelines - I/O Extended 2019 Kuala Lumpur"
-  },
-  {
-    "url": "/faq/food-menu",
-    "title": "Food at the Conference - I/O Extended 2019 Kuala Lumpur"
-  }
+    {
+        "url": "/",
+        "title": "I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/attending",
+        "title": "Attending - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/schedule",
+        "title": "Schedule - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/speakers",
+        "title": "Speakers - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/registration",
+        "title": "Registration - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/faq",
+        "title": "FAQ - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/faq/communityguidelines",
+        "title": "Community Guidelines - I/O Extended 2019 Kuala Lumpur"
+    },
+    {
+        "url": "/faq/food-menu",
+        "title": "Food at the Conference - I/O Extended 2019 Kuala Lumpur"
+    }
 ]

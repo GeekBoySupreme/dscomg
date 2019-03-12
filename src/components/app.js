@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
 import { Router } from 'preact-router';
 import firebase from './firebase';
 import NavBar from './navbar';
@@ -6,6 +6,7 @@ import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
+import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
 import Faq from 'async!../routes/faq';
@@ -14,9 +15,9 @@ import 'preact-material-components/Snackbar/style.css';
 
 export default class App extends Component {
 	handleRoute = e => {
-		if (window.swUpdate) return (window.location = e.url);
 		this.currentUrl = e.url;
 		if (typeof window !== 'undefined') {
+			if (window.swUpdate) return (window.location = e.url);
 			if (e.previous) {
 				if (
 					e.url.startsWith(this.state.rootPath + 'schedule') &&
@@ -256,7 +257,7 @@ export default class App extends Component {
 						db={this.db}
 						rootPath={rootPath}
 					/> */}
-					{/* <Speakers
+					<Speakers
 						path={rootPath + 'speakers/'}
 						user={currentUser}
 						schedule={schedule}
@@ -265,8 +266,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/> */}
-					{/* <Speakers
+					/>
+					<Speakers
 						path={rootPath + 'speakers/:id'}
 						user={currentUser}
 						schedule={schedule}
@@ -275,7 +276,7 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/> */}
+					/>
 					<Registration
 						path={rootPath + 'registration/'}
 						user={currentUser}
