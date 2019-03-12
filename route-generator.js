@@ -1,4 +1,4 @@
-global.fetch = require('node-fetch');
+const fetch = require('node-fetch');
 const fs = require('fs');
 const builder = require('xmlbuilder');
 
