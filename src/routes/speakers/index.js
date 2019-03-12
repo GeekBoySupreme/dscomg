@@ -34,7 +34,7 @@ export default class Speakers extends Component {
 	};
 
 	componentDidMount() {
-		document.title = 'Speakers - Google I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Speakers - I/O Extended 2019 Kuala Lumpur';
 	}
 
 	constructor(props) {
@@ -82,7 +82,7 @@ export default class Speakers extends Component {
 					rootPath={rootPath}
 				/>
 
-				<div className={[style.hero, 'hero'].join(' ')}>
+				<div class={`${style.hero} hero`}>
 					<IoLogo rootPath={rootPath} />
 					<h2>Speakers</h2>
 					<p>
@@ -107,13 +107,13 @@ export default class Speakers extends Component {
 											onError={this.profilePicFallback()}
 										/>
 									) : (
-											<img
-												alt={speakers[item].name}
-												crossorigin="anonymous"
-												class={style.speaker_profile_pic}
-												src={rootPath + 'assets/person.svg'}
-											/>
-										)}
+										<img
+											alt={speakers[item].name}
+											crossorigin="anonymous"
+											class={style.speaker_profile_pic}
+											src={rootPath + 'assets/person.svg'}
+										/>
+									)}
 									{speakers[item].badges && (
 										<div class={style.badges}>
 											{speakers[item].badges.map(item => (

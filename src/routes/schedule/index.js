@@ -78,7 +78,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - Google I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Schedule - I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -110,11 +110,11 @@ export default class Schedule extends Component {
 			<div>
 				<Dialog ref={dialog => { this.dialog = dialog; }} star={userSchedule} speakers={speakers} db={db} user={user} rootPath={rootPath} />
 
-				<div className={[style.hero, 'hero'].join(' ')}>
+				<div class={`${style.hero} hero`}>
 					<IoLogo rootPath={rootPath} />
 					<h2>Schedule</h2>
 					<p>
-						All sessions feature a Q&A session at the end, time permitting.<br /><br />
+						All sessions feature a Q&amp;A session at the end, time permitting.<br /><br />
 						Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
 						<li>Hall A (JC 1) - #9769</li>
 						<li>Hall B (JC 2) - #L145</li>

@@ -209,7 +209,7 @@ export default class NavBar extends Component {
 									activeClassName={style.active}
 									class={style.nav_item}
 									href={rootPath + 'faq'}
-									path={path.startsWith('/faq/') ? url : undefined}
+									path={path.startsWith(`${rootPath}faq/`) ? url : undefined}
 								>
 									<FaqIcon />
 									<span>FAQ</span>

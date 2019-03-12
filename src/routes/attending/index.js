@@ -34,7 +34,7 @@ export default class Attending extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Attending - Google I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Attending - I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		window.addEventListener('resize', this.resize);
 		this.resize();
@@ -50,7 +50,7 @@ export default class Attending extends Component {
 	render({ rootPath, info }, { showTravel, showEvent }) {
 		return (
 			<div>
-				<div className={[style.hero, 'hero'].join(' ')}>
+				<div class={`${style.hero} hero`}>
 					<IoLogo rootPath={rootPath} />
 					<h2>Attending</h2>
 					<p>Join us at Sunway University as we celebrate product and platform innovations at Google.</p>
@@ -60,7 +60,7 @@ export default class Attending extends Component {
 					<div class={style.tab} onClick={this.showTravel(true)} active={showTravel}>Travel</div>
 					<div class={style.line} />
 				</div>
-				<div className={[style.belt, 'belt'].join(' ')}
+				<div class={`${style.belt} belt`}
 					style={"background-image: url('" + rootPath + "assets/sunway_auditorium.jpg')"}
 				/>
 				<div class={style.attending}>

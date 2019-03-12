@@ -18,7 +18,7 @@ export default class Home extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Google I/O Extended 2019 Kuala Lumpur';
+		document.title = 'I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -31,7 +31,7 @@ export default class Home extends Component {
 	render({ rootPath, partners }) {
 		return (
 			<div class={style.home}>
-				<div className={[style.hero, 'hero'].join(' ')}>
+				<div class={`${style.hero} hero`}>
 					<div class={style.hero_title}>
 						<IoLogo rootPath={rootPath} />
 						<h2>
@@ -42,7 +42,7 @@ export default class Home extends Component {
 					</div>
 					<Countdown />
 				</div>
-				<div className={[style.belt, 'belt'].join(' ')} />
+				<div class={`${style.belt} belt`} />
 				<div class={style.home_info}>
 					<div class={style.text}>
 						<h3>What you need to know, before you ask.</h3>
