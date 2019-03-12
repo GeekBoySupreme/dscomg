@@ -30,7 +30,7 @@ export default class Home extends Component {
 
 	render({ rootPath, partners }) {
 		return (
-			<div class={style.home}>
+			<div>
 				<div class={`${style.hero} hero`}>
 					<div class={style.hero_title}>
 						<IoLogo rootPath={rootPath} />
