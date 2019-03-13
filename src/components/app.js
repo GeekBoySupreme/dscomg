@@ -6,7 +6,6 @@ import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
 import Registration from 'async!../routes/registration';
-import Speakers from 'async!../routes/speakers';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
 import Faq from 'async!../routes/faq';
@@ -257,7 +256,7 @@ export default class App extends Component {
 						db={this.db}
 						rootPath={rootPath}
 					/> */}
-					<Speakers
+					{/* <Speakers
 						path={rootPath + 'speakers/'}
 						user={currentUser}
 						schedule={schedule}
@@ -276,7 +275,7 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/>
+					/> */}
 					<Registration
 						path={rootPath + 'registration/'}
 						user={currentUser}
