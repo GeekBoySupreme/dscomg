@@ -7,31 +7,33 @@ let prerenderJson = JSON.parse(fs.readFileSync('src/prerender-urls.json'));
 const base = 'https://events.gdgkl.org/io';
 const dbUrl = 'https://gdg-kl.firebaseio.com/events_site/ioxkl19';
 const getSpeakers = new Promise((resolve) => {
-	fetch(`${dbUrl}/speakers.json`)
-		.then((response) => {
-			response.json().then((data) => {
-				let speakers = [];
-				speakers = Object.keys(data).map(item => ({
-					url: `/speakers/${item}`,
-					title: `${data[item].name} - Speakers - I/O Extended 2019 Kuala Lumpur`
-				}));
-				resolve(speakers);
-			});
-		});
+	// fetch(`${dbUrl}/speakers.json`)
+	// 	.then((response) => {
+	// 		response.json().then((data) => {
+	// 			let speakers = [];
+	// 			speakers = Object.keys(data).map(item => ({
+	// 				url: `/speakers/${item}`,
+	// 				title: `${data[item].name} - Speakers - I/O Extended 2019 Kuala Lumpur`
+	// 			}));
+	// 			resolve(speakers);
+	// 		});
+	// 	});
+	resolve([]);
 });
 
 const getSessions = new Promise((resolve) => {
-	fetch(`${dbUrl}/sessions.json`)
-		.then((response) => {
-			response.json().then((data) => {
-				let sessions = [];
-				sessions = Object.keys(data).map(item => ({
-					url: `/schedule/${item}`,
-					title: `${data[item].title} - Schedule - I/O Extended 2019 Kuala Lumpur`
-				}));
-				resolve(sessions);
-			});
-		});
+	// fetch(`${dbUrl}/sessions.json`)
+	// 	.then((response) => {
+	// 		response.json().then((data) => {
+	// 			let sessions = [];
+	// 			sessions = Object.keys(data).map(item => ({
+	// 				url: `/schedule/${item}`,
+	// 				title: `${data[item].title} - Schedule - I/O Extended 2019 Kuala Lumpur`
+	// 			}));
+	// 			resolve(sessions);
+	// 		});
+	// 	});
+	resolve([]);
 });
 
 Promise.all([getSpeakers, getSessions]).then((values) => {
