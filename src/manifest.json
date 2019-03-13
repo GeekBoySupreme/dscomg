@@ -1,29 +1,29 @@
 {
   "name": "I/O Extended 2019 Kuala Lumpur",
   "short_name": "IOXKL",
-  "start_url": "/io/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
   "theme_color": "#1a73e8",
   "icons": [
     {
-      "src": "/io/assets/favicon-32x32.png",
+      "src": "/assets/favicon-32x32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "/io/assets/favicon-128x128.png",
+      "src": "/assets/favicon-128x128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "/io/assets/android-chrome-192x192.png",
+      "src": "/assets/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/io/assets/android-chrome-512x512.png",
+      "src": "/assets/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

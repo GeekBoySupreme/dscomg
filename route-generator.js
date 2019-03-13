@@ -2,9 +2,30 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const builder = require('xmlbuilder');
 
-let prerenderJson = JSON.parse(fs.readFileSync('src/prerender-urls.json'));
+let prerenderJson = [
+	{
+		url: '/',
+		title: 'I/O Extended 2019 Kuala Lumpur'
+	},
+	{
+		url: '/attending',
+		title: 'Attending - I/O Extended 2019 Kuala Lumpur'
+	},
+	{
+		url: '/registration',
+		title: 'Registration - I/O Extended 2019 Kuala Lumpur'
+	},
+	{
+		url: '/faq',
+		title: 'FAQ - I/O Extended 2019 Kuala Lumpur'
+	},
+	{
+		url: '/faq/communityguidelines',
+		title: 'Community Guidelines - I/O Extended 2019 Kuala Lumpur'
+	}
+];
 
-const base = 'https://events.gdgkl.org/io';
+const base = 'https://ioxkl19.netlify.com';
 const dbUrl = 'https://gdg-kl.firebaseio.com/events_site/ioxkl19';
 const getSpeakers = new Promise((resolve) => {
 	// fetch(`${dbUrl}/speakers.json`)
@@ -38,7 +59,7 @@ const getSessions = new Promise((resolve) => {
 
 Promise.all([getSpeakers, getSessions]).then((values) => {
 	const data = [...prerenderJson, ...values[0], ...values[1]];
-	fs.writeFile('prerender-urls.json', JSON.stringify(data, null, 4), () => {});
+	fs.writeFile('src/prerender-urls.json', JSON.stringify(data, null, 4), () => {});
 	const lastMod = new Date().toISOString();
 	let xml = builder.create('urlset', { version: '1.0', encoding: 'UTF-8' });
 	data.forEach(item => {
@@ -51,7 +72,7 @@ Promise.all([getSpeakers, getSessions]).then((values) => {
 			.up();
 	});
 	xml.end({ pretty: true });
-	fs.writeFile('sitemap.xml', xml.doc().toString({ pretty: true }), () => {});
+	fs.writeFile('src/sitemap.xml', xml.doc().toString({ pretty: true }), () => {});
 	// eslint-disable-next-line no-console
 	console.log('\x1b[32m%s\x1b[0m', `Pre-render config generated successfully: ${data.length} routes generated.`);
 });
