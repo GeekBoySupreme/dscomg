@@ -42,7 +42,9 @@ export default class Home extends Component {
 					</div>
 					<Countdown />
 				</div>
-				<div class={`${style.belt} belt`} />
+				<div class={`${style.belt} belt`}>
+					<img crossorigin="anonymous" src="https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg" />
+				</div>
 				<div class={style.home_info}>
 					<div class={style.text}>
 						<h3>What you need to know, before you ask.</h3>
