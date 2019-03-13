@@ -1,8 +1,9 @@
 import { ANIMATIONS } from './bodymovinAnimationData';
 import { padStart } from 'lodash';
+import lottie from 'lottie-web/build/player/lottie';
 
 // Google I/O 2019 start time
-const EVENT_DATE = new Date('May 7, 2019 10:00 PDT');
+const EVENT_DATE = new Date('June 16, 2019 08:00 GMT+8');
 
 const FRAME_RANGES = {
 	nine: {
@@ -96,7 +97,7 @@ export class Countdown {
 
 			return {
 				element: digit,
-				animation: window.lottie.loadAnimation({
+				animation: lottie.loadAnimation({
 					container: digit,
 					renderer: 'svg',
 					loop: false,

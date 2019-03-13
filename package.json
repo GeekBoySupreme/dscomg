@@ -35,6 +35,7 @@
   "dependencies": {
     "firebase": "^5.8.5",
     "idb": "^2.1.3",
+    "lottie-web": "^5.4.4",
     "npm": "^6.8.0",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.4",

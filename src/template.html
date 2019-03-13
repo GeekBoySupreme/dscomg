@@ -52,7 +52,6 @@
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
     }) %>
-    <script src="https://www.gstatic.com/external_hosted/lottie/lottie.js"></script>
     <script src="https://browser.sentry-cdn.com/4.6.4/bundle.min.js" crossorigin="anonymous"></script>
     <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
     <script>
