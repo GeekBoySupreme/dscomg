@@ -24,7 +24,7 @@ export default (config, env, helpers) => {
 		runtimeCaching: [
 			{
 				urlPattern: /^https:\/\/res\.cloudinary\.com\//,
-				handler: 'fastest',
+				handler: 'cacheFirst',
 				options: {
 					cache: {
 						maxEntries: 200,
