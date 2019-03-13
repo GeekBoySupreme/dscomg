@@ -8,21 +8,16 @@ state = {
 	isReset: false
 }
 
-constructor() {
-	super();
-	if (typeof window !== 'undefined') {
-		this.controller = CountdownController;
-		this.countdownContainer = HTMLElement;
-	}
-}
-
 componentDidMount() {
-	this.controller = new CountdownController(
-		style,
-		this.countdownContainer,
-		this.state.isReset,
-	);
-	this.controller.init();
+	if (!this.controller) {
+		this.controller = new CountdownController(
+			style,
+			this.countdownContainer,
+			this.state.isReset,
+		);
+		this.controller.reset(this.state.isReset);
+		this.controller.init();
+	}
 }
 
 shouldComponentUpdate() {

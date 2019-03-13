@@ -1,6 +1,6 @@
 import { ANIMATIONS } from './bodymovinAnimationData';
 import { padStart } from 'lodash';
-import lottie from 'lottie-web/build/player/lottie';
+import lottie from 'lottie-web/build/player/lottie_light_html';
 
 // Google I/O 2019 start time
 const EVENT_DATE = new Date('June 16, 2019 08:00 GMT+8');
@@ -75,7 +75,7 @@ export class Countdown {
 
 	init() {
 		const digitsElements = Array.from(
-			document.querySelectorAll('.js-digit'),
+			this.countdownContainer.querySelectorAll('.js-digit'),
 		);
 		const numDigits = digitsElements.length;
 		const numRows = 2;
@@ -167,7 +167,7 @@ export class Countdown {
 
 	patchBodymovinClasses(classNames) {
 		classNames.forEach(className => {
-			document.querySelectorAll(`.${className}`).forEach(el => {
+			this.countdownContainer.querySelectorAll(`.${className}`).forEach(el => {
 				el.classList.add(this.style[className]);
 			});
 		});
