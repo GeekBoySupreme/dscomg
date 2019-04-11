@@ -217,7 +217,8 @@ export default class NavBar extends Component {
 							href={rootPath + 'cfp'}
 						>
 							<CFPIcon />
-							<span>Call for Presenters</span>
+							<span class={style.cfpTitle}>Call for Presenters</span>
+							<span class={style.cfpTitleMobile}>CFP</span>
 						</Link>
 						<Match path="/faq">
 							{({ path, url }) => (

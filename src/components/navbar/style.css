@@ -337,6 +337,13 @@
   transform: translateY(440px);
 }
 
+.cfpTitle {
+  display: block;
+}
+.cfpTitleMobile {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .dialog_body {
     padding: 16px 28px;
@@ -398,5 +405,13 @@
 
   .navbar nav .line {
     display: none;
+  }
+
+  .cfpTitle {
+    display: none;
+  }
+  
+  .cfpTitleMobile {
+    display: block;
   }
 }
