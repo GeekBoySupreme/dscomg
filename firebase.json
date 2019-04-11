@@ -1,0 +1,23 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "iox/index.html"
+      }
+    ],
+    "redirects":[
+      {
+        "source": "/",
+        "destination": "https://gdgkl.dev",
+        "type": 301
+      }
+    ]
+  }
+}
