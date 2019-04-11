@@ -3,7 +3,8 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import netlifyPlugin from 'preact-cli-plugin-netlify';
 
 export default (config, env, helpers) => {
-	config.output.publicPath = env.production ? '/' : '/';
+	console.log('does this work', process.argv);
+	config.output.publicPath = env.production ? '/iox/' : '/';
 
 	config.plugins.push(
 		new helpers.webpack.DefinePlugin({
