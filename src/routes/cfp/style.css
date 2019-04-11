@@ -38,9 +38,12 @@
 }
 
 .cfp {
+    display: flex;
+    justify-content: center;
     max-width: 960px;
     padding-bottom: 64px;
     margin: 64px 60px 0 60px;
+    
 }
 
 
