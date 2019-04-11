@@ -38,7 +38,7 @@ export default class Faq extends Component {
 						<div class={style.faq_title}>General</div>
 						<div class={style.faq_content}>
 							<p><b>Date and location</b></p>
-							<p>I/O Extended 2019 Kuala Lumpur will take place in Sunway University, Bandar Sunway.</p>
+							<p>I/O Extended 2019 Kuala Lumpur will take place on the 16 June 2019 at Sunway University, Bandar Sunway.</p>
 							<br />
 							<p><b>Stay Informed</b></p>
 							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the I/O Extended 2019 Kuala Lumpur website, and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a>. You can also follow and join the social conversation about I/O Extended 2019 Kuala Lumpur via official hashtags <b>#io18</b>. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>

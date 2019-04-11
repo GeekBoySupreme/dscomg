@@ -22,7 +22,11 @@ let prerenderJson = [
 	{
 		url: '/faq/communityguidelines',
 		title: 'Community Guidelines - I/O Extended 2019 Kuala Lumpur'
-	}
+	},
+	{
+		url: '/cfp',
+		title: 'Call for Presenters - I/O Extended 2019 Kuala Lumpur'
+	},
 ];
 
 const base = 'https://ioxkl19.netlify.com';

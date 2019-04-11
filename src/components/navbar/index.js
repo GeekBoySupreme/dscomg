@@ -14,6 +14,7 @@ import HomeIcon from '../SVG/Icons/home';
 import AttendingIcon from '../SVG/Icons/attending';
 import RegistrationIcon from '../SVG/Icons/registration';
 import FaqIcon from '../SVG/Icons/faq';
+import CFPIcon from '../SVG/Icons/cpf';
 import style from './style';
 
 export default class NavBar extends Component {
@@ -158,6 +159,13 @@ export default class NavBar extends Component {
 							>
 								Community Guidelines
 							</Link>
+							<Link
+								activeClassName={style.active}
+								href={rootPath + 'cfp'}
+								onClick={this.closeDrawer}
+							>
+								Call for Presenters
+							</Link>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer>
@@ -202,6 +210,14 @@ export default class NavBar extends Component {
 						>
 							<RegistrationIcon />
 							<span>Registration</span>
+						</Link>
+						<Link
+							activeClassName={style.active}
+							class={style.nav_item}
+							href={rootPath + 'cfp'}
+						>
+							<CFPIcon />
+							<span>Call for Presenters</span>
 						</Link>
 						<Match path="/faq">
 							{({ path, url }) => (

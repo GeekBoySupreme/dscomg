@@ -38,7 +38,7 @@ export default class Home extends Component {
 							I/O brings together developers from around the globe for talks, hands-on learning with Google experts, and a first look at Google’s latest developer products.
 						</h2>
 						<br />
-						<h4>June 2019 · Sunway University, Bandar Sunway</h4>
+						<h4>16 June 2019 · Sunway University, Bandar Sunway</h4>
 					</div>
 					<Countdown />
 				</div>
@@ -56,7 +56,7 @@ export default class Home extends Component {
 					</div>
 					<div class={style.stats}>
 						<div class={style.stat}>
-							<div class={style.number}>400+</div>
+							<div class={style.number}>450+</div>
 							<div class={style.label}>Attendees</div>
 						</div>
 						<div class={style.stat}>

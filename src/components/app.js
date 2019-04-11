@@ -9,6 +9,7 @@ import Registration from 'async!../routes/registration';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
 import Faq from 'async!../routes/faq';
+import CallForPresentersPage from 'async!../routes/cfp';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 
@@ -215,7 +216,7 @@ export default class App extends Component {
 	}
 
 	render(
-		{},
+		{ },
 		{
 			currentUser,
 			schedule,
@@ -292,7 +293,11 @@ export default class App extends Component {
 						rootPath={rootPath}
 						partners={partners}
 					/>
+					<CallForPresentersPage path={rootPath + 'cfp/'}
+						rootPath={rootPath}
+						info={info} />
 					<NotFoundPage rootPath={rootPath} default />
+
 				</Router>
 				<Snackbar
 					ref={snackbar => {
