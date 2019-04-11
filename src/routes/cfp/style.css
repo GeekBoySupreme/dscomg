@@ -1,24 +1,75 @@
-.main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 100px auto 0;
-    max-width: 332px;
-    min-height: 80vh!important;
-    padding: 0 40px 60px;
-    text-align: center;
+.tabs {
+    display: none;
+    margin: 0 0 0 60px;
+    position: relative;
 }
 
-.main svg {
-    width: 100%;
-    height: 100%;
+.tabs .tab {
+    color: #4A4A4A; 
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 4px;
+    padding: 16px;
+    transition: 150ms border ease, 150ms color ease;
 }
 
-.errorMessage {
-    margin: 40px auto 0;
-    max-width: 240px;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
+.tabs .tab:hover {
+    color: var(--primary-color);
+}
+
+.tabs .line {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background-color: var(--primary-color);
+    bottom: 0;
+    transition: 250ms ease transform;
+}
+
+.tabs .tab:first-child[active] ~ .line {
+    transform: translateX(0%);
+}
+
+.tabs .tab:nth-child(2)[active] ~ .line {
+    transform: translateX(100%);
+}
+
+.cfp {
+    max-width: 960px;
+    padding-bottom: 64px;
+    margin: 64px 60px 0 60px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        display: flex;
+        margin: 0;
+        width: 100%;
+        padding-top: 64px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .tabs .tab {
+        text-align: center;
+        width: 100%;
+    }
+    .hero, .belt {
+        display: none;
+    }
+    .cfp {
+        margin: 8px 0 0 0;
+        padding: 80px 0 0 0;
+    }
+   
+    .footer {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tabs {
+        padding-top: 56px;
+    }
 }
