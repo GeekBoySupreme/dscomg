@@ -29,7 +29,7 @@ let prerenderJson = [
 	},
 ];
 
-const base = 'https://ioxkl19.netlify.com';
+const base = 'https://events.gdgkl.dev/iox';
 const dbUrl = 'https://gdg-kl.firebaseio.com/events_site/ioxkl19';
 const getSpeakers = new Promise((resolve) => {
 	// fetch(`${dbUrl}/speakers.json`)
