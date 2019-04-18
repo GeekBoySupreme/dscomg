@@ -295,7 +295,8 @@ export default class App extends Component {
 					/>
 					<CallForPresentersPage path={rootPath + 'cfp/'}
 						rootPath={rootPath}
-						info={info} />
+						info={info}
+					/>
 					<NotFoundPage rootPath={rootPath} default />
 
 				</Router>

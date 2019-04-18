@@ -5,6 +5,12 @@ import Footer from '../../components/footer';
 import style from './style';
 
 export default class Attending extends Component {
+	state = {
+		isMobile: false,
+		showTravel: true,
+		showEvent: true
+	}
+
 	handleScroll() {
 		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
 		if (document.documentElement.scrollTop < 56) {
@@ -15,11 +21,17 @@ export default class Attending extends Component {
 		}
 	}
 
+	checkResize() {
+		if (this.windowWidth !== window.innerWidth) {
+			this.resize();
+		}
+	}
+
 	resize() {
-		if (window.innerWidth > 768) {
+		if (window.innerWidth > 768 && this.state.isMobile) {
 			this.setState({ isMobile: false, showTravel: true, showEvent: true });
 		}
-		if (window.innerWidth <= 768) {
+		if (window.innerWidth <= 768 && !this.state.isMobile) {
 			this.setState({ isMobile: true, showTravel: false, showEvent: true });
 		}
 	}
@@ -30,20 +42,22 @@ export default class Attending extends Component {
 
 	constructor(props) {
 		super(props);
-		this.resize = this.resize.bind(this);
+		this.checkResize = this.checkResize.bind(this);
 	}
+
 
 	componentDidMount() {
 		document.title = 'Attending - I/O Extended 2019 Kuala Lumpur';
+		this.windowWidth = window.innerWidth;
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
-		window.addEventListener('resize', this.resize);
+		window.addEventListener('resize', this.checkResize);
 		this.resize();
 		this.handleScroll();
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
-		window.removeEventListener('resize', this.resize);
+		window.removeEventListener('resize', this.checkResize);
 		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
 	}
 

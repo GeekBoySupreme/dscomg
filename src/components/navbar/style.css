@@ -247,7 +247,7 @@
 }
 
 .navbar nav .nav_item {
-  height: 110px;
+  height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -302,7 +302,7 @@
 
 .navbar nav .line {
   position: absolute;
-  height: 110px;
+  height: 90px;
   background-color: var(--primary-color);
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -322,19 +322,19 @@
 }
 
 .navbar nav .nav_item:nth-child(2).active ~ .line {
-  transform: translateY(110px);
+  transform: translateY(90px);
 }
 
 .navbar nav .nav_item:nth-child(3).active ~ .line {
-  transform: translateY(220px);
+  transform: translateY(180px);
 }
 
 .navbar nav .nav_item:nth-child(4).active ~ .line {
-  transform: translateY(330px);
+  transform: translateY(270px);
 }
 
 .navbar nav .nav_item:nth-child(5).active ~ .line {
-  transform: translateY(440px);
+  transform: translateY(360px);
 }
 
 .cfpTitle {

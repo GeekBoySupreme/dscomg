@@ -120,7 +120,7 @@ export default class NavBar extends Component {
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
 							<IoLogo />
-							<h2>June 2019</h2>
+							<h2>16 June 2019</h2>
 							<p>Sunway University, Bandar Sunway</p>
 						</div>
 						<div class={style.drawer_nav}>
@@ -131,41 +131,54 @@ export default class NavBar extends Component {
 							>
 								Home
 							</Link>
-							<Link
-								activeClassName={style.active}
-								href={rootPath + 'attending'}
-								onClick={this.closeDrawer}
-							>
-								Attending
-							</Link>
-							<Link
-								activeClassName={style.active}
-								href={rootPath + 'registration'}
-								onClick={this.closeDrawer}
-							>
-								Registration
-							</Link>
-							<Link
-								activeClassName={style.active}
-								href={rootPath + 'faq'}
-								onClick={this.closeDrawer}
-							>
-								FAQ
-							</Link>
-							<Link
-								activeClassName={style.active}
-								href={rootPath + 'faq/communityguidelines'}
-								onClick={this.closeDrawer}
-							>
-								Community Guidelines
-							</Link>
-							<Link
-								activeClassName={style.active}
-								href={rootPath + 'cfp'}
-								onClick={this.closeDrawer}
-							>
-								Call for Presenters
-							</Link>
+							<Match path="/attending">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'attending'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}attending/`) ? url : undefined}
+									>
+										Attending
+									</Link>
+								)}
+							</Match>
+							<Match path="/registration">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'registration'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}registration/`) ? url : undefined}
+									>
+										Registration
+									</Link>
+								)}
+							</Match>
+							<Match path="/cfp">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'cfp'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}cfp/`) ? url : undefined}
+									>
+										Call for Presenters
+									</Link>
+								)}
+							</Match>
+							<Match path="/faq">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'faq'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}faq/`) ? url : undefined}
+									>
+										FAQ
+									</Link>
+								)}
+							</Match>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer>
@@ -195,31 +208,46 @@ export default class NavBar extends Component {
 							<HomeIcon />
 							<span>Home</span>
 						</Link>
-						<Link
-							activeClassName={style.active}
-							class={style.nav_item}
-							href={rootPath + 'attending'}
-						>
-							<AttendingIcon />
-							<span>Attending</span>
-						</Link>
-						<Link
-							activeClassName={style.active}
-							class={style.nav_item}
-							href={rootPath + 'registration'}
-						>
-							<RegistrationIcon />
-							<span>Registration</span>
-						</Link>
-						<Link
-							activeClassName={style.active}
-							class={style.nav_item}
-							href={rootPath + 'cfp'}
-						>
-							<CFPIcon />
-							<span class={style.cfpTitle}>Call for Presenters</span>
-							<span class={style.cfpTitleMobile}>CFP</span>
-						</Link>
+						<Match path="/attending">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'attending'}
+									path={path.startsWith(`${rootPath}attending/`) ? url : undefined}
+								>
+									<AttendingIcon />
+									<span>Attending</span>
+								</Link>
+							)}
+						</Match>
+						<Match path="/registration">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'registration'}
+									path={path.startsWith(`${rootPath}registration/`) ? url : undefined}
+								>
+									<RegistrationIcon />
+									<span>Registration</span>
+								</Link>
+							)}
+						</Match>
+						<Match path="/cfp">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'cfp'}
+									path={path.startsWith(`${rootPath}cfp/`) ? url : undefined}
+								>
+									<CFPIcon />
+									<span class={style.cfpTitle}>Call for Presenters</span>
+									<span class={style.cfpTitleMobile}>CFP</span>
+								</Link>
+							)}
+						</Match>
 						<Match path="/faq">
 							{({ path, url }) => (
 								<Link
