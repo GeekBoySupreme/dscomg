@@ -40,7 +40,7 @@ export default class CustomDialog extends Component {
 			navigator.share({
 				title: 'I/O Extended 2019 Kuala Lumpur',
 				text: `Check out '${data.title}' at #ioxkl19`,
-				url: `https://events.gdgkl.org/io/schedule/${dataId}`
+				url: `https://events.gdgkl.dev/iox/schedule/${dataId}`
 			});
 		}
 	}
