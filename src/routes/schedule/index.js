@@ -25,7 +25,7 @@ export default class Schedule extends Component {
 
 	star = (id) => e => {
 		let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
-		const ref = this.props.db.ref('/events_site/ioxkl18/users/' + this.props.user.uid + '/schedule/' + id);
+		const ref = this.props.db.ref('/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
 	}
 
@@ -198,4 +198,3 @@ export default class Schedule extends Component {
 		);
 	}
 }
-

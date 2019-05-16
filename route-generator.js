@@ -19,14 +19,18 @@ let prerenderJson = [
 		url: '/faq',
 		title: 'FAQ - I/O Extended 2019 Kuala Lumpur'
 	},
+	// {
+	// 	url: '/faq/communityguidelines',
+	// 	title: 'Community Guidelines - I/O Extended 2019 Kuala Lumpur'
+	// },
 	{
-		url: '/faq/communityguidelines',
-		title: 'Community Guidelines - I/O Extended 2019 Kuala Lumpur'
+		url: '/speakers',
+		title: 'Speakers - I/O Extended 2019 Kuala Lumpur'
 	},
 	{
-		url: '/cfp',
-		title: 'Call for Presenters - I/O Extended 2019 Kuala Lumpur'
-	},
+		url: '/schedule',
+		title: 'Schedule - I/O Extended 2019 Kuala Lumpur'
+	}
 ];
 
 const base = 'https://events.gdgkl.dev/iox';
@@ -80,5 +84,3 @@ Promise.all([getSpeakers, getSessions]).then((values) => {
 	// eslint-disable-next-line no-console
 	console.log('\x1b[32m%s\x1b[0m', `Pre-render config generated successfully: ${data.length} routes generated.`);
 });
-
-

@@ -13,6 +13,8 @@ import MenuIcon from '../SVG/Icons/menu';
 import HomeIcon from '../SVG/Icons/home';
 import AttendingIcon from '../SVG/Icons/attending';
 import RegistrationIcon from '../SVG/Icons/registration';
+import ScheduleIcon from '../SVG/Icons/schedule';
+import SpeakerIcon from '../SVG/Icons/speaker';
 import FaqIcon from '../SVG/Icons/faq';
 import CFPIcon from '../SVG/Icons/cpf';
 import style from './style';
@@ -85,13 +87,13 @@ export default class NavBar extends Component {
 										)
 									}
 								</Match>
-								<Match path={rootPath + 'attending'}>
+								{/* <Match path={rootPath + 'attending'}>
 									{({ path }) =>
 										path.startsWith(rootPath + 'attending') && (
 											<span>Attending</span>
 										)
 									}
-								</Match>
+								</Match> */}
 								<Match path={rootPath + 'speakers'}>
 									{({ path }) =>
 										path.startsWith(rootPath + 'speakers') && (
@@ -131,7 +133,7 @@ export default class NavBar extends Component {
 							>
 								Home
 							</Link>
-							<Match path="/attending">
+							{/* <Match path="/attending">
 								{({ path, url }) => (
 									<Link
 										activeClassName={style.active}
@@ -142,7 +144,7 @@ export default class NavBar extends Component {
 										Attending
 									</Link>
 								)}
-							</Match>
+							</Match> */}
 							<Match path="/registration">
 								{({ path, url }) => (
 									<Link
@@ -155,7 +157,7 @@ export default class NavBar extends Component {
 									</Link>
 								)}
 							</Match>
-							<Match path="/cfp">
+							{/* <Match path="/cfp">
 								{({ path, url }) => (
 									<Link
 										activeClassName={style.active}
@@ -166,7 +168,7 @@ export default class NavBar extends Component {
 										Call for Presenters
 									</Link>
 								)}
-							</Match>
+							</Match> */}
 							<Match path="/faq">
 								{({ path, url }) => (
 									<Link
@@ -176,6 +178,30 @@ export default class NavBar extends Component {
 										path={path.startsWith(`${rootPath}faq/`) ? url : undefined}
 									>
 										FAQ
+									</Link>
+								)}
+							</Match>
+							<Match path="/schedule">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'schedule'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}schedule/`) ? url : undefined}
+									>
+										Schedule
+									</Link>
+								)}
+							</Match>
+							<Match path="/speakers">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'speakers'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}speakers/`) ? url : undefined}
+									>
+										Speakers
 									</Link>
 								)}
 							</Match>
@@ -208,7 +234,7 @@ export default class NavBar extends Component {
 							<HomeIcon />
 							<span>Home</span>
 						</Link>
-						<Match path="/attending">
+						{/* <Match path="/attending">
 							{({ path, url }) => (
 								<Link
 									activeClassName={style.active}
@@ -220,7 +246,7 @@ export default class NavBar extends Component {
 									<span>Attending</span>
 								</Link>
 							)}
-						</Match>
+						</Match> */}
 						<Match path="/registration">
 							{({ path, url }) => (
 								<Link
@@ -234,7 +260,7 @@ export default class NavBar extends Component {
 								</Link>
 							)}
 						</Match>
-						<Match path="/cfp">
+						{/* <Match path="/cfp">
 							{({ path, url }) => (
 								<Link
 									activeClassName={style.active}
@@ -247,7 +273,7 @@ export default class NavBar extends Component {
 									<span class={style.cfpTitleMobile}>CFP</span>
 								</Link>
 							)}
-						</Match>
+						</Match> */}
 						<Match path="/faq">
 							{({ path, url }) => (
 								<Link
@@ -258,6 +284,32 @@ export default class NavBar extends Component {
 								>
 									<FaqIcon />
 									<span>FAQ</span>
+								</Link>
+							)}
+						</Match>
+						<Match path="/schedule">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'schedule'}
+									path={path.startsWith(`${rootPath}schedule/`) ? url : undefined}
+								>
+									<ScheduleIcon />
+									<span>Schedule</span>
+								</Link>
+							)}
+						</Match>
+						<Match path="/speakers">
+							{({ path, url }) => (
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'speakers'}
+									path={path.startsWith(`${rootPath}speakers/`) ? url : undefined}
+								>
+									<SpeakerIcon />
+									<span>Speakers</span>
 								</Link>
 							)}
 						</Match>

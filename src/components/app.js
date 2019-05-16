@@ -9,6 +9,8 @@ import Registration from 'async!../routes/registration';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
 import Faq from 'async!../routes/faq';
+import Schedule from 'async!../routes/schedule';
+import Speakers from 'async!../routes/speakers';
 import CallForPresentersPage from 'async!../routes/cfp';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
@@ -80,7 +82,7 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			this.db = firebase.database();
 
-			this.dbPromise = idb.open('devfestkl18', 1, upgradeDB => {
+			this.dbPromise = idb.open('ioxkl19', 1, upgradeDB => {
 				upgradeDB.createObjectStore('data');
 			});
 
@@ -237,7 +239,7 @@ export default class App extends Component {
 						rootPath={rootPath}
 						info={info}
 					/>
-					{/* <Schedule
+					<Schedule
 						path={rootPath + 'schedule/'}
 						user={currentUser}
 						schedule={schedule}
@@ -246,8 +248,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/> */}
-					{/* <Schedule
+					/>
+					<Schedule
 						path={rootPath + 'schedule/:id'}
 						user={currentUser}
 						schedule={schedule}
@@ -256,8 +258,8 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/> */}
-					{/* <Speakers
+					/>
+					<Speakers
 						path={rootPath + 'speakers/'}
 						user={currentUser}
 						schedule={schedule}
@@ -276,7 +278,7 @@ export default class App extends Component {
 						speakers={speakers}
 						db={this.db}
 						rootPath={rootPath}
-					/> */}
+					/>
 					<Registration
 						path={rootPath + 'registration/'}
 						user={currentUser}
