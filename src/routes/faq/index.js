@@ -37,14 +37,41 @@ export default class Faq extends Component {
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>General</div>
 						<div class={style.faq_content}>
+							<p><b>Session Schedule</b></p>
+							<p>The schedule can be found <a href={rootPath + 'schedule'}>here</a>.</p>
+							<br />
+							<p><b>Community Guidelines</b></p>
+							<p>Our community guidelines can be found <a href={rootPath + 'faq/communityguidelines'}>here</a>. Be nice to each other, and be respectful and constructive.</p>
+							<br />
 							<p><b>Date and location</b></p>
-							<p>I/O Extended 2019 Kuala Lumpur will take place on the 16 June 2019 at Sunway University, Bandar Sunway.</p>
+							<p>I/O Extended 2019 Kuala Lumpur will take place on the 16th June 2019 at Sunway University, Bandar Sunway.</p>
 							<br />
 							<p><b>Stay Informed</b></p>
 							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the I/O Extended 2019 Kuala Lumpur website, and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a>. You can also follow and join the social conversation about I/O Extended 2019 Kuala Lumpur via official hashtags <b>#ioxkl19</b>. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
 							<br />
 							<p><b>Content Formats</b></p>
 							<p>During the conference, attendees will be able to attend sessions and hands-on workshops, chat with experts and attendees.</p>
+							<br />
+							<p><b>Language</b></p>
+							<p>All presentations at I/O Extended 2019 Kuala Lumpur will be in English.</p>
+						</div>
+					</div>
+				</div>
+				<div class={style.faq}>
+					<div class={style.faq_item}>
+						<div class={style.faq_title}>Amenities</div>
+						<div class={style.faq_content}>
+							<p><b>Internet Access</b></p>
+							<p>Attendees can connect to the WiFi network <span style="color:#d84315">Radius</span> for the duration of the event.</p>
+							<br />
+							<p><b>Washroom</b></p>
+							<p>Washrooms can be found on either side (East and West) of the Sunway University building, located behind the elevator lobbies.</p>
+							<br />
+							<p><b>Drinking Fountain</b></p>
+							<p>Drinking fountain/bottle filling stations can be found next to all washroom entrances.</p>
+							<br />
+							<p><b>Surau/Prayer Room</b></p>
+							<p>The Surau/Prayer Room can be found on the <strong>East wing</strong> of the Sunway University building, on the <strong>Mezzanine Floor</strong>, next to the Lunch Box.</p>
 						</div>
 					</div>
 				</div>
@@ -72,9 +99,6 @@ export default class Faq extends Component {
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>Attendance Details</div>
 						<div class={style.faq_content}>
-							<p><b>Language</b></p>
-							<p>All presentations at I/O Extended 2019 Kuala Lumpur will be in English.</p>
-							<br />
 							<p><b>Event Attire</b></p>
 							<p>I/O Extended 2019 Kuala Lumpur is a developer event, so please be comfortable and casual. There is no enforced dress code.</p>
 							<br />

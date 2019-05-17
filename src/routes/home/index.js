@@ -169,6 +169,27 @@ export default class Home extends Component {
 								</div>
 							</div>
 						)}
+						{partners.sponsors && (
+							<div class={style.partner}>
+								<h4>Official Ticketing Partner</h4>
+								<div class={style.sponsor}>
+									{partners.ticketing_partner.map(item => (
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
+										</a>
+									))}
+								</div>
+							</div>
+						)}
 						{partners.organizers && (
 							<div class={style.partner}>
 								<h4>With Love From</h4>
