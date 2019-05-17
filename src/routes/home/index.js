@@ -69,9 +69,30 @@ export default class Home extends Component {
 				{partners && (
 					<div class={style.partners}>
 						<h3>Partners</h3>
+						{partners.partner && (
+							<div class={style.partner}>
+								<div class={style.sponsor}>
+									{partners.partner.map(item => (
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
+										</a>
+									))}
+								</div>
+							</div>
+						)}
+
 						{partners.general_sponsor && (
 							<div class={style.partner}>
-								<h4>Our Mind-blowing Supporters</h4>
+								<h4>Our Mind-blowing Gold Sponsors</h4>
 								<div class={style.sponsor}>
 									{partners.general_sponsor.map(item => (
 										<a
@@ -92,7 +113,7 @@ export default class Home extends Component {
 						)}
 						{partners.sponsors && (
 							<div class={style.partner}>
-								<h4>Our Awesome Partners</h4>
+								<h4>Our Awesome Silver Sponsors</h4>
 								<div class={style.sponsor}>
 									{partners.sponsors.map(item => (
 										<a
