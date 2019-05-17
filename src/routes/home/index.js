@@ -69,6 +69,22 @@ export default class Home extends Component {
 				{partners && (
 					<div class={style.partners}>
 						<h3>Partners</h3>
+						<h4>Main Partner of 2019</h4>
+						{
+										<a
+											class={style.item}
+											href={partners.main_partner.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={partners.main_partner.image}
+												alt={partners.main_partner.name}
+											/>
+										</a>
+						}
+						<h4>Community Partners</h4>
 						{partners.partner && (
 							<div class={style.partner}>
 								<div class={style.sponsor}>
