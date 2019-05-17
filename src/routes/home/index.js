@@ -70,7 +70,7 @@ export default class Home extends Component {
 					<div class={style.partners}>
 						<h3>Partners</h3>
 						<h4>Main Partner of 2019</h4>
-						{
+						{partners.main_partner && (
 										<a
 											class={style.item}
 											href={partners.main_partner.url}
@@ -82,7 +82,7 @@ export default class Home extends Component {
 												src={partners.main_partner.image}
 												alt={partners.main_partner.name}
 											/>
-										</a>
+										</a>)
 						}
 						<h4>Community Partners</h4>
 						{partners.partner && (
