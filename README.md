@@ -10,17 +10,13 @@ Start development server:
 
 `npm run dev`
 
-Build: 
+Build:
 
 `npm run build`
 
-Set Google Cloud Project:
+Deploy:
 
-`gcloud config set project <project-id>`
-
-Deploy: 
-
-`gcloud app deploy io.yaml -v 1`
+`firebase deploy`
 
 ## Technology Stack
 
@@ -30,6 +26,6 @@ Deploy:
 
 ## License
 
-This PWA is published under the [MIT license](/LICENSE.md). 
+This PWA is published under the [MIT license](/LICENSE.md).
 
 Feel free to clone and modify repo as you want, but don't forget to add reference to authors.
