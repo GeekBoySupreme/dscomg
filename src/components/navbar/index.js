@@ -205,6 +205,30 @@ export default class NavBar extends Component {
 									</Link>
 								)}
 							</Match>
+							<Match path="/schedule">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'schedule'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}schedule/`) ? url : undefined}
+									>
+										Schedule
+									</Link>
+								)}
+							</Match>
+							<Match path="/speakers">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'speakers'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}speakers/`) ? url : undefined}
+									>
+										Speakers
+									</Link>
+								)}
+							</Match>
 						</div>
 					</Drawer.DrawerContent>
 				</Drawer>
