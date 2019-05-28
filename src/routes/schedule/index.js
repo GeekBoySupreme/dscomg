@@ -25,7 +25,7 @@ export default class Schedule extends Component {
 
 	star = (id) => e => {
 		let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
-		const ref = this.props.db.ref('/events_site/ioxkl18/users/' + this.props.user.uid + '/schedule/' + id);
+		const ref = this.props.db.ref('/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
 	}
 
@@ -115,11 +115,11 @@ export default class Schedule extends Component {
 					<h2>Schedule</h2>
 					<p>
 						All sessions feature a Q&amp;A session at the end, time permitting.<br /><br />
-						Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
+						{/* Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
 						<li>Hall A (JC 1) - #9769</li>
 						<li>Hall B (JC 2) - #L145</li>
 						<li>Hall C (JC 3) - #N095</li>
-						<li>Hall D (LT 5) - #L556</li>
+						<li>Hall D (LT 5) - #L556</li> */}
 					</p>
 				</div>
 				<div class={style.tabs}>
@@ -198,4 +198,3 @@ export default class Schedule extends Component {
 		);
 	}
 }
-

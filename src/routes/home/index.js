@@ -69,9 +69,46 @@ export default class Home extends Component {
 				{partners && (
 					<div class={style.partners}>
 						<h3>Partners</h3>
+						<h4>Main Partner of 2019</h4>
+						{partners.main_partner && (
+										<a
+											class={style.item}
+											href={partners.main_partner.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={partners.main_partner.image}
+												alt={partners.main_partner.name}
+											/>
+										</a>)
+						}
+						<h4>Community Partners</h4>
+						{partners.partner && (
+							<div class={style.partner}>
+								<div class={style.sponsor}>
+									{partners.partner.map(item => (
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
+										</a>
+									))}
+								</div>
+							</div>
+						)}
+
 						{partners.general_sponsor && (
 							<div class={style.partner}>
-								<h4>Our Mind-blowing Supporters</h4>
+								<h4>Our Mind-blowing Gold Sponsors</h4>
 								<div class={style.sponsor}>
 									{partners.general_sponsor.map(item => (
 										<a
@@ -92,7 +129,7 @@ export default class Home extends Component {
 						)}
 						{partners.sponsors && (
 							<div class={style.partner}>
-								<h4>Our Awesome Partners</h4>
+								<h4>Our Awesome Silver Sponsors</h4>
 								<div class={style.sponsor}>
 									{partners.sponsors.map(item => (
 										<a
@@ -116,6 +153,27 @@ export default class Home extends Component {
 								<h4>Our Hardcore Fans</h4>
 								<div class={style.sponsor}>
 									{partners.community_sponsors.map(item => (
+										<a
+											class={style.item}
+											href={item.url}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img
+												crossorigin="anonymous"
+												src={item.image}
+												alt={item.name}
+											/>
+										</a>
+									))}
+								</div>
+							</div>
+						)}
+						{partners.sponsors && (
+							<div class={style.partner}>
+								<h4>Official Ticketing Partner</h4>
+								<div class={style.sponsor}>
+									{partners.ticketing_partner.map(item => (
 										<a
 											class={style.item}
 											href={item.url}
