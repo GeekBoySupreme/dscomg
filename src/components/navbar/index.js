@@ -193,18 +193,6 @@ export default class NavBar extends Component {
 									</Link>
 								)}
 							</Match>
-							<Match path="/map">
-								{({ path, url }) => (
-									<Link
-										activeClassName={style.active}
-										href={rootPath + 'map'}
-										onClick={this.closeDrawer}
-										path={path.startsWith(`${rootPath}map/`) ? url : undefined}
-									>
-										Map
-									</Link>
-								)}
-							</Match>
 							<Match path="/schedule">
 								{({ path, url }) => (
 									<Link
@@ -226,6 +214,18 @@ export default class NavBar extends Component {
 										path={path.startsWith(`${rootPath}speakers/`) ? url : undefined}
 									>
 										Speakers
+									</Link>
+								)}
+							</Match>
+							<Match path="/map">
+								{({ path, url }) => (
+									<Link
+										activeClassName={style.active}
+										href={rootPath + 'map'}
+										onClick={this.closeDrawer}
+										path={path.startsWith(`${rootPath}map/`) ? url : undefined}
+									>
+										Map
 									</Link>
 								)}
 							</Match>
