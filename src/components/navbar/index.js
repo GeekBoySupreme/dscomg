@@ -11,8 +11,8 @@ import 'preact-material-components/List/style.css';
 import IoLogo from '../io_logo';
 import MenuIcon from '../SVG/Icons/menu';
 import HomeIcon from '../SVG/Icons/home';
-import AttendingIcon from '../SVG/Icons/attending';
-import RegistrationIcon from '../SVG/Icons/registration';
+// import AttendingIcon from '../SVG/Icons/attending';
+// import RegistrationIcon from '../SVG/Icons/registration';
 import ScheduleIcon from '../SVG/Icons/schedule';
 import SpeakerIcon from '../SVG/Icons/speaker';
 import FaqIcon from '../SVG/Icons/faq';
@@ -145,7 +145,7 @@ export default class NavBar extends Component {
 									</Link>
 								)}
 							</Match> */}
-							<Match path="/registration">
+							{/* <Match path="/registration">
 								{({ path, url }) => (
 									<Link
 										activeClassName={style.active}
@@ -156,7 +156,7 @@ export default class NavBar extends Component {
 										Registration
 									</Link>
 								)}
-							</Match>
+							</Match> */}
 							<Match path="/faq">
 								{({ path, url }) => (
 									<Link
@@ -271,7 +271,7 @@ export default class NavBar extends Component {
 								</Link>
 							)}
 						</Match> */}
-						<Match path="/registration">
+						{/* <Match path="/registration">
 							{({ path, url }) => (
 								<Link
 									activeClassName={style.active}
@@ -283,7 +283,7 @@ export default class NavBar extends Component {
 									<span>Registration</span>
 								</Link>
 							)}
-						</Match>
+						</Match> */}
 						{/* <Match path="/cfp">
 							{({ path, url }) => (
 								<Link
@@ -348,7 +348,7 @@ export default class NavBar extends Component {
 										<MapIcon />
 										<span>Map</span>
 									</Link>
-								)}	
+								)}
 						</Match>
 						<div class={style.line} />
 					</nav>

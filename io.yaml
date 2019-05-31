@@ -62,12 +62,6 @@ handlers:
     secure: always
     expiration: '1s'
 
-  - url: /io/registration/?
-    static_files: build/registration/index.html
-    upload: build/registration/index.html
-    secure: always
-    expiration: '1s'
-
   - url: /io/faq/communityguidelines/?
     static_files: build/faq/communityguidelines/index.html
     upload: build/faq/communityguidelines/index.html

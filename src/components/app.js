@@ -5,7 +5,7 @@ import NavBar from './navbar';
 import idb from 'idb';
 import Home from '../routes/home';
 import Attending from 'async!../routes/attending';
-import Registration from 'async!../routes/registration';
+// import Registration from 'async!../routes/registration';
 import CommunityGuidelines from 'async!../routes/communityguidelines';
 import NotFoundPage from 'async!../routes/404';
 import Faq from 'async!../routes/faq';
@@ -279,12 +279,12 @@ export default class App extends Component {
 						db={this.db}
 						rootPath={rootPath}
 					/>
-					<Registration
+					{/* <Registration
 						path={rootPath + 'registration/'}
 						user={currentUser}
 						info={info}
 						rootPath={rootPath}
-					/>
+					/> */}
 					<CommunityGuidelines
 						path={rootPath + 'faq/communityguidelines/'}
 						rootPath={rootPath}

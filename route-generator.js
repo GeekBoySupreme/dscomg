@@ -11,10 +11,10 @@ let prerenderJson = [
 		url: '/attending',
 		title: 'Attending - I/O Extended 2019 Kuala Lumpur'
 	},
-	{
-		url: '/registration',
-		title: 'Registration - I/O Extended 2019 Kuala Lumpur'
-	},
+	// {
+	// 	url: '/registration',
+	// 	title: 'Registration - I/O Extended 2019 Kuala Lumpur'
+	// },
 	{
 		url: '/faq',
 		title: 'FAQ - I/O Extended 2019 Kuala Lumpur'
