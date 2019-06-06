@@ -2,6 +2,39 @@ import { Component } from 'preact';
 import style from './style';
 
 export default class SocialFooter extends Component {
+	constructor(props) {
+		super(props);
+		if (typeof window !== "undefined") {
+		  this.io = new IntersectionObserver(
+			entries => {
+			  const visibleEntries = entries.filter(e => e.isIntersecting);
+	
+			  visibleEntries
+				.filter(e => e.target instanceof HTMLImageElement)
+				.forEach(e => {
+				  e.target.src = e.target.dataset.src;
+				});
+			},
+			{
+			  /* Using default options. Details below */
+			}
+		  );
+		}
+	  }
+	
+	  componentDidMount() {
+		const ele = document.querySelector(`.social_gif`);
+	
+		if (!this.io) return;
+	
+		this.io.observe(ele);
+	  }
+	
+	  componentWillUnmount() {
+		if (!this.io) return;
+		this.io.disconnect();
+	  }
+	
 	render({ rootPath }) {
 		return (
 			<div class={style.social_footer}>
@@ -36,7 +69,7 @@ export default class SocialFooter extends Component {
 					</div>
 				</div>
 				<div class={style.social_gif}>
-					<img crossorigin="anonymous" alt="I/O 2019 Hashtag" src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" />
+					<img class="social_gif" crossorigin="anonymous" alt="I/O 2019 Hashtag" data-src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" />
 				</div>
 			</div>
 		);
