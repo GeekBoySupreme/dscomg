@@ -7,6 +7,23 @@ import Countdown from '../../components/Countdown';
 import style from './style';
 
 export default class Home extends Component {
+
+	constructor(props){
+		super(props);
+
+		this.io = new IntersectionObserver(
+			entries => {
+				const visibleEntries = entries.filter(e=> e.isIntersecting);
+				
+				visibleEntries.filter(e=> e.target instanceof HTMLImageElement).forEach((e)=> {
+					e.target.src = e.target.dataset.src;
+				})
+			},
+			{
+				/* Using default options. Details below */
+			}
+		);
+	}
 	handleScroll() {
 		const ele = document.querySelector('.topappbar.mdc-top-app-bar');
 		if (document.documentElement.scrollTop < 56) {
@@ -21,11 +38,20 @@ export default class Home extends Component {
 		document.title = 'I/O Extended 2019 Kuala Lumpur';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
+		
+
+		const ele = document.querySelector('.belt');
+		const cover = document.querySelector('#cover');
+		const sponsorLogos = document.querySelectorAll('.sponsor_logo');
+		this.io.observe(ele);
+		this.io.observe(cover);
+		sponsorLogos.forEach(logo => this.io.observe(logo));
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
 		document.querySelector('.topappbar.mdc-top-app-bar').removeAttribute('top');
+		this.io.disconnect();
 	}
 
 	render({ rootPath, partners }) {
@@ -43,7 +69,7 @@ export default class Home extends Component {
 					<Countdown />
 				</div>
 				<div class={`${style.belt} belt`}>
-					<img crossorigin="anonymous" src="https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg" />
+					<img id="cover" crossorigin="anonymous" data-src="https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg" />
 				</div>
 				<div class={style.home_info}>
 					<div class={style.text}>
@@ -79,7 +105,8 @@ export default class Home extends Component {
 										>
 											<img
 												crossorigin="anonymous"
-												src={partners.main_partner.image}
+												class="sponsor_logo"
+												data-src={partners.main_partner.image}
 												alt={partners.main_partner.name}
 											/>
 										</a>)
@@ -96,8 +123,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
@@ -118,8 +146,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
@@ -139,8 +168,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
@@ -160,8 +190,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
@@ -181,8 +212,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
@@ -202,8 +234,9 @@ export default class Home extends Component {
 											rel="noopener noreferrer"
 										>
 											<img
+												class="sponsor_logo"
 												crossorigin="anonymous"
-												src={item.image}
+												data-src={item.image}
 												alt={item.name}
 											/>
 										</a>
