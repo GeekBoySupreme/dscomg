@@ -25,6 +25,7 @@
   align-items: center;
   background: transparent;
   user-select: initial;
+  --mdc-ripple-fg-scale: 0!important;
 }
 
 .dialog_header .back svg {
