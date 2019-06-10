@@ -25,7 +25,7 @@ export default class Footer extends Component {
   componentDidMount() {
     const ele = document.querySelector(`.footer_logo`);
 
-    if (!this.io) return;
+    if (!this.io || !ele ) return;
 
     this.io.observe(ele);
   }

@@ -25,7 +25,7 @@ export default class SocialFooter extends Component {
 	  componentDidMount() {
 		const ele = document.querySelector(`.social_gif`);
 	
-		if (!this.io) return;
+		if (!this.io|| !ele) return;
 	
 		this.io.observe(ele);
 	  }
