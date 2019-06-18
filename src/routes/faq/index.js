@@ -62,7 +62,7 @@ export default class Faq extends Component {
 						<div class={style.faq_title}>Amenities</div>
 						<div class={style.faq_content}>
 							<p><b>Internet Access</b></p>
-							<p>Attendees can connect to the WiFi network <span style="color:#d84315">Radius</span> for the duration of the event.</p>
+							<p>Attendees can connect to the WiFi network <span style="color:#d84315">SunwayEdu</span> with username <strong>fstwfg</strong> and password <strong>Sunw@y01</strong></p>
 							<br />
 							<p><b>Washroom</b></p>
 							<p>Washrooms can be found on either side (East and West) of the Sunway University building, located behind the elevator lobbies.</p>
