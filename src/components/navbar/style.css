@@ -95,7 +95,7 @@
 .signout_btn {
   color: #fff!important;
   font-weight: 500;
-  background: #1a73e8;
+  background: #1a73e8!important;
 }
 
 .cancel_btn:focus,

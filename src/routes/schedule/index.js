@@ -24,9 +24,16 @@ export default class Schedule extends Component {
 	}
 
 	star = (id) => e => {
+		
 		let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
 		const ref = this.props.db.ref('/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
+		
+		gtag('event', 'add_to_schdule', {
+			'event_category': 'engagement',
+			'event_label': 'add to schedule',
+		  });
+
 	}
 
 	parseTopic(topic) {
@@ -55,6 +62,12 @@ export default class Schedule extends Component {
 	}
 
 	showMyIO = (state) => e => {
+
+		gtag('event', 'show_my_io', {
+			'event_category': 'engagement',
+			'event_label': 'My Schedule',
+		  });
+
 		this.setState({ showMyIO: state });
 	}
 

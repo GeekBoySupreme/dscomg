@@ -9,8 +9,9 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "iox/index.html"
+        "destination": "/iox/index.html"
       }
+      
     ],
     "redirects":[
       {

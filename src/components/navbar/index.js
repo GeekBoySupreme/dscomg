@@ -29,6 +29,9 @@ export default class NavBar extends Component {
 	};
 
 	signOut = () => {
+
+		gtag('event', 'logout', { method : 'Google' });
+
 		firebase
 			.auth()
 			.signOut()
@@ -38,6 +41,8 @@ export default class NavBar extends Component {
 	};
 
 	toggleSigninDig = () => {
+		gtag('event', 'login', { method : 'Google' });
+
 		this.signIn();
 	};
 
@@ -64,7 +69,7 @@ export default class NavBar extends Component {
 							<Dialog.FooterButton class={style.cancel_btn} accept>
 								Not now
 							</Dialog.FooterButton>
-							<Dialog.FooterButton
+							<Dialog.FooterButton primary
 								class={style.signout_btn}
 								onClick={this.signOut}
 							>
