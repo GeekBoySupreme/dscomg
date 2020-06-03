@@ -24035,10 +24035,10 @@ var config = {
 	projectId: 'ioxkl-3fbcb',
 	storageBucket: 'ioxkl-3fbcb.appspot.com',
 	messagingSenderId: '327746388642',
-	appId: "1:327746388642:web:f89b1e137b60f39b"
+	appId: '1:327746388642:web:f89b1e137b60f39b'
 };
 index_esm["b" /* firebase */].initializeApp(config);
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
 
 	__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "JTUh")).then(function () {
 		return index_esm["b" /* firebase */].performance();
@@ -38590,7 +38590,8 @@ var app_App = function (_Component) {
 				}),
 				Object(preact_min["h"])(map_EventMapPage, { path: rootPath + 'map/',
 					rootPath: rootPath,
-					info: info }),
+					info: info
+				}),
 				Object(preact_min["h"])(dummy_loader_js_routes_404, { rootPath: rootPath, 'default': true })
 			),
 			Object(preact_min["h"])(Snackbar_default.a, {
