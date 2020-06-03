@@ -1,8 +1,6 @@
-# I/O Extended 2019 Kuala Lumpur PWA
+# DSC OMG 2020
 
-Progressive Web App for Google I/O Extended 2019 Kuala Lumpur.
-
-![](https://i.imgur.com/QCyPvdX.jpg)
+Progressive Web App for DSC OMG 20, based on - Google I/O Extended 2019 Kuala Lumpur.
 
 ## Getting Started
 
@@ -21,7 +19,7 @@ Deploy:
 ## Technology Stack
 
 * Preact
-* Firebase (Auth, Realtime Database, Hosting)
+* Firebase (Auth, Realtime Database)
 * Service Worker
 
 ## License
@@ -29,3 +27,5 @@ Deploy:
 This PWA is published under the [MIT license](/LICENSE.md).
 
 Feel free to clone and modify repo as you want, but don't forget to add reference to authors.
+# dscomg
+Still thinking about that
