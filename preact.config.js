@@ -11,7 +11,6 @@ export default (config, env, helpers) => {
 		}),
 		new CopyWebpackPlugin([
 			{ from: `${__dirname}/src/robots.txt` },
-			{ from: `${__dirname}/src/sitemap.xml` }
 		])
 	);
 

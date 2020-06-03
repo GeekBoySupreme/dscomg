@@ -3,7 +3,7 @@ import { padStart } from 'lodash';
 import lottie from 'lottie-web/build/player/lottie_light_html';
 
 // Google I/O 2019 start time
-const EVENT_DATE = new Date('June 16, 2019 08:00 GMT+8');
+const EVENT_DATE = new Date('June 16, 2020 08:00 GMT+8');
 
 const FRAME_RANGES = {
 	nine: {

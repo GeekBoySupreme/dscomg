@@ -84,7 +84,6 @@ Promise.all([getSpeakers, getSessions]).then((values) => {
 			.up();
 	});
 	xml.end({ pretty: true });
-	fs.writeFile('src/sitemap.xml', xml.doc().toString({ pretty: true }), () => {});
 	// eslint-disable-next-line no-console
 	console.log('\x1b[32m%s\x1b[0m', `Pre-render config generated successfully: ${data.length} routes generated.`);
 });

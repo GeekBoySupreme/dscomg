@@ -25,12 +25,6 @@ handlers:
     secure: always
     expiration: '1h'
 
-  - url: /io/sitemap.xml
-    static_files: sitemap.xml
-    upload: sitemap.xml
-    secure: always
-    expiration: '1h'
-
   - url: /io/robots.txt
     static_files: robots.txt
     upload: robots.txt
