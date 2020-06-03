@@ -5,35 +5,35 @@ const builder = require('xmlbuilder');
 let prerenderJson = [
 	{
 		url: '/',
-		title: 'I/O Extended 2019 Kuala Lumpur'
+		title: 'DSC OMG 2020'
 	},
 	{
 		url: '/attending',
-		title: 'Attending - I/O Extended 2019 Kuala Lumpur'
+		title: 'Attending - DSC OMG 2020'
 	},
 	// {
 	// 	url: '/registration',
-	// 	title: 'Registration - I/O Extended 2019 Kuala Lumpur'
+	// 	title: 'Registration - DSC OMG 2020'
 	// },
 	{
 		url: '/faq',
-		title: 'FAQ - I/O Extended 2019 Kuala Lumpur'
+		title: 'FAQ - DSC OMG 2020'
 	},
 	// {
 	// 	url: '/faq/communityguidelines',
-	// 	title: 'Community Guidelines - I/O Extended 2019 Kuala Lumpur'
+	// 	title: 'Community Guidelines - DSC OMG 2020'
 	// },
 	{
 		url: '/speakers',
-		title: 'Speakers - I/O Extended 2019 Kuala Lumpur'
+		title: 'Speakers - DSC OMG 2020'
 	},
 	{
 		url: '/map',
-		title: 'Event Map - I/O Extended 2019 Kuala Lumpur'
+		title: 'Event Map - DSC OMG 2020'
 	},
 	{
 		url: '/schedule',
-		title: 'Schedule - I/O Extended 2019 Kuala Lumpur'
+		title: 'Schedule - DSC OMG 2020'
 	}
 ];
 
@@ -46,7 +46,7 @@ const getSpeakers = new Promise((resolve) => {
 	// 			let speakers = [];
 	// 			speakers = Object.keys(data).map(item => ({
 	// 				url: `/speakers/${item}`,
-	// 				title: `${data[item].name} - Speakers - I/O Extended 2019 Kuala Lumpur`
+	// 				title: `${data[item].name} - Speakers - DSC OMG 2020`
 	// 			}));
 	// 			resolve(speakers);
 	// 		});
@@ -61,7 +61,7 @@ const getSessions = new Promise((resolve) => {
 	// 			let sessions = [];
 	// 			sessions = Object.keys(data).map(item => ({
 	// 				url: `/schedule/${item}`,
-	// 				title: `${data[item].title} - Schedule - I/O Extended 2019 Kuala Lumpur`
+	// 				title: `${data[item].title} - Schedule - DSC OMG 2020`
 	// 			}));
 	// 			resolve(sessions);
 	// 		});

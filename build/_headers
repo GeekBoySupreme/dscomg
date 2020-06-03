@@ -1,0 +1,39 @@
+/*
+	Cache-Control: public, max-age=3600, no-cache
+	Access-Control-Max-Age: 600
+/sw.js
+	Cache-Control: private, no-cache
+/*.chunk.*.js
+	Cache-Control: public, max-age=31536000
+/
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-home.chunk.c5a37.js>; rel=preload; as=script
+/schedule
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-schedule.chunk.864aa.js>; rel=preload; as=script
+/speakers
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-speakers.chunk.9b62a.js>; rel=preload; as=script
+/map
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-map.chunk.06285.js>; rel=preload; as=script
+/faq
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-faq.chunk.57d86.js>; rel=preload; as=script
+/communityguidelines
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-communityguidelines.chunk.f03cc.js>; rel=preload; as=script
+/attending
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-attending.chunk.348b3.js>; rel=preload; as=script
+/404
+	Link: </style.1ab72.css>; rel=preload; as=style
+	Link: </bundle.54c81.js>; rel=preload; as=script
+	Link: </route-404.chunk.49215.js>; rel=preload; as=script
