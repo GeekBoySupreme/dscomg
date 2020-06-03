@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "node route-generator.js && preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker --dest build",
+    "build": "node route-generator.js && preact build --template src/template.html --prerenderUrls src/prerender-urls.json --service-worker false --dest build",
     "serve": "preact build --template src/template.html --service-worker false && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src"
@@ -23,7 +23,7 @@
     "build/*"
   ],
   "devDependencies": {
-    "copy-webpack-plugin": "^6.0.0",
+    "copy-webpack-plugin": "^4.6.0",
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
