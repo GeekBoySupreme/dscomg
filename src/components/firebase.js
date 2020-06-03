@@ -9,11 +9,11 @@ const config = {
 	projectId: 'ioxkl-3fbcb',
 	storageBucket: 'ioxkl-3fbcb.appspot.com',
 	messagingSenderId: '327746388642',
-    appId: "1:327746388642:web:f89b1e137b60f39b"
+	appId: '1:327746388642:web:f89b1e137b60f39b'
 };
 firebase.initializeApp(config);
-if (typeof window !== "undefined"){
+if (typeof window !== 'undefined'){
 
-import ("firebase/performance").then(()=> firebase.performance());
+import('firebase/performance').then(()=> firebase.performance());
 }
 export default firebase;

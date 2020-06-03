@@ -297,7 +297,8 @@ export default class App extends Component {
 					/>
 					<EventMapPage path={rootPath + 'map/'}
 						rootPath={rootPath}
-						info={info}/>
+						info={info}							
+					/>
 					<NotFoundPage rootPath={rootPath} default />
 
 				</Router>
