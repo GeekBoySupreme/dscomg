@@ -66,9 +66,9 @@ export default class Home extends Component {
           <div class={style.hero_title}>
             <IoLogo rootPath={rootPath} />
             <h2>
-              I/O brings together developers from around the globe for talks,
-              hands-on learning with Google experts, and a first look at
-              Google’s latest developer products.
+              DSC OMG brings together developers from around the globe for talks,
+              hands-on learning with DSC Leads and Google experts, and a first look at some of the
+              amazing Community Projects at hand.
             </h2>
             <br />
             <h4>16 June 2019 · Sunway University, Bandar Sunway</h4>
