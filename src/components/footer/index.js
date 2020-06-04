@@ -39,7 +39,7 @@ export default class Footer extends Component {
     return (
       <div class={style.footer}>
         <div class={style.footer_logo}>
-          <img
+        <img
 		  	class="footer_logo"
             crossorigin="anonymous"
             alt="DSC OMG Logo"

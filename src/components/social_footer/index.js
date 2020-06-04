@@ -39,7 +39,7 @@ export default class SocialFooter extends Component {
 		return (
 			<div class={style.social_footer}>
 				<div class={style.social_body}>
-					<p>Keep in touch with GDG Kuala Lumpur for the latest I/O announcements</p>
+					<p>Keep in touch with Developer Student Clubs for the latest OMG announcements</p>
 					<div>
 						<a alt="" href="https://facebook.com/GDGKualaLumpur" target="_blank" rel="noopener noreferrer">
 							<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">

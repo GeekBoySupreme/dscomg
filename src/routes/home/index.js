@@ -86,9 +86,9 @@ export default class Home extends Component {
           <div class={style.text}>
             <h3>What you need to know, before you ask.</h3>
             <p>
-              I/O Extended 2019 Kuala Lumpur brings together the world class
-              experts in Android, Web, Machine Learning and Cloud technologies
-              for one full day of sessions, workshops and showcases.
+              DSC OMG 2020 brings together the world class
+              experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
+              for a week of sessions, workshops and showcases.
             </p>
           </div>
           <div class={style.stats}>
@@ -98,7 +98,7 @@ export default class Home extends Component {
             </div>
             <div class={style.stat}>
               <div class={style.number}>1</div>
-              <div class={style.label}>Day</div>
+              <div class={style.label}>Week</div>
             </div>
           </div>
         </div>
