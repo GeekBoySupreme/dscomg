@@ -3,17 +3,18 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
-	apiKey: 'AIzaSyBrddT3o-QvxKQm22qyybuPZ8EOyWj7mAc',
-	authDomain: 'ioxkl-3fbcb.firebaseapp.com',
-	databaseURL: 'https://ioxkl-3fbcb.firebaseio.com',
-	projectId: 'ioxkl-3fbcb',
-	storageBucket: 'ioxkl-3fbcb.appspot.com',
-	messagingSenderId: '327746388642',
-	appId: '1:327746388642:web:f89b1e137b60f39b'
+	apiKey: 'AIzaSyB_sK0hZM_uLzDpfiCkkrKfelHOY8VkuWY',
+	authDomain: 'dscomg-6d3e0.firebaseapp.com',
+	databaseURL: 'https://dscomg-6d3e0.firebaseio.com',
+	projectId: 'dscomg-6d3e0',
+	storageBucket: 'dscomg-6d3e0.appspot.com',
+	messagingSenderId: '154730227119',
+	appId: '1:154730227119:web:2bcd7929668a1c8125bb5a',
+	measurementId: 'G-0BN7X5YM73'
 };
 firebase.initializeApp(config);
 if (typeof window !== 'undefined'){
 
-import('firebase/performance').then(()=> firebase.performance());
+import('firebase/performance').then(() => firebase.performance());
 }
 export default firebase;
