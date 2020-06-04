@@ -129,8 +129,8 @@ export default class NavBar extends Component {
 					<Drawer.DrawerContent>
 						<div class={style.drawer_toolbar}>
 							<IoLogo />
-							<h2>16 June 2019</h2>
-							<p>Sunway University, Bandar Sunway</p>
+							<h2>24 June 2020</h2>
+							<p>In a Galaxy not too far away</p>
 						</div>
 						<div class={style.drawer_nav}>
 							<Link
