@@ -68,9 +68,9 @@ export default class SocialFooter extends Component {
 						</a>
 					</div>
 				</div>
-				<div class={style.social_gif}>
+				{/* <div class={style.social_gif}>
 					<img class="social_gif" crossorigin="anonymous" alt="I/O 2019 Hashtag" data-src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" />
-				</div>
+				</div> */}
 			</div>
 		);
 	}

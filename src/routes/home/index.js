@@ -79,7 +79,7 @@ export default class Home extends Component {
           <img
             id="cover"
             crossorigin="anonymous"
-            data-src="https://res.cloudinary.com/limhenry/image/upload/v1536157604/devfestkl18_pwa/misc/cover.jpg"
+            data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282861/DSCOMG/992162d2-175b-4360-b6ef-78d8ab082155.jpg"
           />
         </div>
         <div class={style.home_info}>
@@ -106,9 +106,9 @@ export default class Home extends Component {
         {partners && (
           <div class={style.partners}>
             <h3>Partners</h3>
-            <h4>Main Partner of 2019</h4>
+            <h4>To be Updated Soon</h4>
             {partners.main_partner && (
-              <a
+              {/* <a
                 class={style.item}
                 href={partners.main_partner.url}
                 target="_blank"
@@ -120,9 +120,9 @@ export default class Home extends Component {
                   data-src={partners.main_partner.image}
                   alt={partners.main_partner.name}
                 />
-              </a>
+              </a> */}
             )}
-            <h4>Community Partners</h4>
+            {/* <h4>Community Partners</h4>
             {partners.partner && (
               <div class={style.partner}>
                 <div class={style.sponsor}>
@@ -254,7 +254,7 @@ export default class Home extends Component {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         )}
         <SocialFooter rootPath={rootPath} />

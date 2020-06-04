@@ -27,8 +27,8 @@ export default class EventMapPage extends Component {
 	render({ rootPath, info}) {
 		return (
 			<div class={style.scrollbar}>
-				{info && info.map_image && (<img class={style.mapImage} crossorigin="anonymous"  src={info.map_image} />)}
-						
+				{/* {info && info.map_image && (<img class={style.mapImage} crossorigin="anonymous"  src={info.map_image} />)}
+						 */}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />

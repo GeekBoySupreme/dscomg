@@ -127,7 +127,7 @@ export default class Schedule extends Component {
 					<IoLogo rootPath={rootPath} />
 					<h2>Schedule</h2>
 					<p>
-						All sessions feature a Q&amp;A session at the end, time permitting.<br /><br />
+						All sessions feature a Q&amp;A session at the end, time permitting.<br /><br /> Coming Soon
 						{/* Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
 						<li>Hall A (JC 1) - #9769</li>
 						<li>Hall B (JC 2) - #L145</li>
@@ -135,7 +135,7 @@ export default class Schedule extends Component {
 						<li>Hall D (LT 5) - #L556</li> */}
 					</p>
 				</div>
-				<div class={style.tabs}>
+				{/* <div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
 					<div class={style.tab} onClick={this.showMyIO(true)} active={showMyIO}>My Schedule</div>
 				</div>
@@ -202,7 +202,7 @@ export default class Schedule extends Component {
 							</div>
 						))}
 					</div>
-				}
+				} */}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />

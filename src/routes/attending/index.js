@@ -64,7 +64,7 @@ export default class Attending extends Component {
 	render({ rootPath, info }, { showTravel, showEvent }) {
 		return (
 			<div>
-				<div class={`${style.hero} hero`}>
+				{/* <div class={`${style.hero} hero`}>
 					<IoLogo rootPath={rootPath} />
 					<h2>Attending</h2>
 					<p>Join us at Sunway University as we celebrate product and platform innovations at Google.</p>
@@ -146,7 +146,7 @@ export default class Attending extends Component {
 							</div>
 						</div>
 					}
-				</div>
+				</div> */}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />

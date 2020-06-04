@@ -32,8 +32,9 @@ export default class Faq extends Component {
 				<div class="hero">
 					<IoLogo rootPath={rootPath} />
 					<h2>FAQ</h2>
+					<h3>Coming Soon</h3>
 				</div>
-				<div class={style.faq}>
+				{/* <div class={style.faq}>
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>General</div>
 						<div class={style.faq_content}>
@@ -115,7 +116,7 @@ export default class Faq extends Component {
 							<p>Check out the full Community Guidelines <a href={rootPath + 'faq/communityguidelines'}>here</a>.</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<SocialFooter rootPath={rootPath} />
 				<Footer rootPath={rootPath} />
 			</div>

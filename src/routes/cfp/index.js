@@ -27,9 +27,9 @@ export default class CallForPresentersPage extends Component {
 	render({ rootPath }) {
 		return (
 			<div>
-				<div class={style.cfp}>
+				{/* <div class={style.cfp}>
 					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLSSPdRakpp8rG1ZCeMRwzDQ_NEs8K6QnL8_f6JvFtjnLT5g/viewform?embedded=true" width="640" height="2050" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-				</div>
+				</div> */}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />

@@ -47,22 +47,22 @@ export default class GalleryBlock extends Component {
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072861/devfestkl18_pwa/gallery/1.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282863/DSCOMG/20190824_141027.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072831/devfestkl18_pwa/gallery/2.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282861/DSCOMG/992162d2-175b-4360-b6ef-78d8ab082155.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072843/devfestkl18_pwa/gallery/3.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282679/DSCOMG/IMG_20190824_190220.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072857/devfestkl18_pwa/gallery/4.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282674/DSCOMG/IMG_20190823_212816.jpg"
         />
         <img
           crossorigin="anonymous"
@@ -72,7 +72,7 @@ export default class GalleryBlock extends Component {
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072846/devfestkl18_pwa/gallery/6.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282674/DSCOMG/IMG_20190823_204504.jpg"
         />
         <img
           crossorigin="anonymous"
@@ -86,20 +86,20 @@ export default class GalleryBlock extends Component {
         />
         <div crossorigin="anonymous" class={style.gallery_info}>
           <div>
-            <h2>I/O Extended KL 2018 highlights</h2>
+            <h2>Developer Student Club India highlights</h2>
             <p>
-              This year's festival built lots of excitement. Check out photos
+              Developer Student Clubs has been a vibrant community for Developers across the world. Check out photos
               from featured talks, hands-on learning sessions, and after-hours
               fun.
             </p>
           </div>
-          <a
+          {/* <a
             href="https://photos.app.goo.gl/uw6aRmAurGVjafrt8"
             target="_blank"
             rel="noopener noreferrer"
           >
             See all photos
-          </a>
+          </a> */}
         </div>
       </div>
     );

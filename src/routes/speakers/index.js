@@ -91,11 +91,14 @@ export default class Speakers extends Component {
 					<IoLogo rootPath={rootPath} />
 					<h2>Speakers</h2>
 					<p>
-						Learn Google's latest developer products from Googlers, Google
-						Developer Experts, guest speakers and more.
+						Learn Google's latest developer products from DSC Leads, Googlers, Google
+						Developer Experts, guest speakers and more. 
+					</p>
+					<p>
+						To be Updated Soon
 					</p>
 				</div>
-				{speakers && (
+				{/* {speakers && (
 					<div class={style.speakers}>
 						{Object.keys(speakers).map(item => (
 							<div
@@ -146,7 +149,7 @@ export default class Speakers extends Component {
 							</div>
 						))}
 					</div>
-				)}
+				)} */}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />
