@@ -68,9 +68,15 @@ export default class SocialFooter extends Component {
 						</a>
 					</div>
 				</div>
-				{/* <div class={style.social_gif}>
-					<img class="social_gif" crossorigin="anonymous" alt="I/O 2019 Hashtag" data-src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" />
-				</div> */}
+				<div class={style.social_gif}>
+					{/* <img class="social_gif" crossorigin="anonymous" alt="I/O 2019 Hashtag" data-src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" /> */}
+					
+					<svg xmlns="http://www.w3.org/2000/svg" width="129" height="162" viewBox="0 0 129.54 162.45">
+						<path d="M48.61 127.61C59.48 136.9 65.9 148 67 159.16H3.29v-31.55h45.32m1.2-3.29H0v38.13h70.39c0-14.61-8.29-27.95-20.58-38.13z" fill="#fde293"></path>
+						<path d="M0 76.27h129.54c0-40.7-33.83-74.78-73.38-76.27H0z" fill="#fbbc04"></path>
+						<path d="M0 76.27v48.05h99.91c0-17.15-7-33.92-18.85-48z" fill="#fdedc5"></path>
+					</svg>
+				</div>
 			</div>
 		);
 	}

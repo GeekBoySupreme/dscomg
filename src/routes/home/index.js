@@ -71,7 +71,7 @@ export default class Home extends Component {
               amazing Community Projects at hand.
             </h2>
             <br />
-            <h4>16 June 2019 · Sunway University, Bandar Sunway</h4>
+            <h4>24-30 June 2020 · Coming Soon in a Galaxy not too far away</h4>
           </div>
           <Countdown />
         </div>
@@ -97,8 +97,8 @@ export default class Home extends Component {
               <div class={style.label}>Attendees</div>
             </div>
             <div class={style.stat}>
-              <div class={style.number}>1</div>
-              <div class={style.label}>Week</div>
+              <div class={style.number}>7</div>
+              <div class={style.label}>Days</div>
             </div>
           </div>
         </div>
