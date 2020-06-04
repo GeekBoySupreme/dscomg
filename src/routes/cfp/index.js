@@ -15,7 +15,7 @@ export default class CallForPresentersPage extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Call for Presenters - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Call for Presenters - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

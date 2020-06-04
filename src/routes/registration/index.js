@@ -48,7 +48,7 @@ export default class Registration extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Registration - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Registration - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

@@ -34,7 +34,7 @@ export default class Speakers extends Component {
 	};
 
 	componentDidMount() {
-		document.title = 'Speakers - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Speakers - DSCOMG 2020';
 	}
 
 	constructor(props) {
@@ -50,7 +50,7 @@ export default class Speakers extends Component {
 		if (nextProps.id !== this.props.id) {
 			if (nextProps.id) {
 				const speaker = nextProps.speakers[nextProps.id];
-				document.title = `${speaker.name} - Speakers - I/O Extended 2019 Kuala Lumpur`;
+				document.title = `${speaker.name} - Speakers - DSCOMG 2020`;
 				this.dialog.toggle(
 					nextProps.id,
 					speaker,
@@ -58,7 +58,7 @@ export default class Speakers extends Component {
 				);
 			}
 			else {
-				document.title = 'Speakers - I/O Extended 2019 Kuala Lumpur';
+				document.title = 'Speakers - DSCOMG 2020';
 				this.dialog.close();
 			}
 		}
@@ -66,7 +66,7 @@ export default class Speakers extends Component {
 			const speaker = nextProps.speakers[nextProps.id];
 			if (speaker) {
 				this.setState({ toggleDialog: false });
-				document.title = `${speaker.name} - Speakers - I/O Extended 2019 Kuala Lumpur`;
+				document.title = `${speaker.name} - Speakers - DSCOMG 2020`;
 				this.dialog.toggle(
 					nextProps.id,
 					nextProps.speakers[nextProps.id],

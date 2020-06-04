@@ -15,7 +15,7 @@ export default class EventMapPage extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Event Map - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Event Map - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

@@ -26,7 +26,7 @@ export default class Schedule extends Component {
 	star = (id) => e => {
 		
 		let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
-		const ref = this.props.db.ref('/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id);
+		const ref = this.props.db.ref('/events_site/dscomg/users/' + this.props.user.uid + '/schedule/' + id);
 		ref.set(star ? true : null);
 		
 		gtag('event', 'add_to_schdule', {
@@ -91,7 +91,7 @@ export default class Schedule extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Schedule - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Schedule - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

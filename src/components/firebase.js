@@ -9,8 +9,7 @@ const config = {
 	projectId: 'dscomg-6d3e0',
 	storageBucket: 'dscomg-6d3e0.appspot.com',
 	messagingSenderId: '154730227119',
-	appId: '1:154730227119:web:2bcd7929668a1c8125bb5a',
-	measurementId: 'G-0BN7X5YM73'
+	appId: '1:154730227119:web:2bcd7929668a1c8125bb5a'
 };
 firebase.initializeApp(config);
 if (typeof window !== 'undefined'){

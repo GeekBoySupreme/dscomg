@@ -16,7 +16,7 @@ export default class Faq extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'FAQ - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'FAQ - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}
@@ -44,16 +44,16 @@ export default class Faq extends Component {
 							<p>Our community guidelines can be found <a href={rootPath + 'faq/communityguidelines'}>here</a>. Be nice to each other, and be respectful and constructive.</p>
 							<br />
 							<p><b>Date and location</b></p>
-							<p>I/O Extended 2019 Kuala Lumpur will take place on the 16th June 2019 at Sunway University, Bandar Sunway.</p>
+							<p>DSCOMG 2020 will take place on the 16th June 2019 at Sunway University, Bandar Sunway.</p>
 							<br />
 							<p><b>Stay Informed</b></p>
-							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the I/O Extended 2019 Kuala Lumpur website, and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a>. You can also follow and join the social conversation about I/O Extended 2019 Kuala Lumpur via official hashtags <b>#ioxkl19</b>. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
+							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the DSCOMG 2020 website, and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a>. You can also follow and join the social conversation about DSCOMG 2020 via official hashtags <b>#ioxkl19</b>. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
 							<br />
 							<p><b>Content Formats</b></p>
 							<p>During the conference, attendees will be able to attend sessions and hands-on workshops, chat with experts and attendees.</p>
 							<br />
 							<p><b>Language</b></p>
-							<p>All presentations at I/O Extended 2019 Kuala Lumpur will be in English.</p>
+							<p>All presentations at DSCOMG 2020 will be in English.</p>
 						</div>
 					</div>
 				</div>
@@ -83,14 +83,14 @@ export default class Faq extends Component {
 							<ul>
 								<li>Each individual may purchase only one ticket.</li>
 								<li>You may not register on behalf of anyone else.</li>
-								<li>By registering and accepting any discounts, gifts, or items of value related to I/O Extended 2019 Kuala Lumpur, you certify that you are able to do so in compliance with applicable laws and the internal rules of your organization.</li>
+								<li>By registering and accepting any discounts, gifts, or items of value related to DSCOMG 2020, you certify that you are able to do so in compliance with applicable laws and the internal rules of your organization.</li>
 								<li>Tickets may not be sold, bartered, or auctioned in any way, and doing so may result in GDG Kuala Lumpur rendering the ticket null and void without any responsibility to GDG Kuala Lumpur.</li>
-								<li>Attendees aren’t permitted to bring guests to I/O Extended 2019 Kuala Lumpur. If you have someone traveling with you, they’ll need to register themselves and purchase an attendee ticket.</li>
-								<li>Photographs and/or video taken at I/O Extended 2019 Kuala Lumpur by GDG Kuala Lumpur, or others on behalf of GDG Kuala Lumpur, may include your image or likeness. You agree that GDG Kuala Lumpur may use such photographs and/or video for any purpose without compensation to you.</li>
+								<li>Attendees aren’t permitted to bring guests to DSCOMG 2020. If you have someone traveling with you, they’ll need to register themselves and purchase an attendee ticket.</li>
+								<li>Photographs and/or video taken at DSCOMG 2020 by GDG Kuala Lumpur, or others on behalf of GDG Kuala Lumpur, may include your image or likeness. You agree that GDG Kuala Lumpur may use such photographs and/or video for any purpose without compensation to you.</li>
 								<li>All information entered into the registration form must be correct and accurate to the best of your knowledge.</li>
 								<li>All registered attendees agree to allow GDG Kuala Lumpur to contact them regarding their registration and attendance at the event. By registering for a ticket, you agree to allow GDG Kuala Lumpur to communicate with you via email with information regarding the event.</li>
-								<li>You agree to be solely responsible for your own safety, belongings, and well-being while participating in I/O Extended 2019 Kuala Lumpur. GDG Kuala Lumpur won't be liable for your participation in I/O Extended 2019 Kuala Lumpur.</li>
-								<li>No solicitation or selling of items or services is allowed at I/O Extended 2019 Kuala Lumpur. Any attendee conducting these activities may be removed from the conference.</li>
+								<li>You agree to be solely responsible for your own safety, belongings, and well-being while participating in DSCOMG 2020. GDG Kuala Lumpur won't be liable for your participation in DSCOMG 2020.</li>
+								<li>No solicitation or selling of items or services is allowed at DSCOMG 2020. Any attendee conducting these activities may be removed from the conference.</li>
 							</ul>
 						</div>
 					</div>
@@ -100,7 +100,7 @@ export default class Faq extends Component {
 						<div class={style.faq_title}>Attendance Details</div>
 						<div class={style.faq_content}>
 							<p><b>Event Attire</b></p>
-							<p>I/O Extended 2019 Kuala Lumpur is a developer event, so please be comfortable and casual. There is no enforced dress code.</p>
+							<p>DSCOMG 2020 is a developer event, so please be comfortable and casual. There is no enforced dress code.</p>
 							<br />
 							<p><b>Onsite food &amp; beverages</b></p>
 							<p>Attendees are offered complimentary breakfast, lunch, and tea break.</p>
@@ -109,7 +109,7 @@ export default class Faq extends Component {
 							<p>Smoking is strictly prohibited in the venue.</p>
 							<br />
 							<p><b>No Soliciting</b></p>
-							<p>No solicitation or selling of items or services is allowed at I/O Extended 2019 Kuala Lumpur. Any attendee conducting these activities may be removed from the conference.</p>
+							<p>No solicitation or selling of items or services is allowed at DSCOMG 2020. Any attendee conducting these activities may be removed from the conference.</p>
 							<br />
 							<p><b>Community Guidelines</b></p>
 							<p>Check out the full Community Guidelines <a href={rootPath + 'faq/communityguidelines'}>here</a>.</p>

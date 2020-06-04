@@ -47,7 +47,7 @@ export default class Attending extends Component {
 
 
 	componentDidMount() {
-		document.title = 'Attending - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Attending - DSCOMG 2020';
 		this.windowWidth = window.innerWidth;
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		window.addEventListener('resize', this.checkResize);
@@ -93,7 +93,7 @@ export default class Attending extends Component {
 							<div class={style.attending_item}>
 								<div class={style.attending_title}>What to expect and explore</div>
 								<div class={style.attending_content}>
-									<p>I/O Extended 2019 Kuala Lumpur features hands-on learning, Google's latest developer products, and technical talks given by the engineers who are developing our latest APIs and tools–plus a few surprises along the way.</p>
+									<p>DSCOMG 2020 features hands-on learning, Google's latest developer products, and technical talks given by the engineers who are developing our latest APIs and tools–plus a few surprises along the way.</p>
 									<br />
 									<p><b>Sessions</b></p>
 									<p>Learn Google's latest developer products from Googlers, Google Developer Experts and more.</p>

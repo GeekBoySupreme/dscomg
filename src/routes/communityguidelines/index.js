@@ -16,7 +16,7 @@ export default class Register extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Community Guidelines - I/O Extended 2019 Kuala Lumpur';
+		document.title = 'Community Guidelines - DSCOMG 2020';
 		window.addEventListener('scroll', this.handleScroll, { passive: true });
 		this.handleScroll();
 	}

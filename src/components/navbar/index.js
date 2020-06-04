@@ -30,7 +30,8 @@ export default class NavBar extends Component {
 
 	signOut = () => {
 
-		gtag('event', 'logout', { method : 'Google' });
+		// eslint-disable-next-line no-undef
+		gtag('event', 'logout', { method: 'Google' });
 
 		firebase
 			.auth()
@@ -41,7 +42,8 @@ export default class NavBar extends Component {
 	};
 
 	toggleSigninDig = () => {
-		gtag('event', 'login', { method : 'Google' });
+		// eslint-disable-next-line no-undef
+		gtag('event', 'login', { method: 'Google' });
 
 		this.signIn();
 	};
@@ -320,16 +322,16 @@ export default class NavBar extends Component {
 						</Match>
 						<Match path="/map">
 							{({ path, url }) => (
-									<Link
-										activeClassName={style.active}
-										class={style.nav_item}
-										href={rootPath + 'map'}
-										path={path.startsWith(`${rootPath}map/`) ? url : undefined}
-									>
-										<MapIcon />
-										<span>Map</span>
-									</Link>
-								)}
+								<Link
+									activeClassName={style.active}
+									class={style.nav_item}
+									href={rootPath + 'map'}
+									path={path.startsWith(`${rootPath}map/`) ? url : undefined}
+								>
+									<MapIcon />
+									<span>Map</span>
+								</Link>
+							)}
 						</Match>
 						<div class={style.line} />
 					</nav>
