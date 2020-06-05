@@ -60,7 +60,7 @@ body {
 }
 
 .hero svg {
-  width: 168px;
+  width: 308px;
   height: auto;
   margin-bottom: 24px;
   margin-left: 2px;
@@ -223,7 +223,7 @@ body {
     max-width: 90%;
   }
   .hero svg {
-    width: 128px;
+    width: 218px;
   }
   .hero p {
     font-size: 16px;
