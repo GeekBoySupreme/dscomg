@@ -72,6 +72,11 @@ export default class Home extends Component {
             </h2>
             <br />
             <h4>24 June 2020 · Coming Soon in a Galaxy not too far away</h4>
+            <br />
+            <br />
+            <a alt="" href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
+              <button class={style.action_button}>Call For Paper</button>
+            </a>  
           </div>
           <Countdown />
         </div>
