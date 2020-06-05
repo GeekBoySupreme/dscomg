@@ -231,9 +231,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .hero {
+    /* .hero {
         display: none;
-    }
+    } */
     .tabs {
         margin: 0;
         width: 100%;

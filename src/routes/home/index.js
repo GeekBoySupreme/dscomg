@@ -68,7 +68,7 @@ export default class Home extends Component {
             <h2>
               DSC OMG brings together developers from around the globe for talks,
               hands-on learning with DSC Leads and Google experts, and a first look at some of the
-              amazing Community Projects at hand.
+              amazing Community Projects.
             </h2>
             <br />
             <h4>24 June 2020 · Coming Soon in a Galaxy not too far away</h4>

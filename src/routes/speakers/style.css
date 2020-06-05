@@ -100,9 +100,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .hero {
+    /* .hero {
         display: none;
-    }
+    } */
     .speakers {
         grid-gap: 12px;
         padding: 64px 16px 16px 16px;
