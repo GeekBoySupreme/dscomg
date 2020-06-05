@@ -71,7 +71,7 @@ export default class Home extends Component {
               amazing Community Projects at hand.
             </h2>
             <br />
-            <h4>24-30 June 2020 · Coming Soon in a Galaxy not too far away</h4>
+            <h4>24 June 2020 · Coming Soon in a Galaxy not too far away</h4>
           </div>
           <Countdown />
         </div>
