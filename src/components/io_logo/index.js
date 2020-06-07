@@ -52,6 +52,7 @@ export default class IoLogo extends Component {
 						</g>
 					</g>
 				</svg>
+				<br />
 			</div>
 		);
 	}
