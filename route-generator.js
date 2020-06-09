@@ -37,8 +37,8 @@ let prerenderJson = [
 	}
 ];
 
-const base = 'https://events.gdgkl.dev/iox';
-const dbUrl = 'https://gdg-kl.firebaseio.com/events_site/ioxkl19';
+const base = '#';
+// const dbUrl = 'https://gdg-kl.firebaseio.com/events_site/ioxkl19';
 const getSpeakers = new Promise((resolve) => {
 	// fetch(`${dbUrl}/speakers.json`)
 	// 	.then((response) => {
