@@ -66,8 +66,8 @@ export default class Home extends Component {
           <div class={style.hero_title}>
             <IoLogo rootPath={rootPath} />
             <h2>
-              DSC OMG brings together developers from around the globe for talks,
-              hands-on learning with DSC Leads and Google experts, and a first look at some of the
+              Developer Student Clubs OMG brings together developers from around the globe for talks,
+              hands-on learning with Developer Studenht Club Leads and Google experts, and a first look at some of the
               amazing Community Projects.
             </h2>
             <br />
@@ -91,7 +91,7 @@ export default class Home extends Component {
           <div class={style.text}>
             <h3>What you need to know, before you ask.</h3>
             <p>
-              DSC OMG 2020 brings together the world class
+              Developer Student Clubs OMG 2020 brings together the world class
               experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
               for a week of sessions, workshops and showcases.
             </p>
