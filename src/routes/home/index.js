@@ -67,7 +67,7 @@ export default class Home extends Component {
             <IoLogo rootPath={rootPath} />
             <h2>
               Developer Student Clubs OMG brings together developers from around the globe for talks,
-              hands-on learning with Developer Studenht Club Leads and Google experts, and a first look at some of the
+              hands-on learning with Developer Student Club Leads and Google experts, and a first look at some of the
               amazing Community Projects.
             </h2>
             <br />
