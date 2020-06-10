@@ -91,7 +91,7 @@ export default class Home extends Component {
           <div class={style.text}>
             <h3>What you need to know, before you ask.</h3>
             <p>
-              Developer Student Clubs OMG 2020 brings together the world class
+              The Online Mega Gathering - aka OMG brings together the world class
               experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
               for a week of sessions, workshops and showcases.
             </p>
