@@ -71,11 +71,11 @@ export default class Home extends Component {
               amazing Community Projects.
             </h2>
             <br />
-            <h4>24 June 2020 · Coming Soon in a Galaxy not too far away</h4>
+            <h4>24 June 2020 · In a Galaxy not too far away</h4>
             <br />
             <br />
             <a alt="" href="https://docs.google.com/forms/d/e/1FAIpQLSdtNrXrp_giYwoeMVvwn7r0XqfksiURyIG1ZcEPknBs2fIkIg/viewform" target="_blank" rel="noopener noreferrer">
-              <button class={style.action_button}>Attendee Registration</button>
+              <button class={style.action_button}>Registration opens soon</button>
             </a>  
           </div>
           <Countdown />

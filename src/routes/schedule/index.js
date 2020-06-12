@@ -126,14 +126,26 @@ export default class Schedule extends Component {
 				<div class={`${style.hero} hero`}>
 					<IoLogo rootPath={rootPath} />
 					<h2>Schedule</h2>
-					<p>
-						All sessions feature a Q&amp;A session at the end, time permitting.<br /><br /> Coming Soon
-						{/* Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
+					<p>Coming Soon</p>
+					{/* <p>
+						All sessions feature a Q&amp;A session at the end, time permitting.
+						Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
 						<li>Hall A (JC 1) - #9769</li>
 						<li>Hall B (JC 2) - #L145</li>
 						<li>Hall C (JC 3) - #N095</li>
-						<li>Hall D (LT 5) - #L556</li> */}
-					</p>
+						<li>Hall D (LT 5) - #L556</li>
+					</p> */}
+					<a class={style.track_bubble_blue}>Cloud</a>
+					<a class={style.track_bubble_blue}>Android</a>
+					<a class={style.track_bubble_blue}>Web</a> 
+					<a class={style.track_bubble_blue}>Google Assistant</a>
+					<a class={style.track_bubble_blue}>Firebase</a>
+					<a class={style.track_bubble_blue}>Machine Learning</a> 
+					<a class={style.track_bubble_blue}>Security</a>
+					<a class={style.track_bubble_blue}>DevOps</a>
+					<a class={style.track_bubble_blue}>Blockchain</a> 
+					<a class={style.track_bubble_blue}>Design</a> 
+						
 				</div>
 				{/* <div class={style.tabs}>
 					<div class={style.tab} onClick={this.showMyIO(false)} active={!showMyIO}>All</div>
@@ -203,11 +215,13 @@ export default class Schedule extends Component {
 						))}
 					</div>
 				} */}
+				<br />
+				<br />
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />
 				</div>
-			</div >
+			</div>
 		);
 	}
 }

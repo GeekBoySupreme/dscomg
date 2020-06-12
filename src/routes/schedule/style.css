@@ -323,7 +323,7 @@
         padding-right: 16px;
     }
     .footer {
-        display: none;
+        /* display: none; */
     }
 }
 
@@ -335,3 +335,20 @@
         margin-top: 0;
     }
 }
+
+
+/* Track Bubbles Styles */
+.track_bubble_blue {
+    width: auto;
+    padding: 8px 20px;
+    margin: 10px 6px 10px 0px;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-block;
+    
+
+    color: rgb(0,101,202);
+    background-color: rgba(71, 104, 253, 0.1);
+}
+
+

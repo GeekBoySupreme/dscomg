@@ -77,12 +77,12 @@ export default class GalleryBlock extends Component {
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072883/devfestkl18_pwa/gallery/7.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591950808/DSCOMG/IMG_0895.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/limhenry/image/upload/v1537072866/devfestkl18_pwa/gallery/8.jpg"
+          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591950925/DSCOMG/IMG_1005.jpg"
         />
         <div crossorigin="anonymous" class={style.gallery_info}>
           <div>
