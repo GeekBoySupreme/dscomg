@@ -54,7 +54,7 @@ export default class SocialFooter extends Component {
                                 </g>
                             </svg>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/channel/UCCR8rHzvm0l9E7DNa6Y_OGA" target="_blank" rel="noopener noreferrer">
                             <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                                 <title>Developer Student Clubs OMG Youtube Page</title>
                                 <g>
