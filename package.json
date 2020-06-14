@@ -30,7 +30,7 @@
     "preact-cli": "^2.2.1",
     "preact-cli-plugin-netlify": "^1.1.0",
     "preact-cli-sw-precache": "^1.0.3",
-    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "xmlbuilder": "^11.0.0"
   },
   "dependencies": {

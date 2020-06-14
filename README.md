@@ -4,6 +4,12 @@ Progressive Web App for DSC OMG 20, based on - Google I/O Extended 2019 Kuala Lu
 
 ## Getting Started
 
+Install pre-commit hooks so that code consistency is maintained
+```
+pip install pre-commit
+pre-commit install
+```
+
 Start development server:
 
 `npm run dev`
