@@ -75,11 +75,11 @@ export default class Home extends Component {
             <br />
             <br />
             <div class={style.button_holder}>
-                <a alt="" href="https://docs.google.com/forms/d/e/1FAIpQLSdtNrXrp_giYwoeMVvwn7r0XqfksiURyIG1ZcEPknBs2fIkIg/viewform" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtNrXrp_giYwoeMVvwn7r0XqfksiURyIG1ZcEPknBs2fIkIg/viewform" target="_blank" rel="noopener noreferrer">
                   <button class={style.action_button}>Registration opens soon</button>
                 </a>  
-                <a alt="" href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
-                  <button class={style.action_button_2}>Call for Proposal</button>
+                <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
+                  <button class={style.action_button}>Call for Proposal</button>
                 </a>  
             </div>
             
