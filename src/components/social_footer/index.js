@@ -1,5 +1,6 @@
 import {Component} from 'preact';
 import style from './style';
+import {TwitterTimelineEmbed} from "react-twitter-embed";
 
 export default class SocialFooter extends Component {
     constructor(props) {
@@ -54,7 +55,8 @@ export default class SocialFooter extends Component {
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/channel/UCCR8rHzvm0l9E7DNa6Y_OGA" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/channel/UCCR8rHzvm0l9E7DNa6Y_OGA" target="_blank"
+                           rel="noopener noreferrer">
                             <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                                 <title>Developer Student Clubs OMG Youtube Page</title>
                                 <g>
@@ -106,8 +108,17 @@ export default class SocialFooter extends Component {
                         </a>
                     </div>
                 </div>
+
+                <div className={style.social_twitter_wall}>
+                    <TwitterTimelineEmbed
+                        sourceType="likes"
+                        screenName="omgdsc"
+                        noFooter
+                        options={{height: 325, width: 600}}
+                    />
+                </div>
+
                 <div class={style.social_gif}>
-                    {/* <img class="social_gif" crossorigin="anonymous" alt="I/O 2019 Hashtag" data-src="https://res.cloudinary.com/limhenry/image/upload/v1555595550/ioxkl19_pwa/io19_hashtag.gif" /> */}
                     <svg xmlns="http://www.w3.org/2000/svg" width="129" height="162" viewBox="0 0 129.54 162.45">
                         <path
                             d="M48.61 127.61C59.48 136.9 65.9 148 67 159.16H3.29v-31.55h45.32m1.2-3.29H0v38.13h70.39c0-14.61-8.29-27.95-20.58-38.13z"
