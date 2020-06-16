@@ -32,33 +32,35 @@ export default class Faq extends Component {
 				<div class="hero">
 					<IoLogo rootPath={rootPath} />
 					<h2>FAQ</h2>
-					<h3>Coming Soon</h3>
 				</div>
-				{/* <div class={style.faq}>
+				<div class={style.faq}>
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>General</div>
 						<div class={style.faq_content}>
 							<p><b>Session Schedule</b></p>
 							<p>The schedule can be found <a href={rootPath + 'schedule'}>here</a>.</p>
 							<br />
-							<p><b>Community Guidelines</b></p>
+							{/* <p><b>Community Guidelines</b></p>
 							<p>Our community guidelines can be found <a href={rootPath + 'faq/communityguidelines'}>here</a>. Be nice to each other, and be respectful and constructive.</p>
+							<br /> */}
+							<p><b>When and Where</b></p>
+							<p>Developer Student Clubs OMG will take place from June 24th to June 30th 2020 in a virtual format through livestreams.</p>
 							<br />
-							<p><b>Date and location</b></p>
-							<p>DSCOMG 2020 will take place on the 16th June 2019 at Sunway University, Bandar Sunway.</p>
+							<p><b>What is the Developer Student Clubs OMG? Why should I attend it?</b></p>
+							<p>Developer Students Clubs is a platform for you to come and learn from the Developer Student Club Leads from all across the country. A free and open platform for anyone to learn and grow.</p>
 							<br />
-							<p><b>Stay Informed</b></p>
-							<p>To stay up to date on the latest information on sessions, speakers, and activities, be sure to visit the DSCOMG 2020 website, and follow us on <a href="https://www.facebook.com/GDGKualaLumpur/" target="_blank" rel="noopener noreferrer">Facebook Page</a>. You can also follow and join the social conversation about DSCOMG 2020 via official hashtags <b>#ioxkl19</b>. In addition, we'll be emailing important information to all registered attendees, along with check-in instructions prior to the conference.</p>
+							<p><b>Who is behind Developer Student Clubs OMG?</b></p>
+							<p>Developer Student Clubs OMG is a community driven event which is being organised by the culmination of over 199 leads from 120 cities across the country. </p>
 							<br />
-							<p><b>Content Formats</b></p>
-							<p>During the conference, attendees will be able to attend sessions and hands-on workshops, chat with experts and attendees.</p>
+							<p><b>What would be the language of the event?</b></p>
+							<p>All presentations at Developer Student Clubs OMG will be in English.</p>
 							<br />
-							<p><b>Language</b></p>
-							<p>All presentations at DSCOMG 2020 will be in English.</p>
+							<p><b>What all sessions will be there in Developer Student Clubs OMG?</b></p>
+							<p>Developer Student Clubs OMG covers a wide range of technical as well lightning talks, head over to <a href={rootPath + 'schedule'}>schedule</a> tab to know more.</p>
 						</div>
 					</div>
 				</div>
-				<div class={style.faq}>
+				{/* <div class={style.faq}>
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>Amenities</div>
 						<div class={style.faq_content}>
@@ -75,13 +77,21 @@ export default class Faq extends Component {
 							<p>The Surau/Prayer Room can be found on the <strong>East wing</strong> of the Sunway University building, on the <strong>Mezzanine Floor</strong>, next to the Lunch Box.</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<div class={style.faq}>
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>Registration</div>
 						<div class={style.faq_content}>
-							<p><b>Registration terms &amp; conditions</b></p>
-							<ul>
+							<p><b>How can I register for Developer Student Clubs OMG?</b></p>
+							<p>Registrations are not open yet. Make sure to follow us to get informed once it is open. They’ll be open soon on <a href="https://dscomg.com">dscomg.com</a></p>
+							<br/>
+							<p><b>What is the cost of a Developer Student Clubs OMG ticket?</b></p>
+							<p>Developer Student Clubs OMG event has no cost to attend.</p>
+							<br/>
+							<p><b>Can I register for someone else?</b></p>
+							<p>It is highly recommended that each person submit their own registration.</p>
+							<br/>
+							{/* <ul>
 								<li>Each individual may purchase only one ticket.</li>
 								<li>You may not register on behalf of anyone else.</li>
 								<li>By registering and accepting any discounts, gifts, or items of value related to DSCOMG 2020, you certify that you are able to do so in compliance with applicable laws and the internal rules of your organization.</li>
@@ -92,11 +102,11 @@ export default class Faq extends Component {
 								<li>All registered attendees agree to allow GDG Kuala Lumpur to contact them regarding their registration and attendance at the event. By registering for a ticket, you agree to allow GDG Kuala Lumpur to communicate with you via email with information regarding the event.</li>
 								<li>You agree to be solely responsible for your own safety, belongings, and well-being while participating in DSCOMG 2020. GDG Kuala Lumpur won't be liable for your participation in DSCOMG 2020.</li>
 								<li>No solicitation or selling of items or services is allowed at DSCOMG 2020. Any attendee conducting these activities may be removed from the conference.</li>
-							</ul>
+							</ul> */}
 						</div>
 					</div>
 				</div>
-				<div class={style.faq}>
+				{/* <div class={style.faq}>
 					<div class={style.faq_item}>
 						<div class={style.faq_title}>Attendance Details</div>
 						<div class={style.faq_content}>
