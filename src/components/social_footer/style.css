@@ -19,7 +19,7 @@
 
 .social_twitter_wall {
     margin-top: 20px;
-    border: solid #1a73e8;
+    border: 1px solid #fdfdfd;
     border-radius: 5px;
 }
 
@@ -34,6 +34,12 @@
 
 .social_gif img {
     width: 100%;
+}
+
+@media screen  and (min-width: 1024px) {
+    .social_gif {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 960px) {

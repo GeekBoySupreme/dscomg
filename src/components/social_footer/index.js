@@ -114,6 +114,7 @@ export default class SocialFooter extends Component {
                         sourceType="likes"
                         screenName="omgdsc"
                         noFooter
+                        noHeader
                         options={{height: 325, width: 600}}
                     />
                 </div>
