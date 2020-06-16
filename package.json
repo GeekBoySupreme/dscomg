@@ -42,6 +42,7 @@
     "preact-compat": "^3.18.4",
     "preact-material-components": "^1.5.7",
     "preact-router": "^2.5.5",
+    "react-twitter-embed": "^3.0.3",
     "xmlhttprequest": "^1.8.0"
   }
 }

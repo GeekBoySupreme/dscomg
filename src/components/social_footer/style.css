@@ -17,11 +17,16 @@
     line-height: 30px;
 }
 
+.social_twitter_wall {
+    margin-top: 20px;
+}
+
 .social_body a {
     margin-right: 20px;
 }
 
 .social_gif {
+    margin-left: 20px;
     max-width: 340px;
 }
 
@@ -29,12 +34,19 @@
     width: 100%;
 }
 
+@media screen  and (min-width: 1024px) {
+    .social_gif {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 960px) {
     .social_footer {
         flex-direction: column;
         align-items: flex-start;
     }
-    .social_gif  {
+
+    .social_gif {
         margin-top: 80px;
     }
 }
@@ -44,7 +56,7 @@
         padding: 60px 20px 64px;
     }
 
-    .social_body p  {
+    .social_body p {
         margin-right: 24px;
         font-size: 18px;
     }
