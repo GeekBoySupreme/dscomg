@@ -6,7 +6,7 @@ import GalleryBlock from "../../components/gallery_block";
 import Countdown from "../../components/Countdown";
 import Dialog from 'preact-material-components/Dialog';
 import 'preact-material-components/Dialog/style.css';
-import firebase from 'firebase';
+import firebase from '../firebase';
 import style from "./style";
 
 export default class Home extends Component {
