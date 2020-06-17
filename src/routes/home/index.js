@@ -4,6 +4,9 @@ import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import GalleryBlock from "../../components/gallery_block";
 import Countdown from "../../components/Countdown";
+import Dialog from 'preact-material-components/Dialog';
+import 'preact-material-components/Dialog/style.css';
+import firebase from 'firebase';
 import style from "./style";
 
 export default class Home extends Component {
@@ -35,6 +38,36 @@ export default class Home extends Component {
     }
   }
 
+
+	signIn = () => {
+		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
+	};
+
+	signOut = () => {
+
+		// eslint-disable-next-line no-undef
+		gtag('event', 'logout', { method: 'Google' });
+
+		firebase
+			.auth()
+			.signOut()
+			.then(() => {
+				this.signoutDig.MDComponent.close();
+			});
+	};
+
+	toggleSigninDig = () => {
+		// eslint-disable-next-line no-undef
+		gtag('event', 'login', { method: 'Google' });
+
+		this.signIn();
+	};
+
+	toggleSignoutDig = () => {
+		this.signoutDig.MDComponent.show();
+	};
+
+
   componentDidMount() {
     document.title = "DSCOMG 2020";
     window.addEventListener("scroll", this.handleScroll, { passive: true });
@@ -62,6 +95,33 @@ export default class Home extends Component {
   render({ rootPath, partners }) {
     return (
       <div>
+        <div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
+            <Dialog
+              onCancel={this.onClose}
+              onAccept={this.onClose}
+              ref={signoutDig => {
+                this.signoutDig = signoutDig;
+              }}
+            >
+              <div class={style.dialog_body}>
+                <h3>Sign out?</h3>
+                <p>All saved events remain synced to your account.</p>
+              </div>
+              <Dialog.Footer>
+                <Dialog.FooterButton class={style.cancel_btn} accept>
+                  Not now
+                </Dialog.FooterButton>
+                <Dialog.FooterButton primary
+                  class={style.signout_btn}
+                  onClick={this.signOut}
+                >
+                  Sign out
+                </Dialog.FooterButton>
+              </Dialog.Footer>
+            </Dialog>
+          </div>
+
+
         <div class={`${style.hero} hero`}>
           <div class={style.hero_title}>
             <IoLogo rootPath={rootPath} />
@@ -75,8 +135,8 @@ export default class Home extends Component {
             <br />
             <br />
             <div class={style.button_holder}>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtNrXrp_giYwoeMVvwn7r0XqfksiURyIG1ZcEPknBs2fIkIg/viewform" target="_blank" rel="noopener noreferrer">
-                  <button class={style.action_button}>Registration opens soon</button>
+                <a onClick={this.toggleSigninDig}>
+                  <button class={style.action_button}>Register</button>
                 </a>  
                 <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
                   <button class={style.action_button}>Call for Proposal</button>

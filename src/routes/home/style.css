@@ -268,7 +268,8 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
     .button_holder {
-        flex-direction: column;
+        flex-direction: row;
+        margin: 0 auto;
     }
 
     .action_button_2 {
