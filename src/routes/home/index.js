@@ -6,7 +6,8 @@ import GalleryBlock from "../../components/gallery_block";
 import Countdown from "../../components/Countdown";
 import Dialog from 'preact-material-components/Dialog';
 import 'preact-material-components/Dialog/style.css';
-import firebase from '../firebase';
+import { firebase } from '@firebase/app';
+
 import style from "./style";
 
 export default class Home extends Component {
@@ -82,6 +83,20 @@ export default class Home extends Component {
     this.io.observe(ele);
     this.io.observe(cover);
     sponsorLogos.forEach(logo => this.io.observe(logo));
+
+    const config = {
+      apiKey: 'AIzaSyB_sK0hZM_uLzDpfiCkkrKfelHOY8VkuWY',
+      authDomain: 'dscomg-6d3e0.firebaseapp.com',
+      databaseURL: 'https://dscomg-6d3e0.firebaseio.com',
+      projectId: 'dscomg-6d3e0',
+      storageBucket: 'dscomg-6d3e0.appspot.com',
+      messagingSenderId: '154730227119',
+      appId: '1:154730227119:web:2bcd7929668a1c8125bb5a'
+    };
+
+    import('firebase').then(firebase => {
+      firebase.initializeApp(config);
+    });
   }
 
   componentWillUnmount() {
