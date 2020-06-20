@@ -292,8 +292,7 @@ export default class App extends Component {
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
 					<Home
 						path={rootPath}
-						rootPath={rootPath}
-						partners={partners}
+						user={currentUser}
 					/>
 					<EventMapPage path={rootPath + 'map/'}
 						rootPath={rootPath}

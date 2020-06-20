@@ -6,13 +6,13 @@ import GalleryBlock from "../../components/gallery_block";
 import Countdown from "../../components/Countdown";
 import Dialog from 'preact-material-components/Dialog';
 import 'preact-material-components/Dialog/style.css';
-import { firebase } from '@firebase/app';
+import firebase from '../../components/firebase';
 
 import style from "./style";
 
 export default class Home extends Component {
-  constructor(props, user) {
-    super(props, user);
+  constructor(props) {
+    super(props);
     if (typeof window !== "undefined") {
       this.io = new IntersectionObserver(
         entries => {
@@ -40,8 +40,33 @@ export default class Home extends Component {
   }
 
 
+  componentDidMount() {
+    document.title = "DSCOMG 2020";
+    window.addEventListener("scroll", this.handleScroll, { passive: true });
+    this.handleScroll();
+
+    const ele = document.querySelector(".belt");
+    const cover = document.querySelector("#cover");
+    const sponsorLogos = document.querySelectorAll(".sponsor_logo");
+
+    if (!this.io) return;
+
+    this.io.observe(ele);
+    this.io.observe(cover);
+    sponsorLogos.forEach(logo => this.io.observe(logo));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
+
+    if (!this.io) return;
+    this.io.disconnect();
+  }
+
+
 	signIn = () => {
-		firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider());
 	};
 
 	signOut = () => {
@@ -68,46 +93,7 @@ export default class Home extends Component {
 		this.signoutDig.MDComponent.show();
 	};
 
-
-  componentDidMount() {
-    document.title = "DSCOMG 2020";
-    window.addEventListener("scroll", this.handleScroll, { passive: true });
-    this.handleScroll();
-
-    const ele = document.querySelector(".belt");
-    const cover = document.querySelector("#cover");
-    const sponsorLogos = document.querySelectorAll(".sponsor_logo");
-
-    if (!this.io) return;
-
-    this.io.observe(ele);
-    this.io.observe(cover);
-    sponsorLogos.forEach(logo => this.io.observe(logo));
-
-    const config = {
-      apiKey: 'AIzaSyB_sK0hZM_uLzDpfiCkkrKfelHOY8VkuWY',
-      authDomain: 'dscomg-6d3e0.firebaseapp.com',
-      databaseURL: 'https://dscomg-6d3e0.firebaseio.com',
-      projectId: 'dscomg-6d3e0',
-      storageBucket: 'dscomg-6d3e0.appspot.com',
-      messagingSenderId: '154730227119',
-      appId: '1:154730227119:web:2bcd7929668a1c8125bb5a'
-    };
-
-    import('firebase').then(firebase => {
-      firebase.initializeApp(config);
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
-
-    if (!this.io) return;
-    this.io.disconnect();
-  }
-
-  render({ rootPath, partners, user }) {
+  render({ rootPath, user }) {
     return (
       <div>
         <div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
@@ -151,7 +137,7 @@ export default class Home extends Component {
             <br />
             <div class={style.button_holder}>
                 {user ? (                    
-                    <a>Welcome to OMG 🥳</a>
+                    <h4>Hello there, welcome to OMG 🥳</h4>
                   ) : (
                     <div class={style.action_button} onClick={this.toggleSigninDig}>
                       Sign-In to Register
@@ -194,160 +180,6 @@ export default class Home extends Component {
           </div>
         </div>
         <GalleryBlock />
-        {partners && (
-          <div class={style.partners}>
-            <h3>Partners</h3>
-            <h4>To be Updated Soon</h4>
-            {partners.main_partner && (
-              {/* <a
-                class={style.item}
-                href={partners.main_partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  crossorigin="anonymous"
-                  class="sponsor_logo"
-                  data-src={partners.main_partner.image}
-                  alt={partners.main_partner.name}
-                />
-              </a> */}
-            )}
-            {/* <h4>Community Partners</h4>
-            {partners.partner && (
-              <div class={style.partner}>
-                <div class={style.sponsor}>
-                  {partners.partner.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {partners.general_sponsor && (
-              <div class={style.partner}>
-                <h4>Our Mind-blowing Gold Sponsors</h4>
-                <div class={style.sponsor}>
-                  {partners.general_sponsor.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-            {partners.sponsors && (
-              <div class={style.partner}>
-                <h4>Our Awesome Silver Sponsors</h4>
-                <div class={style.sponsor}>
-                  {partners.sponsors.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-            {partners.community_sponsors && (
-              <div class={style.partner}>
-                <h4>Our Hardcore Fans</h4>
-                <div class={style.sponsor}>
-                  {partners.community_sponsors.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-            {partners.sponsors && (
-              <div class={style.partner}>
-                <h4>Official Ticketing Partner</h4>
-                <div class={style.sponsor}>
-                  {partners.ticketing_partner.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-            {partners.organizers && (
-              <div class={style.partner}>
-                <h4>With Love From</h4>
-                <div class={style.sponsor}>
-                  {partners.organizers.map(item => (
-                    <a
-                      class={style.item}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        class="sponsor_logo"
-                        crossorigin="anonymous"
-                        data-src={item.image}
-                        alt={item.name}
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )} */}
-          </div>
-        )}
         <SocialFooter rootPath={rootPath} />
         <Footer rootPath={rootPath} />
       </div>

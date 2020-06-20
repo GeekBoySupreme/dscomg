@@ -2,7 +2,7 @@
   padding: 24px 34px;
 }
 
-.signout_dialog h3 {
+.signout_dialog h3, .signin_confirm h3 {
   font-weight: 500;
   font-size: 22px;
   line-height: 32px;
@@ -11,12 +11,12 @@
   color: #1a73e8;
 }
 
-.signout_dialog h3 {
+.signout_dialog h3, .signin_confirm h3 {
   text-align: left;
   margin-bottom: 26px;
 }
 
-.signout_dialog p {
+.signout_dialog p, .signin_confirm p {
   line-height: 28px;
 }
 
