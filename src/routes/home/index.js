@@ -134,7 +134,6 @@ export default class Home extends Component {
             <br />
             <h4>24 June 2020 · In a Galaxy not too far away</h4>
             <br />
-            <br />
             <div class={style.button_holder}>
                 {user ? (                    
                     <h4>Hello there, welcome to OMG 🥳</h4>
