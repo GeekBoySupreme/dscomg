@@ -1,4 +1,4 @@
-import { Component } from "preact";
+import { h, Component } from 'preact';
 import IoLogo from "../../components/io_logo";
 import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
@@ -11,8 +11,8 @@ import { firebase } from '@firebase/app';
 import style from "./style";
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, user) {
+    super(props, user);
     if (typeof window !== "undefined") {
       this.io = new IntersectionObserver(
         entries => {
@@ -107,7 +107,7 @@ export default class Home extends Component {
     this.io.disconnect();
   }
 
-  render({ rootPath, partners }) {
+  render({ rootPath, partners, user }) {
     return (
       <div>
         <div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
@@ -150,12 +150,17 @@ export default class Home extends Component {
             <br />
             <br />
             <div class={style.button_holder}>
-                <a onClick={this.toggleSigninDig}>
-                  <button class={style.action_button}>Register Now</button>
-                </a>  
-                <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
+                {user ? (                    
+                    <a>Welcome to OMG 🥳</a>
+                  ) : (
+                    <div class={style.action_button} onClick={this.toggleSigninDig}>
+                      Sign-In to Register
+                    </div> 
+                  )}
+                
+                {/* <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
                   <button class={style.action_button}>Call for Proposal</button>
-                </a>  
+                </a>   */}
             </div>
             
           </div>

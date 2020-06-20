@@ -83,7 +83,7 @@ export default class Faq extends Component {
 						<div class={style.faq_title}>Registration</div>
 						<div class={style.faq_content}>
 							<p><b>How can I register for Developer Student Clubs OMG?</b></p>
-							<p>Registrations are not open yet. Make sure to follow us to get informed once it is open. They’ll be open soon on <a href="https://dscomg.com">dscomg.com</a></p>
+							<p><b>Registrations are now open.  Sign In to <a href="https://dscomg.com">dscomg.com</a> to Register</b></p>
 							<br/>
 							<p><b>What is the cost of a Developer Student Clubs OMG ticket?</b></p>
 							<p>Developer Student Clubs OMG event has no cost to attend.</p>
