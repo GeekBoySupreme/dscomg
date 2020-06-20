@@ -34,7 +34,7 @@
     width: 100%;
 }
 
-@media screen  and (min-width: 1024px) {
+@media screen  and (max-width: 480px) {
     .social_gif {
         display: none;
     }
