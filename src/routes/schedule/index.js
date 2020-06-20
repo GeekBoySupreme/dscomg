@@ -26,7 +26,7 @@ export default class Schedule extends Component {
     star = (id) => e => {
 
         let star = this.props.userSchedule ? !this.props.userSchedule[id] : true;
-		const ref = this.props.db.ref('/events_site/dscomg/users/' + this.props.user.uid + '/schedule/' + id);
+        const ref = this.props.db.ref('users/' + this.props.user.uid + '/schedule/' + id);
         ref.set(star ? true : null);
 
         gtag('event', 'add_to_schdule', {
