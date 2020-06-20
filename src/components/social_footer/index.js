@@ -119,7 +119,7 @@ export default class SocialFooter extends Component {
                     />
                 </div>
 
-                <div class={style.social_gif}>
+                {/* <div class={style.social_gif}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="129" height="162" viewBox="0 0 129.54 162.45">
                         <path
                             d="M48.61 127.61C59.48 136.9 65.9 148 67 159.16H3.29v-31.55h45.32m1.2-3.29H0v38.13h70.39c0-14.61-8.29-27.95-20.58-38.13z"
@@ -149,7 +149,7 @@ export default class SocialFooter extends Component {
                         <path d="M488 245c0-128.683-103.87-233-232-233S24 116.317 24 245h464z" stroke="#1a73e8"
                               stroke-width="18" fill="none"></path>
                     </svg>
-                </div>
+                </div> */}
             </div>
         );
     }

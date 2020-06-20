@@ -26,8 +26,8 @@
 }
 
 .social_gif {
-    margin-left: 20px;
     max-width: 340px;
+    display: none;
 }
 
 .social_gif img {
@@ -36,7 +36,7 @@
 
 @media screen  and (max-width: 480px) {
     .social_gif {
-        display: none;
+        display: block;
     }
 }
 
