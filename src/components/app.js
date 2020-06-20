@@ -82,7 +82,7 @@ export default class App extends Component {
 		if (typeof window !== 'undefined') {
 			this.db = firebase.database();
 
-			this.dbPromise = idb.open('ioxkl19', 1, upgradeDB => {
+			this.dbPromise = idb.open('dscomg-6d3e0', 1, upgradeDB => {
 				upgradeDB.createObjectStore('data');
 			});
 
