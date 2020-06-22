@@ -25,7 +25,7 @@ Deploy:
 ## Technology Stack
 
 * Preact
-* Firebase (Auth, Realtime Database)
+* Firebase (Auth, Realtime Database, Cloud Functions)
 * Service Worker
 
 ## License
@@ -33,5 +33,4 @@ Deploy:
 This PWA is published under the [MIT license](/LICENSE.md).
 
 Feel free to clone and modify repo as you want, but don't forget to add reference to authors.
-# dscomg
-Still thinking about that
+
