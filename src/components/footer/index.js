@@ -93,9 +93,9 @@ export default class Footer extends Component {
         <div class={style.footer_links}>
           <div class={style.footer_link}>
             <a href="https://twitter.com/omgdsc">DSCOMG 2020</a>
-            <a href={rootPath + "schedule"}>Schedule</a>
-            <a href={rootPath + "speakers"}>Speakers</a>
-            <a href={rootPath + "faq"}>FAQ</a>
+            <a href="https://dscomg.com/schedule">Schedule</a>
+            <a href="https://dscomg.com/speakers">Speakers</a>
+            <a href="https://dscomg.com/faq">FAQ</a>
           </div>
         </div>
       </div>
