@@ -206,8 +206,8 @@
         flex-basis: auto;
     }
     .schedule_time {
-        padding: 30px 0 30px 30px;
-        flex: 0 0 160px;
+        padding: 35px 0 10px 30px;
+        /*flex: 0 0 160px;*/
     }
     .schedule_event_details {
         display: block;
