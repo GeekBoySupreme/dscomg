@@ -126,7 +126,7 @@ export default class Schedule extends Component {
                 <div class={`${style.hero} hero`}>
                     <IoLogo rootPath={rootPath}/>
                     <h2>Schedule</h2>
-                    <p>Coming Soon</p>
+                    {/*<p>Coming Soon</p>*/}
                     {/* <p>
 						All sessions feature a Q&amp;A session at the end, time permitting.
 						Speakers will be taking questions via the website <a href="https://www.sli.do/">sli.do</a>. The room code for each venue are:<br />
@@ -135,7 +135,7 @@ export default class Schedule extends Component {
 						<li>Hall C (JC 3) - #N095</li>
 						<li>Hall D (LT 5) - #L556</li>
 					</p> */}
-                    <a class={style.track_bubble_blue}>Cloud</a>
+                    {/*<a class={style.track_bubble_blue}>Cloud</a>
                     <a class={style.track_bubble_blue}>Android</a>
                     <a class={style.track_bubble_blue}>Web</a>
                     <a class={style.track_bubble_blue}>Google Assistant</a>
@@ -144,7 +144,7 @@ export default class Schedule extends Component {
                     <a class={style.track_bubble_blue}>Security</a>
                     <a class={style.track_bubble_blue}>DevOps</a>
                     <a class={style.track_bubble_blue}>Blockchain</a>
-                    <a class={style.track_bubble_blue}>Design</a>
+                    <a class={style.track_bubble_blue}>Design</a>*/}
 
                 </div>
                 <div class={style.tabs}>
