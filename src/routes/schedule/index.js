@@ -171,18 +171,19 @@ export default class Schedule extends Component {
                                     {/*{item.startTime}<span>{item.ampm}</span>*/}
                                 </div>
                                 <div class={style.schedule_events}>
-                                    {item.sessions.map(item => (
-                                        this.showEvent(sessions, item, userSchedule, user) &&
+                                    {item.sessions.map(sessionItem => (
+                                        this.showEvent(sessions, sessionItem, userSchedule, user) &&
                                         <div class={style.schedule_event}
-                                             onClick={this.toggleDialog(item, sessions[item])}>
+                                             onClick={this.toggleDialog(sessionItem, sessions[sessionItem])}>
                                             <div class={style.schedule_event_details}>
-                                                <div class={style.schedule_event_title}>{sessions[item].title}</div>
+                                                <div
+                                                    class={style.schedule_event_title}>{sessions[sessionItem].title}</div>
                                                 <div class={style.schedule_event_meta}>
                                                     <div
-                                                        class={style.schedule_event_description}>{sessions[item].startTime} - {sessions[item].endTime} | {sessions[item].duration}</div>
+                                                        class={style.schedule_event_description}>{sessions[sessionItem].startTime} - {sessions[sessionItem].endTime} {item.ampm} | {sessions[sessionItem].duration}</div>
                                                     <div class={style.schedule_event_topics}>
-                                                        {sessions[item].topics &&
-                                                        sessions[item].topics.map(item => (
+                                                        {sessions[sessionItem].topics &&
+                                                        sessions[sessionItem].topics.map(item => (
                                                             <div id={item} class="session_topic">
                                                                 <span>{this.parseTopic(item)}</span>
                                                             </div>
@@ -190,9 +191,9 @@ export default class Schedule extends Component {
                                                         }
                                                     </div>
                                                 </div>
-                                                {sessions[item].slides &&
+                                                {sessions[sessionItem].slides &&
                                                 <a class={style.slides} id="slides" target="_blank"
-                                                   rel="noopener noreferrer" href={sessions[item].slides}>
+                                                   rel="noopener noreferrer" href={sessions[sessionItem].slides}>
                                                     <svg id="slides" viewBox="0 0 24 24">
                                                         <g id="slides">
                                                             <path id="slides"
@@ -204,11 +205,11 @@ export default class Schedule extends Component {
                                                 }
                                             </div>
                                             {user &&
-                                            <div class={style.star_button} onClick={this.star(item)} id="star">
+                                            <div class={style.star_button} onClick={this.star(sessionItem)} id="star">
                                                 <svg id="star">
                                                     {
                                                         userSchedule ?
-                                                            userSchedule[item] ?
+                                                            userSchedule[sessionItem] ?
                                                                 <path id="star" class={style.star} fill="#4768FD"
                                                                       d="M12,17.27l4.15,2.51c0.76,0.46,1.69-0.22,1.49-1.08l-1.1-4.72l3.67-3.18c0.67-0.58,0.31-1.68-0.57-1.75l-4.83-0.41 l-1.89-4.46c-0.34-0.81-1.5-0.81-1.84,0L9.19,8.63L4.36,9.04c-0.88,0.07-1.24,1.17-0.57,1.75l3.67,3.18l-1.1,4.72 c-0.2,0.86,0.73,1.54,1.49,1.08L12,17.27z"/>
                                                                 : <path id="star" class={style.star_border}
