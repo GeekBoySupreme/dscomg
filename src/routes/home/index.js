@@ -143,10 +143,6 @@ export default class Home extends Component {
                     </div> 
                   )
             </div>
-		<a href="https://docs.google.com/document/d/1iFUJLpW9Cd9UAMIZSfEiULepLyeMTi5k1mTyN6DHYjk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  <button class={style.action_button}>Tweet <b>#dscomg</b></button>
-                </a> 
-            
           </div>
           <Countdown />
         </div>
@@ -165,6 +161,10 @@ export default class Home extends Component {
               experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
               for a week of sessions, workshops and showcases.
             </p>
+		<br />
+		<a href="https://docs.google.com/document/d/1iFUJLpW9Cd9UAMIZSfEiULepLyeMTi5k1mTyN6DHYjk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <button class={style.action_button}>Tweet <b>#dscomg</b></button>
+                </a> 
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
