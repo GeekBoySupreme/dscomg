@@ -166,7 +166,9 @@ export default class Schedule extends Component {
                         <div class={style.schedule_section}>
                             <div class={style.schedule_content}>
                                 <div class={style.schedule_time}>
-                                    {item.startTime}<span>{item.ampm}</span>
+                                    Day {item.dayOfEvent}
+                                    <span>{item.date}/{item.day}</span>
+                                    {/*{item.startTime}<span>{item.ampm}</span>*/}
                                 </div>
                                 <div class={style.schedule_events}>
                                     {item.sessions.map(item => (
@@ -177,7 +179,7 @@ export default class Schedule extends Component {
                                                 <div class={style.schedule_event_title}>{sessions[item].title}</div>
                                                 <div class={style.schedule_event_meta}>
                                                     <div
-                                                        class={style.schedule_event_description}>{sessions[item].duration} / {sessions[item].location}</div>
+                                                        class={style.schedule_event_description}>{sessions[item].startTime} - {sessions[item].endTime} | {sessions[item].duration}</div>
                                                     <div class={style.schedule_event_topics}>
                                                         {sessions[item].topics &&
                                                         sessions[item].topics.map(item => (
