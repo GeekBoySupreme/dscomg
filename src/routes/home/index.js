@@ -136,13 +136,18 @@ export default class Home extends Component {
             <br />
             <div class={style.button_holder}>
                 {user ? (                    
-                    <h3>Hello there, welcome to OMG 🥳</h3>
+                    <h4>Hello there, welcome to OMG 🥳</h4>
                   ) : (
                     <div class={style.action_button} onClick={this.toggleSigninDig}>
                       Sign-In to Register
                     </div> 
-                  )
+                  )}
+                
+                {/* <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
+                  <button class={style.action_button}>Call for Proposal</button>
+                </a>   */}
             </div>
+            
           </div>
           <Countdown />
         </div>
@@ -161,10 +166,6 @@ export default class Home extends Component {
               experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
               for a week of sessions, workshops and showcases.
             </p>
-		<br />
-		<a href="https://docs.google.com/document/d/1iFUJLpW9Cd9UAMIZSfEiULepLyeMTi5k1mTyN6DHYjk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  <button class={style.action_button}>Tweet <b>#dscomg</b></button>
-                </a> 
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
