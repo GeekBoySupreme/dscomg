@@ -116,7 +116,7 @@ export default class App extends Component {
 			});
 
 			this.db
-				.ref('/events_site/ioxkl19/schedule')
+				.ref('/schedule')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -125,7 +125,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/ioxkl19/sessions')
+				.ref('/sessions')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -134,7 +134,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/ioxkl19/speakers')
+				.ref('/speakers')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -143,7 +143,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/ioxkl19/partners')
+				.ref('/partners')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -152,7 +152,7 @@ export default class App extends Component {
 				});
 
 			this.db
-				.ref('/events_site/ioxkl19/info')
+				.ref('/info')
 				.once('value')
 				.then(snapshot => {
 					const data = snapshot.val();
@@ -170,7 +170,7 @@ export default class App extends Component {
 						});
 					});
 
-					const dbRef = '/events_site/ioxkl19/users/' + currentUser.uid;
+					const dbRef = '/users/' + currentUser.uid;
 					this.db.ref(dbRef + '/info/').set({
 						uid: currentUser.uid,
 						username: currentUser.displayName,
@@ -292,12 +292,11 @@ export default class App extends Component {
 					<Faq path={rootPath + 'faq/'} rootPath={rootPath} />
 					<Home
 						path={rootPath}
-						rootPath={rootPath}
-						partners={partners}
+						user={currentUser}
 					/>
 					<EventMapPage path={rootPath + 'map/'}
 						rootPath={rootPath}
-						info={info}							
+						info={info}
 					/>
 					<NotFoundPage rootPath={rootPath} default />
 

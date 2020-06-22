@@ -4,6 +4,12 @@ Progressive Web App for DSC OMG 20, based on - Google I/O Extended 2019 Kuala Lu
 
 ## Getting Started
 
+Install pre-commit hooks so that code consistency is maintained
+```
+pip install pre-commit
+pre-commit install
+```
+
 Start development server:
 
 `npm run dev`
@@ -19,7 +25,7 @@ Deploy:
 ## Technology Stack
 
 * Preact
-* Firebase (Auth, Realtime Database)
+* Firebase (Auth, Realtime Database, Cloud Functions)
 * Service Worker
 
 ## License
@@ -27,5 +33,4 @@ Deploy:
 This PWA is published under the [MIT license](/LICENSE.md).
 
 Feel free to clone and modify repo as you want, but don't forget to add reference to authors.
-# dscomg
-Still thinking about that
+

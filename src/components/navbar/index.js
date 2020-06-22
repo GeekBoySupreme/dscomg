@@ -80,6 +80,7 @@ export default class NavBar extends Component {
 						</Dialog.Footer>
 					</Dialog>
 				</div>
+				
 				<div class={style.toolbar}>
 					<TopAppBar className="topappbar">
 						<TopAppBar.Row>
