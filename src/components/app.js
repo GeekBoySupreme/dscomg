@@ -79,10 +79,11 @@ export default class App extends Component {
   componentWillMount() {
     if (typeof window !== "undefined") {
       this.db = firebase.database();
+      
+			this.dbPromise = idb.open('dscomg-6d3e0', 1, upgradeDB => {
+				upgradeDB.createObjectStore('data');
+			});
 
-      this.dbPromise = idb.open("ioxkl19", 1, upgradeDB => {
-        upgradeDB.createObjectStore("data");
-      });
 
       this.getDb("schedule").then(val => {
         this.setState({ schedule: val });
