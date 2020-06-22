@@ -132,7 +132,7 @@ export default class Home extends Component {
               amazing Community Projects.
             </h2>
             <br />
-            <h4>24 June 2020 · In a Galaxy not too far away</h4>
+            <h3>24 June 2020 · In a Galaxy not too far away</h3>
             <br />
             <div class={style.button_holder}>
                 {user ? (                    
@@ -158,7 +158,7 @@ export default class Home extends Component {
             data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591563925/DSCOMG/IMG_6116.jpg"
           />
         </div>
-        <div class={style.home_info}>
+        <div class={style.home_info} id="headsup">
           <div class={style.text}>
             <h3>What you need to know, before you ask.</h3>
             <p>
@@ -166,7 +166,6 @@ export default class Home extends Component {
               experts in Design, Android, Web, Machine Learning, Cloud technologies and much more
               for a week of sessions, workshops and showcases.
             </p>
-	    <br />
 	    <a href="https://docs.google.com/document/d/1iFUJLpW9Cd9UAMIZSfEiULepLyeMTi5k1mTyN6DHYjk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <button class={style.action_button}>Tweet <b>&#x23;dscomg</b></button>
             </a>
