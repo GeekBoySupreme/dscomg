@@ -293,7 +293,7 @@ export default class App extends Component {
                     <EventLivePage
                         path={rootPath + "live/"}
                         rootPath={rootPath}
-                        info={info}
+                        user={currentUser}
                     />
                     <NotFoundPage rootPath={rootPath} default/>
                 </Router>
