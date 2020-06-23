@@ -54,6 +54,7 @@
 .schedule_time span {
     margin-left: 4px;
     font-size: 14px;
+    padding: 10px;
 }
 
 .schedule_events {
