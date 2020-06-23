@@ -134,7 +134,16 @@ export default class Home extends Component {
             <br />
             <div class={style.button_holder}>
               {user ? (
-                <h3>Hello there, welcome to OMG 🥳</h3>
+                <h4>Hello there, welcome to OMG 🥳 Check your mailbox for the Welcome Kit!</h4>
+                <a
+                  href="https://myframe.dscomg.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button class={style.action_button}>
+                    Get your <b>OMG</b> Frame
+                  </button>
+                </a>
               ) : (
                 <div class={style.action_button} onClick={this.toggleSigninDig}>
                   Sign-In to Register
