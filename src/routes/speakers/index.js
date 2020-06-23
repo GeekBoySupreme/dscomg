@@ -141,7 +141,6 @@ export default class Speakers extends Component {
                                 </div>
                                 <div class={style.speaker_name}>{speakers[item].name}</div>
                                 <div class={style.speaker_title}>{speakers[item].title}</div>
-                                <div class={style.short_bio}>{speakers[item].description}</div>
                             </div>
                         ))}
                     </div>
