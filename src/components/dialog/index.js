@@ -51,7 +51,7 @@ export default class CustomDialog extends Component {
   		navigator.share({
   			title: 'Developer Student Clubs OMG 2020',
   			text: `Check out '${data.title}' at #dscomg`,
-  			url: `https://events.gdgkl.dev/iox/schedule/${dataId}`
+  			url: `https://dscomg.com/schedule/${dataId}`
   		});
   	}
   };
