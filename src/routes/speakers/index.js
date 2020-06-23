@@ -94,9 +94,6 @@ export default class Speakers extends Component {
 						Learn Google's latest developer products from DSC Leads, Googlers, Google
 						Developer Experts, guest speakers and more. 
 					</p>
-					<p>
-						To be Updated Soon
-					</p>
 				</div>
 				 {speakers && (
 					<div class={style.speakers}>
