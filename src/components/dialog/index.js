@@ -41,7 +41,7 @@ export default class CustomDialog extends Component {
   star = id => e => {
   	let star = this.props.star ? !this.props.star[id] : true;
   	const ref = this.props.db.ref(
-  		'/events_site/ioxkl19/users/' + this.props.user.uid + '/schedule/' + id
+  		'users/' + this.props.user.uid + '/schedule/' + id
   	);
   	ref.set(star ? true : null);
   };

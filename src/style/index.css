@@ -53,7 +53,7 @@ body {
 }
 
 .hero {
-  padding: 100px 60px 60px 60px;
+  padding: 100px 60px 30px 60px;
   position: relative;
   /* max-width: 620px;
   width: 80%; */
@@ -184,7 +184,7 @@ body {
   color: #00a75d;
 }
 
-#machine_learning {
+#ML {
   border-color: #ffa74d;
   color: #ffa74d;
 }
@@ -207,6 +207,26 @@ body {
 #angular {
   border-color: #d84315;
   color: #d84315;
+}
+
+#devops {
+  border-color: #000000;
+  color: #000000;
+}
+
+#panel {
+  border-color: #fe561f;
+  color: #fe561f;
+}
+
+#security {
+  border-color: #ed1c24;
+  color: #ed1c24;
+}
+
+#keynote {
+  border-color: #00a8db;
+  color: #00a8db;
 }
 
 @media screen and (max-width: 768px) {
