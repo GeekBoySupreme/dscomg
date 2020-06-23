@@ -13,6 +13,7 @@ const config = {
 	measurementId: "G-0BN7X5YM73"
 };
 firebase.initializeApp(config);
+firebase.analytics();
 if (typeof window !== 'undefined'){
 
 import('firebase/performance').then(() => firebase.performance());
