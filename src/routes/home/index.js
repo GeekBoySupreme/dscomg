@@ -134,6 +134,7 @@ export default class Home extends Component {
             <br />
             <div class={style.button_holder}>
               {user ? (
+                <div>
                 <h4>
                   Hello there, welcome to OMG 🥳 Check your mailbox for the Welcome Kit!
                 </h4>
@@ -146,6 +147,7 @@ export default class Home extends Component {
                     Get your <b>OMG</b> Frame
                   </button>
                 </a>
+                </div>
                 
               ) : (
                 <div class={style.action_button} onClick={this.toggleSigninDig}>
