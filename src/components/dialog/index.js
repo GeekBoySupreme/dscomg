@@ -215,7 +215,7 @@ export default class CustomDialog extends Component {
   					) : (
   						<div>
   							<div class={style.subtitle}>
-  								{data.startTime} - {data.endTime}, {data.location}
+  								{data.startTime} - {data.endTime} {data.ampm} | {data.duration}
   							</div>
   							<p class={style.dialog_body_description}>{data.description}</p>
   							<div class={style.schedule_event_topics}>
