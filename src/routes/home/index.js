@@ -164,7 +164,8 @@ export default class Home extends Component {
               technologies and much more for a week of sessions, workshops and
               showcases.
             </p>
-            <a
+            <div class={style.button_holder}>
+              <a
               href="https://contest.dscomg.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -173,6 +174,18 @@ export default class Home extends Component {
                 Tweet <b>&#x23;dscomg</b>
               </button>
             </a>
+
+            <a
+              href="https://myframe.dscomg.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class={style.action_button}>
+                Get your <b>OMG</b> Frame
+              </button>
+            </a>
+            </div>
+            
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
