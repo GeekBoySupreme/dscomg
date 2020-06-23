@@ -172,11 +172,11 @@ export default class Home extends Component {
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
-              <div class={style.number}>30+</div>
+              <div class={style.number}>20+</div>
               <div class={style.label}>Sessions</div>
             </div>
             <div class={style.stat}>
-              <div class={style.number}>7</div>
+              <div class={style.number}>5</div>
               <div class={style.label}>Days</div>
             </div>
           </div>
