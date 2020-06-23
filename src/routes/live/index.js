@@ -24,7 +24,7 @@ export default class EventLivePage extends Component {
     document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
   }
 
-  render({ rootPath, info }) {
+  render({ rootPath, user }) {
     return (
         <div class={style.scrollbar}>
         {/* {info && info.map_image && (<img class={style.mapImage} crossorigin="anonymous"  src={info.map_image} />)}
