@@ -98,7 +98,7 @@ export default class Speakers extends Component {
 						To be Updated Soon
 					</p>
 				</div>
-				{/* {speakers && (
+				 {speakers && (
 					<div class={style.speakers}>
 						{Object.keys(speakers).map(item => (
 							<div
@@ -149,7 +149,7 @@ export default class Speakers extends Component {
 							</div>
 						))}
 					</div>
-				)} */}
+				)}
 				<div class={style.footer}>
 					<SocialFooter rootPath={rootPath} />
 					<Footer rootPath={rootPath} />
