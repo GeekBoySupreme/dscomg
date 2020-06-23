@@ -5,9 +5,10 @@
 .speakers {
     margin: 0 60px 64px 60px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 16px;
-    max-width: 1400px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 18px;
+
+    /*max-width: 1400px;*/
 }
 .speaker_item {
     z-index: 1;
@@ -85,6 +86,12 @@
     width: 95%;
     line-height: 22px;
     color: #565656;
+}
+
+@media screen and (max-width: 1600px) {
+    .speakers {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media screen and (max-width: 1300px) {
