@@ -1,7 +1,6 @@
 import { firebase } from '@firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import 'firebase/analytics';
 
 const config = {
 	apiKey: 'AIzaSyB_sK0hZM_uLzDpfiCkkrKfelHOY8VkuWY',
@@ -14,7 +13,6 @@ const config = {
 	measurementId: "G-0BN7X5YM73"
 };
 firebase.initializeApp(config);
-firebase.analytics();
 if (typeof window !== 'undefined'){
 
 import('firebase/performance').then(() => firebase.performance());
