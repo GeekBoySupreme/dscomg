@@ -213,7 +213,7 @@ export default class CustomDialog extends Component {
                         scrollable
                     >
                         {showSpeaker ? (
-                            <div class={style.speaker_bio}>{speakers[speakerId].bio}</div>
+                            <div class={style.speaker_bio}>{speakers[speakerId].description}</div>
                         ) : (
                             <div>
                                 <div class={style.subtitle}>
