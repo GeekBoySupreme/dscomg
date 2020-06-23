@@ -136,8 +136,9 @@ export default class Home extends Component {
               {user ? (
                 <div>
                 <h4>
-                  Hello there, welcome to OMG 🥳 Check your mailbox for the Welcome Kit!
+                  Hello there, welcome to OMG 🥳 <br />Check your mailbox for the Welcome Kit!
                 </h4>
+                <br />
                 <a
                   href="https://myframe.dscomg.com/"
                   target="_blank"
