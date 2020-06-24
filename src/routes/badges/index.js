@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import IoLogo from "../../components/io_logo";
+import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import axios from "axios";
 import style from "./style";
