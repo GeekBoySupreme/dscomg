@@ -459,7 +459,7 @@ export default class EventLivePage extends Component {
             </b>
           </button>
           <p style={{ fontSize: "80%", padding: 0, margin: 0 }}>
-            * claim points for each session to earn badges!
+            * claim points for each session to earn Badges. Do keep this tab open until the timer hits 00:00 to receive the Badge.
           </p>
 
           <br />
