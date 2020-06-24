@@ -449,7 +449,7 @@ export default class EventLivePage extends Component {
           <IoLogo rootPath={rootPath} />
           <h2>Watch live</h2>
           <div class={style.youtube_embed}>
-            <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/RNuaH3XkU4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
           <p>If you cannot watch the video here, use the button below to open YouTube in a new Tab &nbsp;👇 <br />
