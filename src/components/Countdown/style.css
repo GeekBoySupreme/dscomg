@@ -10,6 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     max-width: calc(100% - 16px);
+    display: none;
 }
 
 .unitWrapper {
