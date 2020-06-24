@@ -369,10 +369,15 @@ export default class EventLivePage extends Component {
     ) {
       sessionCurrent = "D5S3";
     } else if (
-      now >= moment.tz("2020-06-24 11:19", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 12:22", "Asia/Kolkata")
+      now >= moment.tz("2020-06-24 16:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-24 16:20", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D1S3";
+      sessionCurrent = "D0T1";
+    } else if (
+      now >= moment.tz("2020-06-24 16:20", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-24 16:40", "Asia/Kolkata")
+    ) {
+      sessionCurrent = "D0T2";
     }
 
     axios
@@ -453,7 +458,9 @@ export default class EventLivePage extends Component {
                 : "Sign-In to earn badges"}
             </b>
           </button>
-          <p style={{fontSize: "80%", padding: 0, margin: 0}}>* Claim points for each session to earn badges!</p>
+          <p style={{ fontSize: "80%", padding: 0, margin: 0 }}>
+            * Claim points for each session to earn badges!
+          </p>
 
           <br />
           <br />
