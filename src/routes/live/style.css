@@ -30,6 +30,11 @@
   flex-direction: row;
 }
 
+iframe {
+   width: 853px;
+   height: 480;
+}
+
 @media screen and (max-width: 768px) {
   .cfp {
     margin: 8px 0 0 0;
@@ -39,7 +44,13 @@
     /* display: none; */
   }
 }
-
+@media (min-width: 320px) and (max-width: 480px) {
+  iframe {
+   width: 100vw;
+   height: 280;
+}
+  
+}
 @media screen and (min-width: 768px) {
   .scrollbar {
     padding-top: 0px;
