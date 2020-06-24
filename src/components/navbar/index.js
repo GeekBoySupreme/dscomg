@@ -69,7 +69,6 @@ export default class NavBar extends Component {
   						<h3>Sign out?</h3>
   						<p>All saved events remain synced to your account.</p>
   					</div>
-            // eslint-disable-next-line indent
   					<Dialog.Footer>
   						<Dialog.FooterButton class={style.cancel_btn} accept>
                 Not now
