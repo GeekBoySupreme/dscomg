@@ -62,7 +62,7 @@ export default class Faq extends Component {
                 </b>
               </p>
               <p>
-                Developer Students Clubs is a platform for you to come and learn
+                Developer Students Clubs OMG is a platform for you to come and learn
                 from the Developer Student Club Leads from all across the
                 country. A free and open platform for anyone to learn and grow.
               </p>

@@ -455,7 +455,7 @@ export default class EventLivePage extends Component {
           <p>If you cannot watch the video here, use the button below to open YouTube in a new Tab &nbsp;👇 <br />
               <div class={style.button_holder}>
               <a
-              href="https://www.youtube.com/live_chat?v=vxwpPOz_5os"
+              href="https://www.youtube.com/live_chat?v=RNuaH3XkU4U"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -465,7 +465,7 @@ export default class EventLivePage extends Component {
             </a>
 
             <a
-              href="https://www.youtube.com/watch?v=vxwpPOz_5os"
+              href="https://www.youtube.com/watch?v=RNuaH3XkU4U"
               target="_blank"
               rel="noopener noreferrer"
             >
