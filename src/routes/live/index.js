@@ -452,6 +452,7 @@ export default class EventLivePage extends Component {
                 : "Sign-In to earn badges"}
             </b>
           </button>
+          <p>&nbsp;</p>
           <p style={{fontSize: "80%", padding: 0, margin: 0}}>* Claim points for each session to earn badges!</p>
 
           <br />
