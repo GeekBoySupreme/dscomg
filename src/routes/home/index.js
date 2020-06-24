@@ -148,6 +148,15 @@ export default class Home extends Component {
                     Get your <b>OMG</b> Frame
                   </button>
                 </a>
+                <a
+                  href="https://www.youtube.com/watch?v=vxwpPOz_5os"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button class={style.action_button}>
+                    Watch Live
+                  </button>
+                </a>
                 </div>
                 
               ) : (
