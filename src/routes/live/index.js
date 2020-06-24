@@ -452,6 +452,7 @@ export default class EventLivePage extends Component {
             <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
+          <p>If you cannot watch the video here, use the button below to open YouTube in a new Tab &nbsp;👇</p>
           <div class={style.button_holder}>
               <a
               href="https://www.youtube.com/live_chat?v=vxwpPOz_5os"
@@ -462,9 +463,20 @@ export default class EventLivePage extends Component {
                 Open Live Chat
               </button>
             </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=vxwpPOz_5os"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class={style.action_button}>
+                Open on YouTube
+              </button>
+            </a>
             </div>
             <p>
             Stay Tuned here for the Live Sessions, updates and much, much more.
+            PS - Don't close this tab to earn Badges.
             <br />
             Also, subscribe to our YouTube Channel and hit the Bell Icon to get
             more updates.
