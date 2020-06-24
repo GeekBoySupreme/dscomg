@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import IoLogo from "../../components/io_logo";
+import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import axios from "axios";
 import style from "./style";
@@ -61,14 +62,14 @@ export default class Badges extends Component {
       <div>
         <div class="hero">
           <IoLogo rootPath={rootPath + "/badges"} />
-          <h2>My Badges</h2>
-          <h4>{this.state.user ? this.state.user.email : "No user"}</h4>
+          <h3>My Badges</h3>
+          <h4>{this.state.user ? this.state.user.email : "Sign In to start Getting badges"}</h4>
         </div>
         {this.state.user ? (
           <div>
             {this.state.badges.length === 0 ? (
               <div class={style.speakers}>
-                No Badges earned! Watch sessions to earn badges.
+                No Badges earned! <br />Nevermind, it's not too late. Watch sessions to earn badges.
               </div>
             ) : (
               <div class={style.speakers}>
@@ -99,7 +100,10 @@ export default class Badges extends Component {
           <div class={style.speakers}>Sign-In to view badges</div>
         )}
 
-        <Footer rootPath={rootPath} />
+        <div class={style.footer}>
+          <SocialFooter rootPath={rootPath} />
+          <Footer rootPath={rootPath} />
+        </div>
       </div>
     );
   }
