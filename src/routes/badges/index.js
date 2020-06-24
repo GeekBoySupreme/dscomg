@@ -62,8 +62,8 @@ export default class Badges extends Component {
       <div>
         <div class="hero">
           <IoLogo rootPath={rootPath + "/badges"} />
-          <h3>The Badge Board</h3>
-          <h4>Stay tuned to Developer Student Club OMG and grab some exciting Badges along the way.</h4>
+          <h3 class={style.badge_header}>The Badge Board</h3>
+          <h4 class={style.badge_description}>Stay tuned to Developer Student Club OMG and grab some exciting Badges along the way.</h4>
           <h4>{this.state.user ? this.state.user.email : "Sign In to start Getting badges"}</h4>
         </div>
         {this.state.user ? (
