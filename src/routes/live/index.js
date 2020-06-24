@@ -394,6 +394,12 @@ export default class EventLivePage extends Component {
               timeout: 5000,
             });
           }
+          else {
+            this.snackbar.MDComponent.show({
+              message: "Uh oh, Timeout! No badges Earned :'(",
+              timeout: 5000,
+            });
+          }
         },
         (error) => {
           console.log(error);
