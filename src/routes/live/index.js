@@ -444,7 +444,7 @@ export default class EventLivePage extends Component {
           <h2>Watch live</h2>
           <div class={style.youtube_embed}>
             <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
          
             <p>

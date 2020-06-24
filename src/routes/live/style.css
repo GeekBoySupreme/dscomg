@@ -32,7 +32,7 @@
   font-weight: 200;
   color: #1A73E8;
   border: none;
-  padding: 8px 28px;
+  padding: 8px 28px 8px 0px;
   transition: all 0.1s ease-in-out;
   letter-spacing: 0.25px;
   background-color: rgba(0, 0, 0, 0);
