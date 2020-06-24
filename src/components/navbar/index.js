@@ -11,7 +11,7 @@ import "preact-material-components/List/style.css";
 import IoLogo from "../io_logo";
 import MenuIcon from "../SVG/Icons/menu";
 import HomeIcon from "../SVG/Icons/home";
-// import AttendingIcon from '../SVG/Icons/attending';
+import LiveIcon from '../SVG/Icons/live';
 // import RegistrationIcon from '../SVG/Icons/registration';
 import ScheduleIcon from "../SVG/Icons/schedule";
 import SpeakerIcon from "../SVG/Icons/speaker";
@@ -95,13 +95,18 @@ export default class NavBar extends Component {
                     )
                   }
                 </Match>
-                {/* <Match path={rootPath + 'attending'}>
-									{({ path }) =>
-										path.startsWith(rootPath + 'attending') && (
-											<span>Attending</span>
-										)
-									}
-								</Match> */}
+                <Match path="/badges">
+                {({ path, url }) => (
+                  <Link
+                    activeClassName={style.active}
+                    href={rootPath + "badges"}
+                    onClick={this.closeDrawer}
+                    path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
+                  >
+                    Badges
+                  </Link>
+                )}
+              </Match>
                 <Match path={rootPath + "speakers"}>
                   {({ path }) =>
                     path.startsWith(rootPath + "speakers") && (
