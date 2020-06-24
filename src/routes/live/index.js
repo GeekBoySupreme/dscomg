@@ -437,8 +437,8 @@ export default class EventLivePage extends Component {
         <div class={`${style.hero} hero`}>
           <IoLogo rootPath={rootPath} />
           <h2>Watch live</h2>
-          <iframe width="100vw" height="auto" src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <p>
+          <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
             Stay Tuned here for the Live Sessions, updates and much, much more.
             <br />
             Also, subscribe to our YouTube Channel and hit the Bell Icon to get
