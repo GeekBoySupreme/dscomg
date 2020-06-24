@@ -53,6 +53,16 @@ iframe {
    border-radius: 5px;
 }
 
+.youtube_embed {
+  display: flex;
+  flex-direction: row;
+}
+
+.chat_embed {
+  width: 10vw;
+  height: 480px;
+}
+
 @media screen and (max-width: 768px) {
   .cfp {
     margin: 8px 0 0 0;
@@ -68,6 +78,14 @@ iframe {
    height: 280px;
    position: relative;
    left: -20px;
+}
+
+.youtube_embed {
+  flex-direction: column;
+}
+.chat_embed {
+  width: 100vw;
+  height: 50vh;
 }
   
 }

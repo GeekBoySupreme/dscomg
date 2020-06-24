@@ -10,6 +10,14 @@
 
     /*max-width: 1400px;*/
 }
+
+.badge_header {
+    font-weight: 500;
+}
+.badge_description {
+    font-weight: 300;
+}
+
 .speaker_item {
     z-index: 1;
     background: white;
