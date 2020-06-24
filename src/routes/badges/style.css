@@ -13,7 +13,7 @@
 .speaker_item {
     z-index: 1;
     background: white;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.15); */
     padding: 24px 12px 48px 12px;
     min-width: 280px;
     max-width: 350px;
