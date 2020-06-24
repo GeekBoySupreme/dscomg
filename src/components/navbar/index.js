@@ -258,19 +258,19 @@ export default class NavBar extends Component {
               <HomeIcon />
               <span>Home</span>
             </Link>
-            {/* <Match path="/attending">
-							{({ path, url }) => (
-								<Link
-									activeClassName={style.active}
-									class={style.nav_item}
-									href={rootPath + 'attending'}
-									path={path.startsWith(`${rootPath}attending/`) ? url : undefined}
-								>
-									<AttendingIcon />
-									<span>Attending</span>
-								</Link>
-							)}
-						</Match> */}
+            <Match path="/badges">
+              {({ path, url }) => (
+                <Link
+                  activeClassName={style.active}
+                  class={style.nav_item}
+                  href={rootPath + "badges"}
+                  path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
+                >
+                  <MapIcon />
+                  <span>Badges</span>
+                </Link>
+              )}
+            </Match>
             {/* <Match path="/registration">
 							{({ path, url }) => (
 								<Link
@@ -354,7 +354,7 @@ export default class NavBar extends Component {
                 </Link>
               )}
             </Match>
-            <Match path="/badges">
+            {/* <Match path="/badges">
               {({ path, url }) => (
                 <Link
                   activeClassName={style.active}
@@ -366,7 +366,7 @@ export default class NavBar extends Component {
                   <span>Badges</span>
                 </Link>
               )}
-            </Match>
+            </Match> */}
             <div class={style.line} />
           </nav>
         </div>
