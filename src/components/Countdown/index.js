@@ -35,7 +35,7 @@ componentWillUnmount() {
 render() {
 	return (
 		<div class={style.countdownContainer} ref={div => (this.countdownContainer = div)}>
-			<div
+			{/* <div
 				class={`${style.countdown}`}
 				aria-hidden="true"
 				role="presentation"
@@ -92,7 +92,13 @@ render() {
 					/>
 					<span class={`${style.unitLabel}`}>S</span>
 				</div>
-			</div>
+			</div> */}
+
+			<img
+				class={style.image_fluid}
+				crossorigin="anonymous"
+				data-src="https://res.cloudinary.com/distortedaura/image/upload/v1593002932/DSCOMG/Day_1_Website_1.png"
+			/>
 		</div>
 	);
 }

@@ -109,6 +109,10 @@
     stroke: #cdead5
 }
 
+.img_fluid {
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .countdownContainer {
         margin-left: 0;
