@@ -1,24 +1,26 @@
+/* eslint-disable react/jsx-indent-props */
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import { h, Component } from "preact";
-import { Link, Match } from "preact-router/match";
-import firebase from "../firebase";
-import Drawer from "preact-material-components/Drawer";
-import TopAppBar from "preact-material-components/TopAppBar";
-import Dialog from "preact-material-components/Dialog";
-import "preact-material-components/Dialog/style.css";
-import "preact-material-components/TopAppBar/style.css";
-import "preact-material-components/Drawer/style.css";
-import "preact-material-components/List/style.css";
-import IoLogo from "../io_logo";
-import MenuIcon from "../SVG/Icons/menu";
-import HomeIcon from "../SVG/Icons/home";
+import { h, Component } from 'preact';
+import { Link, Match } from 'preact-router/match';
+import firebase from '../firebase';
+import Drawer from 'preact-material-components/Drawer';
+import TopAppBar from 'preact-material-components/TopAppBar';
+import Dialog from 'preact-material-components/Dialog';
+import 'preact-material-components/Dialog/style.css';
+import 'preact-material-components/TopAppBar/style.css';
+import 'preact-material-components/Drawer/style.css';
+import 'preact-material-components/List/style.css';
+import IoLogo from '../io_logo';
+import MenuIcon from '../SVG/Icons/menu';
+import HomeIcon from '../SVG/Icons/home';
 import BadgeIcon from '../SVG/Icons/badge';
 // import RegistrationIcon from '../SVG/Icons/registration';
-import ScheduleIcon from "../SVG/Icons/schedule";
-import SpeakerIcon from "../SVG/Icons/speaker";
-import FaqIcon from "../SVG/Icons/faq";
-import MapIcon from "../SVG/Icons/map";
-import style from "./style";
+import ScheduleIcon from '../SVG/Icons/schedule';
+import SpeakerIcon from '../SVG/Icons/speaker';
+import FaqIcon from '../SVG/Icons/faq';
+import MapIcon from '../SVG/Icons/map';
+import style from './style';
 
 export default class NavBar extends Component {
   closeDrawer = () => this.setState({ drawerOpened: false });
@@ -31,7 +33,7 @@ export default class NavBar extends Component {
 
   signOut = () => {
   	// eslint-disable-next-line no-undef
-  	gtag("event", "logout", { method: "Google" });
+  	gtag('event', 'logout', { method: 'Google' });
 
   	firebase
   		.auth()
@@ -43,7 +45,7 @@ export default class NavBar extends Component {
 
   toggleSigninDig = () => {
   	// eslint-disable-next-line no-undef
-  	gtag("event", "login", { method: "Google" });
+  	gtag('event', 'login', { method: 'Google' });
 
   	this.signIn();
   };
@@ -55,7 +57,7 @@ export default class NavBar extends Component {
   render({ rootPath, user }) {
   	return (
   		<div>
-  			<div className={[style.signout_dialog, "signout_dialog"].join(" ")}>
+  			<div className={[style.signout_dialog, 'signout_dialog'].join(' ')}>
   				<Dialog
   					onCancel={this.onClose}
   					onAccept={this.onClose}
@@ -90,16 +92,16 @@ export default class NavBar extends Component {
   							<MenuIcon class={style.menu_icon} onClick={this.openDrawer} />
   						</TopAppBar.Section>
   						<div class={style.mobile_title}>
-  							<Match path={rootPath + "schedule"}>
+  							<Match path={rootPath + 'schedule'}>
   								{({ path }) =>
-  									path.startsWith(rootPath + "schedule") && (
+  									path.startsWith(rootPath + 'schedule') && (
   										<span>Schedule</span>
   									)
   								}
   							</Match>
-  							<Match path={rootPath + "speakers"}>
+  							<Match path={rootPath + 'speakers'}>
   								{({ path }) =>
-  									path.startsWith(rootPath + "speakers") && (
+  									path.startsWith(rootPath + 'speakers') && (
   										<span>Speakers</span>
   									)
   								}
@@ -140,7 +142,7 @@ export default class NavBar extends Component {
   							{({ path, url }) => (
   								<Link
   									activeClassName={style.active}
-  									href={rootPath + "badges"}
+  									href={rootPath + 'badges'}
   									onClick={this.closeDrawer}
   									path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
   								>
@@ -152,7 +154,7 @@ export default class NavBar extends Component {
   							{({ path, url }) => (
   								<Link
   									activeClassName={style.active}
-  									href={rootPath + "faq"}
+  									href={rootPath + 'faq'}
   									onClick={this.closeDrawer}
   									path={path.startsWith(`${rootPath}faq/`) ? url : undefined}
   								>
@@ -164,7 +166,7 @@ export default class NavBar extends Component {
   							{({ path, url }) => (
   								<Link
   									activeClassName={style.active}
-  									href={rootPath + "schedule"}
+  									href={rootPath + 'schedule'}
   									onClick={this.closeDrawer}
   									path={
   										path.startsWith(`${rootPath}schedule/`) ? url : undefined
@@ -178,7 +180,7 @@ export default class NavBar extends Component {
   							{({ path, url }) => (
   								<Link
   									activeClassName={style.active}
-  									href={rootPath + "speakers"}
+  									href={rootPath + 'speakers'}
   									onClick={this.closeDrawer}
   									path={
   										path.startsWith(`${rootPath}speakers/`) ? url : undefined
@@ -192,7 +194,7 @@ export default class NavBar extends Component {
   							{({ path, url }) => (
   								<Link
   									activeClassName={style.active}
-  									href={rootPath + "live"}
+  									href={rootPath + 'live'}
   									onClick={this.closeDrawer}
   									path={path.startsWith(`${rootPath}live/`) ? url : undefined}
   								>
@@ -235,7 +237,7 @@ export default class NavBar extends Component {
   							<Link
   								activeClassName={style.active}
   								class={style.nav_item}
-  								href={rootPath + "badges"}
+  								href={rootPath + 'badges'}
   								path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
   							>
   								<BadgeIcon />
@@ -243,25 +245,25 @@ export default class NavBar extends Component {
   							</Link>
   						)}
   					</Match>
-  					<Match path="/faq">
+  					{/* <Match path="/faq">
   						{({ path, url }) => (
   							<Link
   								activeClassName={style.active}
   								class={style.nav_item}
-  								href={rootPath + "faq"}
+  								href={rootPath + 'faq'}
   								path={path.startsWith(`${rootPath}faq/`) ? url : undefined}
   							>
   								<FaqIcon />
   								<span>FAQ</span>
   							</Link>
   						)}
-  					</Match>
+  					</Match> */}
   					<Match path="/schedule">
   						{({ path, url }) => (
   							<Link
   								activeClassName={style.active}
   								class={style.nav_item}
-  								href={rootPath + "schedule"}
+  								href={rootPath + 'schedule'}
   								path={
   									path.startsWith(`${rootPath}schedule/`) ? url : undefined
   								}
@@ -276,7 +278,7 @@ export default class NavBar extends Component {
   							<Link
   								activeClassName={style.active}
   								class={style.nav_item}
-  								href={rootPath + "speakers"}
+  								href={rootPath + 'speakers'}
   								path={
   									path.startsWith(`${rootPath}speakers/`) ? url : undefined
   								}
@@ -291,7 +293,7 @@ export default class NavBar extends Component {
   							<Link
   								activeClassName={style.active}
   								class={style.nav_item}
-  								href={rootPath + "live"}
+  								href={rootPath + 'live'}
   								path={path.startsWith(`${rootPath}live/`) ? url : undefined}
   							>
   								<MapIcon />
