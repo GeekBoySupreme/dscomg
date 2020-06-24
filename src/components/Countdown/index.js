@@ -33,13 +33,68 @@ export default class Countdown extends Component {
 
   render() {
     return (
-      <div>
-        <img
-          class={style.img}
-          src={
-            "https://res.cloudinary.com/distortedaura/image/upload/v1593002932/DSCOMG/Day_1_Website_1.png"
-          }
-        />
+      <div
+        class={style.countdownContainer}
+        ref={div => (this.countdownContainer = div)}
+      >
+        <div
+          class={`${style.countdown}`}
+          aria-hidden="true"
+          role="presentation"
+        >
+          <div class={`${style.unitWrapper}`}>
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="days"
+              data-max-number="nine"
+            />
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="days"
+              data-max-number="nine"
+            />
+            <span class={`${style.unitLabel}`}>D</span>
+          </div>
+          <div class={`${style.unitWrapper}`}>
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="hours"
+              data-max-number="two"
+            />
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="hours"
+              data-max-number="nine"
+            />
+            <span class={`${style.unitLabel}`}>H</span>
+          </div>
+          <div class={`${style.unitWrapper}`}>
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="minutes"
+              data-max-number="five"
+            />
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="minutes"
+              data-max-number="nine"
+            />
+            <span class={`${style.unitLabel}`}>M</span>
+          </div>
+          <div class={`${style.unitWrapper}`}>
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="seconds"
+              data-max-number="five"
+            />
+            <div
+              class={`${style.digit} js-digit`}
+              data-unit="seconds"
+              data-max-number="nine"
+            />
+            <span class={`${style.unitLabel}`}>S</span>
+          </div>
+        </div>
       </div>
     );
   }
