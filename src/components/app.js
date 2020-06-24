@@ -14,6 +14,8 @@ import Schedule from "async!../routes/schedule";
 import Speakers from "async!../routes/speakers";
 import Snackbar from "preact-material-components/Snackbar";
 import "preact-material-components/Snackbar/style.css";
+import Badges from "../routes/badges";
+import axios from "axios";
 
 export default class App extends Component {
     handleRoute = e => {
@@ -160,6 +162,22 @@ export default class App extends Component {
                 });
 
             firebase.auth().onAuthStateChanged(currentUser => {
+                axios.post('https://badges.dscomg.com/api/session/', {
+                    session: 'D0S0',
+                    email: currentUser.email
+                  })
+                  .then((response) => {
+                    console.log(response.data);
+                    if(response.data.badgeEarned) {
+                        this.snackbar.MDComponent.show({
+                            message: "You earned a badge!",
+                            timeout: 5000,
+                        });
+                    }
+                  }, (error) => {
+                    console.log(error);
+                  });
+
                 this.setState({currentUser});
                 if (currentUser) {
                     window.Sentry.configureScope(scope => {
@@ -292,6 +310,11 @@ export default class App extends Component {
                     <Home path={rootPath} user={currentUser}/>
                     <EventLivePage
                         path={rootPath + "live/"}
+                        rootPath={rootPath}
+                        user={currentUser}
+                    />
+                    <Badges
+                        path={rootPath + "badges/"}
                         rootPath={rootPath}
                         user={currentUser}
                     />

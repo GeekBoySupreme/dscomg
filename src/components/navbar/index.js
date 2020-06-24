@@ -217,6 +217,18 @@ export default class NavBar extends Component {
                   </Link>
                 )}
               </Match>
+              <Match path="/badges">
+                {({ path, url }) => (
+                  <Link
+                    activeClassName={style.active}
+                    href={rootPath + "badges"}
+                    onClick={this.closeDrawer}
+                    path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
+                  >
+                    Badges
+                  </Link>
+                )}
+              </Match>
             </div>
           </Drawer.DrawerContent>
         </Drawer>
@@ -339,6 +351,19 @@ export default class NavBar extends Component {
                 >
                   <MapIcon />
                   <span>Live</span>
+                </Link>
+              )}
+            </Match>
+            <Match path="/badges">
+              {({ path, url }) => (
+                <Link
+                  activeClassName={style.active}
+                  class={style.nav_item}
+                  href={rootPath + "badges"}
+                  path={path.startsWith(`${rootPath}badges/`) ? url : undefined}
+                >
+                  <MapIcon />
+                  <span>Badges</span>
                 </Link>
               )}
             </Match>
