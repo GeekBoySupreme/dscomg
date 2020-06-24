@@ -100,7 +100,9 @@ export default class Badges extends Component {
         ) : (
           <div class={style.speakers}>Sign-In to view badges</div>
         )}
+        <h3>Note: Please note that these badges are not certificates, can not be exchanged nor tranferred.</h3>
 
+        <h3>Badges here are merely representative souvenirs and are meant to celebrate the community togetherness and your participation in the Developer Student Clubs OMG.</h3>
         <div class={style.footer}>
           <SocialFooter rootPath={rootPath} />
           <Footer rootPath={rootPath} />
