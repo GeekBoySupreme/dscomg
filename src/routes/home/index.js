@@ -130,7 +130,7 @@ export default class Home extends Component {
               Community Projects.
             </h2>
             <br />
-            <h4>24 June 2020 · In a Galaxy not too far away</h4>
+            <h4>25 June 2020 · Day 2 Coming Up</h4>
             <br />
             <div class={style.button_holder}>
               {user ? (
@@ -149,7 +149,7 @@ export default class Home extends Component {
                   </button>
                 </a>
                 <a
-                  href="https://www.youtube.com/watch?v=vxwpPOz_5os"
+                  href="https://www.youtube.com/watch?v=RNuaH3XkU4U"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
