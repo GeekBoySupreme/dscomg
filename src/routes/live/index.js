@@ -452,6 +452,8 @@ export default class EventLivePage extends Component {
             <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
+          <p>
+            If you cannot see the video here, open the Session in a separate Tab with the button below &nbsp;👇
           <div class={style.button_holder}>
               <a
               href="https://www.youtube.com/live_chat?v=vxwpPOz_5os"
@@ -460,6 +462,16 @@ export default class EventLivePage extends Component {
             >
               <button class={style.action_button}>
                 Open Live Chat
+              </button>
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=vxwpPOz_5os"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class={style.action_button}>
+                Open on YouTube
               </button>
             </a>
             </div>
