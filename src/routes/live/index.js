@@ -449,17 +449,17 @@ export default class EventLivePage extends Component {
             Also, subscribe to our YouTube Channel and hit the Bell Icon to get
             more updates.
           </p>
-          <button class={style.action_button}>
+          <button class={style.action_timer}>
             <b>
               {this.props.user
                 ? `Claiming Points in ${TimeFormat.fromMs(
                     this.state.remaining
                   )}`
-                : "Sign-In to earn badges"}
+                : "You need to be Signed in to receive Badges"}
             </b>
           </button>
           <p style={{ fontSize: "80%", padding: 0, margin: 0 }}>
-            * Claim points for each session to earn badges!
+            * claim points for each session to earn badges!
           </p>
 
           <br />
