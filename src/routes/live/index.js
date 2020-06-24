@@ -446,7 +446,17 @@ export default class EventLivePage extends Component {
             <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
-         
+          <div class={style.button_holder}>
+              <a
+              href="https://www.youtube.com/live_chat?v=vxwpPOz_5os"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class={style.action_button}>
+                Open Live Chat
+              </button>
+            </a>
+            </div>
             <p>
             Stay Tuned here for the Live Sessions, updates and much, much more.
             <br />
