@@ -1,3 +1,7 @@
+h3 {
+    font-weight: 200;
+}
+
 .speaker {
     overflow-x: hidden;
     position: relative;
