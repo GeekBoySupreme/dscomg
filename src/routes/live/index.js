@@ -503,17 +503,6 @@ export default class EventLivePage extends Component {
           <br />
           <br />
 
-          <div class={style.button_holder}>
-            <a
-              href="https://www.youtube.com/DiversityInDSC?reload=9"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                <b>Subscribe us on YouTube</b>
-              </button>
-            </a>
-          </div>
         </div>
         <Snackbar
           ref={(snackbar) => {
