@@ -19,12 +19,12 @@ export default class Home extends Component {
     super(props);
     if (typeof window !== "undefined") {
       this.io = new IntersectionObserver(
-        (entries) => {
-          const visibleEntries = entries.filter((e) => e.isIntersecting);
+        entries => {
+          const visibleEntries = entries.filter(e => e.isIntersecting);
 
           visibleEntries
-            .filter((e) => e.target instanceof HTMLImageElement)
-            .forEach((e) => {
+            .filter(e => e.target instanceof HTMLImageElement)
+            .forEach(e => {
               e.target.src = e.target.dataset.src;
             });
         },
@@ -52,7 +52,7 @@ export default class Home extends Component {
       timeout: 5000,
       actionHandler: () => {
         window.location.reload();
-      },
+      }
     });
   };
 
@@ -71,7 +71,7 @@ export default class Home extends Component {
 
     this.io.observe(ele);
     this.io.observe(cover);
-    sponsorLogos.forEach((logo) => this.io.observe(logo));
+    sponsorLogos.forEach(logo => this.io.observe(logo));
   }
 
   componentWillUnmount() {
@@ -115,23 +115,23 @@ export default class Home extends Component {
     axios
       .post("https://badges.dscomg.com/api/session/", {
         session: "YTsub",
-        email: this.props.user.email,
+        email: this.props.user.email
       })
       .then(
-        (response) => {
+        response => {
           if (response.data.badgeEarned) {
             this.snackbar.MDComponent.show({
               message: "You earned a badge!",
-              timeout: 5000,
+              timeout: 5000
             });
           } else {
             this.snackbar.MDComponent.show({
               message: "You already have this badge",
-              timeout: 5000,
+              timeout: 5000
             });
           }
         },
-        (error) => {
+        error => {
           console.log(error);
         }
       );
@@ -145,7 +145,7 @@ export default class Home extends Component {
           <Dialog
             onCancel={this.onClose}
             onAccept={this.onClose}
-            ref={(signoutDig) => {
+            ref={signoutDig => {
               this.signoutDig = signoutDig;
             }}
           >
@@ -178,7 +178,7 @@ export default class Home extends Component {
               Community Projects.
             </h2>
             <br />
-            <h4>25 June 2020 · Day 2 Coming Up</h4>
+            <h4>26 June 2020 · Day 3 Coming Up</h4>
             <br />
             <div class={style.button_holder}>
               {user ? (
@@ -276,7 +276,7 @@ export default class Home extends Component {
         <SocialFooter rootPath={rootPath} />
         <Footer rootPath={rootPath} />
         <Snackbar
-          ref={(snackbar) => {
+          ref={snackbar => {
             this.snackbar = snackbar;
           }}
         />
