@@ -62,7 +62,7 @@ export default class Badges extends Component {
       <div>
         <div class="hero">
           <IoLogo rootPath={rootPath + "/badges"} />
-          <h3 class={style.badge_header}>The Badge Board</h3>
+          <h1 class={style.badge_header}>The Badge Board</h1>
           <h4 class={style.badge_description}>Stay tuned to Developer Student Club OMG and grab some exciting Badges along the way.</h4>
           <h4>{this.state.user ? this.state.user.email : "Sign In to start Getting badges"}</h4>
         </div>
@@ -100,9 +100,11 @@ export default class Badges extends Component {
         ) : (
           <div class={style.speakers}>Sign-In to view badges</div>
         )}
+        <div class="hero">
         <h3>Note: Please note that these badges are not certificates, can not be exchanged nor tranferred.</h3>
 
         <h3>Badges here are merely representative souvenirs and are meant to celebrate the community togetherness and your participation in the Developer Student Clubs OMG.</h3>
+        </div>
         <div class={style.footer}>
           <SocialFooter rootPath={rootPath} />
           <Footer rootPath={rootPath} />

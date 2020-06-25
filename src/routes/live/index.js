@@ -387,16 +387,14 @@ export default class EventLivePage extends Component {
       })
       .then(
         (response) => {
-          console.log(response.data);
           if (response.data.badgeEarned) {
             this.snackbar.MDComponent.show({
               message: "You earned a badge!",
               timeout: 5000,
             });
-          }
-          else {
+          } else {
             this.snackbar.MDComponent.show({
-              message: "Uh oh, Timeout! No badges Earned :'(",
+              message: "Points Collected! Earn more points to get a badge.",
               timeout: 5000,
             });
           }
@@ -449,34 +447,37 @@ export default class EventLivePage extends Component {
           <IoLogo rootPath={rootPath} />
           <h2>Watch live</h2>
           <div class={style.youtube_embed}>
-            <iframe src="https://www.youtube.com/embed/RNuaH3XkU4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/RNuaH3XkU4U"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
             {/* <iframe class={style.chat_embed} src="https://www.youtube.com/live_chat?v=vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
-          <p>If you cannot watch the video here, use the button below to open YouTube in a new Tab &nbsp;👇 <br />
-              <div class={style.button_holder}>
+          <p>
+            If you cannot watch the video here, use the button below to open
+            YouTube in a new Tab &nbsp;👇 <br />
+            <div class={style.button_holder}>
               <a
-              href="https://www.youtube.com/live_chat?v=RNuaH3XkU4U"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                Open Live Chat
-              </button>
-            </a>
+                href="https://www.youtube.com/live_chat?v=RNuaH3XkU4U"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class={style.action_button}>Open Live Chat</button>
+              </a>
 
-            <a
-              href="https://www.youtube.com/watch?v=RNuaH3XkU4U"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                Open on YouTube
-              </button>
-            </a>
+              <a
+                href="https://www.youtube.com/watch?v=RNuaH3XkU4U"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class={style.action_button}>Open on YouTube</button>
+              </a>
             </div>
           </p>
-          
-            <p>
+
+          <p>
             Stay Tuned here for the Live Sessions, updates and much, much more.
             PS - Don't close this tab to earn Badges.
             <br />
@@ -492,24 +493,16 @@ export default class EventLivePage extends Component {
                 : "You need to be Signed in to receive Badges"}
             </b>
           </button>
-          <p style={{ fontSize: "80%", padding: 0, margin: 0 }}>
-            * claim points for each session to earn Badges. Do keep this tab open until the timer hits 00:00 to receive the Badge.
+          <p style={{ fontSize: "85%", padding: 0, margin: 0 }}>
+            * Claim points for each session to earn Badges. Do keep this tab
+            open while watching the stream to keep collecting points. <br />
+            * Badges are granted after crossing a certain threshold of points.
           </p>
+          <p>* Points are collected after EVERY 15 minutes</p>
 
           <br />
           <br />
 
-          <div class={style.button_holder}>
-            <a
-              href="https://www.youtube.com/DiversityInDSC?reload=9"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                <b>Find us on YouTube</b>
-              </button>
-            </a>
-          </div>
         </div>
         <Snackbar
           ref={(snackbar) => {

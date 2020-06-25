@@ -10,17 +10,21 @@ import firebase from "../../components/firebase";
 
 import style from "./style";
 
+import axios from "axios";
+import Snackbar from "preact-material-components/Snackbar";
+import "preact-material-components/Snackbar/style.css";
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
     if (typeof window !== "undefined") {
       this.io = new IntersectionObserver(
-        entries => {
-          const visibleEntries = entries.filter(e => e.isIntersecting);
+        (entries) => {
+          const visibleEntries = entries.filter((e) => e.isIntersecting);
 
           visibleEntries
-            .filter(e => e.target instanceof HTMLImageElement)
-            .forEach(e => {
+            .filter((e) => e.target instanceof HTMLImageElement)
+            .forEach((e) => {
               e.target.src = e.target.dataset.src;
             });
         },
@@ -29,6 +33,8 @@ export default class Home extends Component {
         }
       );
     }
+
+    this.getYTBadge = this.getYTBadge.bind(this);
   }
   handleScroll() {
     const ele = document.querySelector(".topappbar.mdc-top-app-bar");
@@ -39,6 +45,17 @@ export default class Home extends Component {
     }
   }
 
+  showRefreshSnack = () => {
+    this.snackbar.MDComponent.show({
+      message: "Site updated. Refresh this page for better experience.",
+      actionText: "Refresh",
+      timeout: 5000,
+      actionHandler: () => {
+        window.location.reload();
+      },
+    });
+  };
+
   componentDidMount() {
     document.title = "DSCOMG 2020";
     window.addEventListener("scroll", this.handleScroll, { passive: true });
@@ -48,16 +65,19 @@ export default class Home extends Component {
     const cover = document.querySelector("#cover");
     const sponsorLogos = document.querySelectorAll(".sponsor_logo");
 
+    window.addEventListener("showRefreshSnack", this.showRefreshSnack);
+
     if (!this.io) return;
 
     this.io.observe(ele);
     this.io.observe(cover);
-    sponsorLogos.forEach(logo => this.io.observe(logo));
+    sponsorLogos.forEach((logo) => this.io.observe(logo));
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
     document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
+    window.removeEventListener("showRefreshSnack", this.showRefreshSnack);
 
     if (!this.io) return;
     this.io.disconnect();
@@ -90,6 +110,34 @@ export default class Home extends Component {
     this.signoutDig.MDComponent.show();
   };
 
+  getYTBadge() {
+    console.log("Clicked B4");
+    axios
+      .post("https://badges.dscomg.com/api/session/", {
+        session: "YTsub",
+        email: this.props.user.email,
+      })
+      .then(
+        (response) => {
+          if (response.data.badgeEarned) {
+            this.snackbar.MDComponent.show({
+              message: "You earned a badge!",
+              timeout: 5000,
+            });
+          } else {
+            this.snackbar.MDComponent.show({
+              message: "You already have this badge",
+              timeout: 5000,
+            });
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    console.log("Clicked After");
+  }
+
   render({ rootPath, user }) {
     return (
       <div>
@@ -97,7 +145,7 @@ export default class Home extends Component {
           <Dialog
             onCancel={this.onClose}
             onAccept={this.onClose}
-            ref={signoutDig => {
+            ref={(signoutDig) => {
               this.signoutDig = signoutDig;
             }}
           >
@@ -135,30 +183,33 @@ export default class Home extends Component {
             <div class={style.button_holder}>
               {user ? (
                 <div>
-                <h4>
-                  Hello there, welcome to OMG 🥳 <br />Check your mailbox for the Welcome Kit!
-                </h4>
-                <br />
-                <a
-                  href="https://myframe.dscomg.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button class={style.action_button}>
-                    Get your <b>OMG</b> Frame
-                  </button>
-                </a>
-                <a
-                  href="https://www.youtube.com/watch?v=RNuaH3XkU4U"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button class={style.action_button}>
-                    Watch Live
-                  </button>
-                </a>
+                  <h4>
+                    Hello there, welcome to OMG 🥳 <br />
+                    Check your mailbox for the Welcome Kit!
+                  </h4>
+                  <br />
+                  <a
+                    href="https://myframe.dscomg.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button class={style.action_button}>
+                      Get your <b>OMG</b> Frame
+                    </button>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCCR8rHzvm0l9E7DNa6Y_OGA?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button
+                      class={style.action_button}
+                      onClick={this.getYTBadge}
+                    >
+                      Subscribe on YouTube | Earn a Badge
+                    </button>
+                  </a>
                 </div>
-                
               ) : (
                 <div class={style.action_button} onClick={this.toggleSigninDig}>
                   Sign-In to Register
@@ -190,26 +241,25 @@ export default class Home extends Component {
             </p>
             <div class={style.button_holder}>
               <a
-              href="https://contest.dscomg.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                Tweet <b>&#x23;dscomg</b>
-              </button>
-            </a>
+                href="https://contest.dscomg.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class={style.action_button}>
+                  Tweet <b>&#x23;dscomg</b>
+                </button>
+              </a>
 
-            <a
-              href="https://myframe.dscomg.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button class={style.action_button}>
-                Get your <b>OMG</b> Frame
-              </button>
-            </a>
+              <a
+                href="https://myframe.dscomg.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class={style.action_button}>
+                  Get your <b>OMG</b> Frame
+                </button>
+              </a>
             </div>
-            
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
@@ -225,6 +275,11 @@ export default class Home extends Component {
         <GalleryBlock />
         <SocialFooter rootPath={rootPath} />
         <Footer rootPath={rootPath} />
+        <Snackbar
+          ref={(snackbar) => {
+            this.snackbar = snackbar;
+          }}
+        />
       </div>
     );
   }
