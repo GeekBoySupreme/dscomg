@@ -20,8 +20,6 @@ export default class EventLivePage extends Component {
 
     this.ticker = this.ticker.bind(this);
     this.subTimer = this.subTimer.bind(this);
-    this.mainTimer = this.mainTimer.bind(this);
-    this.resetSubTimer = this.resetSubTimer.bind(this);
   }
 
   showRefreshSnack = () => {
@@ -60,210 +58,12 @@ export default class EventLivePage extends Component {
     }
   }
 
-  resetSubTimer() {
-    console.log("Fired");
-    clearInterval(this.state.subTimer);
-    var subTimer = setInterval(this.subTimer, 900000);
-    this.setState({ subTimer: subTimer, remaining: 900000 });
-  }
-
-  mainTimer() {
-    var now = moment.tz("Asia/Kolkata");
-
-    if (
-      now >= moment.tz("2020-06-24 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 18:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 18:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 18:51", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 19:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 19:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 19:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 20:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-24 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 20:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:51", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 19:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:51", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 19:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-26 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:51", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 19:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 19:21", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 19:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-27 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-28 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 18:01", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-28 18:10", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 18:11", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    } else if (
-      now >= moment.tz("2020-06-28 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 20:31", "Asia/Kolkata")
-    ) {
-      this.resetSubTimer();
-    }
-  }
-
   performPost() {
     var now = moment.tz("Asia/Kolkata");
 
     var sessionCurrent = "D0S0";
 
     if (
-      now >= moment.tz("2020-06-24 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 18:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S1";
-    } else if (
-      now >= moment.tz("2020-06-24 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 18:50", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S2";
-    } else if (
-      now >= moment.tz("2020-06-24 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 19:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S3";
-    } else if (
-      now >= moment.tz("2020-06-24 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 20:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S4";
-    } else if (
-      now >= moment.tz("2020-06-24 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 20:30", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S5";
-    } else if (
-      now >= moment.tz("2020-06-24 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 21:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D1S6";
-    } else if (
       now >= moment.tz("2020-06-25 18:00", "Asia/Kolkata") &&
       now < moment.tz("2020-06-25 18:20", "Asia/Kolkata")
     ) {
@@ -293,91 +93,6 @@ export default class EventLivePage extends Component {
       now < moment.tz("2020-06-25 21:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "D2S6";
-    } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S1";
-    } else if (
-      now >= moment.tz("2020-06-26 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:50", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S2";
-    } else if (
-      now >= moment.tz("2020-06-26 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S3";
-    } else if (
-      now >= moment.tz("2020-06-26 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S4";
-    } else if (
-      now >= moment.tz("2020-06-26 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:30", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S5";
-    } else if (
-      now >= moment.tz("2020-06-26 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 21:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D3S6";
-    } else if (
-      now >= moment.tz("2020-06-27 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S1";
-    } else if (
-      now >= moment.tz("2020-06-27 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:50", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S2";
-    } else if (
-      now >= moment.tz("2020-06-27 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 19:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S3";
-    } else if (
-      now >= moment.tz("2020-06-27 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S4";
-    } else if (
-      now >= moment.tz("2020-06-27 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:30", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S5";
-    } else if (
-      now >= moment.tz("2020-06-27 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 21:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S6";
-    } else if (
-      now >= moment.tz("2020-06-28 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 18:10", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D5S1";
-    } else if (
-      now >= moment.tz("2020-06-28 18:10", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 20:30", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D5S2";
-    } else if (
-      now >= moment.tz("2020-06-28 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 21:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D5S3";
-    } else if (
-      now >= moment.tz("2020-06-24 16:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 16:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D0T1";
-    } else if (
-      now >= moment.tz("2020-06-24 16:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-24 16:40", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D0T2";
     }
 
     axios
@@ -423,9 +138,6 @@ export default class EventLivePage extends Component {
     var ticker = setInterval(this.ticker, 1000);
     this.setState({ ticker: ticker });
 
-    var mainTimer = setInterval(this.mainTimer, 50000);
-    this.setState({ mainTimer: mainTimer });
-
     var subTimer = setInterval(this.subTimer, 900000);
     this.setState({ subTimer: subTimer });
   }
@@ -433,7 +145,6 @@ export default class EventLivePage extends Component {
   componentWillUnmount() {
     document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
 
-    clearInterval(this.state.mainTimer);
     clearInterval(this.state.subTimer);
     clearInterval(this.state.ticker);
   }
@@ -457,7 +168,8 @@ export default class EventLivePage extends Component {
           </div>
           <p>
             If you cannot watch the video here, use the button below to open
-            YouTube in a new Tab &nbsp;👇 <br />
+            YouTube in a new Tab (Do not close this tab to keep collecting
+            badges) &nbsp;👇 <br />
             <div class={style.button_holder}>
               <a
                 href="https://www.youtube.com/live_chat?v=RNuaH3XkU4U"
@@ -495,14 +207,13 @@ export default class EventLivePage extends Component {
           </button>
           <p style={{ fontSize: "85%", padding: 0, margin: 0 }}>
             * Claim points for each session to earn Badges. Do keep this tab
-            open while watching the stream to keep collecting points. <br />
-            * Badges are granted after crossing a certain threshold of points.
+            open while watching the stream to keep collecting points. <br />*
+            Badges are granted after crossing a certain threshold of points.
           </p>
           <p>* Points are collected after EVERY 15 minutes</p>
 
           <br />
           <br />
-
         </div>
         <Snackbar
           ref={(snackbar) => {
