@@ -14,6 +14,7 @@ import Faq from 'async!../routes/faq';
 import EventLivePage from 'async!../routes/live';
 import Schedule from 'async!../routes/schedule';
 import Speakers from 'async!../routes/speakers';
+import Collection from '../routes/collection';
 import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 import Badges from '../routes/badges';
@@ -315,6 +316,10 @@ export default class App extends Component {
                         path={rootPath + 'badges/'}
                         rootPath={rootPath}
                         user={currentUser}
+                    />
+                    <Collection
+                        path={rootPath + 'collection/:id'}
+                        rootPath={rootPath}
                     />
                     <NotFoundPage rootPath={rootPath} default/>
                 </Router>
