@@ -181,6 +181,34 @@ export default class App extends Component {
                     console.log(error);
                   });
 
+                  const probability = Math.random();
+                  console.log(probability);
+                  if (probability >= 0.85) {
+                    axios
+                      .post("https://badges.dscomg.com/api/session/", {
+                        session: "rubberduck",
+                        email: currentUser.email,
+                      })
+                      .then(
+                        (response) => {
+                          if (response.data.badgeEarned) {
+                            this.snackbar.MDComponent.show({
+                              message: "Badge Unlocked. Woah...You Are Lucky Ducky!",
+                              timeout: 5000,
+                            });
+                          } else {
+                            this.snackbar.MDComponent.show({
+                              message: "You already Lucky",
+                              timeout: 5000,
+                            });
+                          }
+                        },
+                        (error) => {
+                          console.log(error);
+                        }
+                      );
+                  }  
+
                 this.setState({currentUser});
                 if (currentUser) {
                     window.Sentry.configureScope(scope => {
