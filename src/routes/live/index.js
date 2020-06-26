@@ -159,7 +159,7 @@ export default class EventLivePage extends Component {
           <h2>Watch live</h2>
           <div class={style.youtube_embed}>
             <iframe
-              src="https://www.youtube.com/watch?v=Efwa0lTJLsc"
+              src="https://www.youtube.com/embed/Efwa0lTJLsc"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
