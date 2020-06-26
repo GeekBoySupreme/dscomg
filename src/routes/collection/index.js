@@ -5,93 +5,39 @@ import Footer from "../../components/footer";
 import axios from "axios";
 import style from "./style";
 
-export default class Badges extends Component {
+export default class Collection extends Component {
   constructor(props) {
     super(props);
 
+    this.id = props.id;
+
     this.state = {
       badges: [],
-      uuid: null,
-      user: props.user,
+      email: null,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.user !== this.props.user) {
-      this.setState({ user: nextProps.user });
-
-      const email = nextProps.user.email;
-      axios
-        .get("https://badges.dscomg.com/api/badges?email=" + email)
-        .then((response) => {
-          this.setState({
-            badges: response.data.badges,
-            uuid: response.data.uuid,
-          });
-        });
-    }
-  }
-
-  handleScroll() {
-    const ele = document.querySelector(".topappbar.mdc-top-app-bar");
-    if (document.documentElement.scrollTop < 56) {
-      ele.setAttribute("top", true);
-    } else {
-      ele.removeAttribute("top");
-    }
-  }
-
-  componentWillMount() {}
-
   componentDidMount() {
-    document.title = "Badges - DSCOMG 2020";
-    window.addEventListener("scroll", this.handleScroll, { passive: true });
-    this.handleScroll();
-
-    const email = this.props.user.email;
     axios
-      .get("https://badges.dscomg.com/api/badges?email=" + email)
+      .get("https://badges.dscomg.com/api/collection/" + this.id)
       .then((response) => {
-        this.setState({ badges: response.data.badges });
+        this.setState({
+          badges: response.data.badges,
+          email: response.data.email,
+        });
       });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    document.querySelector(".topappbar.mdc-top-app-bar").removeAttribute("top");
   }
 
   render({ rootPath }) {
     return (
       <div>
         <div class="hero">
-          <IoLogo rootPath={rootPath + "/badges"} />
+          <IoLogo rootPath={rootPath} />
           <h1 class={style.badge_header}>The Badge Board</h1>
-          <h4 class={style.badge_description}>
-            Stay tuned to Developer Student Club OMG and grab some exciting
-            Badges along the way.
-          </h4>
-          <h4>
-            {this.state.user ? (
-              <div>
-                {this.state.user.email}
-                <p>
-                  Share Your badges using this{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`/collection/${this.state.uuid}`}
-                  >
-                    public link:
-                  </a>
-                </p>
-              </div>
-            ) : (
-              "Sign In to start Getting badges"
-            )}
-          </h4>
+          <h4 class={style.badge_header}>{this.state.email}</h4>
         </div>
-        {this.state.user ? (
+
+        {this.state.email ? (
           <div>
             {this.state.badges.length === 0 ? (
               <div class={style.speakers}>
@@ -124,8 +70,9 @@ export default class Badges extends Component {
             )}
           </div>
         ) : (
-          <div class={style.speakers}>Sign-In to view badges</div>
+          <div class={style.speakers}>Invalid Public Profile</div>
         )}
+
         <div class="hero">
           <h3>
             PS - Please note that these Badges are not Certificates, and can not
