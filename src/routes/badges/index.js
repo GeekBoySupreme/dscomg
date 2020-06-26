@@ -52,7 +52,10 @@ export default class Badges extends Component {
     axios
       .get("https://badges.dscomg.com/api/badges?email=" + email)
       .then((response) => {
-        this.setState({ badges: response.data.badges });
+        this.setState({
+          badges: response.data.badges,
+          uuid: response.data.uuid,
+        });
       });
   }
 
