@@ -156,7 +156,7 @@ export default class Schedule extends Component {
     );
     confirm(".....");
     confirm("FOLLOW NOW!");
-    window.open("https://twitter.com/Kautukkundan");
+    window.location.href = "https://twitter.com/Kautukkundan";
   }
 
   render(
