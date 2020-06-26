@@ -64,35 +64,35 @@ export default class EventLivePage extends Component {
     var sessionCurrent = "D0S0";
 
     if (
-      now >= moment.tz("2020-06-25 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 18:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S1";
+      sessionCurrent = "D3S1";
     } else if (
-      now >= moment.tz("2020-06-25 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 18:50", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 18:20", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 18:50", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S2";
+      sessionCurrent = "D3S2";
     } else if (
-      now >= moment.tz("2020-06-25 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 19:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 18:50", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 19:20", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S3";
+      sessionCurrent = "D3S3";
     } else if (
-      now >= moment.tz("2020-06-25 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 20:00", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 19:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 20:00", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S4";
+      sessionCurrent = "D3S4";
     } else if (
-      now >= moment.tz("2020-06-25 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 20:30", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 20:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 20:30", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S5";
+      sessionCurrent = "D3S5";
     } else if (
-      now >= moment.tz("2020-06-25 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-25 21:00", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 20:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-26 21:00", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D2S6";
+      sessionCurrent = "D3S6";
     }
 
     axios
