@@ -140,12 +140,12 @@ export default class Footer extends Component {
             <a href="https://dscomg.com/schedule">Schedule</a>
             <a href="https://dscomg.com/speakers">Speakers</a>
             <a href="https://dscomg.com/faq">FAQ</a>
-            <p
+            {/* <p
               style={{ cursor: "pointer", fontSize: "80%" }}
               onClick={this.getFooter}
             >
               What's this?
-            </p>
+            </p> */}
           </div>
         </div>
         <Snackbar
