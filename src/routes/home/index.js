@@ -248,7 +248,7 @@ export default class Home extends Component {
               Community Projects.
             </h2>
             <br />
-            <h4>26 June 2020 · Day 3 Coming Up</h4>
+            <h4>27 June 2020 · Day 4 Coming Up</h4>
             <br />
             <div class={style.button_holder}>
               {user ? (
