@@ -145,33 +145,33 @@ export default class Home extends Component {
     var sessionCurrent = "D0S0";
 
     if (
-      now >= moment.tz("2020-06-26 07:00", "Asia/Kolkata") &&
+      now >= moment.tz("2020-06-26 04:00", "Asia/Kolkata") &&
       now < moment.tz("2020-06-26 18:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "morning";
     } else if (
-      now >= moment.tz("2020-06-27 07:00", "Asia/Kolkata") &&
+      now >= moment.tz("2020-06-27 04:00", "Asia/Kolkata") &&
       now < moment.tz("2020-06-27 18:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "morning";
     } else if (
-      now >= moment.tz("2020-06-28 07:00", "Asia/Kolkata") &&
+      now >= moment.tz("2020-06-28 04:00", "Asia/Kolkata") &&
       now < moment.tz("2020-06-28 18:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "morning";
     } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-26 21:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 04:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "night";
     } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 21:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 04:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "night";
     } else if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-28 21:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-29 04:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "night";
     } else {
