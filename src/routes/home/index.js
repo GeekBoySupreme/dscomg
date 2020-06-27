@@ -357,7 +357,7 @@ export default class Home extends Component {
           <div class={style.text}>
             <h3>Watch on Demand</h3>
             <p>
-              Missed watching them live? <br/>Watch the Streams from Developer Students Club OMG here.
+              Missed watching the Sessions live? <br/>Watch the Streams from Developer Students Club OMG here.
             </p>
             </div>
         </div>
