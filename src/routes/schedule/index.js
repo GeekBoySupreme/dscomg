@@ -355,8 +355,8 @@ export default class Schedule extends Component {
           </div>
         )}
         <div class={style.footer}>
-          <SocialFooter rootPath={rootPath} />
-          <Footer rootPath={rootPath} />
+          <SocialFooter rootPath={rootPath} user={user} />
+          <Footer rootPath={rootPath} user={user} />
         </div>
       </div>
     );
