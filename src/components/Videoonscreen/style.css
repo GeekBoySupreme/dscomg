@@ -1,0 +1,16 @@
+.video_embed {
+    padding: 48px 60px;
+    display: flex;
+}
+
+.col_1 {
+    width: 30%;
+    margin: 15px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .col_1 {
+        width: 95%;
+        margin: 10px auto;
+    }
+  }

@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import IoLogo from "../../components/io_logo";
+import VideoOnScreen from "../../components/Videoonscreen";
 import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import GalleryBlock from "../../components/gallery_block";
@@ -348,6 +349,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+        <VideoOnScreen />
         <GalleryBlock />
         <SocialFooter rootPath={rootPath} user={user} />
         <Footer rootPath={rootPath} user={user} />
