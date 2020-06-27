@@ -10,7 +10,7 @@
 }
 
 iframe {
-    width: 350;
+    width: 350px;
     height: 280px;
     margin: 10px auto;
 }
@@ -28,6 +28,8 @@ iframe {
     }
 
     .video_embed {
-        flex-direction: columns;
+        flex-direction: column;
+        margin-left: -45px;
+        width: 80vw;
     }
   }
