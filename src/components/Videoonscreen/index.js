@@ -40,13 +40,13 @@ export default class VideoOnScreen extends Component {
     return (
       <div class={style.video_embed}>
             <div class={style.col_1}>
-                <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class={style.homescreen_embed} src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class={style.col_1}>
-                <iframe src="https://www.youtube.com/embed/RNuaH3XkU4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class={style.homescreen_embed} src="https://www.youtube.com/embed/RNuaH3XkU4U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class={style.col_1}>
-                <iframe src="https://www.youtube.com/embed/Efwa0lTJLsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class={style.homescreen_embed} src="https://www.youtube.com/embed/Efwa0lTJLsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
       </div>
     );

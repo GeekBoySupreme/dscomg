@@ -9,7 +9,7 @@
     margin: 15px;
 }
 
-iframe {
+.homescreen_embed {
     width: 350px;
     height: 280px;
     margin: 10px auto;
@@ -21,7 +21,7 @@ iframe {
         margin: 10px auto;
     }
 
-    iframe {
+    .homescreen_embed {
         width: 96%;
         height: 280px;
         margin: 0 auto;
