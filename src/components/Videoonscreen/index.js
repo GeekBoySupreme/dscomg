@@ -39,7 +39,6 @@ export default class VideoOnScreen extends Component {
   render({ rootPath }) {
     return (
       <div class={style.video_embed}>
-      <p>Watch on Demand</p>
             <div class={style.col_1}>
                 <iframe src="https://www.youtube.com/embed/vxwpPOz_5os" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>

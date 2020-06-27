@@ -1,6 +1,7 @@
 .video_embed {
     padding: 48px 60px;
     display: flex;
+    flex-direction: row;
 }
 
 .col_1 {
@@ -9,13 +10,24 @@
 }
 
 iframe {
-    width: 94%;
-    height: 350px;
+    width: 350;
+    height: 280px;
+    margin: 10px auto;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
     .col_1 {
         width: 95%;
         margin: 10px auto;
+    }
+
+    iframe {
+        width: 96%;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .video_embed {
+        flex-direction: columns;
     }
   }
