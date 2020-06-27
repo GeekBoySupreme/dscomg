@@ -64,35 +64,35 @@ export default class EventLivePage extends Component {
     var sessionCurrent = "D0S0";
 
     if (
-      now >= moment.tz("2020-06-26 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 18:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 18:20", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S1";
+      sessionCurrent = "D4S1";
     } else if (
-      now >= moment.tz("2020-06-26 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 18:50", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 18:20", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 18:50", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S2";
+      sessionCurrent = "D4S2";
     } else if (
-      now >= moment.tz("2020-06-26 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 19:20", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 18:50", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 19:20", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S3";
+      sessionCurrent = "D4S3";
     } else if (
-      now >= moment.tz("2020-06-26 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:00", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 19:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 20:00", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S4";
+      sessionCurrent = "D4S4";
     } else if (
-      now >= moment.tz("2020-06-26 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 20:30", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 20:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 20:30", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S5";
+      sessionCurrent = "D4S5";
     } else if (
-      now >= moment.tz("2020-06-26 20:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-26 21:00", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 20:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 21:00", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D3S6";
+      sessionCurrent = "D4S6";
     }
 
     axios
@@ -221,8 +221,8 @@ export default class EventLivePage extends Component {
           }}
         />
         <div class={style.footer}>
-          <SocialFooter rootPath={rootPath} />
-          <Footer rootPath={rootPath} />
+          <SocialFooter rootPath={rootPath} user={this.props.user} />
+          <Footer rootPath={rootPath} user={this.props.user} />
         </div>
       </div>
     );

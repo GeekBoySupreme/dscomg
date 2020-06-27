@@ -139,8 +139,8 @@ export default class Badges extends Component {
           </h3>
         </div>
         <div class={style.footer}>
-          <SocialFooter rootPath={rootPath} />
-          <Footer rootPath={rootPath} />
+          <SocialFooter rootPath={rootPath} user={this.props.user} />
+          <Footer rootPath={rootPath} user={this.props.user} />
         </div>
       </div>
     );

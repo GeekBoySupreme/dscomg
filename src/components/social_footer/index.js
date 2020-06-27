@@ -61,6 +61,11 @@ export default class SocialFooter extends Component {
             console.log(error);
           }
         );
+    } else {
+      this.snackbar.MDComponent.show({
+        message: "Not the right time ;)",
+        timeout: 5000,
+      });
     }
   }
 
