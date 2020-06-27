@@ -1,7 +1,8 @@
 .video_embed {
-    padding: 48px 60px;
+    padding: 8px 60px 48px 60px;
     display: flex;
     flex-direction: row;
+    margin: 10x auto;
 }
 
 .col_1 {
@@ -10,7 +11,7 @@
 }
 
 .homescreen_embed {
-    width: 350px;
+    width: 98%;
     height: 280px;
     margin: 10px auto;
 }
@@ -25,11 +26,12 @@
         width: 96%;
         height: 280px;
         margin: 0 auto;
+        border-radius: 5px;
     }
 
     .video_embed {
         flex-direction: column;
-        margin-left: -45px;
-        width: 80vw;
+        margin-left: -34px;
+        width: 130vw;
     }
   }
