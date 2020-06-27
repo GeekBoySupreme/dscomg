@@ -353,7 +353,7 @@ export default class Home extends Component {
         <GalleryBlock />
 
 
-        <div class={style.home_info} id="headsup">
+        <div class={style.home_info} id="headsup" style="padding-bottom: 10px">
           <div class={style.text}>
             <h3>Watch on Demand</h3>
             <p>
