@@ -352,6 +352,15 @@ export default class Home extends Component {
         
         <GalleryBlock />
 
+
+        <div class={style.home_info} id="headsup">
+          <div class={style.text}>
+            <h3>Watch on Demand</h3>
+            <p>
+              Missed watching them live? <br/>Watch the Streams from Developer Students Club OMG here.
+            </p>
+            </div>
+        </div>
         <VideoOnScreen />
 
         <SocialFooter rootPath={rootPath} user={user} />
