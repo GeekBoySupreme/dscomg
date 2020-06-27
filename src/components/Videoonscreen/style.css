@@ -8,6 +8,11 @@
     margin: 15px;
 }
 
+iframe {
+    width: 94%;
+    height: 350px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
     .col_1 {
         width: 95%;

@@ -349,8 +349,11 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <VideoOnScreen />
+        
         <GalleryBlock />
+
+        <VideoOnScreen />
+
         <SocialFooter rootPath={rootPath} user={user} />
         <Footer rootPath={rootPath} user={user} />
         <Snackbar
