@@ -74,6 +74,7 @@ iframe {
 }
 @media (min-width: 320px) and (max-width: 480px) {
   iframe {
+   border-radius: 0px;
    width: 100vw;
    height: 280px;
    position: relative;

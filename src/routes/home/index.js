@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import IoLogo from "../../components/io_logo";
+import VideoOnScreen from "../../components/Videoonscreen";
 import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import GalleryBlock from "../../components/gallery_block";
@@ -248,7 +249,7 @@ export default class Home extends Component {
               Community Projects.
             </h2>
             <br />
-            <h4>26 June 2020 · Day 3 Coming Up</h4>
+            <h4>27 June 2020 · Day 4 Coming Up</h4>
             <br />
             <div class={style.button_holder}>
               {user ? (
@@ -348,7 +349,20 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+        
         <GalleryBlock />
+
+
+        <div class={style.home_info} id="headsup">
+          <div class={style.text}>
+            <h3>Watch on Demand</h3>
+            <p>
+              Missed watching the Sessions live? <br/>Watch the Streams from Developer Students Club OMG here.
+            </p>
+            </div>
+        </div>
+        <VideoOnScreen />
+
         <SocialFooter rootPath={rootPath} user={user} />
         <Footer rootPath={rootPath} user={user} />
         <Snackbar
