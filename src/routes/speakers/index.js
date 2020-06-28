@@ -146,6 +146,7 @@ export default class Speakers extends Component {
             We will, we will{" "}
             <input
               type="text"
+              class={style.easter_egg_input}
               value={this.state.inputValue}
               onChange={(e) => {
                 this.changeText(e);

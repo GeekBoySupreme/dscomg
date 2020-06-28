@@ -11,6 +11,15 @@
     /*max-width: 1400px;*/
 }
 
+.easter_egg_input {
+    display: block;
+    border: none;
+    padding: 8px;
+    border-bottom: 2px solid rgb(0,101,202);
+    width: 250px;
+    margin-bottom: 5px;
+}
+
 .action_button {
     font-family: "Google Sans", arial, sans-serif;
     font-size: 15px;
