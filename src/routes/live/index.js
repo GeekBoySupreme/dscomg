@@ -64,23 +64,28 @@ export default class EventLivePage extends Component {
     var sessionCurrent = "D0S0";
 
     if (
-      now >= moment.tz("2020-06-27 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:30", "Asia/Kolkata")
+      now >= moment.tz("2020-06-28 18:00", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 18:30", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S1";
     } else if (
-      now >= moment.tz("2020-06-27 18:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:05", "Asia/Kolkata")
+      now >= moment.tz("2020-06-28 18:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 19:15", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D5S2";
+      sessionCurrent = "D5S1";
     } else if (
-      now >= moment.tz("2020-06-27 20:05", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 21:40", "Asia/Kolkata")
+      now >= moment.tz("2020-06-28 19:15", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 20:05", "Asia/Kolkata")
+    ) {
+      sessionCurrent = "D5S1";
+    } else if (
+      now >= moment.tz("2020-06-28 20:05", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 21:40", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S4";
     } else if (
-      now >= moment.tz("2020-06-27 20:40", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 21:00", "Asia/Kolkata")
+      now >= moment.tz("2020-06-28 20:40", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-28 21:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S3";
     }
