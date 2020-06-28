@@ -5,13 +5,17 @@ import { route } from "preact-router";
 import SocialFooter from "../../components/social_footer";
 import Footer from "../../components/footer";
 import style from "./style";
-
+import { relativeTimeThreshold } from "moment-timezone";
+import axios from "axios";
+import Snackbar from "preact-material-components/Snackbar";
+import "preact-material-components/Snackbar/style.css";
 export default class Speakers extends Component {
   state = {
     schedule: [],
     sessions: {},
     dialogOpened: false,
     toggleDialog: false,
+    inputValue: "",
   };
 
   shortBio(string) {
@@ -21,6 +25,17 @@ export default class Speakers extends Component {
         : string;
     }
   }
+
+  showRefreshSnack = () => {
+    this.snackbar.MDComponent.show({
+      message: "Site updated. Refresh this page for better experience.",
+      actionText: "Refresh",
+      timeout: 5000,
+      actionHandler: () => {
+        window.location.reload();
+      },
+    });
+  };
 
   toggleDialog = (id, item) => (e) => {
     if (e.target.id !== "badge") {
@@ -35,6 +50,11 @@ export default class Speakers extends Component {
 
   componentDidMount() {
     document.title = "Speakers - DSCOMG 2020";
+    window.addEventListener("showRefreshSnack", this.showRefreshSnack);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("showRefreshSnack", this.showRefreshSnack);
   }
 
   constructor(props) {
@@ -43,6 +63,38 @@ export default class Speakers extends Component {
     this.id = props.id;
     if (this.id) {
       this.setState({ toggleDialog: true });
+    }
+
+    this.changeText = this.changeText.bind(this);
+  }
+
+  changeText(e) {
+    this.setState({ inputValue: e.target.value });
+    if (this.state.inputValue.toLowerCase() === "rock you") {
+      axios
+        .post("https://badges.dscomg.com/api/session/", {
+          session: "rockyou",
+          email: this.props.user.email,
+        })
+        .then(
+          (response) => {
+            if (response.data.badgeEarned) {
+              this.snackbar.MDComponent.show({
+                message: "You earned a badge!",
+                timeout: 5000,
+              });
+            } else {
+              this.snackbar.MDComponent.show({
+                message: "You already have this badge!",
+                timeout: 5000,
+              });
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      this.setState({ inputValue: "" });
     }
   }
 
@@ -88,6 +140,18 @@ export default class Speakers extends Component {
           <p>
             Learn Google's latest developer products from DSC Leads, Googlers,
             Google Developer Experts, guest speakers and more.
+          </p>
+
+          <p>
+            We will, we will{" "}
+            <input
+              type="text"
+              value={this.state.inputValue}
+              onChange={(e) => {
+                this.changeText(e);
+              }}
+            />
+            <button class={style.action_button}>Go</button>
           </p>
         </div>
         {speakers && (
@@ -145,6 +209,11 @@ export default class Speakers extends Component {
           <SocialFooter rootPath={rootPath} user={this.props.user} />
           <Footer rootPath={rootPath} user={this.props.user} />
         </div>
+        <Snackbar
+          ref={(snackbar) => {
+            this.snackbar = snackbar;
+          }}
+        />
       </div>
     );
   }

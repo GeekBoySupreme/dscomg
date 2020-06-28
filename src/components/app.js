@@ -19,6 +19,7 @@ import Snackbar from 'preact-material-components/Snackbar';
 import 'preact-material-components/Snackbar/style.css';
 import Badges from '../routes/badges';
 import axios from 'axios';
+import Nothing from '../routes/nothing';
 
 export default class App extends Component {
     handleRoute = e => {
@@ -348,6 +349,11 @@ export default class App extends Component {
                     <Collection
                         path={rootPath + 'collection/:id'}
                         rootPath={rootPath}
+                    />
+                    <Nothing
+                        path={rootPath + 'nothing/'}
+                        rootPath={rootPath}
+                        user={currentUser}
                     />
                     <NotFoundPage rootPath={rootPath} default/>
                 </Router>

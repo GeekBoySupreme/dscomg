@@ -1,6 +1,7 @@
 import { Component } from "preact";
 import style from "./style";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { Link, Match } from "preact-router/match";
 
 import moment from "moment-timezone";
 
@@ -223,6 +224,11 @@ export default class SocialFooter extends Component {
             </a>
           </div>
           <div>
+            <br />
+            <br />
+            <Link href={"/nothing"}>
+              <button class={style.action_button}>Nothing to see here!</button>
+            </Link>
             <br />
             <br />
             <button class={style.action_button} onClick={this.getButWhy}>
