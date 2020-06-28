@@ -159,7 +159,7 @@ export default class EventLivePage extends Component {
           <h2>Watch live</h2>
           <div class={style.youtube_embed}>
             <iframe
-              src="https://www.youtube.com/embed/unzi3EtZysA"
+              src="https://www.youtube.com/embed/9o5CDkeWPmM"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -168,11 +168,10 @@ export default class EventLivePage extends Component {
           </div>
           <p>
             If you cannot watch the video here, use the button below to open
-            YouTube in a new Tab (Do not close this tab to keep collecting
-            badges) &nbsp;👇 <br />
+            YouTube in a new Tab &nbsp;👇 <br />
             <div class={style.button_holder}>
               <a
-                href="https://www.youtube.com/live_chat?v=unzi3EtZysA"
+                href="https://www.youtube.com/live_chat?v=9o5CDkeWPmM"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -180,7 +179,7 @@ export default class EventLivePage extends Component {
               </a>
 
               <a
-                href="https://www.youtube.com/watch?v=unzi3EtZysA"
+                href="https://www.youtube.com/watch?v=9o5CDkeWPmM"
                 target="_blank"
                 rel="noopener noreferrer"
               >
