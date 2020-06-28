@@ -70,15 +70,20 @@ export default class EventLivePage extends Component {
       sessionCurrent = "D5S1";
     } else if (
       now >= moment.tz("2020-06-27 18:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:40", "Asia/Kolkata")
+      now < moment.tz("2020-06-27 20:05", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S2";
+    } else if (
+      now >= moment.tz("2020-06-27 20:05", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 21:40", "Asia/Kolkata")
+    ) {
+      sessionCurrent = "D5S4";
     } else if (
       now >= moment.tz("2020-06-27 20:40", "Asia/Kolkata") &&
       now < moment.tz("2020-06-27 21:00", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S3";
-    } 
+    }
 
     axios
       .post("https://badges.dscomg.com/api/session/", {
