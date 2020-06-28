@@ -80,7 +80,7 @@ export default class EventLivePage extends Component {
       sessionCurrent = "D5S2";
     } else if (
       now >= moment.tz("2020-06-28 20:05", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-28 21:40", "Asia/Kolkata")
+      now < moment.tz("2020-06-28 20:40", "Asia/Kolkata")
     ) {
       sessionCurrent = "D5S4";
     } else if (
