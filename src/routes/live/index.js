@@ -65,35 +65,20 @@ export default class EventLivePage extends Component {
 
     if (
       now >= moment.tz("2020-06-27 18:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:20", "Asia/Kolkata")
+      now < moment.tz("2020-06-27 18:30", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D4S1";
+      sessionCurrent = "D5S1";
     } else if (
-      now >= moment.tz("2020-06-27 18:20", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 18:50", "Asia/Kolkata")
+      now >= moment.tz("2020-06-27 18:30", "Asia/Kolkata") &&
+      now < moment.tz("2020-06-27 20:40", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D4S2";
+      sessionCurrent = "D5S2";
     } else if (
-      now >= moment.tz("2020-06-27 18:50", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 19:20", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S3";
-    } else if (
-      now >= moment.tz("2020-06-27 19:30", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:00", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S4";
-    } else if (
-      now >= moment.tz("2020-06-27 20:00", "Asia/Kolkata") &&
-      now < moment.tz("2020-06-27 20:30", "Asia/Kolkata")
-    ) {
-      sessionCurrent = "D4S5";
-    } else if (
-      now >= moment.tz("2020-06-27 20:30", "Asia/Kolkata") &&
+      now >= moment.tz("2020-06-27 20:40", "Asia/Kolkata") &&
       now < moment.tz("2020-06-27 21:00", "Asia/Kolkata")
     ) {
-      sessionCurrent = "D4S6";
-    }
+      sessionCurrent = "D5S3";
+    } 
 
     axios
       .post("https://badges.dscomg.com/api/session/", {
