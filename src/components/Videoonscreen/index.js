@@ -48,6 +48,9 @@ export default class VideoOnScreen extends Component {
             <div class={style.col_1}>
                 <iframe class={style.homescreen_embed} src="https://www.youtube.com/embed/Efwa0lTJLsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <div class={style.col_1}>
+                <iframe class={style.homescreen_embed} src="https://www.youtube.com/embed/unzi3EtZysA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
       </div>
     );
   }
