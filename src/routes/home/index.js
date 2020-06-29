@@ -242,21 +242,23 @@ export default class Home extends Component {
         <div class={`${style.hero} hero`}>
           <div class={style.hero_title}>
             <IoLogo rootPath={rootPath} />
-            <h2>
-              Developer Student Clubs OMG brings together developers from around
+            <h2>It's a Wrap</h2>
+            <h4 class={style.text_container}>
+              Developer Student Clubs OMG brought together developers from around
               the globe for talks, hands-on learning with Developer Student Club
               Leads and Google experts, and a first look at some of the amazing
               Community Projects.
-            </h2>
+            </h4>
             <br />
-            <h4>28 June 2020 · Day 5 Coming Up</h4>
+            <h4>24 June • 28 June 2020</h4>
             <br />
+            
             <div class={style.button_holder}>
               {user ? (
                 <div>
                   <h4>
-                    Hello there, welcome to OMG 🥳 <br />
-                    Check your mailbox for the Welcome Kit!
+                    Hello there, Thank you for attending OMG 🥳 <br />
+                    We hope to see you again, soon!
                   </h4>
                   <br />
                   <a
@@ -268,7 +270,7 @@ export default class Home extends Component {
                       Get your <b>OMG</b> Frame
                     </button>
                   </a>
-                  <a
+                  {/* <a
                     href="https://www.youtube.com/channel/UCCR8rHzvm0l9E7DNa6Y_OGA?sub_confirmation=1"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -285,12 +287,39 @@ export default class Home extends Component {
                     onClick={this.getDayNightBadge}
                   >
                     A Badge?
-                  </button>
+                  </button> */}
+
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeHD0iFHKK9TVgXLHeheH5f14myIow9GBUd363iJTOt5Uuj_g/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button class={style.action_button}>
+                      Give Feedback
+                    </button>
+                  </a>
                 </div>
               ) : (
-                <div class={style.action_button} onClick={this.toggleSigninDig}>
-                  Sign-In to Register
-                </div>
+                <div>
+                <a
+                    href="https://myframe.dscomg.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button class={style.action_button}>
+                      Get your <b>OMG</b> Frame
+                    </button>
+                  </a>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeHD0iFHKK9TVgXLHeheH5f14myIow9GBUd363iJTOt5Uuj_g/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button class={style.action_button}>
+                      Give Feedback
+                    </button>
+                  </a>
+                  </div>
               )}
 
               {/* <a href="https://sessionize.com/dscomg" target="_blank" rel="noopener noreferrer">
@@ -309,12 +338,17 @@ export default class Home extends Component {
         </div>
         <div class={style.home_info} id="headsup">
           <div class={style.text}>
-            <h3>What you need to know, before you ask.</h3>
+            <h3>Why did we call it OMG!</h3>
             <p>
-              The Online Mega Gathering - aka OMG brings together the world
+              The idea was to bring together the world
               class experts in Design, Android, Web, Machine Learning, Cloud
               technologies and much more for a week of sessions, workshops and
               showcases.
+            </p>
+            <p>
+              The Team pulled out every stop, and what makes it even more amazing that Leads
+              across India collaborated for the first time, blurred geographical boundaries,
+              and led the 5-day event from conceptualization to execution in 14 Days.
             </p>
             <div class={style.button_holder}>
               <a
@@ -340,12 +374,24 @@ export default class Home extends Component {
           </div>
           <div class={style.stats}>
             <div class={style.stat}>
-              <div class={style.number}>20+</div>
-              <div class={style.label}>Sessions</div>
+              <div class={style.number}>4,000+</div>
+              <div class={style.label}>Registrations</div>
             </div>
             <div class={style.stat}>
-              <div class={style.number}>5</div>
-              <div class={style.label}>Days</div>
+              <div class={style.number}>10,000+</div>
+              <div class={style.label}>Badges Claimed</div>
+            </div>
+            <div class={style.stat}>
+              <div class={style.number}>14,000+</div>
+              <div class={style.label}>YouTube Views</div>
+            </div>
+            <div class={style.stat}>
+              <div class={style.number}>22,000+</div>
+              <div class={style.label}>Site Visits</div>
+            </div>
+            <div class={style.stat}>
+              <div class={style.number}>34,000+</div>
+              <div class={style.label}>Emails Sent</div>
             </div>
           </div>
         </div>

@@ -7,6 +7,10 @@
     justify-content: space-between;
 }
 
+.text_container {
+    max-width: 600px;
+}
+
 .hero h2 {
     margin: 0;
     font-size: 24px;

@@ -179,12 +179,12 @@ export default class Schedule extends Component {
         <div class={`${style.hero} hero`}>
           <IoLogo rootPath={rootPath} />
           <h2>Schedule</h2>
-          <button class={style.action_button} onClick={this.clickMe}>
+          {/* <button class={style.action_button} onClick={this.clickMe}>
             Click me
           </button>
           <button class={style.action_button} onClick={this.dontClick}>
             Don't Click me
-          </button>
+          </button> */}
           {/*<p>Coming Soon</p>*/}
           {/* <p>
 						All sessions feature a Q&amp;A session at the end, time permitting.

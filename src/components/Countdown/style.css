@@ -1,3 +1,13 @@
+.social_gif {
+  /* max-width: 40vw; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social_gif svg {
+  width: 40%!important;
+}
+
 .countdownContainer {
   max-width: 800px;
   margin-left: 48px;
@@ -124,4 +134,13 @@
     margin-left: 0;
     margin-right: 20px;
   }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .social_gif {
+    /* max-width: 40vw; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
 }

@@ -225,7 +225,7 @@ export default class SocialFooter extends Component {
           </div>
           <div>
             <br />
-            <br />
+            {/* <br />
             <Link href={"/nothing"}>
               <button class={style.action_button}>Nothing to see here!</button>
             </Link>
@@ -233,7 +233,7 @@ export default class SocialFooter extends Component {
             <br />
             <button class={style.action_button} onClick={this.getButWhy}>
               Click me between 4am and 4:30am IST
-            </button>
+            </button> */}
           </div>
         </div>
 
