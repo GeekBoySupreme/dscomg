@@ -146,7 +146,7 @@ export default class EventLivePage extends Component {
          */}
         <div class={`${style.hero} hero`}>
           <IoLogo rootPath={rootPath} />
-          <h2>Watch live</h2>
+          <h2>Watch on Demand</h2>
           <div class={style.youtube_embed}>
             <iframe
               src="https://www.youtube.com/embed/9o5CDkeWPmM"
@@ -178,13 +178,13 @@ export default class EventLivePage extends Component {
             </div>
           </p>
 
-          <p>
+          {/* <p>
             Stay Tuned here for the Live Sessions, updates and much, much more.
             PS - Don't close this tab to earn Badges.
             <br />
             Also, subscribe to our YouTube Channel and hit the Bell Icon to get
             more updates.
-          </p>
+          </p> */}
           <button class={style.action_timer}>
             <b>
               {this.props.user
