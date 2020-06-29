@@ -142,7 +142,7 @@ export default class Speakers extends Component {
             Google Developer Experts, guest speakers and more.
           </p>
 
-          <p>
+          {/* <p>
             We will, we will{" "}
             <input
               type="text"
@@ -153,7 +153,7 @@ export default class Speakers extends Component {
               }}
             />
             <button class={style.action_button}>Go</button>
-          </p>
+          </p> */}
         </div>
         {speakers && (
           <div class={style.speakers}>
