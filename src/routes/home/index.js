@@ -329,13 +329,7 @@ export default class Home extends Component {
           </div>
           <Countdown />
         </div>
-        <div class={`${style.belt} belt`}>
-          <img
-            id="cover"
-            crossorigin="anonymous"
-            data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591563925/DSCOMG/IMG_6116.jpg"
-          />
-        </div>
+       
         <div class={style.home_info} id="headsup">
           <div class={style.text}>
             <h3>Why did we call it OMG!</h3>
@@ -408,6 +402,16 @@ export default class Home extends Component {
             </div>
         </div>
         <VideoOnScreen />
+
+        <div class={`${style.belt} belt`}>
+        <br />
+        <br />
+          <img
+            id="cover"
+            crossorigin="anonymous"
+            data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591563925/DSCOMG/IMG_6116.jpg"
+          />
+        </div>
 
         <SocialFooter rootPath={rootPath} user={user} />
         <Footer rootPath={rootPath} user={user} />
