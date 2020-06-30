@@ -113,7 +113,7 @@ export default class EventLivePage extends Component {
           console.log(error);
         }
       );
-  }
+   }
 
   subTimer() {
     this.setState({ remaining: 900000 });
@@ -190,7 +190,7 @@ export default class EventLivePage extends Component {
             Also, subscribe to our YouTube Channel and hit the Bell Icon to get
             more updates.
           </p> */}
-          <button class={style.action_timer}>
+          {/*<button class={style.action_timer}>
             <b>
               {this.props.user
                 ? `Claiming Points in ${TimeFormat.fromMs(
@@ -207,7 +207,7 @@ export default class EventLivePage extends Component {
           <p>* Points are collected after EVERY 15 minutes</p>
 
           <br />
-          <br />
+          <br />*/}
         </div>
         <Snackbar
           ref={(snackbar) => {
