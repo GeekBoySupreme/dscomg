@@ -257,7 +257,7 @@ export default class Home extends Component {
               {user ? (
                 <div>
                   <h4>
-                    Hello there, Thank you for attending OMG 🥳 <br />
+                    Thank you for attending OMG 🥳 <br />
                     We hope to see you again, soon!
                   </h4>
                   <br />
