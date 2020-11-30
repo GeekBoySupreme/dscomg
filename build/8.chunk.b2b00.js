@@ -1,2 +1,0 @@
-webpackJsonp([8],{"Xok/":function(e,n,t){"use strict";function c(e){t.e(15).then(function(){e(t("Vn0a"))}.bind(null,t)).catch(t.oe)}Object.defineProperty(n,"__esModule",{value:!0});var o=t("7N8r");n.default=t.n(o)()(c)}});
-//# sourceMappingURL=8.chunk.b2b00.js.map

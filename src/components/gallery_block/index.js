@@ -47,42 +47,42 @@ export default class GalleryBlock extends Component {
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282863/DSCOMG/20190824_141027.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/20190824_141027_DO_NXlBiN.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282861/DSCOMG/992162d2-175b-4360-b6ef-78d8ab082155.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/_DSC0962_i8mYjA5WX.JPG"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282679/DSCOMG/IMG_20190824_190220.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/IMG_20190824_190220_utbmiRXh6.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282674/DSCOMG/IMG_20190823_212816.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/029A2551_2epF-lUl2.JPG"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1592858574/DSCOMG/AVI_6305.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/IMG_20190823_164740_Q5K2CN6ld.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591282674/DSCOMG/IMG_20190823_204504.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/992162d2-175b-4360-b6ef-78d8ab082155_8_nPKocLs.jpg"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591950808/DSCOMG/IMG_0895.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/AVI_6315_Rh3vXlQaJq.JPG"
         />
         <img
           crossorigin="anonymous"
           class={style.grid_item}
-          data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591950925/DSCOMG/IMG_1005.jpg"
+          data-src="https://ik.imagekit.io/sh7tot7lqad/IMG_20190823_170659_ifXRJIY4V.jpg"
         />
         <div crossorigin="anonymous" class={style.gallery_info}>
           <div>

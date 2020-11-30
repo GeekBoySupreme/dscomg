@@ -409,7 +409,7 @@ export default class Home extends Component {
           <img
             id="cover"
             crossorigin="anonymous"
-            data-src="https://res.cloudinary.com/distortedaura/image/upload/v1591563925/DSCOMG/IMG_6116.jpg"
+            data-src="https://ik.imagekit.io/sh7tot7lqad/IMG_6116_I444LJ-0J.jpg"
           />
         </div>
 

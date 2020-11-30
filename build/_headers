@@ -6,34 +6,46 @@
 /*.chunk.*.js
 	Cache-Control: public, max-age=31536000
 /
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-home.chunk.949fe.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-home.chunk.d5593.js>; rel=preload; as=script
+/nothing
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-nothing.chunk.24a52.js>; rel=preload; as=script
+/collection
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-collection.chunk.18b4c.js>; rel=preload; as=script
+/badges
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-badges.chunk.92c85.js>; rel=preload; as=script
 /schedule
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-schedule.chunk.54b99.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-schedule.chunk.dff80.js>; rel=preload; as=script
 /speakers
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-speakers.chunk.77567.js>; rel=preload; as=script
-/map
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-map.chunk.595e4.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-speakers.chunk.a7693.js>; rel=preload; as=script
+/live
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-live.chunk.c3192.js>; rel=preload; as=script
 /faq
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-faq.chunk.87c6c.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-faq.chunk.a3ac0.js>; rel=preload; as=script
 /communityguidelines
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-communityguidelines.chunk.1e242.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-communityguidelines.chunk.d5bc0.js>; rel=preload; as=script
 /attending
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-attending.chunk.e13cd.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-attending.chunk.20010.js>; rel=preload; as=script
 /404
-	Link: </style.19b33.css>; rel=preload; as=style
-	Link: </bundle.55c56.js>; rel=preload; as=script
-	Link: </route-404.chunk.79a38.js>; rel=preload; as=script
+	Link: </style.28acf.css>; rel=preload; as=style
+	Link: </bundle.7ac84.js>; rel=preload; as=script
+	Link: </route-404.chunk.40277.js>; rel=preload; as=script
