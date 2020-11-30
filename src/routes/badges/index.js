@@ -72,10 +72,11 @@ export default class Badges extends Component {
           <h1 class={style.badge_header}>The Badge Board</h1>
           <h4 class={style.badge_description}>
             Stay tuned to Developer Student Club OMG and grab some exciting
-            Badges along the way.
+            Badges along the way. <br /><br />
+            Update - This is now retired 😔
           </h4>
           <h4>
-            {this.state.user ? (
+            {/* {this.state.user ? (
               <div>
                 {this.state.user.email}
                 <p>
@@ -91,10 +92,10 @@ export default class Badges extends Component {
               </div>
             ) : (
               "Sign In to start Getting badges"
-            )}
+            )} */}
           </h4>
         </div>
-        {this.state.user ? (
+        {/* {this.state.user ? (
           <div>
             {this.state.badges.length === 0 ? (
               <div class={style.speakers}>
@@ -127,17 +128,9 @@ export default class Badges extends Component {
             )}
           </div>
         ) : (
-          <div class={style.speakers}>Sign-In to view badges</div>
-        )}
-        <div class="hero">
-          <h3>
-            PS - Please note that these Badges are not Certificates, and can not
-            be exchanged nor transferred. <br />
-            Badges here are representative souvenirs and are meant to celebrate
-            the community togetherness <br />
-            And your participation in the Developer Student Clubs OMG.
-          </h3>
-        </div>
+          <div class={style.speakers}></div>
+        )} */}
+      
         <div class={style.footer}>
           <SocialFooter rootPath={rootPath} user={this.props.user} />
           <Footer rootPath={rootPath} user={this.props.user} />

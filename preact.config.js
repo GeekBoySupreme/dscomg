@@ -15,31 +15,31 @@ export default (config, env, helpers) => {
 	);
 
 	const precacheConfig = {
-		filename: 'sw.js',
-		navigateFallback: 'index.html',
-		navigateFallbackWhitelist: [/^(?!\/__).*/],
-		minify: true,
-		stripPrefix: config.cwd,
-		staticFileGlobsIgnorePatterns: [
-			/polyfills(\..*)?\.js$/,
-			/\.map$/,
-			/push-manifest\.json$/,
-			/.DS_Store/,
-			/\.git/
-		],
-		runtimeCaching: [
-			{
-				urlPattern: /^https:\/\/res\.cloudinary\.com\//,
-				handler: 'cacheFirst',
-				options: {
-					cache: {
-						maxEntries: 200,
-						name: 'items-cache'
-					}
-				}
-			}
-		]
-	};
+    filename: "sw.js",
+    navigateFallback: "index.html",
+    navigateFallbackWhitelist: [/^(?!\/__).*/],
+    minify: true,
+    stripPrefix: config.cwd,
+    staticFileGlobsIgnorePatterns: [
+      /polyfills(\..*)?\.js$/,
+      /\.map$/,
+      /push-manifest\.json$/,
+      /.DS_Store/,
+      /\.git/,
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/ik\.imagekit\.io\//,
+        handler: "cacheFirst",
+        options: {
+          cache: {
+            maxEntries: 200,
+            name: "items-cache",
+          },
+        },
+      },
+    ],
+  };
 	
 	netlifyPlugin(config);
 

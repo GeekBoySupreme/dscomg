@@ -47705,19 +47705,7 @@ function badges__inherits(subClass, superClass) { if (typeof superClass !== "fun
 
 var badges__ref2 = Object(preact_min["h"])("br", null);
 
-var badges__ref3 = Object(preact_min["h"])(
-  "div",
-  { "class": "hero" },
-  Object(preact_min["h"])(
-    "h3",
-    null,
-    "PS - Please note that these Badges are not Certificates, and can not be exchanged nor transferred. ",
-    Object(preact_min["h"])("br", null),
-    "Badges here are representative souvenirs and are meant to celebrate the community togetherness ",
-    Object(preact_min["h"])("br", null),
-    "And your participation in the Developer Student Clubs OMG."
-  )
-);
+var badges__ref3 = Object(preact_min["h"])("br", null);
 
 var badges_Badges = function (_Component) {
   badges__inherits(Badges, _Component);
@@ -47801,76 +47789,13 @@ var badges_Badges = function (_Component) {
         Object(preact_min["h"])(
           "h4",
           { "class": badges_style_default.a.badge_description },
-          "Stay tuned to Developer Student Club OMG and grab some exciting Badges along the way."
-        ),
-        Object(preact_min["h"])(
-          "h4",
-          null,
-          this.state.user ? Object(preact_min["h"])(
-            "div",
-            null,
-            this.state.user.email,
-            Object(preact_min["h"])(
-              "p",
-              null,
-              "Share Your badges using this",
-              " ",
-              Object(preact_min["h"])(
-                "a",
-                {
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  href: "/collection/" + this.state.uuid
-                },
-                "public link:"
-              )
-            )
-          ) : "Sign In to start Getting badges"
-        )
-      ),
-      this.state.user ? Object(preact_min["h"])(
-        "div",
-        null,
-        this.state.badges.length === 0 ? Object(preact_min["h"])(
-          "div",
-          { "class": badges_style_default.a.speakers },
-          "No Badges earned! ",
+          "Stay tuned to Developer Student Club OMG and grab some exciting Badges along the way. ",
           badges__ref2,
-          "Nevermind, it's not too late. Watch sessions to earn badges."
-        ) : Object(preact_min["h"])(
-          "div",
-          { "class": badges_style_default.a.speakers },
-          this.state.badges.map(function (item, index) {
-            return Object(preact_min["h"])(
-              "div",
-              { "class": badges_style_default.a.speaker_item },
-              Object(preact_min["h"])(
-                "div",
-                { "class": badges_style_default.a.profile_pic },
-                item.image ? Object(preact_min["h"])("img", {
-                  alt: item.name,
-                  "class": badges_style_default.a.speaker_profile_pic,
-                  src: "https://badges.dscomg.com" + item.image
-                }) : Object(preact_min["h"])("img", {
-                  alt: item.name,
-                  "class": badges_style_default.a.speaker_profile_pic,
-                  src: rootPath + "assets/person.svg"
-                })
-              ),
-              Object(preact_min["h"])(
-                "div",
-                { "class": badges_style_default.a.speaker_name },
-                item.name
-              )
-            );
-          })
-        )
-      ) : Object(preact_min["h"])(
-        "div",
-        { "class": badges_style_default.a.speakers },
-        "Sign-In to view badges"
+          badges__ref3,
+          "Update - This is now retired \uD83D\uDE14"
+        ),
+        Object(preact_min["h"])("h4", null)
       ),
-      badges__ref3,
       Object(preact_min["h"])(
         "div",
         { "class": badges_style_default.a.footer },
